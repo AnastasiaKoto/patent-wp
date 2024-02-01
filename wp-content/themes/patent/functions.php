@@ -65,3 +65,37 @@ add_action( 'after_setup_theme', 'theme_register_nav_footer_menu' );
 function theme_register_nav_footer_menu() {
 	register_nav_menu( 'footer', 'Footer Menu');
 }
+
+// тип записи услуги
+
+function create_custom_post_type() {
+    register_post_type('services',
+        array(
+            'labels' => array(
+                'name' => __('Услуги'),
+                'singular_name' => __('Услуги')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'services'),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+        )
+    );
+}
+add_action('init', 'create_custom_post_type');
+
+// таксономии для услуг
+
+function create_services_taxonomies() {
+    register_taxonomy(
+        'services_category',
+        'services',
+        array(
+            'label' => __('Категории услуг'),
+            'hierarchical' => true,
+            'rewrite' => array('slug' => 'services-category'),
+        )
+    );
+}
+add_action('init', 'create_services_taxonomies');
+

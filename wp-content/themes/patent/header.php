@@ -54,7 +54,7 @@
 								<a href="tel:<?php echo $tel_link; ?>"><?php echo $tel_tel; ?></a>
 								<?php } } ?>
 							</address>
-							<a href="#" class="btn header__btn lite__btn">Заказать звонок 111</a>
+							<a href="#" class="btn header__btn lite__btn">Заказать звонок</a>
 							<div class="header__socials flex">
 								<?php if(get_field('wa_link', 'option')) { ?>
 								<a href="<?php echo get_field('wa_link', 'option'); ?>">
