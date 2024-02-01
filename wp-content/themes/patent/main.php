@@ -67,15 +67,19 @@ get_header();
 					</div>
 					<?php } ?>
 				</div>
-				<div class="banner__block">
+				<div class="banner__block banner__block-main">
 					<?php if(get_field('photo')) { ?>
 					<img src="<?php echo get_field('photo'); ?>" alt="">
 					<?php } ?>
 				</div>
+				<div class="banner__block banner__block-mob">
+					<!-- man-mob.png -->
+					<img src="/wp-content/themes/patent/images/man-mob.png" alt="">
+				</div>
 			</div>
 		</div>
 	</section>
-	<section class="services">
+	<section class="services ">
 		<div class="container">
 			<h2 class="titles">основные услуги</h2>
 			<?php 
@@ -123,6 +127,14 @@ get_header();
 					</div>
 				</div>
 			</div>
+			<div class="services__card last__card last__card-mob">
+					<div class="services-card__content">
+						<a href="#" class="btn dark__btn all__btn">Все услуги</a>
+						<div class="small__price">
+							Ознакомиться со всеми услугами
+						</div>
+					</div>
+				</div>
 			<?php } ?>
 		</div>
 	</section>
@@ -337,7 +349,7 @@ get_header();
 			</h2>
 		</div>
 	</section>
-	<section class="articles">
+	<section class="articles ">
 		<div class="container">
 			<div class="articles__block">
 				<h2 class="titles">
@@ -506,7 +518,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="doubarticles">
+	<section class="doubarticles ">
 		<div class="container">
 			<h2 class="titles">
 				Статьи
@@ -562,7 +574,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="order-form">
+	<section class="order-form ">
 		<div class="container">
 			<div class="form__content flex">
 				<div class="form__part">

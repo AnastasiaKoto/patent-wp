@@ -1,0 +1,20 @@
+<svg width="395.000000" height="379.945221" viewBox="0 0 395 379.945" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_625_1007_dd" x="0.000000" y="0.000000" width="395.000000" height="379.945221" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feOffset dx="0" dy="14"/>
+			<feGaussianBlur stdDeviation="8.33333"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.059 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+	</defs>
+	<g filter="url(#filter_625_1007_dd)">
+		<path id="Rectangle 33" d="M42 11L353 11C362.389 11 370 18.6112 370 28L370 297C370 306.389 362.389 314 353 314L173.623 314C161.867 314 153.66 325.647 157.614 336.718C157.965 337.701 158.31 338.668 158.645 339.605C158.95 340.461 158.049 341.248 157.243 340.83L109.18 315.908C106.762 314.654 104.078 314 101.355 314L42 314C32.6111 314 25 306.389 25 297L25 28C25 18.6112 32.6111 11 42 11Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>
