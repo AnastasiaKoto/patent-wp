@@ -21,7 +21,7 @@
 
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
-		<div id="page" class="site">
+		<div id="page" class="site ">
 			<header class="header">
 				<div class="container">
 					<div class="header__content flex">
@@ -71,5 +71,64 @@
 					</div>
 				</div>
 			</header>
+            <header class="header-mobile">
+                <div class="container header-mobile__container">
+                    <div class="header-mobile__top">
+                        <p class="header-mobile__info">
+            <span class="header-mobile__text--400"
+            >Патентный поверенный № 1387</span
+            >
+                            <span class="header-mobile__text--600">Юрист Анатолий Павлов</span>
+                        </p>
+                        <nav class="nav" data-nav>
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">Пункт 1</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">Пункт 2</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">Пункт 3</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">Пункт 4</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">Пункт 5</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#" class="nav__link">Пункт 6</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <button
+                                class="burger"
+                                data-burger
+                                aria-label="Открыть меню"
+                                aria-expanded="false"
+                        >
+                            <span class="burger__line"></span>
+                        </button>
+                    </div>
+
+                    <div class="header-mobile__bottom">
+                        <a class="header-mobile__text--500" href="#">+7 (926) 207-17-90</a>
+                        <a class="header-mobile__text--500" href="#">info@gospatent.ru</a>
+                        <ul class="header-mobile__social">
+                            <li>
+                                <a href="#">
+                                    <img src="/wp-content/themes/patent/images/Telegram.svg" alt="" width="31" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/wp-content/themes/patent/images/WhatsApp.svg" alt="" width="31" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
 
 			<div id="content" class="site-content">
