@@ -83,22 +83,42 @@
                         <nav class="nav" data-nav>
                             <ul class="nav__list">
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Пункт 1</a>
+                                    <a href="#" class="header-mobile__link">Главная</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Пункт 2</a>
+                                    <a href="#" class="header-mobile__link">Услуги</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Пункт 3</a>
+                                    <a href="#" class="header-mobile__link">О патентном бюро</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Пункт 4</a>
+                                    <a href="#" class="header-mobile__link">МКТУ</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Пункт 5</a>
+                                    <a href="#" class="header-mobile__link">Кейсы</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link">Пункт 6</a>
+                                    <ul class="header-mobile__social header-mobile__social-2">
+                            <li>
+                                <a href="#">
+                                    <img src="/wp-content/themes/patent/images/Telegram.svg" alt="" width="44" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/wp-content/themes/patent/images/WhatsApp.svg" alt="" width="44" />
+                                </a>
+                            </li>
+                        </ul>
+                                </li>
+								<li class="nav__item nav__item-2">
+                                    <a href="#" class="header-mobile__link-2">info@gospatent.ru</a>
+                                </li>
+								<li class="nav__item">
+                                    <a href="#" class="header-mobile__link-2">+7 (926) 207-17-90</a>
+                                </li>
+								<li class="nav__item">
+                                    <a href="#" class="header-mobile__btn">Заказать звонок</a>
                                 </li>
                             </ul>
                         </nav>
