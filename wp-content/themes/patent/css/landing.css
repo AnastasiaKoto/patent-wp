@@ -1,0 +1,113 @@
+.benefit__list {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 28px;
+    row-gap: 43px;
+    margin-bottom: 51px;
+}
+
+.benefit__card {
+    border-radius: 27px;
+    border: 1px solid #DDD;
+    column-gap: 52px;
+    padding: 34px 25px 30px;
+    justify-content: space-between;
+}
+
+.benefit-card__txt {
+    max-width: 80%;
+}
+
+.benefit-card__img {
+    min-width: 53px;
+    margin-top: -63px;
+    max-width: 20%;
+}
+
+.benefit-card__txt .title {
+    margin-bottom: 7px;
+}
+
+.benefit-card__txt > p {
+    margin-bottom: 9px;
+    color: #4B555E;
+}
+
+.benefit-card__descr.hidden {
+    max-height: 189px;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+.benefit-card__descr {
+    max-height: 100%;
+    transition: all .3s ease;
+}
+
+.benefit-card__more {
+    cursor: pointer;
+    position: relative;
+    color: #5671B2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 138%; /* 19.32px */
+    width: max-content;
+    padding-right: 16px;
+}
+
+.benefit-card__more::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 30%;
+    width: 10px;
+    height: 8px;
+    background-image: url(/images/arr_more.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.benefit-card__more.d-none {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    display: none;
+}
+
+.serv_btn {
+    display: block;
+    margin-left: auto;
+    max-width: 196px;
+    position: relative;
+    font-size: 14px;
+    padding: 14px 27px;
+}
+
+.serv_btn::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-image: url(/images/serv_after.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    top: 38%;
+    right: 20px;
+}
+
+/*  branch  */
+
+.branch {
+    padding-bottom: 102px;
+}
+
+.branch h2 {
+    margin-bottom: 93px;
+}
+
+.branch .benefit-card__img {
+    min-width: 60px;
+    margin-top: 0;
+}
