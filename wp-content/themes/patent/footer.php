@@ -15,7 +15,7 @@
 
 </div><!-- #content -->
 
-<footer class="footer">
+<footer class="footer hidden">
 	<div class="container">
 		<div class="footer__content flex">
 			<div class="footer__group flex">

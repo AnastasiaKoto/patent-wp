@@ -173,7 +173,7 @@ h1, h2, h3, button {
 }
 
 .banner__offer {
-    background-image: url(/images/banner_bg.svg);
+    background-image: url(/wp-content/themes/patent/images/banner_bg.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -210,7 +210,7 @@ h1, h2, h3, button {
     position: absolute;
     left: 0;
     top: 5px;
-    background-image: url(/images/banner_point.svg);
+    background-image: url(/wp-content/themes/patent/images/banner_point.svg);
     width: 15px;
     height: 12px;
     background-repeat: no-repeat;
@@ -343,7 +343,7 @@ h1, h2, h3, button {
     height: 15px;
     right: 16%;
     top: 35%;
-    background-image: url(/images/serv_arr.svg);
+    background-image: url(/wp-content/themes/patent/images/serv_arr.svg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -378,7 +378,7 @@ h1, h2, h3, button {
     width: 209px;
     height: 213px;
     position: absolute;
-    background-image: url(/images/feat.svg);
+    background-image: url(/wp-content/themes/patent/images/feat.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -521,7 +521,7 @@ h1, h2, h3, button {
     border-radius: 27px;
     background-color: #FFF;
     position: relative;
-    background-image: url(/images/keys_bg.svg);
+    background-image: url(/wp-content/themes/patent/images/keys_bg.svg);
     background-repeat: no-repeat;
     background-size: 243px;
     background-position: left top;
@@ -599,7 +599,7 @@ h1, h2, h3, button {
     position: absolute;
     top: -30px;
     left: 10%;
-    background-image: url(/images/benefit_bg.svg);
+    background-image: url(/wp-content/themes/patent/images/benefit_bg.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -612,7 +612,7 @@ h1, h2, h3, button {
     position: absolute;
     bottom: 0;
     left: -100px;
-    background-image: url(/images/benefit_bgbg.svg);
+    background-image: url(/wp-content/themes/patent/images/benefit_bgbg.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -924,7 +924,7 @@ h1, h2, h3, button {
     content: '';
     width: 14px;
     height: 7px;
-    background-image: url(/images/drop.svg);
+    background-image: url(/wp-content/themes/patent//images/drop.svg);
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
@@ -1012,7 +1012,7 @@ h1, h2, h3, button {
 }
 
 .custom__check.active {
-    background-image: url(/images/agree.svg);
+    background-image: url(/wp-content/themes/patent/images/agree.svg);
     background-repeat: no-repeat;
     background-size: 16px;
     background-position: center center;
@@ -1321,6 +1321,10 @@ h1, h2, h3, button {
     margin: 25px auto;
 }
 
+.banner__block-mob {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .header {
         display: none;
@@ -1373,14 +1377,75 @@ h1, h2, h3, button {
         border-bottom: 1px solid var(--second-text);
         font-size: 20px;
     }
+    /* banner */
+
+    .banner {
+        padding-top: 0;
+    }
+
+    .banner__offer {
+    background-image: url(/wp-content/themes/patent/images/banner_bg-mob.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 31px 21px 71px 21px;
+    min-height: 356px;
+    max-width: 345px;
+    position: relative;
+    top: 33px;
+}
+    .main__title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .banner__block:nth-of-type(1) {
+    max-width: 100%;
+    }
+
+    .banner__list {
+        grid-template-columns: auto;
+        column-gap: 36px;
+        margin-top: 0;
+        row-gap: 20px;
+        max-width: 170px;
+    }
+    
+    .banner__block img {
+    position: absolute;
+    bottom: -58px;
+    right: 0;
+    width: 200px;
+    }
+
+    .banner__offer li {
+        font-size: 16px;
+    }
+
+    .banner__block-main {
+        display: none;
+    }
+
+    .banner__block-mob {
+        display: block;
+    }
+
+    .banner__btn {
+        font-size: 14px;
+        margin-bottom: 12px;
+        display: block;
+        max-width: 300px;
+    }
+
 }
 
 
-.main {
-    display: none;
-
-}
 
 footer {
+    display: none;
+}
+
+.hidden {
     display: none;
 }

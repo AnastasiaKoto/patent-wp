@@ -67,15 +67,19 @@ get_header();
 					</div>
 					<?php } ?>
 				</div>
-				<div class="banner__block">
+				<div class="banner__block banner__block-main">
 					<?php if(get_field('photo')) { ?>
 					<img src="<?php echo get_field('photo'); ?>" alt="">
 					<?php } ?>
 				</div>
+				<div class="banner__block banner__block-mob">
+					<!-- man-mob.png -->
+					<img src="/wp-content/themes/patent/images/man-mob.png" alt="">
+				</div>
 			</div>
 		</div>
 	</section>
-	<section class="services">
+	<section class="services ">
 		<div class="container">
 			<h2 class="titles">основные услуги</h2>
 			<div class="services__list grid">
@@ -170,7 +174,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="features">
+	<section class="features hidden">
 		<div class="container">
 			<h2 class="titles">Получите преимущество</h2>
 			<div class="features__block grid">
@@ -254,7 +258,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="keyses">
+	<section class="keyses hidden">
 		<div class="container">
 			<h2 class="titles">кейсы клиентов</h2>
 			<div class="tabs keyses__tabs">
@@ -361,7 +365,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="benefit">
+	<section class="benefit hidden">
 		<div class="container">
 			<h2 class="titles">Чем полезен Патентный поверенный именно мне?</h2>
 			<div class="benefit__banner flex">
@@ -456,7 +460,7 @@ get_header();
 			<a href="#" class="btn dark__btn serv_btn">Основные услуги</a>
 		</div>
 	</section>
-	<section class="branch">
+	<section class="branch hidden">
 		<div class="container">
 			<h2 class="titles">Какую отрасль Вы представляете?</h2>
 			<div class="benefit__list grid">
@@ -519,14 +523,14 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="patent-form">
+	<section class="patent-form hidden">
 		<div class="container">
 			<h2 class="titles">
 				заказать услугу патнетного поверенного
 			</h2>
 		</div>
 	</section>
-	<section class="articles">
+	<section class="articles hidden">
 		<div class="container">
 			<div class="articles__block">
 				<h2 class="titles">
@@ -695,7 +699,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="doubarticles">
+	<section class="doubarticles hidden">
 		<div class="container">
 			<h2 class="titles">
 				Статьи
@@ -751,7 +755,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="order-form">
+	<section class="order-form hidden">
 		<div class="container">
 			<div class="form__content flex">
 				<div class="form__part">
