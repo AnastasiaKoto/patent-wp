@@ -78,87 +78,42 @@ get_header();
 	<section class="services">
 		<div class="container">
 			<h2 class="titles">основные услуги</h2>
+			<?php 
+			$args = array(
+				'post_type' => 'services',
+				'post_status' => 'publish',
+				'posts_per_page' => 5,
+			);
+			$query = new WP_Query($args);
+			if ($query ->have_posts()) {
+			?>
 			<div class="services__list grid">
-				<a href="#" class="services__card flex">
+				<?php 
+				$count = 1;
+                while ( $query->have_posts() ) {
+                    $query->the_post();
+                ?>
+				<a href="<?php the_permalink(); ?>" class="services__card flex">
 					<div class="number">
-						01
+						<?php echo '0'. $count; ?>
 					</div>
 					<div class="services-card__content">
 						<h3 class="small__titles">
-							Регистрация товарного знака
+							<?php the_title(); ?>
 						</h3>
+						<?php if(get_field('price', get_the_ID())) { ?>
 						<div class="small__price">
-							от 15 000 ₽ или от 55 400 ₽
+							<?php echo get_field('price', get_the_ID()); ?>
 						</div>
+						<?php } ?>
+						<?php if(get_field('price_descr', get_the_ID())) { ?>
 						<p>
-							С учетом пошлин
+							<?php echo get_field('price_descr', get_the_ID()); ?>
 						</p>
+						<?php } ?>
 					</div>
 				</a>
-				<a href="#" class="services__card flex">
-					<div class="number">
-						01
-					</div>
-					<div class="services-card__content">
-						<h3 class="small__titles">
-							Регистрация товарного знака
-						</h3>
-						<div class="small__price">
-							от 15 000 ₽ или от 55 400 ₽
-						</div>
-						<p>
-							С учетом пошлин
-						</p>
-					</div>
-				</a>
-				<a href="#" class="services__card flex">
-					<div class="number">
-						01
-					</div>
-					<div class="services-card__content">
-						<h3 class="small__titles">
-							Регистрация товарного знака
-						</h3>
-						<div class="small__price">
-							от 15 000 ₽ или от 55 400 ₽
-						</div>
-						<p>
-							С учетом пошлин
-						</p>
-					</div>
-				</a>
-				<a href="#" class="services__card flex">
-					<div class="number">
-						01
-					</div>
-					<div class="services-card__content">
-						<h3 class="small__titles">
-							Регистрация товарного знака
-						</h3>
-						<div class="small__price">
-							от 15 000 ₽ или от 55 400 ₽
-						</div>
-						<p>
-							С учетом пошлин
-						</p>
-					</div>
-				</a>
-				<a href="#" class="services__card flex">
-					<div class="number">
-						01
-					</div>
-					<div class="services-card__content">
-						<h3 class="small__titles">
-							Регистрация товарного знака
-						</h3>
-						<div class="small__price">
-							от 15 000 ₽ или от 55 400 ₽
-						</div>
-						<p>
-							С учетом пошлин
-						</p>
-					</div>
-				</a>
+				<?php $count++; } ?>
 				<div class="services__card last__card">
 					<div class="services-card__content">
 						<a href="#" class="btn dark__btn all__btn">Все услуги</a>
@@ -168,205 +123,140 @@ get_header();
 					</div>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 	</section>
 	<section class="features">
 		<div class="container">
 			<h2 class="titles">Получите преимущество</h2>
+			<?php 
+			$features = get_field('features');
+			if($features) {
+			?>
 			<div class="features__block grid">
+				<?php foreach($features as $feature) { ?>
 				<div class="features-block__card">
 					<div class="small__titles">
-						детальная аналитика
+						<?php echo $feature['title']; ?>
 					</div>
 					<p>
-						гарантирует успех дела
+						<?php echo $feature['descr']; ?>
 					</p>
 				</div>
-				<div class="features-block__card">
-					<div class="small__titles">
-						детальная аналитика
-					</div>
-					<p>
-						гарантирует успех дела
-					</p>
-				</div>
-				<div class="features-block__card">
-					<div class="small__titles">
-						детальная аналитика
-					</div>
-					<p>
-						гарантирует успех дела
-					</p>
-				</div>
-				<div class="features-block__card">
-					<div class="small__titles">
-						детальная аналитика
-					</div>
-					<p>
-						гарантирует успех дела
-					</p>
-				</div>
+				<?php } ?>
 			</div>
+			<?php } ?>
 			<div class="lead__block grid">
 				<div class="lead__card">
 					<div class="big__title">
 						общая консультация бесплатно
 					</div>
+					<?php 
+					$general_list = get_field('general_advice'); 
+					if($general_list) {
+					?>
 					<ul>
+						<?php foreach($general_list as $point) { ?>
 						<li>
-							Вопросы по процедурам регистрации
+							<?php echo $point['point']; ?>
 						</li>
-						<li>
-							Вопросы по прогнозу регистрации
-						</li>
-						<li>
-							Все вопросы, которые у нас вызывают обеспокоенность
-						</li>
-						<li>
-							Все вопросы, которые у нас вызывают обеспокоенность
-						</li>
-						<li>
-							Все вопросы, которые у нас вызывают обеспокоенность
-						</li>
-						<li>
-							Все вопросы, которые у нас вызывают обеспокоенность
-						</li>
+						<?php } ?>
 					</ul>
+					<?php } ?>
 					<a href="#" class="btn dark__btn">Получить консультацию</a>
 				</div>
 				<div class="lead__card">
 					<div class="big__title">
-						общая консультация бесплатно
+						консультации определяющие ваш вопрос
 					</div>
+					<?php 
+					$specialized_list = get_field('specialized'); 
+					if($specialized_list) {
+					?>
 					<ul>
+						<?php foreach($specialized_list as $point) { ?>
 						<li>
-							Вопросы по процедурам регистрации
+							<?php echo $point['point']; ?>
 						</li>
-						<li>
-							Вопросы по прогнозу регистрации
-						</li>
-						<li>
-							Все вопросы, которые у нас вызывают обеспокоенность
-						</li>
+						<?php } ?>
 					</ul>
+					<?php } ?>
 					<a href="#" class="btn dark__btn">Получить консультацию</a>
 				</div>
 			</div>
 		</div>
 	</section>
+	<?php 
+		$args = array(
+			'post_type' => 'keyses',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+		);
+		$keyses = new WP_Query($args);
+		if ($keyses->have_posts()) {
+	?>
 	<section class="keyses">
 		<div class="container">
 			<h2 class="titles">кейсы клиентов</h2>
 			<div class="tabs keyses__tabs">
 				<ul class="tabs__caption">
-					<li class="active">Наименование услуги</li>
-					<li>Наименование услуги</li>
+					<?php 
+					$count_tab = 1;
+					while ( $keyses->have_posts() ) {
+						$keyses->the_post();
+					?>
+					<li <?php if($count_tab == 1) { ?> class="active" <?php } ?>><?php the_title(); ?></li>
+					<?php $count_tab++;  } ?>
 				</ul>
-				<div class="tabs__content active">
+				<?php 
+				$count_keys = 1;
+				while ( $keyses->have_posts() ) {
+					$keyses->the_post();
+				?>
+				<div class="tabs__content <?php if($count_keys == 1) { ?> active <?php } ?>">
+					<?php 
+					$keyses_field = get_field('servise_keyses', get_the_ID());
+					if($keyses_field) {
+					?>
 					<div class="keyses__slider slick-slider">
+						<?php foreach($keyses_field as $keys) { ?>
 						<div class="keyses-slide flex">
 							<div class="keyses__left">
-								<img src="/images/keys__logo.svg" alt="">
+								<img src="<?php echo $keys['logo']; ?>" alt="">
 								<div class="keys__descr">
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и мест
-								</div>
-							</div>
-							<div class="keyses__right">
-								<div class="title">
-									Задача 111
-								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
-								<div class="title">
-									что сделали
-								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
-							</div>
-						</div>
-						<div class="keyses-slide flex">
-							<div class="keyses__left">
-								<img src="/images/keys__logo.svg" alt="">
-								<div class="keys__descr">
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и мест
+									<?php echo $keys['short_descr']; ?>
 								</div>
 							</div>
 							<div class="keyses__right">
 								<div class="title">
 									Задача
 								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
+								<div class="descr">
+									<?php echo $keys['task']; ?>
+								</div>
 								<div class="title">
 									что сделали
 								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
+								<div class="descr">
+									<?php echo $keys['result']; ?>
+								</div>
 							</div>
 						</div>
+						<?php } ?>
 					</div>
+					<?php } ?>
 				</div>
-				<div class="tabs__content">
-					<div class="keyses__slider slick-slider">
-						<div class="keyses-slide flex">
-							<div class="keyses__left">
-								<img src="/images/keys__logo.svg" alt="">
-								<div class="keys__descr">
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и мест
-								</div>
-							</div>
-							<div class="keyses__right">
-								<div class="title">
-									Задача
-								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
-								<div class="title">
-									что сделали
-								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
-							</div>
-						</div>
-						<div class="keyses-slide flex">
-							<div class="keyses__left">
-								<img src="/images/keys__logo.svg" alt="">
-								<div class="keys__descr">
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и мест
-								</div>
-							</div>
-							<div class="keyses__right">
-								<div class="title">
-									Задача
-								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
-								<div class="title">
-									что сделали
-								</div>
-								<p>
-									Равным образом консультация с широким активом требуют от нас анализа форм развития. Таким образом рамки и место обучения кадров играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий. 
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php $count_keys++; } ?>
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	<section class="benefit">
 		<div class="container">
 			<h2 class="titles">Чем полезен Патентный поверенный именно мне?</h2>
 			<div class="benefit__banner flex">
 				<div class="banner__img">
-					<img src="/images/benefit_banner.png" alt="">
+					<img src="/wp-content/themes/patent/images/benefit_banner.png" alt="">
 				</div>
 				<div class="benefit-banner__content">
 					<div class="big__title">
@@ -383,142 +273,63 @@ get_header();
 					</div>
 				</div>
 			</div>
+			<?php 
+			$profs = get_field('profs');
+			if($profs) {
+			?>
 			<div class="benefit__list grid">
+				<?php foreach($profs as $prof) { ?>
 				<div class="benefit__card flex">
 					<div class="benefit-card__img">
-						<img src="/images/benef_cardimg.svg" alt="">
+						<img src="<?php echo $prof['img']; ?>" alt="">
 					</div>
 					<div class="benefit-card__txt">
 						<div class="title">
-							Вы предприниматель
+							<?php echo $prof['title']; ?>
 						</div>
 						<p>
-							(владелец компании)
+							<?php echo $prof['title_descr']; ?>
 						</p>
 						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки, насколько она будет защищать (страховать) проинвестированные средства. СУТЬ  дела – привести дела клиента в полный порядок и поддерживать его при смене менеджмента. Вы получите видение в стратегическом плане
+							<?php echo $prof['txt']; ?>
 						</p>
 						<div class="benefit-card__more">Читать полностью</div>
 					</div>
 				</div>
-				<div class="benefit__card flex">
-					<div class="benefit-card__img">
-						<img src="/images/benef_cardimg.svg" alt="">
-					</div>
-					<div class="benefit-card__txt">
-						<div class="title">
-							Вы предприниматель
-						</div>
-						<p>
-							(владелец компании)
-						</p>
-						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки, насколько она будет защищать (страховать) проинвестированные средства. СУТЬ  дела – привести дела клиента в полный порядок и поддерживать его при смене менеджмента. Вы получите видение в стратегическом плане
-						</p>
-						<div class="benefit-card__more">Читать полностью</div>
-					</div>
-				</div>
-				<div class="benefit__card flex">
-					<div class="benefit-card__img">
-						<img src="/images/benef_cardimg.svg" alt="">
-					</div>
-					<div class="benefit-card__txt">
-						<div class="title">
-							Вы предприниматель
-						</div>
-						<p>
-							(владелец компании)
-						</p>
-						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки, насколько она будет защищать (страховать) проинвестированные средства. СУТЬ  дела – привести дела клиента в полный порядок и поддерживать его при смене менеджмента. Вы получите видение в стратегическом плане
-						</p>
-						<div class="benefit-card__more">Читать полностью</div>
-					</div>
-				</div>
-				<div class="benefit__card flex">
-					<div class="benefit-card__img">
-						<img src="/images/benef_cardimg.svg" alt="">
-					</div>
-					<div class="benefit-card__txt">
-						<div class="title">
-							Вы предприниматель
-						</div>
-						<p>
-							(владелец компании)
-						</p>
-						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки, насколько она будет защищать (страховать) проинвестированные средства. СУТЬ  дела – привести дела клиента в полный порядок и поддерживать его при смене менеджмента. Вы получите видение в стратегическом плане
-						</p>
-						<div class="benefit-card__more">Читать полностью</div>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 			<a href="#" class="btn dark__btn serv_btn">Основные услуги</a>
+			<?php } ?>
 		</div>
 	</section>
+	<?php 
+	$branches = get_field('branches');
+	if($branches) {
+	?>
 	<section class="branch">
 		<div class="container">
 			<h2 class="titles">Какую отрасль Вы представляете?</h2>
 			<div class="benefit__list grid">
+				<?php foreach($branches as $branch) { ?>
 				<div class="benefit__card flex">
 					<div class="benefit-card__img">
-						<img src="/images/dashicons_money.svg" alt="">
+						<img src="<?php echo $branch['img']; ?>" alt="">
 					</div>
 					<div class="benefit-card__txt">
 						<div class="title">
-							Венчурный фонд
+							<?php echo $branch['title']; ?>
 						</div>
 						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки...
+							<?php echo $branch['txt']; ?>
 						</p>
 						<div class="benefit-card__more">Читать полностью</div>
 					</div>
 				</div>
-				<div class="benefit__card flex">
-					<div class="benefit-card__img">
-						<img src="/images/dashicons_money.svg" alt="">
-					</div>
-					<div class="benefit-card__txt">
-						<div class="title">
-							Венчурный фонд
-						</div>
-						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки...
-						</p>
-						<div class="benefit-card__more">Читать полностью</div>
-					</div>
-				</div>
-				<div class="benefit__card flex">
-					<div class="benefit-card__img">
-						<img src="/images/dashicons_money.svg" alt="">
-					</div>
-					<div class="benefit-card__txt">
-						<div class="title">
-							Венчурный фонд
-						</div>
-						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки...
-						</p>
-						<div class="benefit-card__more">Читать полностью</div>
-					</div>
-				</div>
-				<div class="benefit__card flex">
-					<div class="benefit-card__img">
-						<img src="/images/dashicons_money.svg" alt="">
-					</div>
-					<div class="benefit-card__txt">
-						<div class="title">
-							Венчурный фонд
-						</div>
-						<p class="benefit-card__descr hidden">
-							С патентным поверенным будет полезно изначально обсудить стратегию развития компании в отношении патентования предполагаемой продукции.Мы сможем прояснить невидимые зоны и поставить задачи в правильную очередность.Например, определим степень защиты патентуемой разработки...
-						</p>
-						<div class="benefit-card__more">Читать полностью</div>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	<section class="patent-form">
 		<div class="container">
 			<h2 class="titles">
@@ -559,56 +370,56 @@ get_header();
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
@@ -636,56 +447,56 @@ get_header();
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
 							<div class="article__content-list_point">
 								<div class="art__count"><div>1</div></div>
 								<div class="icon">
-									<img src="/images/icon1.svg" alt="">
+									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
 								</div>
 								<div class="sm__title">Идея</div>
 							</div>
@@ -708,7 +519,7 @@ get_header();
 					<div class="newsblock__list flex">
 						<div class="newsblock__card flex">
 							<div class="newsblock__img">
-								<img src="/images/newsblock.png" alt="">
+								<img src="/wp-content/themes/patent/images/newsblock.png" alt="">
 							</div>
 							<div class="newstitle">
 								качество поиска товарных знаков исключает риски отказа регистрации
@@ -719,7 +530,7 @@ get_header();
 						</div>
 						<div class="newsblock__card flex">
 							<div class="newsblock__img">
-								<img src="/images/newsblock.png" alt="">
+								<img src="/wp-content/themes/patent/images/newsblock.png" alt="">
 							</div>
 							<div class="newstitle">
 								качество поиска товарных знаков исключает риски отказа регистрации
@@ -737,7 +548,7 @@ get_header();
 					<div class="newsblock__list flex">
 						<div class="newsblock__card flex">
 							<div class="newsblock__img">
-								<img src="/images/newsblock.png" alt="">
+								<img src="/wp-content/themes/patent/images/newsblock.png" alt="">
 							</div>
 							<div class="newstitle">
 								качество поиска товарных знаков исключает риски отказа регистрации
@@ -761,7 +572,7 @@ get_header();
 					<p>
 						Равным образом консультация с широким активом требуют от нас анализа форм развития.
 					</p>
-					<img src="/images/form_bg.svg" alt="">
+					<img src="/wp-content/themes/patent/images/form_bg.svg" alt="">
 				</div>
 				<div class="form__part">
 					<form action="" method="post" id="order">

@@ -66,7 +66,7 @@ function theme_register_nav_footer_menu() {
 	register_nav_menu( 'footer', 'Footer Menu');
 }
 
-// тип записи услуги
+// тип записи
 
 function create_custom_post_type() {
     register_post_type('services',
@@ -81,12 +81,24 @@ function create_custom_post_type() {
             'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
         )
     );
+    register_post_type('keyses',
+        array(
+            'labels' => array(
+                'name' => __('Кейсы'),
+                'singular_name' => __('Кейсы')
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'rewrite' => array('slug' => 'keyses'),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+        )
+    );
 }
 add_action('init', 'create_custom_post_type');
 
-// таксономии для услуг
+// таксономии
 
-function create_services_taxonomies() {
+function create_custom_taxonomies() {
     register_taxonomy(
         'services_category',
         'services',
@@ -97,5 +109,5 @@ function create_services_taxonomies() {
         )
     );
 }
-add_action('init', 'create_services_taxonomies');
+add_action('init', 'create_custom_taxonomies');
 
