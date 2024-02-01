@@ -1325,6 +1325,10 @@ h1, h2, h3, button {
     display: none;
 }
 
+.last__card-mob {
+        display: none;
+}
+
 @media (max-width: 1024px) {
     .header {
         display: none;
@@ -1437,6 +1441,73 @@ h1, h2, h3, button {
         display: block;
         max-width: 300px;
     }
+
+    .services {
+        padding: 30px 0;
+    }
+
+    .services__list {
+    grid-template-columns: auto;
+    gap: 25px;
+    }
+
+    .last__card-hidden {
+        display: none;
+    }
+
+    .last__card-mob {
+    display: block;
+    margin: 30px 0;
+    border: none;
+    }
+
+    .titles {
+        font-size: 20px;
+    }
+
+    .small__titles {
+    font-size: 15px;
+    }
+
+    .features__block {
+        padding: 13px;
+        border-radius: 27px;
+        background-color: #dfe3ee;
+        grid-template-columns: auto;
+        gap: 9px;
+        margin-bottom: 11px;
+        position: relative;
+    }
+
+    .features h2 {
+        margin-bottom: 30px;
+    }
+
+    .lead__block {
+        grid-template-columns: auto;
+        gap: 12px;
+    }
+
+    .lead__card {
+        padding: 29px 15px;
+        border-radius: 27px;
+        background-color: #f3f5fa;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .lead__card .big__title {
+        margin-bottom: 16px;
+        font-size: 15px;
+    }
+
+    .lead__card ul li {
+    position: relative;
+    padding-left: 35px;
+    color: #4b555e;
+    font-size: 14px;
+    line-height: normal;
+}
 
 }
 
