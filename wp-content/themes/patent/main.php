@@ -391,6 +391,9 @@ global $post;
 			</form>
 		</div>
 	</section>
+	<?php $recomendations = get_field('recomend');
+	if($recomendations) { 
+	?>
 	<section class="articles">
 		<div class="container">
 			<div class="articles__block">
@@ -399,167 +402,79 @@ global $post;
 				</h2>
 				<div class="tabs articles__tabs flex">
 					<ul class="tabs__caption">
-						<li class="active">Раздел 1</li>
-						<li>Раздел 2</li>
+						<?php 
+						$r_count = 1;
+						foreach($recomendations as $recomendation) {
+						?>
+						<li <?php if($r_count == 1) { ?> class="active" <?php } ?>>Раздел <?php echo $r_count; ?></li>
+						<?php $r_count++; } ?>
 					</ul>
-					<div class="tabs__content article__content active">
+					<?php 
+						$r2_count = 1;
+						foreach($recomendations as $recomendation) {
+							$stages = $recomendation['stages'];
+					?>
+					<div class="tabs__content article__content <?php if($r2_count == 1) { ?> active <?php } ?>">
 						<div class="article__subtitle">
-							раздел 111
+							раздел <?php echo $r2_count; ?>
 						</div>
+						<?php if($recomendation['title']) { ?>
 						<div class="title">
-							От мысли к…..идее
+							<?php echo $recomendation['title']; ?>
 						</div>
+						<?php } ?>
+						<?php if($recomendation['txt']) { ?>
 						<div class="article__txt">
-							<p>
-								Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-							</p>
-							<p>
-								Классификация идей
-							</p>
-							<p>
-								Мысль – формируется идея. В этом случае мы вместе можем довольно быстро представить перспективы идеи по следующей цепочке, а) возможность ее реализации по шкале**** б) вероятность ее привлекательности и коммерциализации с) потенциальная патентоспособность. Таким образом каждая ваша мысль в предпринимательсвком плане будет быстро обработана и систематизирована. Вы будете быстро принимать решения/
-							</p>
+							<?php echo $recomendation['txt']; ?>
 						</div>
+						<?php } ?>
+						<?php if($stages) { 
+							$count_inside = 1;
+						?>
 						<div class="article__content-list flex">
+							<?php foreach($stages as $stage) { ?>
 							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
+								<div class="art__count"><div><?php echo $count_inside; ?></div></div>
 								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
+									<img src="<?php echo $stage['img']; ?>" alt="">
 								</div>
-								<div class="sm__title">Идея</div>
+								<div class="sm__title"><?php echo $stage['stage_title']; ?></div>
 							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
+							<?php $count_inside++; } ?>
 						</div>
-					</div>
-					<div class="tabs__content article__content">
-						<div class="article__subtitle">
-							раздел 2
-						</div>
-						<div class="title">
-							От мысли к…..идее
-						</div>
+						<?php } ?>
+						<?php if($recomendation['txt2']) { ?>
 						<div class="article__txt">
-							<p>
-								Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-							</p>
-							<p>
-								Классификация идей
-							</p>
-							<p>
-								Мысль – формируется идея. В этом случае мы вместе можем довольно быстро представить перспективы идеи по следующей цепочке, а) возможность ее реализации по шкале**** б) вероятность ее привлекательности и коммерциализации с) потенциальная патентоспособность. Таким образом каждая ваша мысль в предпринимательсвком плане будет быстро обработана и систематизирована. Вы будете быстро принимать решения/
-							</p>
+							<?php echo $recomendation['txt2']; ?>
 						</div>
-						<div class="article__content-list flex">
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
-							</div>
-							<div class="article__content-list_point">
-								<div class="art__count"><div>1</div></div>
-								<div class="icon">
-									<img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-								</div>
-								<div class="sm__title">Идея</div>
+						<?php } ?>
+						<?php  
+						if($recomendation['show_rec']) {
+							$rec = $recomendation['rec_group'];
+						?>
+						<!-- тут совет -->
+						<div>
+							<div>СОВЕТ</div>
+							<div><?php // echo $rec['rec_txt']; ?> 
+								<p>
+									ЗДЕСЬ ВЫ МОЖЕТЕ ПРИГЛАСИТЬ МЕНЯ В КАЧЕСТВЕ ЭКСПЕРТА, ПОДТВЕРЖДАЮЩЕГО ВОЗМОЖНОСТЬ ПОЛУЧЕНИЯ ПАТЕНТА, ЗАЩИЩАЮЩЕГО ПРОДУКТ
+								</p>
+								<p>
+									Если вы оказались на этом этапе без предыдущего моего участия, то рекомедуется проработать ситуацию с самого начала и проверить все данные в отношении существенных приззнаков и формулы патента в целом.
+								</p>
 							</div>
 						</div>
+						<!-- конец совета -->
+						<?php 
+						}
+						?>
 					</div>
+					<?php $r2_count++; } ?>
 				</div>
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	<section class="doubarticles">
 		<div class="container">
 			<h2 class="titles">
