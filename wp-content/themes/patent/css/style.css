@@ -1321,6 +1321,47 @@ h1, h2, h3, button {
     margin: 25px auto;
 }
 
+.patent-form-titles {
+        text-align: center;
+}
+
+.patent-form-titles::before {
+        display: none;
+}
+
+.patent-form {
+    padding: 110px 0 70px 0;
+    background: linear-gradient(-56.62deg, rgb(203, 208, 219) 5.927%,rgb(206, 211, 224) 37.65%,rgb(243, 245, 250) 88.235%);   
+}
+
+.patent-form__inner {
+    margin: 0 auto;
+    max-width: 1125px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    gap: 9px;
+    padding-top: 79px;
+}
+
+.patent-form__items {
+    width: 100%;
+}
+
+.patent-form__items input {
+    border: 1px solid rgb(30, 29, 37);
+    border-radius: 27px;
+    padding: 26px 28px;
+    color: rgba(30, 29, 37, 0.5);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    width: 100%;
+    background: none;
+}
+
+
 .banner__block-mob {
     display: none;
 }
@@ -1331,6 +1372,42 @@ h1, h2, h3, button {
 
 .banner__img-mob {
     display: none;
+}
+
+.patent-form__items-btn {
+    border: 1px solid rgb(30, 29, 37);
+    border-radius: 27px;
+    padding: 26px 28px;
+    color: rgba(30, 29, 37, 0.5);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patent-form__inner-btn {
+    padding-top: 54px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.patent-form__inner-btn span {
+    padding-top: 15px;
+    max-width: 250px;
+    display: block;
+}
+
+.patent-form__inner-btn label {
+    display: flex;
+    align-items: center;
+
 }
 
 @media (max-width: 1024px) {
@@ -1541,4 +1618,5 @@ h1, h2, h3, button {
         display: block;
     }
 
+    
 }
