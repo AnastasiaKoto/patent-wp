@@ -118,7 +118,7 @@ get_header();
 					</div>
 				</a>
 				<?php $count++; } ?>
-				<div class="services__card last__card">
+				<div class="services__card last__card last__card-hidden">
 					<div class="services-card__content">
 						<a href="#" class="btn dark__btn all__btn">Все услуги</a>
 						<div class="small__price">
@@ -268,7 +268,8 @@ get_header();
 			<h2 class="titles">Чем полезен Патентный поверенный именно мне?</h2>
 			<div class="benefit__banner flex">
 				<div class="banner__img">
-					<img src="/wp-content/themes/patent/images/benefit_banner.png" alt="">
+					<img class="banner__img-main" src="/wp-content/themes/patent/images/benefit_banner.png" alt="">
+					<img class="banner__img-mob" src="/wp-content/themes/patent/images/man-mob.png" alt="">
 				</div>
 				<div class="benefit-banner__content">
 					<div class="big__title">
@@ -318,7 +319,7 @@ get_header();
 	$branches = get_field('branches');
 	if($branches) {
 	?>
-	<section class="branch">
+	<section class="branch>
 		<div class="container">
 			<h2 class="titles">Какую отрасль Вы представляете?</h2>
 			<div class="benefit__list grid">
@@ -349,7 +350,7 @@ get_header();
 			</h2>
 		</div>
 	</section>
-	<section class="articles ">
+	<section class="articles">
 		<div class="container">
 			<div class="articles__block">
 				<h2 class="titles">
@@ -518,7 +519,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="doubarticles ">
+	<section class="doubarticles">
 		<div class="container">
 			<h2 class="titles">
 				Статьи
@@ -574,7 +575,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="order-form ">
+	<section class="order-form">
 		<div class="container">
 			<div class="form__content flex">
 				<div class="form__part">

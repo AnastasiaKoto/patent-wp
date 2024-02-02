@@ -650,7 +650,7 @@ h1, h2, h3, button {
 /*  patent-form */
 
 .patent-form {
-    display: none;
+    
 }
 
 /*  articles    */
@@ -1329,6 +1329,10 @@ h1, h2, h3, button {
         display: none;
 }
 
+.banner__img-mob {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .header {
         display: none;
@@ -1509,14 +1513,32 @@ h1, h2, h3, button {
     line-height: normal;
 }
 
-}
 
+    .big__title {
+        font-size: 16px;
+        font-weight: 500;
+    }
 
+    .benefit-banner__content {
+        border: none;
+        margin: 0;
+        padding: 29px 23px;
+        border-radius: 25px; 
+        max-width: 100%; 
+    }
 
-footer {
-    display: none;
-}
+    /* .benefit-banner__content p {
+        margin-bottom: 25px;
+        height: 150px;
+        overflow: hidden;
+    } */
 
-.hidden {
-    display: none;
+    .banner__img-main {
+        display: none;
+    }
+
+    .banner__img-mob {
+        display: block;
+    }
+
 }
