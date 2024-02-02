@@ -93,6 +93,31 @@ function create_custom_post_type() {
             'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
         )
     );
+    register_post_type('news',
+        array(
+            'labels' => array(
+                'name' => __('Новости'),
+                'singular_name' => __('Новости')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'news'),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+        )
+    );
+
+    register_post_type('articles',
+        array(
+            'labels' => array(
+                'name' => __('Статьи'),
+                'singular_name' => __('Статьи')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'articles'),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+        )
+    );
 }
 add_action('init', 'create_custom_post_type');
 
