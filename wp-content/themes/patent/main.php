@@ -324,7 +324,7 @@ global $post;
 	$branches = get_field('branches');
 	if($branches) {
 	?>
-	<section class="branch>
+	<section class="branch">
 		<div class="container">
 			<h2 class="titles">Какую отрасль Вы представляете?</h2>
 			<div class="benefit__list grid">
