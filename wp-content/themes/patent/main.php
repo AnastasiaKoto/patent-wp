@@ -3,6 +3,7 @@
 */
 
 get_header();
+global $post;
 ?>
 <main class="main">
 	<section class="banner">
@@ -135,7 +136,9 @@ get_header();
 						</div>
 					</div>
 				</div>
-			<?php } ?>
+			<?php }
+			wp_reset_postdata(); 
+			?>
 		</div>
 	</section>
 	<section class="features">
@@ -164,7 +167,7 @@ get_header();
 						общая консультация бесплатно
 					</div>
 					<?php 
-					$general_list = get_field('general_advice'); 
+					$general_list = get_field('general_advice', $post->ID); 
 					if($general_list) {
 					?>
 					<ul>
@@ -182,7 +185,7 @@ get_header();
 						консультации определяющие ваш вопрос
 					</div>
 					<?php 
-					$specialized_list = get_field('specialized'); 
+					$specialized_list = get_field('specialized', $post->ID); 
 					if($specialized_list) {
 					?>
 					<ul>
@@ -262,7 +265,9 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<?php } ?>
+	<?php } 
+	wp_reset_postdata(); 
+	?>
 	<section class="benefit">
 		<div class="container">
 			<h2 class="titles">Чем полезен Патентный поверенный именно мне?</h2>
