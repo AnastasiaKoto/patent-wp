@@ -353,17 +353,21 @@ global $post;
 			<h2 class="titles patent-form-titles">
 				заказать услугу патнетного поверенного
 			</h2>
-			<form class="" action="">
+			<form class="" action="" method="post">
 				<div class="patent-form__inner">
 					<div class="patent-form__items">
-						<input type="text" placeholder="Имя">
+						<input type="text" name="order_name" placeholder="Имя">
 					</div>
 					<div class="patent-form__items">
-						<input type="text" placeholder="Email">
+						<input type="text" name="order_mail" placeholder="Email">
 					</div>
 					<div class="patent-form__items">
-						<input type="text" placeholder="Телефон">
+						<input type="text" name="order_tel" placeholder="Телефон">
 					</div>
+					<select name="order_service" class="order__inp">
+						<option value="1">Такая-то услуга</option>
+						<option value="2">Такая-то услуга 2</option>
+					</select>
 					<div class="patent-form__items">
 						<div class="patent-form__items-btn"><span>Услуга</span>
 							<svg width="14.707031" height="8.060547" viewBox="0 0 14.707 8.06055" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -379,7 +383,7 @@ global $post;
 					</div>
 				</div>
                 <div class="patent-form__inner-btn">
-                    <a class="btn dark__btn patent-form__btn" href="">Заказать услугу</a>
+                    <button type="submit" class="btn dark__btn patent-form__btn" href="">Заказать услугу</button>
                     <label for="">
                         <input type="checkbox">
                         <span>Я даю согласие на обработку
@@ -479,53 +483,82 @@ global $post;
 				Статьи
 			</h2>
 			<div class="newsblock flex">
+			<?php 
+				$args = array(
+					'post_type' => 'articles',
+					'post_status' => 'publish',
+					'posts_per_page' => 2,
+				);
+				$articles = new WP_Query($args);
+				if ($articles->have_posts()) {
+			?>
 				<div class="newsblock__block">
 					<div class="subtitle">
 						Это важно иметь в виду
 					</div>
 					<div class="newsblock__list flex">
-						<div class="newsblock__card flex">
+						<?php 
+						while ( $articles->have_posts() ) {
+							$articles->the_post();
+							$thumbnail_id = get_post_thumbnail_id();
+							$image_url = wp_get_attachment_image_src( $thumbnail_id, 'full' )[0];
+						?>
+						<a href="<?php echo get_permalink(); ?>" class="newsblock__card flex">
 							<div class="newsblock__img">
-								<img src="/wp-content/themes/patent/images/newsblock.png" alt="">
+								<img src="<?php echo $image_url; ?>" alt="">
 							</div>
 							<div class="newstitle">
-								качество поиска товарных знаков исключает риски отказа регистрации
+								<?php the_title(); ?>
 							</div>
 							<p>
-								Равным образом консультация с широким активом требуют от нас анализа форм...
+								<?php echo get_field('artic_short-descr', get_the_ID()); ?>
 							</p>
-						</div>
-						<div class="newsblock__card flex">
-							<div class="newsblock__img">
-								<img src="/wp-content/themes/patent/images/newsblock.png" alt="">
-							</div>
-							<div class="newstitle">
-								качество поиска товарных знаков исключает риски отказа регистрации
-							</div>
-							<p>
-								Равным образом консультация с широким активом требуют от нас анализа форм...
-							</p>
-						</div>
+						</a>
+						<?php } ?>
 					</div>
 				</div>
+				<?php 
+				} 
+				wp_reset_postdata();
+				?>
+				<?php 
+					$args = array(
+						'post_type' => 'news',
+						'post_status' => 'publish',
+						'posts_per_page' => 1,
+					);
+					$news = new WP_Query($args);
+					if ($news->have_posts()) {
+				?>
 				<div class="newsblock__block">
 					<div class="subtitle">
 						Вам может быть интересно
 					</div>
 					<div class="newsblock__list flex">
-						<div class="newsblock__card flex">
+						<?php 
+						while ( $news->have_posts() ) {
+							$news->the_post();
+							$thumbnail_id = get_post_thumbnail_id();
+							$image_url = wp_get_attachment_image_src( $thumbnail_id, 'full' )[0];
+						?>
+						<a href="<?php echo get_permalink(); ?>" class="newsblock__card flex">
 							<div class="newsblock__img">
-								<img src="/wp-content/themes/patent/images/newsblock.png" alt="">
+								<img src="<?php echo $image_url; ?>" alt="">
 							</div>
 							<div class="newstitle">
-								качество поиска товарных знаков исключает риски отказа регистрации
+								<?php echo the_title(); ?>
 							</div>
 							<p>
-								Равным образом консультация с широким активом требуют от нас анализа форм...
+								<?php echo get_field('news_short-descr', get_the_ID()); ?>
 							</p>
-						</div>
+						</a>
+						<?php } ?>
 					</div>
 				</div>
+				<?php 
+				} 
+				wp_reset_postdata();
+				?>
 			</div>
 		</div>
 	</section>
@@ -542,34 +575,7 @@ global $post;
 					<img src="/wp-content/themes/patent/images/form_bg.svg" alt="">
 				</div>
 				<div class="form__part">
-					<form action="" method="post" id="order">
-						<div class="form__wrapper flex">
-							<input type="text" name="order_name" id="order_name" class="order__inp" placeholder="Имя">
-							<input type="tel" name="order_tel" id="order_tel" class="order__inp" placeholder="Телефон">
-							<input type="email" name="order_mail" id="order_mail" class="order__inp" placeholder="Email">
-							<select name="order_service" id="order_service" class="order__inp">
-								<option value="1">Такая-то услуга</option>
-								<option value="2">Такая-то услуга 2</option>
-							</select>
-							<div class="order__custom-select">
-								<div class="order__default">Услуга</div>
-								<div class="order__services-list">
-									<ul class="flex">
-										<li data-value="1">Такая-то услуга</li>
-										<li data-value="2">Такая-то услуга 2</li>
-									</ul>
-								</div>
-							</div>
-							<button class="btn dark__btn btn__submit" type="submit">Заказать услугу</button>
-							<div class="agree__group flex">
-								<input type="checkbox" name="agree" id="agree">
-								<span class="custom__check"></span>
-								<label for="agree" class="personal">
-									Я даю согласие на&nbsp;обработку&nbsp;моих&nbsp;персональных&nbsp;данных
-								</label>
-							</div>
-						</div>
-					</form>
+					<?php get_template_part('templates/feedback'); ?>
 				</div>
 			</div>
 		</div>
