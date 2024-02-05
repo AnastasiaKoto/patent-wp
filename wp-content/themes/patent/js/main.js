@@ -22,13 +22,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
         arrows: false
     });
 
-    $('.benefit__list').slick({
-        infinite: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false
-    });
+
+          // Создаем медиа-запрос для экранов с шириной меньше 768px
+      const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+      let sliderInitialized = false;
+      let $slider;
+
+      // Функция для инициализации слайдера
+      function initSlider() {
+          $slider = $('.benefit__list').slick({
+              infinite: false,
+              dots: false,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false
+          });
+          sliderInitialized = true;
+      }
+
+      // Функция для уничтожения слайдера
+      function destroySlider() {
+          if (sliderInitialized) {
+              $slider.slick('unslick');
+              sliderInitialized = false;
+          }
+      }
+
+      // Проверяем условие медиа-запроса при загрузке страницы и вызываем инициализацию слайдера при необходимости
+      if (mobileMediaQuery.matches) {
+          initSlider();
+      }
+
+      // Следим за изменениями размера экрана и вызываем инициализацию или уничтожение слайдера при необходимости
+      window.addEventListener('resize', function() {
+          if (mobileMediaQuery.matches) {
+              if (!sliderInitialized) {
+                  initSlider();
+              }
+          } else {
+              destroySlider();
+          }
+      });
+
+
+    
     
     //отправка формы
 

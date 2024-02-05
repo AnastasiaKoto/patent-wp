@@ -97,6 +97,17 @@
     right: 20px;
 }
 
+@media (max-width: 1024px) {
+    .serv_btn {
+    display: block;
+    max-width: 345px;
+    position: relative;
+    font-size: 14px;
+    padding: 14px 27px;
+    margin: 0 auto;
+    }
+}
+
 /*  branch  */
 
 .branch {

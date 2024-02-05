@@ -1692,7 +1692,7 @@ input.error {
     }
 
     .keyses-slide {
-    padding: 24;
+    padding: 24px;
     display: flex !important;
     border-radius: 27px;
     background-color: #FFF;
@@ -1751,5 +1751,113 @@ input.error {
     .benefit__list {
         display: flex;
     }
-    
+
+    .patent-form-titles {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .patent-form__inner {
+    margin: 0 auto;
+    max-width: 1125px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    gap: 9px;
+    padding-top: 20px;
+    }
+
+    .patent-form__items input {
+        border-radius: 12px;    
+        padding: 17px 15px;
+
+    }
+
+    .patent-form__items-btn {
+        border-radius: 12px;
+        padding: 17px 15px;
+
+    }
+
+
+    .patent-form__inner-btn {
+    padding-top: 20px;
+
+    }
+
+    .patent-form {
+        background: #F3F5FA;
+    }
+
+
+    .branch {
+        padding-bottom: 0;
+    }
+
+    .patent-form__btn {
+        width: 100%;
+    }
+
+    .articles__block {
+        padding: 23px;
+    }
+
+    .articles__tabs {
+        flex-direction: column;
+    }
+
+
+    .keyses__right {
+    max-width: 100%;
+    }
+
+    .newsblock {
+        flex-direction: column;
+    }
+
+    .newsblock__list {
+
+        overflow-x: scroll;
+    }
+
+    .article__content {
+        max-width: 100%;
+        padding-right: 22px;
+        padding-left: 23px;
+    }
+
+    .article__content-list_point .icon {
+        width: 68px;
+    }
+
+    .article__content-list_point {
+        flex-basis: 94px;
+    }
+
+    .articles__block {
+    padding: 0;
+    }
+
+    .articles__block .titles {
+        padding: 23px;
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+
+    .article__content-list {
+        gap: 15px;
+    }
+
+    .tabs__caption {
+        padding: 23px;
+        border-bottom: solid 1px #CED2DF;
+    }
+
+
+    .form__content {
+    justify-content: space-between;
+    flex-direction: column;
+    }
+
+
 }
