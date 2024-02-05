@@ -136,3 +136,4 @@ function create_custom_taxonomies() {
 }
 add_action('init', 'create_custom_taxonomies');
 
+require __DIR__ . '/inc/main_form.php';
