@@ -167,13 +167,13 @@ global $post;
 						общая консультация бесплатно
 					</div>
 					<?php 
-					$general_list = get_field('general_advice', $post->ID); 
+					$general_list = get_field('general', $post->ID); 
 					if($general_list) {
 					?>
 					<ul>
 						<?php foreach($general_list as $point) { ?>
 						<li>
-							<?php echo $point['point']; ?>
+							<?php echo $point['contain']; ?>
 						</li>
 						<?php } ?>
 					</ul>
@@ -185,7 +185,7 @@ global $post;
 						консультации определяющие ваш вопрос
 					</div>
 					<?php 
-					$specialized_list = get_field('specialized', $post->ID); 
+					$specialized_list = get_field('special', $post->ID); 
 					if($specialized_list) {
 					?>
 					<ul>
