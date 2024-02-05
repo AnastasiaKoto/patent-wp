@@ -1420,8 +1420,65 @@ input.error {
 .patent-form__inner-btn label {
     display: flex;
     align-items: center;
-
+    max-width: 300px;
+    margin-top: 27px;
 }
+
+
+.patent-form__custom-checkbox {
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.patent-form__custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.patent-form__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background-color: none;
+    border-radius: 6px;
+    border: 1px solid rgb(30, 29, 37);
+}
+
+.patent-form__custom-checkbox input:checked ~ .patent-form__checkmark {
+    background-color: none; 
+}
+
+.patent-form__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.patent-form__custom-checkbox input:checked ~ .patent-form__checkmark:after {
+    display: block;
+}
+
+.patent-form__custom-checkbox .patent-form__checkmark:after {
+    left: 10px;
+    top: 5px; 
+    width: 6px; 
+    height: 12px; 
+    border: solid rgb(7, 3, 3);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.benefitBtn {
+    z-index: 99;
+    display: none;
+}
+
+
 
 @media (max-width: 1024px) {
     .header {
@@ -1615,13 +1672,8 @@ input.error {
         padding: 29px 23px;
         border-radius: 25px; 
         max-width: 100%; 
+        padding-bottom: 200px;
     }
-
-    /* .benefit-banner__content p {
-        margin-bottom: 25px;
-        height: 150px;
-        overflow: hidden;
-    } */
 
     .banner__img-main {
         display: none;
@@ -1631,5 +1683,73 @@ input.error {
         display: block;
     }
 
+    .features__block::after {
+    display: none;
+    }
+
+    .keyses__tabs .tabs__caption li {
+        font-size: 12px;
+    }
+
+    .keyses-slide {
+    padding: 24;
+    display: flex !important;
+    border-radius: 27px;
+    background-color: #FFF;
+    position: relative;
+    column-gap: 54px;
+    flex-direction: column;
+    }
+
+    .keyses__left {
+        max-width: 100%;
+    }
+
+    .keys__descr {
+        font-size: 14px;
+    }
+
+    .keyses__right .title {
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+
+    .benefit__banner {
+        flex-direction: column;
+    }
+
+
+    .banner__img {
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        order: 1;
+        bottom: 0;
+    }
+
+    .benefit-banner__content .big__title:last-child {
+        margin-bottom: 19px;
+        max-width: 196px;
+        margin-top: 30px;
+    }
+
+    .benefit-banner__content .benefit-banner__text {
+        max-height: 100%;
+        transition: all .3s ease;
+    }
+
+    .benefit-banner__content .benefit-banner__text.hidden-text {
+        max-height: 250px;
+        transition: all .3s ease;
+        overflow: hidden;
+    }
+
+    .benefitBtn {
+        display: block;
+    }
+
+    .benefit__list {
+        display: flex;
+    }
     
 }

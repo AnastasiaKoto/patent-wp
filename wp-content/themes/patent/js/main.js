@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         slidesToScroll: 1,
         arrows: false
     });
+
+    $('.benefit__list').slick({
+        infinite: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false
+    });
     
     //отправка формы
 
@@ -144,4 +152,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           nav?.classList.remove('nav--visible');
       });
   });
+
+
+  
 });
+
