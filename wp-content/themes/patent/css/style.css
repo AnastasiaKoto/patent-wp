@@ -1608,7 +1608,7 @@ input.error {
 
     .last__card-mob {
     display: block;
-    margin: 30px 0;
+    margin: 0;
     border: none;
     }
 
@@ -1859,5 +1859,18 @@ input.error {
     flex-direction: column;
     }
 
+    .footer__content {
+        flex-direction: column;
+    }
+
+    .services h2 {
+    margin-bottom: 22px;
+    }
+
+
+    .articles {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    }
 
 }
