@@ -1,8 +1,14 @@
-<form action="" method="post" id="order">
+<form action="" method="post" id="order" name="footer_order">
     <div class="form__wrapper flex">
-        <input type="text" name="order_name" id="order_name" class="order__inp" placeholder="Имя">
-        <input type="tel" name="order_tel" id="order_tel" class="order__inp" placeholder="Телефон">
-        <input type="email" name="order_mail" id="order_mail" class="order__inp" placeholder="Email">
+        <div class="inp__wrapper">
+            <input type="text" name="order_name" id="order_name" class="order__inp" placeholder="Имя">
+        </div>
+        <div class="inp__wrapper">
+            <input type="tel" name="order_tel" id="order_tel" class="order__inp" placeholder="Телефон">
+        </div>
+        <div class="inp__wrapper">
+            <input type="email" name="order_mail" id="order_mail" class="order__inp" placeholder="Email">
+        </div>
         <?php 
         $args = array(
             'post_type' => 'services',

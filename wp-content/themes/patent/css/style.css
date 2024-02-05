@@ -653,6 +653,19 @@ h1, h2, h3, button {
     
 }
 
+input.error {
+    border-color: red;
+}
+
+.form__error {
+    color: red;
+}
+
+.form__wrapper input:not([type="checkbox"]) {
+    display: block;
+    width: 100%;
+}
+
 /*  articles    */
 
 .articles {
