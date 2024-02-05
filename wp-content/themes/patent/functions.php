@@ -43,10 +43,18 @@ function my_acf_op_init() {
 	if( function_exists('acf_add_options_page') ) {
 
 		// Register options page.
-		$option_page = acf_add_options_page(array(
+		acf_add_options_page(array(
 			'page_title'    => __('Страница настроек'),
 			'menu_title'    => __('Настройки темы'),
 			'menu_slug'     => 'theme-general-settings',
+			'capability'    => 'edit_posts',
+			'redirect'      => false
+		));
+
+        acf_add_options_page(array(
+			'page_title'    => __('Страница настроек формы-квиза'),
+			'menu_title'    => __('Настройки формы-квиза'),
+			'menu_slug'     => 'theme-quize-settings',
 			'capability'    => 'edit_posts',
 			'redirect'      => false
 		));
