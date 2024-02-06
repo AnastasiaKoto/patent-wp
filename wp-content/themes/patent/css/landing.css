@@ -113,6 +113,11 @@
     margin-top: 0;
 }
 
+.benefit__card {
+    column-gap: 0;
+    justify-content: space-evenly;
+}
+
 
 @media (max-width: 1024px) {
     .serv_btn {

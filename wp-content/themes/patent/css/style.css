@@ -489,6 +489,7 @@ h1, h2, h3, button {
     height: auto;
 }
 
+
 .tabs__caption li {
     cursor: pointer;
 }
@@ -836,6 +837,7 @@ input.error {
     height: 100%;
     display: block;
     object-fit: cover;
+    border-radius: 16px;
 }
 
 .newstitle {
@@ -1528,8 +1530,18 @@ input.error {
     background: none;
 }
 
+.patent-form__btn {
+        min-width: 360px;
+}
+
+.article__content-list_point {
+    flex-basis: 133px;
+}
+
+
 
 @media (max-width: 1024px) {
+
     .header {
         display: none;
     }
@@ -1738,6 +1750,7 @@ input.error {
 
     .keyses__tabs .tabs__caption li {
         font-size: 12px;
+        text-align: center;
     }
 
     .keyses-slide {
@@ -1846,6 +1859,7 @@ input.error {
 
     .patent-form__btn {
         width: 100%;
+        max-width: 345px
     }
 
     .articles__block {
@@ -1976,8 +1990,21 @@ input.error {
         position: relative;
     }
 
+    .patent-form__inner .order__default {
+        padding: 17px 15px;
+        border-radius: 12px;
+    }
+
     .order__default {
-    padding: 0;
+        padding: 17px 15px;
+    }
+
+    .order__custom-select {
+        padding: 0;
+    }
+
+    .patent-form__inner .order__custom-select  {
+        border-radius: 12px;
     }
 
     .footer__group:first-child {
@@ -2095,6 +2122,15 @@ input.error {
         background: #f3f5fa;
     }
 
+    .tabs__content div {
+        height: 0;
+        flex-basis: 133px;
+    }
+
+
+    .slick-dots li button:before {
+        font-size: 20px;
+    }
     
 }
 
