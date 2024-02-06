@@ -23,69 +23,79 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     
     //отправка формы
-
+    let footerSubmitted = false;
     $('#order').on('click', '.btn__submit', function (e) {
       e.preventDefault();
       let form = $(this).closest('form');
-      let policy = form.find('input[name="agree"]');
+      form.find('.global_err').removeClass('active');
+      if(footerSubmitted == false) {
+        let policy = form.find('input[name="agree"]');
 
-      form.find('.error').removeClass('error');
-      form.find('.form__error').remove();
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
 
-      if (policy.is(':checked')) {
-        $.ajax({
-          url: '/wp-admin/admin-ajax.php',
-          data: form.serialize() + '&action=main_callback',
-          type: 'POST',
-        }).done(function (result) {
-          if (result.errors) {
-            $.each(result.errors, function (e, index) {
-              form.find('input[name="' + e + '"]').addClass('error');
-              form
-                .find('input[name="' + e + '"]')
-                .parent()
-                .append('<div class="form__error">' + index[0] + '</div>');
-            });
-          } else {
-            if (result.success == true) {
-              form[0].reset();
+        if (policy.is(':checked')) {
+          footerSubmitted = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+              }
             }
-          }
-        });
+          });
+        } else {
+          policy.parent().addClass('error');
+        }
       } else {
-        policy.parent().addClass('error');
+        form.find('.global_err').addClass('active');
       }
     });
+    let bannerSubmitted = false;
     $('#banner_form').on('click', '.btn__submit', function (e) {
       e.preventDefault();
-      let form = $(this).closest('form');
-      let policy = form.find('input[name="agree"]');
+      if(bannerSubmitted == false) {
+        let form = $(this).closest('form');
+        let policy = form.find('input[name="agree"]');
 
-      form.find('.error').removeClass('error');
-      form.find('.form__error').remove();
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
 
-      if (policy.is(':checked')) {
-        $.ajax({
-          url: '/wp-admin/admin-ajax.php',
-          data: form.serialize() + '&action=main_callback',
-          type: 'POST',
-        }).done(function (result) {
-          if (result.errors) {
-            $.each(result.errors, function (e, index) {
-              form.find('input[name="' + e + '"]').addClass('error');
-              form
-                .find('input[name="' + e + '"]')
-                .parent()
-                .append('<div class="form__error">' + index[0] + '</div>');
-            });
-          } else {
-            if (result.success == true) {
-              form[0].reset();
+        if (policy.is(':checked')) {
+          bannerSubmitted = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+              }
             }
-          }
-        });
-      } else {
-        policy.parent().addClass('error');
+          });
+        } else {
+          policy.parent().addClass('error');
+        }
       }
     });
   });

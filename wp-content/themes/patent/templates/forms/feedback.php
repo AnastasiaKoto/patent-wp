@@ -1,4 +1,4 @@
-<form action="" method="post" id="order" name="footer_order">
+<form action="" method="POST" id="order">
     <div class="form__wrapper flex">
         <div class="inp__wrapper">
             <input type="text" name="order_name" id="order_name" class="order__inp" placeholder="Имя">
@@ -51,5 +51,6 @@
                 Я даю согласие на&nbsp;обработку&nbsp;моих&nbsp;персональных&nbsp;данных
             </label>
         </div>
+        <div class="global_err">Дождитесь отправки предыдущей формы!</div>
     </div>
 </form>

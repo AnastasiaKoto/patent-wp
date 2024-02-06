@@ -649,8 +649,15 @@ h1, h2, h3, button {
 
 /*  patent-form */
 
-.patent-form {
-    
+.global_err {
+    font-size: 14px;
+    color: red;
+    display: none;
+    text-align: center;
+}
+
+.global_err.active {
+    display: block;
 }
 
 input.error {

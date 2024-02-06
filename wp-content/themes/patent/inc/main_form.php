@@ -1,5 +1,4 @@
 <?php
-
 add_action( 'wp_ajax_main_callback', 'main_callback' );
 add_action( 'wp_ajax_nopriv_main_callback', 'main_callback' );
 
@@ -7,25 +6,24 @@ function main_callback(){
 
     $my_error = new WP_Error();
     $message = [];
-
     $name = htmlspecialchars($_POST['order_name']);
-    $email = htmlspecialchars($_POST['email']);
+    $email = htmlspecialchars($_POST['order_mail']);
     $phone = htmlspecialchars($_POST['order_tel']);
     $service = htmlspecialchars($_POST['order_service']);
 
     if(empty($name)){
-        $my_error->add( 'name', pll__( 'Поле является обязательным.' ) );
+        $my_error->add( 'order_name', 'Поле является обязательным.');
     }
 
     if(empty($phone)){
-        $my_error->add( 'phone', pll__( 'Поле является обязательным.' ) );
+        $my_error->add( 'order_tel', 'Поле является обязательным.');
     }
 
     if(empty($email)){
-        $my_error->add( 'email', pll__( 'Поле является обязательным.' ) );
+        $my_error->add( 'order_mail', 'Поле является обязательным.');
     } else {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $my_error->add( 'email', pll__( 'Введите действительный E-mail.' ) );
+            $my_error->add( 'order_mail', 'Введите действительный E-mail.');
         }
     }
 
@@ -46,7 +44,7 @@ function main_callback(){
         $message2 .= '</table>';
 
         $headers  = "Content-type: text/html; charset=utf-8 \r\n";
-        $headers .= "From: <wordpress@patent.ru>\r\n";
+        $headers .= "From: <wordpress@patent.veht.ru>\r\n";
 
         $mailstat = mail('shishakova180196@gmail.com', 'Письмо с сайта', $message2, $headers);
 
