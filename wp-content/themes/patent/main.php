@@ -196,7 +196,7 @@ global $post;
 						<?php } ?>
 					</ul>
 					<?php } ?>
-					<a href="#" class="btn dark__btn">Получить консультацию</a>
+					<a href="#" class="btn dark__btn">Оставить заявку</a>
 				</div>
 			</div>
 		</div>

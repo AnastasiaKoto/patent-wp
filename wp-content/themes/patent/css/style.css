@@ -285,6 +285,8 @@ h1, h2, h3, button {
     border-radius: 27px;
     border: 1px solid #DFE3EE;
     padding: 27px 12px 12px 22px;
+    display: flex;
+    justify-content: center;
 }
 
 .services__card {
@@ -1566,7 +1568,9 @@ input.error {
     opacity: 0.7;
 }
 
-
+#order_service {
+    width: 0;
+}
 
 
 
@@ -1659,10 +1663,10 @@ input.error {
     }
     
     .banner__block img {
-    position: absolute;
-    bottom: -58px;
-    right: 0;
-    width: 200px;
+        position: absolute;
+        bottom: -58px;
+        right: 0;
+        width: 190px;
     }
 
     .banner__offer li {
@@ -1802,6 +1806,7 @@ input.error {
     }
 
     .keyses__right .title {
+        margin-top: 16px;
         margin-bottom: 16px;
         font-size: 16px;
     }
@@ -2064,9 +2069,9 @@ input.error {
     }
 
     .keyses {
-    padding-top: 0;
-    padding-bottom: 189px;
-    background-color: #fff;
+        padding-top: 0;
+        padding-bottom: 20px;
+        background-color: #fff;
     }
 
     .keyses-slide {
@@ -2094,6 +2099,7 @@ input.error {
 
     .newsblock__card > p {
         font-size: 12px;
+        line-height: 140%;
     }
 
     .newstitle {
@@ -2161,6 +2167,8 @@ input.error {
     .slick-dots li button:before {
         font-size: 20px;
     }
+
+    
     
 }
 
