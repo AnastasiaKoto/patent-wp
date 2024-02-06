@@ -144,35 +144,75 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   });
 
-  let dropDownBtn = document.querySelector('.order__custom-select');
-  let dropDownList = document.querySelector('.order__services-list');
-  console.log(dropDownList);
-  let currentPoint = document.querySelector('.order__default');
-  let serviceBtns = dropDownList.querySelectorAll('li');
-  let servicesSelect = document.querySelector('select[name="order_service"]');
-  if(dropDownBtn) {
-    dropDownBtn.addEventListener('click', function() {
+  // let dropDownBtn = document.querySelector('.order__custom-select');
+  // let dropDownList = document.querySelector('.order__services-list');
+  // console.log(dropDownList);
+  // let currentPoint = document.querySelector('.order__default');
+  // let serviceBtns = dropDownList.querySelectorAll('li');
+  // let servicesSelect = document.querySelector('select[name="order_service"]');
+  // if(dropDownBtn) {
+  //   dropDownBtn.addEventListener('click', function() {
+  //     dropDownList.classList.toggle('active');
+  //     currentPoint.classList.toggle('active');
+  //   })
+  // }
+
+  // if(serviceBtns) {
+  //   serviceBtns.forEach(service => {
+  //     service.addEventListener('click', function() {
+  //       currentPoint.textContent = this.textContent;
+  //       let selectedValue = this.getAttribute('data-value');
+  //       servicesSelect.value = selectedValue; 
+  //     })
+  //   })
+  // }
+
+  // let feedBack = document.querySelector('.agree__group');
+  // if(feedBack) {
+  //   feedBack.querySelector('.personal').addEventListener('click', function() {
+  //     feedBack.querySelector('.custom__check').classList.toggle('active');
+  //   })
+  // }
+
+
+  let dropDownBtns = document.querySelectorAll('.order__custom-select'); // Общий класс для кнопок
+  let dropDownLists = document.querySelectorAll('.order__services-list'); // Общий класс для списков
+  let currentPoints = document.querySelectorAll('.order__default'); // Общий класс для текущих значений
+  let servicesSelects = document.querySelectorAll('select[name="order_service"]'); // Общий класс для селектов услуг
+
+dropDownBtns.forEach((dropDownBtn, index) => {
+  let dropDownList = dropDownLists[index];
+  let currentPoint = currentPoints[index];
+  let servicesSelect = servicesSelects[index];
+
+  if (dropDownBtn) {
+    dropDownBtn.addEventListener('click', function () {
       dropDownList.classList.toggle('active');
       currentPoint.classList.toggle('active');
-    })
+    });
   }
 
-  if(serviceBtns) {
-    serviceBtns.forEach(service => {
-      service.addEventListener('click', function() {
+  if (dropDownList) {
+    dropDownList.querySelectorAll('li').forEach(service => {
+      service.addEventListener('click', function () {
         currentPoint.textContent = this.textContent;
         let selectedValue = this.getAttribute('data-value');
-        servicesSelect.value = selectedValue; 
-      })
-    })
+        servicesSelect.value = selectedValue;
+      });
+    });
   }
+});
 
-  let feedBack = document.querySelector('.agree__group');
-  if(feedBack) {
-    feedBack.querySelector('.personal').addEventListener('click', function() {
+let feedBacks = document.querySelectorAll('.agree__group'); // Общий класс для обратной связи
+
+feedBacks.forEach(feedBack => {
+  if (feedBack) {
+    feedBack.querySelector('.personal').addEventListener('click', function () {
       feedBack.querySelector('.custom__check').classList.toggle('active');
-    })
+    });
   }
+});
+
 
 
   //  бургер меню
