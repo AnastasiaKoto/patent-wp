@@ -802,13 +802,14 @@ input.error {
     top: 0;
 }
 
-/*  doubarticles    */
+/*  doubarticles    1*/
 
 .doubarticles {
     padding-bottom: 85px;
 }
 
 .doubarticles h2 {
+    margin-top: 35px;
     margin-bottom: 35px;
     
 }
