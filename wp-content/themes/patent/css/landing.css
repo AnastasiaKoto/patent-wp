@@ -97,16 +97,6 @@
     right: 20px;
 }
 
-@media (max-width: 1024px) {
-    .serv_btn {
-    display: block;
-    max-width: 345px;
-    position: relative;
-    font-size: 14px;
-    padding: 14px 27px;
-    margin: 0 auto;
-    }
-}
 
 /*  branch  */
 
@@ -121,4 +111,21 @@
 .branch .benefit-card__img {
     min-width: 60px;
     margin-top: 0;
+}
+
+
+@media (max-width: 1024px) {
+    .serv_btn {
+    display: block;
+    max-width: 345px;
+    position: relative;
+    font-size: 14px;
+    padding: 14px 27px;
+    margin: 50px auto 30px auto;
+    }
+
+    .branch h2 {
+    margin-bottom: 30px;
+    }
+
 }

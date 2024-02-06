@@ -19,7 +19,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              dots: true,
+            }
+          },
+        ]
+
     });
 
 
@@ -32,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       function initSlider() {
           $slider = $('.benefit__list').slick({
               infinite: false,
-              dots: false,
+              dots: true,
               slidesToShow: 1,
               slidesToScroll: 1,
               arrows: false
