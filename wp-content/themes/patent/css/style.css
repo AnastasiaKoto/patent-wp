@@ -1930,5 +1930,30 @@ input.error {
     padding: 0;
     }
 
+    .footer__group:first-child {
+        order: 1;
+    
+    }
+
+    .footer__group:last-child {
+        align-items: flex-start;
+    }
+
+    .footer__group:nth-child(2) {
+        display: none;
+    }
+
+    .footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: linear-gradient(271deg, #CBD0DB 10.67%, #CED3E0 41.04%, #DFE3EE 89.46%);
+    }
+
+    .footer__soc {
+        margin-top: 30px;
+        align-items: center;
+        column-gap: 13px;
+        margin-bottom: 20px;
+    }
 
 }
