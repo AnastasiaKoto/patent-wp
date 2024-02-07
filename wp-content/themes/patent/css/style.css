@@ -660,12 +660,34 @@ h1, h2, h3, button {
     text-align: center;
 }
 
+.footer__submit-block > div {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+    text-transform: uppercase;
+    max-width: 40%;
+    margin: 0 auto;
+    margin-bottom: 26px;
+}
+
+.footer__submit-block > p {
+    text-align: center;
+    color: #4B555E;
+    font-weight: 400;
+    line-height: 26px;
+}
+
 .global_err.active {
     display: block;
 }
 
 input.error {
     border-color: red;
+}
+
+.agree__group.error > label, .error {
+    color: red;
 }
 
 .form__error {

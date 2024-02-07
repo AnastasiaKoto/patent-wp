@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             data: form.serialize() + '&action=main_callback',
             type: 'POST',
           }).done(function (result) {
+            footerSubmitted = false;
             if (result.errors) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
@@ -106,21 +107,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
               if (result.success == true) {
                 form[0].reset();
+                let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                $('.order-form .form__content').remove();
+                $('.order-form .container').append(submitBlock);
               }
             }
           });
         } else {
+          console.log('политика не заполнена');
           policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
         }
       } else {
         form.find('.global_err').addClass('active');
       }
     });
+
+
     let bannerSubmitted = false;
-    $('#banner_form').on('click', '.btn__submit', function (e) {
+    $('#banner').on('click', '.btn__submit', function (e) {
       e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
       if(bannerSubmitted == false) {
-        let form = $(this).closest('form');
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -133,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             data: form.serialize() + '&action=main_callback',
             type: 'POST',
           }).done(function (result) {
+            bannerSubmitted = false;
             if (result.errors) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
@@ -144,12 +154,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
               if (result.success == true) {
                 form[0].reset();
+                let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                form.remove();
+                $('.patent-form h2').remove();
+                $('.patent-form .container').append(submitBlock);
               }
             }
           });
         } else {
-          policy.parent().addClass('error');
+          $('.patent-form__custom-checkbox').addClass('error');
         }
+      } else {
+        form.find('.global_err').addClass('active');
       }
     });
   });
