@@ -1698,8 +1698,6 @@ input.error {
     color: #4b555e;
 }
 
-
-
 @media (max-width: 1024px) {
 
     .services__card {
@@ -2102,8 +2100,8 @@ input.error {
 
 
     .form__content {
-    justify-content: space-between;
-    flex-direction: column;
+        justify-content: space-between;
+        flex-direction: column;
     }
 
     .footer__content {
@@ -2116,8 +2114,8 @@ input.error {
 
 
     .articles {
-    padding-top: 20px;
-    padding-bottom: 30px;
+        padding-top: 20px;
+        padding-bottom: 30px;
     }
 
     .tabs__caption li {
@@ -2237,12 +2235,12 @@ input.error {
 
     .newsblock__block .subtitle {
 
-    font-size: 14px;
-    font-weight: 600;
- 
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    margin-top: 25px;
+        font-size: 14px;
+        font-weight: 600;
+    
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        margin-top: 25px;
     }
 
     .newsblock__card > p {
@@ -2270,7 +2268,7 @@ input.error {
     }
 
     .form-bottom h2 {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .form-bottom__list {
@@ -2328,12 +2326,12 @@ input.error {
     }
 
     .small__price {
-    color: rgba(75, 85, 94, 0.60);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    justify-content: space-between;
+        color: rgba(75, 85, 94, 0.60);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .services-card__content {
@@ -2341,5 +2339,3 @@ input.error {
     }
     
 }
-
-
