@@ -29,6 +29,7 @@ function main_callback(){
 
     if (empty($my_error->errors)){
 
+        $service_title = get_the_title($service);
         $message2 = '<table width="600" border="0" cellspacing="0" cellpadding="0" style="font: 300 14px Arial;">';
         $message2 .= '<tr><td colspan="2" style="padding-top:15px; font-weight:bold;"><strong>Данные: </strong></td>';
         $message2 .= '<tr><td>Имя: </td><td>' . $name . '</td></tr>';
@@ -39,7 +40,7 @@ function main_callback(){
             $message2 .= '<tr><td>Телефон: </td><td>' . $phone . '</td></tr>';
         }
         if ($service){
-            $message2 .= '<tr><td>Услуга: </td><td>' . $service . '</td></tr>';
+            $message2 .= '<tr><td>Услуга: </td><td>' . $service_title . '</td></tr>';
         }
         $message2 .= '</table>';
 
