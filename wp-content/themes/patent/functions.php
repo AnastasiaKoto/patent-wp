@@ -25,6 +25,7 @@ function all_styles() {
 	wp_enqueue_style( 'slicktheme_css', '/wp-content/themes/patent/slick/slick-theme.css' );
 	wp_enqueue_style( 'style_css', '/wp-content/themes/patent/css/style.css' );
 	wp_enqueue_style( 'landing_css', '/wp-content/themes/patent/css/landing.css' );
+    wp_enqueue_style( 'services_css', '/wp-content/themes/patent/css/services.css' );
 }
 function all_js() {
 	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js');

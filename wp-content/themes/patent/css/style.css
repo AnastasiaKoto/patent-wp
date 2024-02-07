@@ -1209,9 +1209,6 @@ input.error {
     align-items: center;
 }
 
-.nav__list a {
-
-}
 
 .nav__item:not(:last-child) {
     margin-right: 30px;
