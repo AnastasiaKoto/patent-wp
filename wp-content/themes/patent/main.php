@@ -569,80 +569,293 @@ global $post;
                   ?>
                 </div>
             </div>
-        </section>
-        <section class="order-form">
-            <div class="container">
-                <div class="form__content flex">
-                    <div class="form__part">
-                        <h2 class="titles">
-                            заказать услугу патнетного&nbsp;поверенного
-                        </h2>
-                        <p>
-                            Равным образом консультация с широким активом требуют от нас анализа форм развития.
-                        </p>
-                        <img src="/wp-content/themes/patent/images/form_bg.svg" alt="">
-                    </div>
-                    <div class="form__part">
-                      <?php get_template_part('templates/forms/feedback'); ?>
-                    </div>
-                </div>
-            </div>
-            <div class="form-bottom">
-                <div class="container">
-                    <h2 class="titles">
-                        Услуги
-                    </h2>
-                    <ul class="form-bottom__list">
-                        <li class="form-bottom__item">
-                            <span>Регистрация товарного знака</span>
-                            <svg width="23" height="12" viewBox="0 0 23 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z"
-                                      fill="#4B555E" fill-opacity="0.5"/>
-                            </svg>
-                        </li>
-
-                        <li class="form-bottom__item">
-                            <span>Патент на изобретение</span>
-                            <svg width="23" height="12" viewBox="0 0 23 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z"
-                                      fill="#4B555E" fill-opacity="0.5"/>
-                            </svg>
-                        </li>
-
-                        <li class="form-bottom__item">
-					<span>Составление 
-					лицензионного договора</span>
-                            <svg width="23" height="12" viewBox="0 0 23 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z"
-                                      fill="#4B555E" fill-opacity="0.5"/>
-                            </svg>
-                        </li>
-
-                        <li class="form-bottom__item">
-					<span>Составление регистрации 
-					договора отчуждения</span>
-                            <svg width="23" height="12" viewBox="0 0 23 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z"
-                                      fill="#4B555E" fill-opacity="0.5"/>
-                            </svg>
-                        </li>
-
-                        <li class="form-bottom__item">
-					<span>Защита контента 
-					на сайте (авторское право)</span>
-                            <svg width="23" height="12" viewBox="0 0 23 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z"
-                                      fill="#4B555E" fill-opacity="0.5"/>
-                            </svg>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
+		</div>
+	</section>
+	<?php } 
+	wp_reset_postdata(); 
+	?>
+	<section class="benefit">
+		<div class="container">
+			<h2 class="titles">Чем полезен Патентный поверенный именно мне?</h2>
+			<div class="benefit__banner flex">
+				<div class="banner__img">
+					<img class="banner__img-main" src="/wp-content/themes/patent/images/benefit_banner.png" alt="">
+					<img class="banner__img-mob" src="/wp-content/themes/patent/images/man-mob.png" alt="">
+				</div>
+				<div class="benefit-banner__content">
+					<div class="big__title">
+						Цель  – привести дела клиента в полный порядок и поддерживать его
+					</div>
+					<p class="benefit-banner__text hidden-text">
+						Как патентный поверенный и юрист способен создать весь комплекс действий по защите иновационного бизнеса. Подготовлю договор об учреждении ООО, при котором партнеры будут эффективно взаимодействовать, мы зарегистрируем товарный знак, получим патент на устройство или вещество 
+						из любой отрасли (техника, элктроника, проукты питания, стройматрерилы, медицина….).Получим патент на дизайн, составим авторское соглашение 
+						с разделением авторского вклада.Защитим интересы компаниив на стадии досудебного урегулирвания и в суде,Проведем экспертзизу, проведем патентые исследования.Проведем инвентарицацию и оценку сущесвуюх объектов для создания эффективного портфеля объектов или при покупке бизнеса.Ваши дела всегда будут в порядке! 
+						Я привожу дела килентов в прядок и в сложных ситуациях нахожу примелемый выход.
+					</p>
+					<div class="benefit-card__more benefitBtn">Читать полностью</div>
+					<div class="big__title">
+						Меня ценят за внимание к деталям, усердие и находчивость.
+					</div>
+				</div>
+			</div>
+			<?php 
+			$profs = get_field('profs');
+			if($profs) {
+			?>
+			<div class="benefit__list grid">
+				<?php foreach($profs as $prof) { ?>
+				<div class="benefit__card flex">
+					<div class="benefit-card__img">
+						<img src="<?php echo $prof['img']; ?>" alt="">
+					</div>
+					<div class="benefit-card__txt">
+						<div class="title">
+							<?php echo $prof['title']; ?>
+						</div>
+						<p>
+							<?php echo $prof['title_descr']; ?>
+						</p>
+						<p class="benefit-card__descr hidden">
+							<?php echo $prof['txt']; ?>
+						</p>
+						<div class="benefit-card__more">Читать полностью</div>
+					</div>
+				</div>
+				<?php } ?>
+			</div>
+			<a href="#services" class="btn dark__btn serv_btn">
+				Основные услуги
+				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 10.25L5.5 5.75L10 10.25" stroke="white" />
+					<path d="M1 5.25L5.5 0.75L10 5.25" stroke="white" />
+				</svg>
+			</a>
+			<?php } ?>
+		</div>
+	</section>
+	<?php 
+	$branches = get_field('branches');
+	if($branches) {
+	?>
+	<section class="branch">
+		<div class="container">
+			<h2 class="titles">Какую отрасль Вы представляете?</h2>
+			<div class="benefit__list grid">
+				<?php foreach($branches as $branch) { ?>
+				<div class="benefit__card flex">
+					<div class="benefit-card__img">
+						<img src="<?php echo $branch['img']; ?>" alt="">
+					</div>
+					<div class="benefit-card__txt">
+						<div class="title">
+							<?php echo $branch['title']; ?>
+						</div>
+						<p class="benefit-card__descr hidden">
+							<?php echo $branch['txt']; ?>
+						</p>
+						<div class="benefit-card__more">Читать полностью</div>
+					</div>
+				</div>
+				<?php } ?>
+			</div>
+		</div>
+	</section>
+	<?php } ?>
+	<section class="patent-form">
+		<div class="container">
+			<h2 class="titles patent-form-titles">
+				заказать услугу патнетного поверенного
+			</h2>
+			<?php get_template_part('templates/forms/banner', 'form'); ?>
+		</div>
+	</section>
+	<?php $recomendations = get_field('recomend');
+	if($recomendations) { 
+	?>
+	<section class="articles">
+		<div class="container">
+			<div class="articles__block">
+				<h2 class="titles">
+					Патентный поверенный дает рекомендации, как построить инновационную компанию.
+				</h2>
+				<div class="tabs articles__tabs flex">
+					<ul class="tabs__caption">
+						<?php 
+						$r_count = 1;
+						foreach($recomendations as $recomendation) {
+						?>
+						<li <?php if($r_count == 1) { ?> class="active" <?php } ?>>Раздел <?php echo $r_count; ?></li>
+						<?php $r_count++; } ?>
+					</ul>
+					<?php 
+						$r2_count = 1;
+						foreach($recomendations as $recomendation) {
+							$stages = $recomendation['stages'];
+					?>
+					<div class="tabs__content article__content <?php if($r2_count == 1) { ?> active <?php } ?>">
+						<div class="article__subtitle">
+							раздел <?php echo $r2_count; ?>
+						</div>
+						<?php if($recomendation['title']) { ?>
+						<div class="title">
+							<?php echo $recomendation['title']; ?>
+						</div>
+						<?php } ?>
+						<?php if($recomendation['txt']) { ?>
+						<div class="article__txt">
+							<?php echo $recomendation['txt']; ?>
+						</div>
+						<?php } ?>
+						<?php if($stages) { 
+							$count_inside = 1;
+						?>
+						<div class="article__content-list flex">
+							<?php foreach($stages as $stage) { ?>
+							<div class="article__content-list_point">
+								<div class="art__count"><div><?php echo $count_inside; ?></div></div>
+								<div class="icon">
+									<img src="<?php echo $stage['img']; ?>" alt="">
+								</div>
+								<div class="sm__title"><?php echo $stage['stage_title']; ?></div>
+							</div>
+							<?php $count_inside++; } ?>
+						</div>
+						<?php } ?>
+						<?php if($recomendation['txt2']) { ?>
+						<div class="article__txt">
+							<?php echo $recomendation['txt2']; ?>
+						</div>
+						<?php } ?>
+						<?php  
+						if($recomendation['show_rec']) {
+							$rec = $recomendation['rec_group'];
+						?>
+						<!-- тут совет -->
+						<div>
+							<div>СОВЕТ</div>
+							<div><?php // echo $rec['rec_txt']; ?> 
+								<p>
+									ЗДЕСЬ ВЫ МОЖЕТЕ ПРИГЛАСИТЬ МЕНЯ В КАЧЕСТВЕ ЭКСПЕРТА, ПОДТВЕРЖДАЮЩЕГО ВОЗМОЖНОСТЬ ПОЛУЧЕНИЯ ПАТЕНТА, ЗАЩИЩАЮЩЕГО ПРОДУКТ
+								</p>
+								<p>
+									Если вы оказались на этом этапе без предыдущего моего участия, то рекомедуется проработать ситуацию с самого начала и проверить все данные в отношении существенных приззнаков и формулы патента в целом.
+								</p>
+							</div>
+						</div>
+						<!-- конец совета -->
+						<?php 
+						}
+						?>
+					</div>
+					<?php $r2_count++; } ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php } ?>
+	<section class="doubarticles">
+		<div class="container">
+			<h2 class="titles">
+				Статьи
+			</h2>
+			<div class="newsblock flex">
+			<?php 
+				$args = array(
+					'post_type' => 'articles',
+					'post_status' => 'publish',
+					'posts_per_page' => 2,
+				);
+				$articles = new WP_Query($args);
+				if ($articles->have_posts()) {
+			?>
+				<div class="newsblock__block">
+					<div class="subtitle">
+						Это важно иметь в виду
+					</div>
+					<div class="newsblock__list flex">
+						<?php 
+						while ( $articles->have_posts() ) {
+							$articles->the_post();
+							$thumbnail_id = get_post_thumbnail_id();
+							$image_url = wp_get_attachment_image_src( $thumbnail_id, 'full' )[0];
+						?>
+						<a href="<?php echo get_permalink(); ?>" class="newsblock__card flex">
+							<div class="newsblock__img">
+								<img src="<?php echo $image_url; ?>" alt="">
+							</div>
+							<div class="newstitle">
+								<?php the_title(); ?>
+							</div>
+							<p>
+								<?php echo get_field('artic_short-descr', get_the_ID()); ?>
+							</p>
+						</a>
+						<?php } ?>
+					</div>
+				</div>
+				<?php 
+				} 
+				wp_reset_postdata();
+				?>
+				<?php 
+					$args = array(
+						'post_type' => 'news',
+						'post_status' => 'publish',
+						'posts_per_page' => 1,
+					);
+					$news = new WP_Query($args);
+					if ($news->have_posts()) {
+				?>
+				<div class="newsblock__block">
+					<div class="subtitle">
+						Вам может быть интересно
+					</div>
+					<div class="newsblock__list flex">
+						<?php 
+						while ( $news->have_posts() ) {
+							$news->the_post();
+							$thumbnail_id = get_post_thumbnail_id();
+							$image_url = wp_get_attachment_image_src( $thumbnail_id, 'full' )[0];
+						?>
+						<a href="<?php echo get_permalink(); ?>" class="newsblock__card flex">
+							<div class="newsblock__img">
+								<img src="<?php echo $image_url; ?>" alt="">
+							</div>
+							<div class="newstitle">
+								<?php echo the_title(); ?>
+							</div>
+							<p>
+								<?php echo get_field('news_short-descr', get_the_ID()); ?>
+							</p>
+						</a>
+						<?php } ?>
+					</div>
+				</div>
+				<?php 
+				} 
+				wp_reset_postdata();
+				?>
+			</div>
+		</div>
+	</section>
+	<section class="order-form">
+		<div class="container">
+			<div class="form__content flex">
+				<div class="form__part">
+					<h2 class="titles">
+						заказать услугу патнетного&nbsp;поверенного
+					</h2>
+					<p>
+						Равным образом консультация с широким активом требуют от нас анализа форм развития.
+					</p>
+					<img src="/wp-content/themes/patent/images/form_bg.svg" alt="">
+				</div>
+				<div class="form__part">
+					<?php get_template_part('templates/forms/feedback'); ?>
+				</div>
+			</div>
+		</div>
+		<?php get_template_part('templates/blocks/services', 'block'); ?>
+	</section>
+</main>
 <?php get_footer(); ?>

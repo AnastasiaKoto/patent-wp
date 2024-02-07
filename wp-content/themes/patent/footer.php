@@ -130,7 +130,8 @@
 </div>
 
 </div><!-- #page -->
-
+<?php get_template_part('templates/blocks/modal', 'result'); ?>
+<div class="overlay"></div>
 <?php wp_footer(); ?>
 
 </body>
