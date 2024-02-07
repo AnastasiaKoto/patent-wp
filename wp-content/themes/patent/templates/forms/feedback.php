@@ -1,4 +1,4 @@
-<form action="" method="POST" id="order">
+<form action="" method="POST" id="order" name="order">
     <div class="form__wrapper flex">
         <div class="inp__wrapper">
             <input type="text" name="order_name" id="order_name" class="order__inp" placeholder="Имя">
