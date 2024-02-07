@@ -270,3 +270,30 @@ feedBacks.forEach(feedBack => {
 
   
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const btnToTop = document.querySelector('.to_top');
+
+  // Показываем кнопку "Наверх" при прокрутке страницы
+  window.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      btnToTop.style.opacity = '1';
+    } else {
+      btnToTop.style.opacity = '0';
+    }
+  });
+
+  // Плавный скролл к началу страницы при клике на кнопку "Наверх"
+  btnToTop.addEventListener('click', () => {
+    scrollToTop();
+  });
+
+  // Функция плавного скролла
+  const scrollToTop = () => {
+    const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentPosition > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, currentPosition - currentPosition / 20); // Скорость скролла определяется делим значением второго аргумента
+    }
+  };
+});
