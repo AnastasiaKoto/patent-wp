@@ -14,44 +14,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
         .closest('div.articles__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
     });
 
-    var $slider1 = $('.keyses__slider');
+      var $slider1 = $('.keyses__slider');
 
-// Инициализация слайдера
-$slider1.slick({
-    infinite: false,
-    dots: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-});
+      // Инициализация слайдера
+      $slider1.slick({
+          infinite: false,
+          dots: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+      });
 
-// Обработчик клика на кнопку "Вперед"
-$('.slick-next-new').click(function(){
-    $slider1.slick('slickNext');
-});
+      // Обновление счетчика
+      function updateCounter() {
+          var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
+          $('.currentCoach').text(currentSlideNumber);
+          $('.allCoach').text($slider1.slick('getSlick').slideCount);
+      }
 
-// Обработчик клика на кнопку "Назад"
-$('.slick-prev-new').click(function(){
-    $slider1.slick('slickPrev');
-});
+      // Обновление счетчика при инициализации и переключении таба
+      $slider1.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+          updateCounter();
+      });
 
-// Обновление счетчика
-$slider1.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
-    // Получаем общее количество слайдов
-    var totalSlides = slick.slideCount;
+      $('.tabs__caption li').on('click', function () {
+          // Проверяем активный таб и обновляем счетчик, если это нужный таб
+          if ($(this).hasClass('active')) {
+              updateCounter();
+          }
+      });
+
+      // Обработчик клика на кнопку "Вперед"
+      $('.slick-next-new').click(function(){
+          $slider1.slick('slickNext');
+      });
+
+      // Обработчик клика на кнопку "Назад"
+      $('.slick-prev-new').click(function(){
+          $slider1.slick('slickPrev');
+      });
     
-    // Обновляем текущий номер слайда
-    var currentSlideNumber = (currentSlide ? currentSlide : 0) + 1;
-
-    // Обновляем текст счетчика
-    $('.currentCoach').text(currentSlideNumber);
-    $('.allCoach').text(totalSlides);
-});
-    
 
 
-          // Создаем медиа-запрос для экранов с шириной меньше 768px
-      const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+          // Создаем медиа-запрос для экранов с шириной меньше 1024px
+      const mobileMediaQuery = window.matchMedia('(max-width: 1024px)');
       let sliderInitialized = false;
       let $slider;
 
