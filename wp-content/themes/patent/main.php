@@ -269,6 +269,15 @@ global $post;
 				</div>
 				<?php $count_keys++; } ?>
 			</div>
+			<div class="slide_count">
+				<span class="slick-prev-new keyses__slick"> 
+					<
+			    </span>
+                    <span class="currentCoach">2</span><span class="slesh">/</span><span class="allCoach">3</span>
+				<span class="slick-next-new keyses__slick">
+					>
+				</span>
+            </div>
 		</div>
 	</section>
 	<?php } 

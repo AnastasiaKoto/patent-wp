@@ -286,7 +286,7 @@ h1, h2, h3, button {
     border: 1px solid #DFE3EE;
     padding: 27px 12px 12px 22px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .services__card {
@@ -455,6 +455,7 @@ h1, h2, h3, button {
 /*  keyses  */
 
 .keyses {
+    position: relative;
     padding-top: 84px;
     padding-bottom: 189px;
     background-color: #F3F5FA;
@@ -1621,9 +1622,55 @@ input.error {
     font-weight: 400;
 }
 
+.keyses__slick {
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    background: #4D4B5A;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.slide_count {
+    display: none;
+}
+
+
+.currentCoach, .slesh, .allCoach {
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #4b555e;
+}
+
 
 
 @media (max-width: 1024px) {
+
+    .benefit {
+        padding-top: 40px;
+        padding-bottom: 44px;
+    }
+
+    .slide_count {
+    display: flex;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    justify-content: space-around;
+    width: 140px;
+    align-items: center;
+    bottom: 0;
+
+    }
 
     .header {
         display: none;
@@ -2119,7 +2166,7 @@ input.error {
 
     .keyses {
         padding-top: 0;
-        padding-bottom: 20px;
+        padding-bottom: 50px;
         background-color: #fff;
     }
 
