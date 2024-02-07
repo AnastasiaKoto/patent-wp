@@ -1,0 +1,32 @@
+.banner-services__offerse {
+    min-height: 213px;
+    max-width: 598px;
+    background: #fff;
+    padding: 31px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 25px;
+}
+
+.banner-services__title {
+    font-weight: 500;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #1e1d25;
+    margin: 30px auto;
+}
+
+.banner-services__point {
+        display: flex;
+    align-items: center;
+}
+
+
+@media  (max-width: 768px) {
+    .banner-services__point p {
+    font-weight: 400;
+    font-size: 14px;
+    }
+}
