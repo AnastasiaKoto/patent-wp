@@ -286,8 +286,11 @@ h1, h2, h3, button {
     border: 1px solid #DFE3EE;
     padding: 27px 12px 12px 22px;
     display: flex;
-    justify-content: center;
     
+}
+
+.last__card {
+    justify-content: center;
 }
 
 .services__card {
@@ -1209,9 +1212,6 @@ input.error {
     align-items: center;
 }
 
-.nav__list a {
-
-}
 
 .nav__item:not(:last-child) {
     margin-right: 30px;
