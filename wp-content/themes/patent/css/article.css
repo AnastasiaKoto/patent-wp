@@ -1,0 +1,148 @@
+.article {
+    padding-top: 37px;
+    padding-bottom: 112px;
+}
+
+.article__header {
+    column-gap: 76px;
+    align-items: center;
+    margin-bottom: 66px;
+}
+
+.article__img {
+    max-width: 55%;
+    border-radius: 27px;
+    overflow: hidden;
+}
+
+.article__img > img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.article__titles {
+    max-width: 40%;
+}
+
+.article__date {
+    color: #4B555E;
+    font-size: 14px;
+    line-height: 164.9%; /* 23.086px */
+    margin-bottom: 7px;
+}
+
+.article__titles > h2 {
+    padding: 0;
+    font-weight: 600;
+    line-height: 139.4%;
+    margin-bottom: 22px;
+}
+
+.article__titles > h2::before {
+    display: none;
+}
+
+.article__short-descr {
+    color: #4B555E;
+    font-size: 18px;
+}
+
+.article__body > p:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.article__body {
+    line-height: 175.4%;
+    color: #4B555E;
+}
+
+.mobile__block {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+
+    .article__header {
+        column-gap: 42px;
+        margin-bottom: 39px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .article {
+        padding-bottom: 56px;
+    }
+
+    .article__header {
+        flex-direction: column-reverse;
+        row-gap: 25px;
+    }
+
+    .article__img {
+        max-width: 100%;
+    }
+
+    .article__titles {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .article {
+        padding-top: 29px;
+        padding-bottom: 62px;
+    }
+
+    .article__short-descr {
+        font-size: 16px;
+    }
+
+    .article__titles > h2 {
+        margin-bottom: 16px;
+    }
+
+    .article__body {
+        font-size: 14px;
+    }
+
+    .mobile__block {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        padding-top: 34px;
+        padding-bottom: 43px;
+    }
+
+    .form__mobile-block {
+        position: relative;
+    }
+
+    .mobile__block::before {
+        content: '';
+        width: 768px;
+        height: 100%;
+        position: absolute;
+        background: #F3F5FA;
+        left: -20px;
+        top: 0;
+    }
+
+    .form__mobile-block > h2 {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .form__mobile-block > h2::before {
+        display: none;
+    }
+
+    .form__mobile-block > p {
+        margin-bottom: 26px;
+        color: #4B555E;
+        font-size: 14px;
+    }
+}

@@ -35,9 +35,15 @@ get_header();
                         </div>
                     <?php } } ?>
                     <?php if(get_field('work_time', 'option')) { ?>
-                        <div class="contacts__content-group">
+                        <div class="contacts__content-group time_desk">
                             <div>Время работы:</div>
                             <p><?php echo get_field('work_time', 'option'); ?></p>
+                        </div>
+                    <?php } ?>
+                    <?php if(get_field('mb_time-work', 'option')) { ?>
+                        <div class="contacts__content-group time_mob">
+                            <div>Время работы:</div>
+                            <p><?php echo get_field('mb_time-work', 'option'); ?></p>
                         </div>
                     <?php } ?>
                 </div>

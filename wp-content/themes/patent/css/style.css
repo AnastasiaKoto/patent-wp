@@ -1018,7 +1018,7 @@ input.error {
     pointer-events: all;
     transform: translateY(0px);
     position: absolute;
-    z-index: 10;
+    z-index: 10000;
     transition: all .3s ease;
 }
 
@@ -2260,7 +2260,6 @@ input.error {
     }
 
     .form-bottom {
-        padding-top: 27px;
         border-top: solid 1px #fff;
         display: block;
         margin-top: 30px;
