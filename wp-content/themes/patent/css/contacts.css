@@ -192,6 +192,10 @@
     max-width: 50%;
 }
 
+.time_mob {
+    display: none;
+}
+
 @media (max-width: 1024px) {
 
     .contacts .form-bottom {
@@ -257,9 +261,30 @@
     .contacts .btn__submit {
         position: relative;
     }
+
+    .time_mob {
+        display: block;
+    }
+
+    .time_desk {
+        display: none;
+    }
+
+    .page-template-contacts .form-bottom {
+        margin-bottom: 43px;
+    }
 }
 
 @media (max-width: 480px) {
+
+    .page__title {
+        font-size: 16px;
+    }
+
+    .breadcrumbs {
+        font-size: 12px;
+        line-height: normal;
+    }
 
     .titles__block {
         padding: 17px 0 21px 0;
