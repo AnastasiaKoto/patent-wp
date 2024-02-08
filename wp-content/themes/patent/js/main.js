@@ -107,9 +107,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
               if (result.success == true) {
                 form[0].reset();
-                let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
-                $('.order-form .form__content').remove();
-                $('.order-form .container').append(submitBlock);
+                if($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
               }
             }
           });
@@ -264,6 +272,30 @@ feedBacks.forEach(feedBack => {
           nav?.classList.remove('nav--visible');
       });
   });
+
+  let overlay = document.querySelector('.overlay');
+  let resultClose = document.querySelector('.close__btn');
+  let modal = document.querySelector('.modal');
+  
+  if(overlay) {
+    overlay.addEventListener('click', function() {
+      if(modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('stop-scroll');
+      }
+    })
+  }
+
+  if(resultClose) {
+    resultClose.addEventListener('click', function() {
+      if(modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('stop-scroll');
+      }
+    })
+  }
   
 });
 
