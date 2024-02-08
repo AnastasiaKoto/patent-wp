@@ -63,7 +63,7 @@
     background: #F9CD54;
 }
 
-.prices-card__stage-text--color:hover {
+.prices-card__stage-text:hover {
     color: #fff;
     background: #4c515e;
 }
@@ -281,6 +281,20 @@ linear-gradient(159deg, #4d4b5a 0%, #485c63 100%);
     margin: 0 auto;
 }
 
+
+/* калькулятор */
+
+.calculator-page {
+    padding: 84px 0;
+    background: #f3f5fa;
+}
+
+.calculator {
+    padding: 21px;
+    box-shadow: 0 14px 37px 0 rgba(0, 0, 0, 0.11);
+    background: #fff;
+    border-radius: 27px;
+}
 
 @media  (max-width: 768px) {
     .banner-services__point p {
