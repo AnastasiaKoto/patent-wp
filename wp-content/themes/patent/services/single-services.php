@@ -6,22 +6,15 @@
 get_header(); // подключаем шапку сайта
 ?>
     <main class="main">
-        <!-- <section class="banner">
-        <div class="breadcrumbs">
-            <div class="container">
-                <?php
-        if (function_exists('yoast_breadcrumb')) {
-          yoast_breadcrumb();
-        }
-        ?>
-                
-            </div>
-        </div>
-        <h1><?php the_title(); ?></h1>
-    </section> -->
-
         <section class="banner">
             <div class="container">
+                <div class="breadcrumbs">
+                    <?php
+                    if (function_exists('yoast_breadcrumb')) {
+                    yoast_breadcrumb();
+                    }
+                    ?>
+                </div>
                 <div class="banner__content flex">
                     <div class="banner__block">
                         <h1 class="title banner-services__title">регистрация товарного знака</h1>
