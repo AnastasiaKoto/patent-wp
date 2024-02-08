@@ -80,7 +80,7 @@ global $post;
 			</div>
 		</div>
 	</section>
-	<section class="services ">
+	<section class="services " id="services">
 		<div class="container">
 			<h2 class="titles">основные услуги</h2>
 			<?php 
@@ -269,6 +269,15 @@ global $post;
 				</div>
 				<?php $count_keys++; } ?>
 			</div>
+			<div class="slide_count">
+				<span class="slick-prev-new keyses__slick"> 
+					<
+			    </span>
+                    <span class="currentCoach">1</span><span class="slesh">/</span><span class="allCoach">2</span>
+				<span class="slick-next-new keyses__slick">
+					>
+				</span>
+            </div>
 		</div>
 	</section>
 	<?php } 
@@ -323,7 +332,7 @@ global $post;
 				</div>
 				<?php } ?>
 			</div>
-			<a href="#" class="btn dark__btn serv_btn">
+			<a href="#services" class="btn dark__btn serv_btn">
 				Основные услуги
 				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M1 10.25L5.5 5.75L10 10.25" stroke="white" />

@@ -14,26 +14,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
         .closest('div.articles__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
     });
 
-    $('.keyses__slider').slick({
-        infinite: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              dots: true,
-            }
-          },
-        ]
+      var $slider1 = $('.keyses__slider');
 
-    });
+      // Инициализация слайдера
+      $slider1.slick({
+          infinite: false,
+          dots: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+      });
+
+      // Обновление счетчика
+      function updateCounter() {
+          var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
+          $('.currentCoach').text(currentSlideNumber);
+          $('.allCoach').text($slider1.slick('getSlick').slideCount);
+      }
+
+      // Обновление счетчика при инициализации и переключении таба
+      $slider1.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+          updateCounter();
+      });
+
+      $('.tabs__caption li').on('click', function () {
+          // Проверяем активный таб и обновляем счетчик, если это нужный таб
+          if ($(this).hasClass('active')) {
+              updateCounter();
+          }
+      });
+
+      // Обработчик клика на кнопку "Вперед"
+      $('.slick-next-new').click(function(){
+          $slider1.slick('slickNext');
+      });
+
+      // Обработчик клика на кнопку "Назад"
+      $('.slick-prev-new').click(function(){
+          $slider1.slick('slickPrev');
+      });
+    
 
 
-          // Создаем медиа-запрос для экранов с шириной меньше 768px
-      const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+          // Создаем медиа-запрос для экранов с шириной меньше 1024px
+      const mobileMediaQuery = window.matchMedia('(max-width: 1024px)');
       let sliderInitialized = false;
       let $slider;
 
@@ -299,3 +323,29 @@ feedBacks.forEach(feedBack => {
   
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+  const btnToTop = document.querySelector('.to_top');
+
+  // Показываем кнопку "Наверх" при прокрутке страницы
+  window.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      btnToTop.style.opacity = '1';
+    } else {
+      btnToTop.style.opacity = '0';
+    }
+  });
+
+  // Плавный скролл к началу страницы при клике на кнопку "Наверх"
+  btnToTop.addEventListener('click', () => {
+    scrollToTop();
+  });
+
+  // Функция плавного скролла
+  const scrollToTop = () => {
+    const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentPosition > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, currentPosition - currentPosition / 20); // Скорость скролла определяется делим значением второго аргумента
+    }
+  };
+});
