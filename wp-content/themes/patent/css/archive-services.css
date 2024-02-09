@@ -1,0 +1,50 @@
+.service-cats__group {
+    padding-top: 31px;
+}
+
+.service-cats__title {
+    color: rgba(30, 29, 37, 0.50);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 31px;
+}
+
+.service-cats__list {
+    grid-template-columns: repeat(3,1fr);
+    gap: 19px;
+}
+
+.service-cats__card {
+    display: block;
+    padding: 25px 23px 27px;
+}
+
+.service-cats__card-list {
+    flex-direction: column;
+    row-gap: 10px;
+    padding-left: 53px;
+}
+
+.serv__header-block {
+    align-items: center;
+    column-gap: 14px;
+    margin-bottom: 13px;
+}
+
+.serv__header-block .small__titles {
+    margin-bottom: 0;
+}
+
+.mini-title {
+    margin: 0;
+    color: #1E1D25;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.service-cats {
+    padding-bottom: 88px;
+}
