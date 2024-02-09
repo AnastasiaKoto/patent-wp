@@ -48,3 +48,7 @@
 .service-cats {
     padding-bottom: 88px;
 }
+
+.service-cats__list:last-child .serv__header-block {
+    margin: 0;
+}
