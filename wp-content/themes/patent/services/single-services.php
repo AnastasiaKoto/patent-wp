@@ -354,18 +354,126 @@ get_header(); // подключаем шапку сайта
             <h2 class="banner-services__title">С помощью калькулятора вы можете узнать классы МКТУ, их количество, рассчитать полную стоимость для вашего случая</h2>
 
             <div class="calculator">
-                <div class="calculator__inner">
-                    <div class="calculator__caunt">
-                        <span>1</span>
-                        <span>/</span>
-                        <span>6</span>
+                <div class="calculator__caunt">
+                    <span>1</span>
+                    <span>/</span>
+                    <span>6</span>
+                </div>
+                <div class="calculator__wrapper">
+                   <div class="calculator__inner">
+                       <div class="calculator__type">
+                           <h2 class="calculator__title">тип товарного знака</h2>
+                           <label class="">
+                               <input type="radio" name="wordmark_option">
+                               Словесный
+                           </label>
+                           <label class="">
+                               <input type="radio" name="wordmark_option">
+                               Изобразительный
+                           </label>
+                           <label class="">
+                               <input type="radio" name="wordmark_option">
+                               Комбинированный
+                           </label>
+                       </div>
+
+                       <div class="calculator__type">
+                           <h2 class="calculator__title">название товарного знака*</h2>
+                           <label class="">
+                               <input type="text" placeholder="Введите название">
+
+                           </label>
+                           <label class="calculator__file-input-label">
+                               <input type="file" class="calculator__file-input">
+                           </label>
+
+                           <span class="calculator__optional">*Поле не является обязательным для заполнения</span>
+                       </div>
+                   </div>
+                    <div class="calculator__inner">
+                        <div class="calculator__logos">
+                            <p>Примеры словесного товарного знака:</p>
+                            <ul>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/1/coca-cola.svg" alt="">
+                                </li>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/1/Google.svg" alt="">
+                                </li>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/1/Sony.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="calculator__logos" style="display: none;">
+                            <p>Примеры словесного товарного знака:</p>
+                            <ul>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/2/apple.svg" alt="">
+                                </li>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/2/mac.svg" alt="">
+                                </li>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/2/star.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="calculator__logos" style="display: none;">
+                            <p>Примеры словесного товарного знака:</p>
+                            <ul>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/3/adidas.svg" alt="">
+                                </li>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/3/king.svg" alt="">
+                                </li>
+                                <li>
+                                    <img src="/wp-content/themes/patent/images/logos/3/peugeot.svg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
 
+
+
+                </div>
+                <a class="calculator__next" href="#">далее
+                    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5303 6.53033C10.8232 6.23744 10.8232 5.76256 10.5303 5.46967L5.75736 0.696699C5.46447 0.403806 4.98959 0.403806 4.6967 0.696699C4.40381 0.989593 4.40381 1.46447 4.6967 1.75736L8.93934 6L4.6967 10.2426C4.40381 10.5355 4.40381 11.0104 4.6967 11.3033C4.98959 11.5962 5.46447 11.5962 5.75736 11.3033L10.5303 6.53033ZM0 6.75H10V5.25H0V6.75Z" fill="white" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="discounts">
+        <div class="container">
+            <div class="discounts__wrapper">
+                <div class="discounts__inner">
+                    <img src="" alt="">
+                    <h3>Договор и оплата</h3>
+                    <p>Договор предусматривает контроль и уведомление клиента о ситуации на каждом этапе регистрации</p>
+                    <p>При последовательной оплате мы пройдем все этапы и зарегистрируем товарный знак.</p>
+                </div>
+                <div class="discounts__inner">
+                    <div class="">
+                        <h2>для наших клиентов скидка на пошлину 30%</h2>
+                        <a href="">Получить скидку</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="points">
+        <div class="container">
+            <h2>Важные моменты</h2>
+        </div>
+    </section>
 
 </main>
 <?php

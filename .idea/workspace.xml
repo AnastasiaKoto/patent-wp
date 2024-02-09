@@ -5,6 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b917c0e3-67da-4be2-8dee-02d8cb93fc1a" name="Changes" comment="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/1/Google.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/1/Sony.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/1/coca-cola.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/2/apple.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/2/mac.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/2/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/3/adidas.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/3/king.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/logos/3/peugeot.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/paper-clip.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" afterDir="false" />
@@ -66,7 +76,8 @@
       <updated>1707316715734</updated>
       <workItem from="1707316716706" duration="40000" />
       <workItem from="1707316763956" duration="4385000" />
-      <workItem from="1707371637326" duration="19849000" />
+      <workItem from="1707371637326" duration="21166000" />
+      <workItem from="1707460603081" duration="7841000" />
     </task>
     <task id="LOCAL-00001" summary="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
       <option name="closed" value="true" />
@@ -106,7 +117,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/services-page" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
