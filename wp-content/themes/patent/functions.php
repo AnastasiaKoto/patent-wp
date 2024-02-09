@@ -28,6 +28,7 @@ function all_styles() {
   wp_enqueue_style( 'contact_css', '/wp-content/themes/patent/css/contacts.css' );
   wp_enqueue_style( 'article_css', '/wp-content/themes/patent/css/article.css' );
   wp_enqueue_style( 'services_css', '/wp-content/themes/patent/css/services.css' );
+  wp_enqueue_style( 'archive-services_css', '/wp-content/themes/patent/css/archive-services.css' );
 }
 function all_js() {
 	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js');
