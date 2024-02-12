@@ -238,38 +238,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
   let currentPoints = document.querySelectorAll('.order__default'); // Общий класс для текущих значений
   let servicesSelects = document.querySelectorAll('select[name="order_service"]'); // Общий класс для селектов услуг
 
-dropDownBtns.forEach((dropDownBtn, index) => {
-  let dropDownList = dropDownLists[index];
-  let currentPoint = currentPoints[index];
-  let servicesSelect = servicesSelects[index];
+  dropDownBtns.forEach((dropDownBtn, index) => {
+    let dropDownList = dropDownLists[index];
+    let currentPoint = currentPoints[index];
+    let servicesSelect = servicesSelects[index];
 
-  if (dropDownBtn) {
-    dropDownBtn.addEventListener('click', function () {
-      dropDownList.classList.toggle('active');
-      currentPoint.classList.toggle('active');
-    });
-  }
-
-  if (dropDownList) {
-    dropDownList.querySelectorAll('li').forEach(service => {
-      service.addEventListener('click', function () {
-        currentPoint.textContent = this.textContent;
-        let selectedValue = this.getAttribute('data-value');
-        servicesSelect.value = selectedValue;
+    if (dropDownBtn) {
+      dropDownBtn.addEventListener('click', function () {
+        dropDownList.classList.toggle('active');
+        currentPoint.classList.toggle('active');
       });
-    });
-  }
-});
+    }
 
-let feedBacks = document.querySelectorAll('.agree__group'); // Общий класс для обратной связи
+    if (dropDownList) {
+      dropDownList.querySelectorAll('li').forEach(service => {
+        service.addEventListener('click', function () {
+          currentPoint.textContent = this.textContent;
+          let selectedValue = this.getAttribute('data-value');
+          servicesSelect.value = selectedValue;
+        });
+      });
+    }
+  });
 
-feedBacks.forEach(feedBack => {
-  if (feedBack) {
-    feedBack.querySelector('.personal').addEventListener('click', function () {
-      feedBack.querySelector('.custom__check').classList.toggle('active');
-    });
-  }
-});
+  let feedBacks = document.querySelectorAll('.agree__group'); // Общий класс для обратной связи
+
+  feedBacks.forEach(feedBack => {
+    if (feedBack) {
+      feedBack.querySelector('.personal').addEventListener('click', function () {
+        feedBack.querySelector('.custom__check').classList.toggle('active');
+      });
+    }
+  });
 
 
 
@@ -318,6 +318,17 @@ feedBacks.forEach(feedBack => {
         overlay.classList.remove('active');
         body.classList.remove('stop-scroll');
       }
+    })
+  }
+
+  let dropDownServices = document.querySelectorAll('.serv__header-block');
+
+  if(dropDownServices) {
+    dropDownServices.forEach(service => {
+      service.addEventListener('click', function() {
+        this.classList.toggle('active');
+        this.parentNode.querySelector('.service-cats__card-list').classList.toggle('active');
+      })
     })
   }
   
