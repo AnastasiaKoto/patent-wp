@@ -25,6 +25,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
           arrows: false,
       });
 
+      $('.points-slider__list').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        variableWidth: true,
+      });
+
       // Обновление счетчика
       function updateCounter() {
           var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
