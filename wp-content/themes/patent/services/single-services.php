@@ -541,7 +541,36 @@ get_header(); // подключаем шапку сайта
             </ul>
         </div>
 
-
+        <div class="points-slider">
+            <div class="points-slider__inner">
+                <h3 class="points-slider__title">Меня ценят за вдумчивость
+                    и внимание к деталям, щепетильность</h3>
+                <p class="points-slider__text">Не беспокойтесь в 1-3 консультации Мы разберемся даже с очень сложным вопросом. Компания получит надежную регистрацию бренда.</p>
+            </div>
+            <div class="points-slider__slides">
+                <div class="points-slider__list">
+                    <div class="points-slider__item">
+                        <img src="/wp-content/themes/patent/images/sony.svg" alt="">
+                    </div>
+                    <div class="points-slider__item">
+                        <img src="/wp-content/themes/patent/images/micro.svg" alt="">
+                    </div>
+                    <div class="points-slider__item">
+                        <img src="/wp-content/themes/patent/images/british.svg" alt="">
+                    </div>
+                    <div class="points-slider__item">
+                        <img src="/wp-content/themes/patent/images/asus.svg" alt="">
+                    </div>
+                    <div class="points-slider__item">
+                        <img src="/wp-content/themes/patent/images/office.svg" alt="">
+                    </div>
+                </div>
+                <div class="arrows">
+                    <span class="arrows__item arrows__end"> < </span>
+                    <span class="arrows__item arrows__next"> > </span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
