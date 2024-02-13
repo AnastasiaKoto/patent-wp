@@ -349,3 +349,29 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const pointsItems = document.querySelectorAll('.points__inner');
+
+  pointsItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const hiddenContents = document.querySelectorAll('.points__hidden.active');
+      hiddenContents.forEach(content => {
+        content.classList.toggle('active');
+      });
+
+      const hiddenContent = this.parentElement.querySelector('.points__hidden');
+      const svgIcons = document.querySelectorAll('.points__item--svg.active');
+      svgIcons.forEach(icon => {
+        icon.classList.toggle('active');
+      });
+
+      const svgIcon = this.querySelector('.points__item--svg');
+      if (hiddenContent) {
+        hiddenContent.classList.add('active');
+        svgIcon.classList.add('active');
+      }
+    });
+  });
+});
