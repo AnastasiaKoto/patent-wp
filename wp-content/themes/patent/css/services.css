@@ -432,6 +432,155 @@
     margin-top: 10px;
 }
 
+.discounts {
+    padding: 84px 0;
+}
+
+
+.discounts__wrapper {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 27px;
+}
+
+.discounts__inner {
+    flex-basis: 620px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 34px;
+}
+
+.discounts__inner--sb {
+    justify-content: space-between;
+}
+
+.discounts__inner-bg {
+    background-size: contain;
+    background: url(/wp-content/themes/patent/images/payment-bg.png) no-repeat center;
+    width: 100%;
+    min-height: 373px;
+    border-radius: 27px;
+}
+
+.discounts__inner-bg div {
+
+}
+
+.discounts__inner-title {
+
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+}
+
+.discounts__inner-bg a {
+    border-radius: 57px;
+    padding: 0;
+    max-width: 237px;
+    height: 58px;
+    background: linear-gradient(159deg, #4d4b5a 0%, #485c63 100%);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    margin: 20px auto;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.discounts__img {
+
+}
+
+.discounts__title {
+    font-weight: 500;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #1e1d25;
+}
+
+.discounts__text {
+    max-width: 480px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 165%;
+    color: #4b555e;
+}
+
+
+.discounts__text span {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 165%;
+    color: #4b555e;
+}
+
+.points {
+    padding: 84px 0;
+}
+
+.points__wrapper {
+    padding-top: 54px;
+    padding-bottom: 84px;
+}
+
+.points__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}
+
+.points__item--500 {
+    font-weight: 500;
+    font-size: 18px;
+    color: #1e1d25;
+}
+
+.points__item--svg {
+    border-radius: 100%;
+    background: linear-gradient(159deg, #4d4b5a 0%, #485c63 100%);
+    width: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 11px;
+}
+
+.points__item--svg.active {
+    transform: rotate(180deg);
+}
+
+.points__item {
+    border-radius: 27px;
+    box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.04);
+    background: #fff;
+    padding: 13px 10px 13px 32px;
+}
+
+.points__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.points__hidden {
+    display: none;
+}
+
+.points__hidden.active {
+    display: flex;
+}
 
 @media  (max-width: 768px) {
     .banner-services__point p {
