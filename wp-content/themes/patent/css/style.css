@@ -307,8 +307,9 @@ h1, h2, h3, button {
     text-transform: uppercase;
     border-radius: 11px;
     background: linear-gradient(99deg, #4D4B5A -4.76%, #485C63 158.33%);
-    max-height: 39px;
-    max-width: 39px;
+    max-height: 40px;
+    /*max-height: 39px;
+    max-width: 39px;*/
 }
 
 .small__titles {

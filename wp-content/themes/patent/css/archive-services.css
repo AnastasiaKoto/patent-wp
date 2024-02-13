@@ -137,4 +137,12 @@
     .serv__header-block.active::after {
         background-image: url(/wp-content/uploads/2024/02/arrow_active.svg);
     }
+
+    .service__dop .serv__header-block::after {
+        display: none;
+    }
+
+    .service__dop .serv__header-block.active::after {
+        display: none;
+    }
 }
