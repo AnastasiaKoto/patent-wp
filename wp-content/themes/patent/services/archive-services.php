@@ -40,7 +40,12 @@ get_header();
                                         <div class="number">
                                             <?php echo '0' . $count; ?>
                                         </div>
-                                        <h3 class="small__titles"><?php echo $children->name; ?></h3>
+                                        <div class="titles__wrapp">
+                                            <h3 class="small__titles"><?php echo $children->name; ?></h3>
+                                            <div class="small__price">
+                                                <span><?php echo get_field('arch-price', 'services_category_' . $children->term_id); ?></span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <ul class="service-cats__card-list flex"> <!-- Поместили ul здесь -->
                                         <?php 
@@ -87,7 +92,7 @@ get_header();
                 }
             }
             ?>
-            <div class="service-cats__group">
+            <div class="service-cats__group service__dop">
                 <h2 class="service-cats__title">
                     Дополнительно
                 </h2>

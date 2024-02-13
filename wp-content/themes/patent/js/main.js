@@ -1,12 +1,30 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   jQuery(function($) {
       
-    $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-        $('.keyses__slider').slick('reinit');
-      $(this)
-        .addClass('active').siblings().removeClass('active')
-        .closest('div.keyses__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
-    });
+    //if($('section.keyses')) {
+      $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
+          $('.keyses__slider').slick('reinit');
+        $(this)
+          .addClass('active').siblings().removeClass('active')
+          .closest('div.keyses__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+      });
+    //}
+
+    /*if($('.keyses-section')) {
+      $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
+        var index = $(this).index();
+        var $tabsContent = $(this).closest('div.keyses__tabs').find('div.tabs__content');
+    
+        $tabsContent.removeClass('active').eq(index).addClass('active'); // Переключаем активную вкладку
+    
+        // Переинициализируем пагинацию внутри активной вкладки
+        $tabsContent.eq(index).find('.navigation').wp_pagenavi({
+            query: {
+                paged: 1 // Установите начальную страницу при переключении вкладок
+            }
+        });
+      });    
+    }*/
 
     $('.articles__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
       $(this)
