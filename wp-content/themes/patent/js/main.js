@@ -207,6 +207,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         form.find('.global_err').addClass('active');
       }
     });
+
+
+
+    $('.targets__list').slick({
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('.slick-prev'),
+      nextArrow: $('.slick-next'),
+    });
+
   });
 
   // let dropDownBtn = document.querySelector('.order__custom-select');

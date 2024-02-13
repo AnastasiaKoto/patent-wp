@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b917c0e3-67da-4be2-8dee-02d8cb93fc1a" name="Changes" comment="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/asus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/british.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/micro.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/office.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/sony.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/man.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" afterDir="false" />
@@ -82,7 +78,7 @@
       <workItem from="1707720592795" duration="3901000" />
       <workItem from="1707735792628" duration="1415000" />
       <workItem from="1707741603090" duration="8824000" />
-      <workItem from="1707806837765" duration="4419000" />
+      <workItem from="1707806837765" duration="15381000" />
     </task>
     <task id="LOCAL-00001" summary="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
       <option name="closed" value="true" />
