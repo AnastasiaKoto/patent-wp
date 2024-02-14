@@ -25,13 +25,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           arrows: false,
       });
 
-      $('.points-slider__list').slick({
-        infinite: false,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        variableWidth: true,
-      });
-
       // Обновление счетчика
       function updateCounter() {
           var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
@@ -214,8 +207,48 @@ document.addEventListener("DOMContentLoaded", function(event) {
       infinite: false,
       slidesToShow: 1,
       slidesToScroll: 1,
-      prevArrow: $('.slick-prev'),
-      nextArrow: $('.slick-next'),
+      prevArrow: $('.slick-prev-new-2'),
+      nextArrow: $('.slick-next-new-2'),
+      appendArrows: $('.prices__slide_count'),
+      appendDots: $('.prices__slide_count'),
+      customPaging: function(slider, i) {
+        return '<span class="dot"></span>';
+      },
+      dots: true
+    });
+
+    $('.targets__list').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('.currentCoach').text(nextSlide + 1);
+    });
+
+    if ($(window).width() < 769) {
+      $('.prices__list').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.slick-prev-new'),
+        nextArrow: $('.slick-next-new'),
+        appendArrows: $('.prices__slide_count'),
+        appendDots: $('.prices__slide_count'),
+        customPaging: function(slider, i) {
+          return '<span class="dot"></span>';
+        },
+        dots: true
+      });
+
+      $('.prices__list').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $('.currentCoach').text(nextSlide + 1);
+      });
+    }
+
+
+    $('.points-slider__list').slick({
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 3,
+      variableWidth: true,
+      prevArrow: $('.points-slider__arrows__end'),
+      nextArrow: $('.points-slider__arrows__next'),
     });
 
   });
