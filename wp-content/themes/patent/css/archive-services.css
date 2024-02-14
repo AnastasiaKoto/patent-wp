@@ -53,6 +53,10 @@
     margin: 0;
 }
 
+.titles__wrapp .small__price {
+    display: none;
+}
+
 @media (max-width: 1024px) {
 
     .service-cats__list {
@@ -144,5 +148,9 @@
 
     .service__dop .serv__header-block.active::after {
         display: none;
+    }
+
+    .titles__wrapp .small__price {
+        display: block;
     }
 }
