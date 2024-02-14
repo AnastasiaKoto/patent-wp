@@ -20,7 +20,7 @@ get_header(); // подключаем шапку сайта
                 <h1 class="title banner-services__title">регистрация товарного знака</h1>
                 <div class="banner-services__offerse">
                     <p>Основное средство конкурентных отношений Бренд должен эффективно выделять и надежно
-                        защищать компанию. Защита! – первое что важно!</p>
+                        защищать компанию. <span>Защита! – первое что важно!</span></p>
                     <a href="#" class="dark__btn btn banner__btn">Заказать услугу</a>
                 </div>
                 <div class="banner__list grid">
@@ -304,8 +304,20 @@ get_header(); // подключаем шапку сайта
                     </ul>
                 </div>
             </li>
-
         </ul>
+        <div class="slide_count prices__slide_count">
+            <span class="slick-prev-new keyses__slick">
+                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 1L2 6L7 11" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </span>
+            <span class="currentCoach">1</span><span class="slesh">/</span><span class="allCoach">6</span>
+            <span class="slick-next-new keyses__slick">
+                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 11L6 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </span>
+        </div>
 
         <div class="prices__term">
             <span>!</span>
@@ -566,8 +578,8 @@ get_header(); // подключаем шапку сайта
                         </div>
                     </div>
                     <div class="points-arrows">
-                        <span class="points-arrows__item arrows__end"> < </span>
-                        <span class="points-arrows__item arrows__next"> > </span>
+                        <span class="points-arrows__item points-slider__arrows__end"> < </span>
+                        <span class="points-arrows__item points-slider__arrows__next"> > </span>
                     </div>
                 </div>
             </div>
@@ -580,10 +592,17 @@ get_header(); // подключаем шапку сайта
             <div class="targets__wrapper">
                 <ul class="targets__list">
                     <li class="targets__item">
-                        <div class="targets__logo">
-                            <span>logo</span>
-                        </div>
                         <div class="targets__inner">
+                            <div class="targets__img">
+                                <div class="targets__logo">
+                                    <span>logo</span>
+                                </div>
+                                <img src="/wp-content/themes/patent/images/man-2.png" width="119" alt="">
+                                <div class="targets__after">
+                                    <span>Иванов Иван Иванович</span>
+                                    <span>Генеральный директор компании</span>
+                                </div>
+                            </div>
                            <p>
                                <span>Цель  – привести дела клиента
                                в полный порядок и поддерживать
@@ -591,17 +610,20 @@ get_header(); // подключаем шапку сайта
                                <a href="#">Читать отзыв полностью <span>(PDF, 64КБ)</span></a>
                            </p>
                         </div>
-                        <div class="targets__after">
-                            <span>Иванов Иван Иванович</span>
-                            <span>Генеральный директор компании</span>
-                        </div>
                     </li>
 
                     <li class="targets__item">
-                        <div class="targets__logo">
-                            <span>logo2</span>
-                        </div>
                         <div class="targets__inner">
+                            <div class="targets__img">
+                                <div class="targets__logo">
+                                    <span>logo</span>
+                                </div>
+                                <img src="/wp-content/themes/patent/images/man-2.png" width="119" alt="">
+                                <div class="targets__after">
+                                    <span>Иванов Иван Иванович</span>
+                                    <span>Генеральный директор компании</span>
+                                </div>
+                            </div>
                             <p>
                                <span>Цель  – привести дела клиента
                                в полный порядок и поддерживать
@@ -609,12 +631,17 @@ get_header(); // подключаем шапку сайта
                                 <a href="#">Читать отзыв полностью <span>(PDF, 64КБ)</span></a>
                             </p>
                         </div>
-                        <div class="targets__after">
-                            <span>Иванов Иван Иванович</span>
-                            <span>Генеральный директор компании</span>
-                        </div>
                     </li>
                 </ul>
+                <div class="slide_count slide_count-new">
+				<span class="slick-prev-new-2 keyses__slick">
+					&lt;
+			    </span>
+                    <span class="currentCoach">1</span><span class="slesh">/</span><span class="allCoach">2</span>
+                    <span class="slick-next-new-2 keyses__slick">
+					&gt;
+				</span>
+                </div>
             </div>
         </div>
     </section>
@@ -689,37 +716,55 @@ get_header(); // подключаем шапку сайта
                     <h3 class="what__title">Внесение изменений</h3>
                     <div class="what__text--min">(адрес, лого, )</div>
                     <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                    <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                    </svg>
                 </li>
 
                 <li class="what__item">
                     <h3 class="what__title">Получение доп. Доказательств</h3>
                     <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                    <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                    </svg>
                 </li>
 
                 <li class="what__item">
                     <h3 class="what__title">Получение письма-согласия/ письма-поручения</h3>
                     <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                    <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                    </svg>
                 </li>
                 <li class="what__item">
                     <h3 class="what__title">Аннулирование препятствующего ТЗ</h3>
                     <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                    <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                    </svg>
                 </li>
 
                 <li class="what__item">
                     <h3 class="what__title">Оспаривание Палата</h3>
                     <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                    <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                    </svg>
                 </li>
 
                 <li class="what__item">
                     <h3 class="what__title">Судебное опротестование</h3>
                     <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                    <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                    </svg>
                 </li>
             </ul>
 
             <div class="what__container">
                 <div class="what__wrapper--title">
-                    <h2 class="titles">ЧТО МОЖЕТ ПОНАДОБИТСЯ ЕЩЕ В ПРОЦЕССЕ РЕГИСТРАЦИИ</h2>
-                    <span>от 15 000 ₽ или от 55 400 ₽</span>
+                    <h2 class="titles">ОТДЕЛЬНЫЕ УСЛУГИ</h2>
+                    <span>Что может понадобиться после регистрации</span>
                 </div>
 
                 <ul class="what__list">
@@ -727,35 +772,56 @@ get_header(); // подключаем шапку сайта
                         <h3 class="what__title">Внесение изменений</h3>
                         <div class="what__text--min">(адрес, лого, )</div>
                         <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                        <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                        </svg>
                     </li>
 
                     <li class="what__item">
                         <h3 class="what__title">Получение доп. Доказательств</h3>
                         <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                        <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                        </svg>
                     </li>
 
                     <li class="what__item">
                         <h3 class="what__title">Получение письма-согласия/ письма-поручения</h3>
                         <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                        <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                        </svg>
                     </li>
                     <li class="what__item">
                         <h3 class="what__title">Аннулирование препятствующего ТЗ</h3>
                         <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                        <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                        </svg>
                     </li>
 
                     <li class="what__item">
                         <h3 class="what__title">Оспаривание Палата</h3>
                         <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                        <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                        </svg>
                     </li>
 
                     <li class="what__item">
                         <h3 class="what__title">Судебное опротестование</h3>
                         <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                        <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                        </svg>
                     </li>
 
                     <li class="what__item">
                         <h3 class="what__title">Судебное опротестование</h3>
                         <div class="what__text">от 15 000 ₽ или от 55 400 ₽</div>
+                        <svg class="what__svg" width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
+                        </svg>
                     </li>
                 </ul>
             </div>

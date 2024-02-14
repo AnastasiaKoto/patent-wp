@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b917c0e3-67da-4be2-8dee-02d8cb93fc1a" name="Changes" comment="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/man.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/man-2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" afterDir="false" />
@@ -31,28 +31,31 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2c2jl5sNMcUGRs1UrNARweVCpus" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "services-page",
-    "last_opened_file_path": "C:/devwork/OSPanel/domains/patent/wp-content/themes/patent/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettier.import.notification.dismissed": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;services-page&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/devwork/OSPanel/domains/patent/wp-content/themes/patent/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettier.import.notification.dismissed&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\devwork\OSPanel\domains\patent\wp-content\themes\patent\images" />
@@ -61,6 +64,13 @@
       <recent name="C:\devwork\OSPanel\domains\patent\wp-content\themes\patent\images" />
       <recent name="C:\devwork\OSPanel\domains\patent\wp-content\themes\patent\images\logos\3" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,7 +88,9 @@
       <workItem from="1707720592795" duration="3901000" />
       <workItem from="1707735792628" duration="1415000" />
       <workItem from="1707741603090" duration="8824000" />
-      <workItem from="1707806837765" duration="15381000" />
+      <workItem from="1707806837765" duration="17811000" />
+      <workItem from="1707890537989" duration="559000" />
+      <workItem from="1707891192577" duration="17793000" />
     </task>
     <task id="LOCAL-00001" summary="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
       <option name="closed" value="true" />
@@ -134,16 +146,5 @@
     <MESSAGE value="Табуляция" />
     <MESSAGE value="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
