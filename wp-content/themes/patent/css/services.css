@@ -857,7 +857,7 @@
 }
 
 .article-box__wrapper {
-    padding: 72px;
+    padding: 55px 72px;
     box-shadow: 0 14px 37px 0 rgba(0, 0, 0, 0.11);
     border-radius: 27px;
     background: #fff;
@@ -926,7 +926,84 @@
     display: none;
 }
 
+.prices-subtitle {
+    max-width: 710px;
+    padding-top: 25px;
+}
+
+.prices-subtitle__title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 165%;
+    color: #4b555e;
+}
+
+.prices-subtitle__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 165%;
+    color: #4b555e;
+}
+
+.prices-pt0 {
+    padding-top: 0;
+}
+
+.points__wrapper-tp0 {
+    padding-bottom: 0;
+}
+
+.discounts-tp0 {
+    padding-top: 0;
+    margin-bottom: 30px;
+}
+
+.points__hidden ul {
+
+}
+
+.points__hidden ul {
+    list-style: none;
+    padding-top: 40px;
+    padding-left: 20px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.points__hidden ul li {
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 10px;
+    flex-basis: 250px;
+
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.points__hidden ul li:before {
+    content: ''; /* Создаем псевдоэлемент для маркера */
+    position: absolute; /* Абсолютное позиционирование относительно родительского элемента li */
+    top: 0;
+    left: -20px; /* Позиционируем маркер влево за пределы элемента списка */
+    width: 3px; /* Ширина маркера */
+    height: 100%; /* Высота маркера (100% от высоты элемента списка) */
+    background-color: #4B5560; /* Цвет маркера */
+}
+
+
 @media  (max-width: 768px) {
+
+    .prices-subtitle__title {
+        font-size: 20px;
+    }
+
+    .prices-subtitle__text {
+        font-size: 14px;
+    }
+
+
     .banner-services__point p {
         font-weight: 400;
         font-size: 14px;

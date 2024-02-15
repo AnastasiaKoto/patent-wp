@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b917c0e3-67da-4be2-8dee-02d8cb93fc1a" name="Changes" comment="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/images/man-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/services/services-two.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +30,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2c2jl5sNMcUGRs1UrNARweVCpus" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -90,7 +89,8 @@
       <workItem from="1707741603090" duration="8824000" />
       <workItem from="1707806837765" duration="17811000" />
       <workItem from="1707890537989" duration="559000" />
-      <workItem from="1707891192577" duration="17793000" />
+      <workItem from="1707891192577" duration="18393000" />
+      <workItem from="1707978179823" duration="10361000" />
     </task>
     <task id="LOCAL-00001" summary="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
       <option name="closed" value="true" />
