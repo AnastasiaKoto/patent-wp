@@ -164,7 +164,7 @@ h1, h2, h3, button {
 /*  banner  */
 
 .banner {
-    padding-top: 72px;
+    padding-top: 32px;
     padding-bottom: 58px;
     background: linear-gradient(271deg, #CBD0DB 10.67%, #CED3E0 41.04%, #DFE3EE 89.46%);
 }
