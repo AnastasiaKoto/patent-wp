@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b917c0e3-67da-4be2-8dee-02d8cb93fc1a" name="Changes" comment="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/patent/services/services-two.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_06_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_06__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;services-page&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/devwork/OSPanel/domains/patent/wp-content/themes/patent/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -90,7 +96,9 @@
       <workItem from="1707806837765" duration="17811000" />
       <workItem from="1707890537989" duration="559000" />
       <workItem from="1707891192577" duration="18393000" />
-      <workItem from="1707978179823" duration="10361000" />
+      <workItem from="1707978179823" duration="16666000" />
+      <workItem from="1708062654560" duration="12355000" />
+      <workItem from="1708323031833" duration="10275000" />
     </task>
     <task id="LOCAL-00001" summary="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
       <option name="closed" value="true" />

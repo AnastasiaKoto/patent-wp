@@ -372,7 +372,7 @@ get_header(); // подключаем шапку сайта
                 <span>6</span>
             </div>
 
-            <div class="calculator__wrapper">
+            <div style="display: none" class="calculator__wrapper">
                <div class="calculator__inner">
                    <div class="calculator__type">
                        <h2 class="calculator__title">тип товарного знака</h2>
@@ -450,6 +450,197 @@ get_header(); // подключаем шапку сайта
                     </div>
 
                 </div>
+
+            </div>
+
+
+            <div style="display: none" class="calculator__wrapper">
+                <div class="calculator__inner calculator__inner-2">
+                    <div class="calculator__type">
+                        <h2 class="calculator__title">Требуется ли предварительная проверка вашего товарного знака?</h2>
+                        <div class="calculator__text">
+                            Если вы не уверены в возможности регистрации вашего товарного знака,
+                            его необходимо проверить. Мы проведем поиск сходных знаков, как уже зарегистрированных, так и заявок, поданных на регистрацию, а так же проверим
+                            ваш знак на соответствие требованиям законодательства. Это значительно (до 95%) увеличивает вероятность того, что ваш знак будет зарегистрирован.
+                        </div>
+                        <label class="">
+                            <input type="radio" name="wordmark2_option">
+                            Да, требуется полная проверка моего товарного знака (3-4 дня).
+                        </label>
+                        <label class="">
+                            <input type="radio" name="wordmark2_option">
+                            Нет, не требуется. Мне известна возможность регистрации моего товарного знака.
+                        </label>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+
+            <div class="calculator__wrapper">
+                <div class="calculator__inner calculator__inner-2">
+                    <div class="calculator__type">
+                        <h2 class="calculator__title">классы МКТУ</h2>
+                        <div class="calculator__text calculator__text--w100">
+                            Каждый товарный знак регистрируется в отношении определённых товаров
+                            и услуг, распределенных по классам. Всего таких классов на сегодняшний день 45
+                            (34 — товаров и 11 — услуг), они установлены Международной классификацией товаров и услуг для регистрации знаков (МКТУ). От того, в скольких классах будет регистрироваться знак, зависит пошлина за подачу заявки.
+                        </div>
+                        <div class="calculator__subtitle">Выберите классы МКТУ, в которых хотите проверить товарный знак</div>
+                    </div>
+                    <div class="calculator-box calculator-box-2">
+                        <div class="calculator-box__wrapper calculator-box__wrapper--fb800">
+                            <h3 class="calculator-box__title">Классы товаров</h3>
+                            <div class="calculator-box__list">
+                                <div class="calculator-box__inner">
+                                    <div class="calculator-box__items">
+                                        <div class="calculator-box__item">1</div>
+                                        <div class="calculator-box__item">2</div>
+                                    </div>
+                                    <div class="calculator-box__text">агрохимия, краски, ацетон;</div>
+                                </div>
+                            </div>
+
+                            <div class="calculator-box__list">
+                                <div class="calculator-box__inner">
+                                    <div class="calculator-box__items">
+                                        <div class="calculator-box__item">3</div>
+                                        <div class="calculator-box__item">4</div>
+                                        <div class="calculator-box__item">5</div>
+                                        <div class="calculator-box__item">6</div>
+                                        <div class="calculator-box__item">7</div>
+                                        <div class="calculator-box__item">8</div>
+                                        <div class="calculator-box__item">9</div>
+                                        <div class="calculator-box__item">10</div>
+                                        <div class="calculator-box__item">11</div>
+                                        <div class="calculator-box__item">12</div>
+                                        <div class="calculator-box__item">13</div>
+                                        <div class="calculator-box__item">14</div>
+                                        <div class="calculator-box__item">15</div>
+                                        <div class="calculator-box__item">16</div>
+
+                                        <div class="calculator-box__item">17</div>
+                                        <div class="calculator-box__item">18</div>
+                                        <div class="calculator-box__item">19</div>
+                                        <div class="calculator-box__item">20</div>
+                                        <div class="calculator-box__item">21</div>
+                                        <div class="calculator-box__item">22</div>
+                                        <div class="calculator-box__item">23</div>
+                                        <div class="calculator-box__item">24</div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="calculator-box__list">
+                                <div class="calculator-box__inner">
+                                    <div class="calculator-box__items">
+                                        <div class="calculator-box__item">25</div>
+                                    </div>
+                                    <div class="calculator-box__text">одежда</div>
+                                </div>
+                            </div>
+
+                            <div class="calculator-box__list">
+                                <div class="calculator-box__inner">
+                                    <div class="calculator-box__items">
+                                        <div class="calculator-box__item">26</div>
+                                        <div class="calculator-box__item">27</div>
+                                        <div class="calculator-box__item">28</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="calculator-box__list">
+                                <div class="calculator-box__inner">
+                                    <div class="calculator-box__items">
+                                        <div class="calculator-box__item">29</div>
+                                        <div class="calculator-box__item">25</div>
+                                        <div class="calculator-box__item">25</div>
+                                        <div class="calculator-box__item">25</div>
+                                        <div class="calculator-box__item">25</div>
+                                    </div>
+                                    <div class="calculator-box__text">продукты питания</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator-box__wrapper calculator-box__wrapper--fb300">
+                            <div class="calculator-helps">
+                                <label class="patent-form__custom-checkbox">
+                                    <input type="checkbox" >
+                                    <span class="patent-form__checkmark"></span>
+                                    Мне нужна помощь в подборе
+                                    классов МКТУ. Я хотел бы получить консультацию специалиста
+                                </label>
+
+                                <p class="calculator-helps__text">
+                                    Телефон для консультации
+                                    <a href="">+7 (926) 207-17-90</a>
+                                    Пройдите калькулятор до конца
+                                    и заполните заявку
+                                </p>
+
+                                <label  class="calculator-helps__input-text">
+                                    <input type="text" placeholder="1">
+                                    <span>Количество выбранных классов</span>
+                                </label>
+                                
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div style="display: none" class="calculator__wrapper">
+                <div class="calculator__inner calculator__inner-2">
+                    <div class="calculator__type">
+                        <h2 class="calculator__title">Выберите тип регистрации</h2>
+                        <div class="calculator__text">
+                            Обычно от 10 до 15 месяцев может занять регистрация, в некоторых случаях, требуется ускорить этот процесс, тогда мы можем приложить дополнительные усилия
+                            и зарегистрировать за 2–3 месяца.
+                        </div>
+                        <label class="">
+                            <input type="radio" name="wordmark3_option">
+                            Стандартная регистрация 10-15 месяцев
+                        </label>
+                        <label class="">
+                            <input type="radio" name="wordmark3_option">
+                            Ускоренная регистрация 2-3 месяца*
+                        </label>
+                        <div class="calculator__text--min">*Увеличивает пошлину на 100 000 рублей</div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div style="display: none" class="calculator__wrapper">
+                <div class="calculator__inner calculator__inner-2">
+                    <div class="calculator__type">
+                        <h2 class="calculator__title">Будете ли вы учувствовать в сохранении природы на планете?</h2>
+                        <div class="calculator__text">
+                            <span>Можно не получать готовое свидетельство на бумаге и сэкономить 1 400 руб.</span>
+                            В этом случае будет только публикация в эл. реестре – ссылка
+                            Но если по каким-либо причинам Вам важно его получить (доверие к системе), мысделаем это.
+                        </div>
+                        <label class="">
+                            <input type="radio" name="wordmark4_option">
+                            Получить свидетельство на бумаге
+                        </label>
+                        <label class="">
+                            <input type="radio" name="wordmark4_option">
+                            Получить свидетельство в электронном виде
+                        </label>
+                    </div>
+
+                </div>
+
 
             </div>
 
