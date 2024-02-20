@@ -15,7 +15,7 @@ get_header();
     $keyses = new WP_Query($args);
     if ($keyses->have_posts()) {
         ?>
-        <section class="keyses-section">
+        <section class="keyses-section keyses-section__pt39">
             <div class="container">
                 <div class="tabs keyses__tabs">
                     <ul class="tabs__caption">
@@ -49,7 +49,7 @@ get_header();
                                                 display: none !important;
                                             }
                                         </style>
-                                        <div class="keyses-slide flex <?php if ($counter > 4) echo 'hidden'; ?>">
+                                        <div class="keyses-slide keyses-slide__shadow flex <?php if ($counter > 4) echo 'hidden'; ?>">
                                             <div class="keyses__left">
                                                 <img src="<?php echo $keys['logo']; ?>" alt="">
                                                 <div class="keys__descr">
@@ -76,7 +76,7 @@ get_header();
                                     ?>
                                 </div>
                             <?php if ($num_keys > 4) : ?>
-                                <a class="btn dark__btn" id="showMoreKeyses">Показать еще</a>
+                                <a class="btn dark__btn keyses-section__btn" id="showMoreKeyses">Показать еще</a>
                                 <script>
                                     document.addEventListener('DOMContentLoaded', function() {
                                         var showMoreButton = document.getElementById('showMoreKeyses');
