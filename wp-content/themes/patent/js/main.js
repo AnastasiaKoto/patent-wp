@@ -430,6 +430,25 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var showMoreButton = document.getElementById('showMoreKeyses');
+  if (showMoreButton) {
+    showMoreButton.addEventListener('click', function() {
+      var hiddenSlides = document.querySelectorAll('.keyses-slide.hidden');
+      var counter = 0;
+      hiddenSlides.forEach(function(slide) {
+        if (counter < 4) {
+          slide.classList.remove('hidden');
+          counter++;
+        }
+      });
+      if (document.querySelectorAll('.keyses-slide.hidden').length === 0) {
+        showMoreButton.style.display = 'none';
+      }
+    });
+  }
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const pointsItems = document.querySelectorAll('.points__inner');
@@ -454,4 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+
+
 });

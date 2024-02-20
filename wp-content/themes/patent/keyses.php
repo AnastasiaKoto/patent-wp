@@ -77,26 +77,6 @@ get_header();
                                 </div>
                             <?php if ($num_keys > 4) : ?>
                                 <a class="btn dark__btn keyses-section__btn" id="showMoreKeyses">Показать еще</a>
-                                <script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        var showMoreButton = document.getElementById('showMoreKeyses');
-                                        if (showMoreButton) {
-                                            showMoreButton.addEventListener('click', function() {
-                                                var hiddenSlides = document.querySelectorAll('.keyses-slide.hidden');
-                                                var counter = 0;
-                                                hiddenSlides.forEach(function(slide) {
-                                                    if (counter < 4) {
-                                                        slide.classList.remove('hidden');
-                                                        counter++;
-                                                    }
-                                                });
-                                                if (document.querySelectorAll('.keyses-slide.hidden').length === 0) {
-                                                    showMoreButton.style.display = 'none';
-                                                }
-                                            });
-                                        }
-                                    });
-                                </script>
 
                             <?php endif; ?>
 

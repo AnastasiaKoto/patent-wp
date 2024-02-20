@@ -228,6 +228,13 @@
                         </div>
 
                     </div>
+                    <p class="calculator-helps__link">Чтобы ознакомиться более подробно с каждым классом,
+                        <a  href="">перейдите на страницу МКТУ
+                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3536 4.35355C19.5488 4.15829 19.5488 3.84171 19.3536 3.64645L16.1716 0.464466C15.9763 0.269204 15.6597 0.269204 15.4645 0.464466C15.2692 0.659728 15.2692 0.976311 15.4645 1.17157L18.2929 4L15.4645 6.82843C15.2692 7.02369 15.2692 7.34027 15.4645 7.53553C15.6597 7.7308 15.9763 7.7308 16.1716 7.53553L19.3536 4.35355ZM0 4.5H19V3.5H0V4.5Z" fill="#5671B2" />
+                            </svg>
+                        </a>
+                    </p>
                 </div>
 
 
@@ -281,10 +288,91 @@
 
             </div>
 
+            <div class="calculator__wrapper calculator-value-inner">
+                <div class="calculator-value">
+                    <div class="calculator__inner calculator__inner--sb">
+                        <h2 class="calculator__title">Цена за наши услуги</h2>
+                        <ul class="calculator-value__list">
+                            <li>
+                                <p>
+                                    <span>Ваш товарный знак:</span>
+                                    <span>апр</span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <span>Поиск:</span>
+                                    <span>1 000 ₽</span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <span>Подача заявки и ведение дел</span>
+                                    <span>26 000 ₽</span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <span>Получение свидетельства</span>
+                                    <span>12 000 ₽</span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <span>Итого:</span>
+                                    <span>38 000 ₽</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="calculator__inner calculator__inner--sb">
+                        <h2 class="calculator__title">Пошлины Роспатента</h2>
+                        <p class="calculator__subtitle-text">Размер пошлины зависит от количества классов МКТУ, которые вы указали при расчете.</p>
+                        <ul class="calculator-value__list">
+                            <li>
+                                <p>
+                                    <span>Подача заявки</span>
+                                    <span>10 500 ₽</span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <span>Получение свидетельства</span>
+                                    <span>11 200 ₽</span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <span>Итого:</span>
+                                    <span>21 700 ₽</span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="calculator-value-bottom">
+                    <p>Всего за регистрацию: <span>59 700 ₽</span></p>
+                </div>
+            </div>
 
 
 
 
+
+
+            <a class="calculator__end" href="#">
+                <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.46967 5.46967C0.176777 5.76256 0.176777 6.23744 0.46967 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46447 6.59619 0.989592 6.3033 0.696699C6.01041 0.403805 5.53553 0.403805 5.24264 0.696699L0.46967 5.46967ZM11 5.25L1 5.25L1 6.75L11 6.75L11 5.25Z" fill="#1E1D25" fill-opacity="0.6" />
+                </svg>
+                назад
+            </a>
 
             <a class="calculator__next" href="#">далее
                 <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
