@@ -467,6 +467,22 @@ h1, h2, h3, button {
     overflow: hidden;
 }
 
+.keyses-section__pt39 {
+    padding-top: 39px;
+}
+
+.keyses-section__btn {
+    display: block;
+    width: 240px;
+    margin: 25px auto;
+}
+
+.keyses-slide__shadow {
+    box-shadow: 0 14px 25px 0 rgba(0, 0, 0, 0.06);
+    background: #fff;
+    margin-bottom: 25px;
+}
+
 .keyses h2 {
     margin-bottom: 37px;
 }
