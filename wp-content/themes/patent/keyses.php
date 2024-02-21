@@ -1,7 +1,6 @@
 <?php
 /* Template Name: Кейсы
 */
-
 get_header();
 ?>
 <main class="main">

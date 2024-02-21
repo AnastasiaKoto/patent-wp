@@ -62,6 +62,23 @@ function my_acf_op_init() {
 			'capability'    => 'edit_posts',
 			'redirect'      => false
 		));
+
+
+        acf_add_options_page(array(
+            'page_title'    => __('Договор и оплата на услугах'),
+            'menu_title'    => __('Договор и оплата'),
+            'redirect'      => false
+
+        ));
+
+        acf_add_options_page(array(
+            'page_title'    => __('Логотипы на услугах'),
+            'menu_title'    => __('Логотипы'),
+            'redirect'      => false
+
+        ));
+
+
 	}
 }
 
@@ -149,3 +166,4 @@ function create_custom_taxonomies() {
 add_action('init', 'create_custom_taxonomies');
 
 require __DIR__ . '/inc/main_form.php';
+
