@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b917c0e3-67da-4be2-8dee-02d8cb93fc1a" name="Changes" comment="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/contacts.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/services.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/keyses.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/keyses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/services/services-two.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/services/services-two.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/services/single-services.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/patent/templates/blocks/calculator-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/patent/templates/blocks/calculator-page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +121,9 @@
       <workItem from="1708062654560" duration="12355000" />
       <workItem from="1708323031833" duration="10275000" />
       <workItem from="1708354425316" duration="5191000" />
-      <workItem from="1708428902642" duration="8373000" />
+      <workItem from="1708428902642" duration="11530000" />
+      <workItem from="1708496557115" duration="14959000" />
+      <workItem from="1708576973636" duration="690000" />
     </task>
     <task id="LOCAL-00001" summary="Merge pull request #27 from AnastasiaKoto/test07022024&#10;&#10;service title">
       <option name="closed" value="true" />

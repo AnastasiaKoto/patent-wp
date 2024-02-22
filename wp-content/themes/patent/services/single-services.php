@@ -65,28 +65,28 @@ $approach_wrapper_field = get_field_object('approach_wrapper');
                     <a href="#" class="dark__btn btn banner__btn">Заказать услугу</a>
                 </div>
                 <?php endif; ?>
-
-                <?php if (!empty($offer_field)): ?>
-                <div class="banner__list grid">
-                    <?php
-                    foreach($offer_field as $item) {
-                    ?>
-                        <div class="banner__point banner-services__point">
-                            <p><?php echo $item ?> </p>
-                        </div>
-                        <?php
-                    }?>
-                </div>
-                       <?php endif; ?>
             </div>
             <div class="banner__block banner__block-main">
-                <img src="http://patent/wp-content/uploads/2024/01/banner_man.png" alt="">
+                <img src="/wp-content/themes/patent/images/banner_man.png" alt="">
             </div>
             <div class="banner__block banner__block-mob">
                 <!-- man-mob.png -->
                 <img src="/wp-content/themes/patent/images/man-mob.png" alt="">
             </div>
+
         </div>
+      <?php if (!empty($offer_field)): ?>
+          <div class="banner__list banner__list-inner">
+            <?php
+            foreach($offer_field as $item) {
+              ?>
+                <div class="banner__point banner-services__point">
+                    <p><?php echo $item ?> </p>
+                </div>
+              <?php
+            }?>
+          </div>
+      <?php endif; ?>
     </div>
 </section>
 

@@ -8,6 +8,23 @@
     align-items: flex-start;
     justify-content: space-between;
     border-radius: 25px;
+    position: relative;
+}
+
+.banner-services__offerse::after {
+    content: "";
+    position: absolute;
+    right: -38px;
+    top: 94px;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-left: 40px solid #fff;
+    border-bottom: 40px solid transparent;
+}
+
+.banner-services {
+    background: linear-gradient(346deg, #cdd1dd 0%, #5671b2 100%);
 }
 
 .banner-services__title {
@@ -21,6 +38,20 @@
 .banner-services__point {
         display: flex;
     align-items: center;
+}
+
+.banner__list-inner {
+    display: flex;
+    max-width: 880px;
+}
+
+.banner__block-main img {
+    right: -75px;
+}
+
+.banner__list-inner p {
+    display: flex;
+    max-width: 380px;
 }
 
 .prices {
@@ -408,6 +439,10 @@
     margin-bottom: 26px;
 }
 
+.calculator__title-mb18 {
+    margin-bottom: 18px;
+}
+
 .calculator__type {
     display: flex;
     flex-direction: column;
@@ -419,6 +454,7 @@
     font-size: 16px;
     line-height: 138%;
     color: #5671b2;
+    margin-bottom: 10px;
 }
 
 .calculator__type [type="radio"] {
@@ -448,8 +484,7 @@
     position: relative;
     padding-left: 24px; /* Размер иконки + отступ для текста */
     cursor: pointer; /* Сделать курсор указателем при наведении */
-
-    margin: 20px 0;
+    margin-bottom: 14px;
 }
 
 .calculator__file-input-label::before {
@@ -1151,6 +1186,9 @@
     font-size: 18px;
     line-height: 138%;
     color: #1e1d25;
+    padding-top: 18px;
+    margin-left: 25px;
+    display: block;
 }
 
 .article-box {

@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="calculator__type">
-                            <h2 class="calculator__title">название товарного знака*</h2>
+                            <h2 class="calculator__title calculator__title-mb18">название товарного знака*</h2>
                             <label class="">
                                 <input type="text" placeholder="Введите название">
 
@@ -331,8 +331,10 @@
                             </ul>
                         </div>
                         <div class="calculator__inner calculator__inner--sb">
-                            <h2 class="calculator__title">Пошлины Роспатента</h2>
-                            <p class="calculator__subtitle-text">Размер пошлины зависит от количества классов МКТУ, которые вы указали при расчете.</p>
+                            <div class="">
+                                <h2 class="calculator__title">Пошлины Роспатента</h2>
+                                <p class="calculator__subtitle-text">Размер пошлины зависит от количества классов МКТУ, которые вы указали при расчете.</p>
+                            </div>
                             <ul class="calculator-value__list">
                                 <li>
                                     <p>

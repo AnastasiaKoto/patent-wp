@@ -6,7 +6,7 @@ Template post type: services
 get_header(); // подключаем шапку сайта
 ?>
     <main class="main">
-        <section class="banner">
+        <section class="banner banner-services">
             <div class="container">
                 <div class="breadcrumbs">
                   <?php

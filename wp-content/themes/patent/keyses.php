@@ -43,11 +43,6 @@ get_header();
                                     foreach($keyses_field as $keys) {
                                         $counter++;
                                         ?>
-                                        <style>
-                                            .keyses-slide.flex.hidden{
-                                                display: none !important;
-                                            }
-                                        </style>
                                         <div class="keyses-slide keyses-slide__shadow flex <?php if ($counter > 4) echo 'hidden'; ?>">
                                             <div class="keyses__left">
                                                 <img src="<?php echo $keys['logo']; ?>" alt="">
