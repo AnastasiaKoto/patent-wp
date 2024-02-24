@@ -37,7 +37,7 @@ $offer_field = get_field('offer_list');
                 <?php endif; ?>
             </div>
             <div class="banner__block banner__block-main">
-                <img src="http://patent/wp-content/uploads/2024/01/banner_man.png" alt="">
+                <img src="/wp-content/uploads/2024/01/banner_man.png" alt="">
             </div>
             <div class="banner__block banner__block-mob">
                 <!-- man-mob.png -->

@@ -5,7 +5,7 @@ Template post type: services
 */
 get_header(); // подключаем шапку сайта
 ?>
-    <main class="main">
+    <main class="main main__services2">
 
         <!--Банер-->
         <?php get_template_part('templates/blocks/services', 'baner'); ?>

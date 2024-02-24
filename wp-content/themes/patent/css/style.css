@@ -286,7 +286,7 @@ h1, h2, h3, button {
     border: 1px solid #DFE3EE;
     padding: 27px 12px 12px 22px;
     display: flex;
-    
+
 }
 
 .last__card {
@@ -864,7 +864,7 @@ input.error {
 .doubarticles h2 {
     margin-top: 35px;
     margin-bottom: 35px;
-    
+
 }
 
 .newsblock__list, .newsblock {
@@ -1401,7 +1401,7 @@ input.error {
 
 .patent-form {
     padding: 110px 0 70px 0;
-    background: linear-gradient(-56.62deg, rgb(203, 208, 219) 5.927%,rgb(206, 211, 224) 37.65%,rgb(243, 245, 250) 88.235%);   
+    background: linear-gradient(-56.62deg, rgb(203, 208, 219) 5.927%,rgb(206, 211, 224) 37.65%,rgb(243, 245, 250) 88.235%);
 }
 
 .patent-form__inner {
@@ -1507,7 +1507,7 @@ input.error {
 }
 
 .patent-form__custom-checkbox input:checked ~ .patent-form__checkmark {
-    background-color: none; 
+    background-color: none;
 }
 
 .patent-form__checkmark:after {
@@ -1522,9 +1522,9 @@ input.error {
 
 .patent-form__custom-checkbox .patent-form__checkmark:after {
     left: 10px;
-    top: 5px; 
-    width: 6px; 
-    height: 12px; 
+    top: 5px;
+    width: 6px;
+    height: 12px;
     border: solid rgb(7, 3, 3);
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
@@ -1600,7 +1600,7 @@ input.error {
 }
 
 .order__services-list > ul > li {
- 
+
 
     border-left: 1px solid #4B555E;
     border-right: 1px solid #4B555E;
@@ -1725,7 +1725,7 @@ input.error {
 
     .services__card {
         justify-content: flex-start;
-    
+
     }
 
     .benefit {
@@ -1830,7 +1830,7 @@ input.error {
         row-gap: 20px;
         max-width: 170px;
     }
-    
+
     .banner__block img {
         position: absolute;
         bottom: -58px;
@@ -1910,7 +1910,7 @@ input.error {
         display: flex;
         flex-direction: column;
     }
-    
+
     .lead__card .big__title {
         margin-bottom: 16px;
         font-size: 15px;
@@ -1934,8 +1934,8 @@ input.error {
         border: none;
         margin: 0;
         padding: 29px 23px;
-        border-radius: 25px; 
-        max-width: 100%; 
+        border-radius: 25px;
+        max-width: 100%;
         padding-bottom: 200px;
     }
 
@@ -2034,7 +2034,7 @@ input.error {
     }
 
     .patent-form__items input {
-        border-radius: 12px;    
+        border-radius: 12px;
         padding: 17px 15px;
 
     }
@@ -2213,7 +2213,7 @@ input.error {
 
     .footer__group:first-child {
         order: 1;
-    
+
     }
 
     .footer__group:last-child {
@@ -2260,7 +2260,7 @@ input.error {
 
         font-size: 14px;
         font-weight: 600;
-    
+
         text-transform: uppercase;
         margin-bottom: 25px;
         margin-top: 25px;
@@ -2276,7 +2276,7 @@ input.error {
 
     text-transform: uppercase;
     }
-    
+
     .order-form {
         background: #f3f5fa;
         padding-top: 30px;
@@ -2359,5 +2359,22 @@ input.error {
     .services-card__content {
         width: 100%;
     }
-    
+
 }
+
+
+.main__services2 .prices, .main__services2 .discounts,  .main__services2 .approach ,  .main__services2 .interesting             {
+ padding-top: 0 !important;
+}
+
+
+.main__services2 .points, .main__services2 .what{
+   padding-bottom: 0;
+}
+
+.main__services2 .points-slider{
+    margin-bottom: 84px;
+}
+
+
+
