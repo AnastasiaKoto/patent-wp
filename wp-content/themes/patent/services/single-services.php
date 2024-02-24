@@ -38,6 +38,9 @@ get_header(); // подключаем шапку сайта
     </section>
  <!--   Важные моменты и слайдер логотипов---->
 
+    <!--  кейсы клиентов-->
+    <?php get_template_part('templates/blocks/block', 'cases'); ?>
+    <!-- кейсы клиентов-->
 
 <!-- рекомендации-->
     <?php get_template_part('templates/blocks/services', 'recommendations'); ?>
@@ -62,6 +65,9 @@ get_header(); // подключаем шапку сайта
 <!--вам может быть интересно-->
     <?php get_template_part('templates/blocks/services', 'interesting'); ?>
 <!--вам может быть интересно-->
+    <!--заказать услугу патнетного поверенного -->
+    <?php get_template_part('templates/blocks/form', 'order'); ?>
+    <!--заказать услугу патнетного поверенного -->
 </main>
 <?php
 get_footer();

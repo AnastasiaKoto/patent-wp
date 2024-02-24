@@ -4,7 +4,7 @@ $offer_field = get_field('offer_list');
 ?>
 
 
-<section class="banner">
+<section class="banner banner-services">
     <div class="container">
         <div class="breadcrumbs">
             <?php

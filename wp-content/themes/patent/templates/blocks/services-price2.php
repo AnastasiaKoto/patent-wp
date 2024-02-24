@@ -5,13 +5,19 @@ $comby_mark = get_field('comby_mark');
 $service_stages2 = get_field('service_stages2');
 $registration_period = get_field('registration_period');
 $full_sum_example = get_field('full_sum_example');
+$parties_desc = get_field('parties_desc');
 ?>
 
 
 <?php if ( !empty($service_stages2)): ?>
     <section class="prices">
         <div class="container">
-            <h2 class="titles">стоимость</h2>
+            <?php if (!empty($parties_desc)): ?>
+                <div class="prices-subtitle">
+                    <h3 class="prices-subtitle__title">На стороне ответчика</h3>
+                    <div class="prices-subtitle__text"> <?php echo $parties_desc ?> </div>
+                </div>
+            <?php endif; ?>
             <ul class="prices__list">
                 <?php
                 if (!empty($service_stages2)) {

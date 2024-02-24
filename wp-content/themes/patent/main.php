@@ -1,10 +1,11 @@
-<?php  
+<?php
 /* Template Name: Главная
 */
 
 get_header();
 global $post;
 ?>
+
 <main class="main">
 	<section class="banner">
 		<div class="container">
@@ -12,7 +13,7 @@ global $post;
 				<div class="banner__block">
 					<div class="banner__offer">
 						<h1 class="titles main__title"><?php the_title(); ?></h1>
-						<?php 
+						<?php
 						$banner_list = get_field('offers_list');
 						if($banner_list) {
 						?>
@@ -24,7 +25,7 @@ global $post;
 						<?php } ?>
 						<a href="#" class="dark__btn btn banner__btn">Кому и чем могу быть полезен</a>
 					</div>
-					<?php 
+					<?php
 						if( have_rows('utp') ) { ?>
 					<div class="banner__list grid">
 						<?php
@@ -83,7 +84,7 @@ global $post;
 	<section class="services ">
 		<div class="container">
 			<h2 class="titles">основные услуги</h2>
-			<?php 
+			<?php
 			$args = array(
 				'post_type' => 'services',
 				'post_status' => 'publish',
@@ -93,7 +94,7 @@ global $post;
 			if ($query ->have_posts()) {
 			?>
 			<div class="services__list grid">
-				<?php 
+				<?php
 				$count = 1;
                 while ( $query->have_posts() ) {
                     $query->the_post();
@@ -143,14 +144,14 @@ global $post;
 					</div>
 				</div>
 			<?php }
-			wp_reset_postdata(); 
+			wp_reset_postdata();
 			?>
 		</div>
 	</section>
 	<section class="features">
 		<div class="container">
 			<h2 class="titles">Получите преимущество</h2>
-			<?php 
+			<?php
 			$features = get_field('features');
 			if($features) {
 			?>
@@ -172,8 +173,8 @@ global $post;
 					<div class="big__title">
 						общая консультация бесплатно
 					</div>
-					<?php 
-					$general_list = get_field('general', $post->ID); 
+					<?php
+					$general_list = get_field('general', $post->ID);
 					if($general_list) {
 					?>
 					<ul>
@@ -190,8 +191,8 @@ global $post;
 					<div class="big__title">
 						консультации определяющие ваш вопрос
 					</div>
-					<?php 
-					$specialized_list = get_field('special', $post->ID); 
+					<?php
+					$specialized_list = get_field('special', $post->ID);
 					if($specialized_list) {
 					?>
 					<ul>
@@ -207,82 +208,10 @@ global $post;
 			</div>
 		</div>
 	</section>
-	<?php 
-		$args = array(
-			'post_type' => 'keyses',
-			'post_status' => 'publish',
-			'posts_per_page' => -1,
-		);
-		$keyses = new WP_Query($args);
-		if ($keyses->have_posts()) {
-	?>
-	<section class="keyses">
-		<div class="container">
-			<h2 class="titles">кейсы клиентов</h2>
-			<div class="tabs keyses__tabs">
-				<ul class="tabs__caption">
-					<?php 
-					$count_tab = 1;
-					while ( $keyses->have_posts() ) {
-						$keyses->the_post();
-					?>
-					<li <?php if($count_tab == 1) { ?> class="active" <?php } ?>><?php the_title(); ?></li>
-					<?php $count_tab++;  } ?>
-				</ul>
-				<?php 
-				$count_keys = 1;
-				while ( $keyses->have_posts() ) {
-					$keyses->the_post();
-				?>
-				<div class="tabs__content <?php if($count_keys == 1) { ?> active <?php } ?>">
-					<?php 
-					$keyses_field = get_field('servise_keyses', get_the_ID());
-					if($keyses_field) {
-					?>
-					<div class="keyses__slider slick-slider">
-						<?php foreach($keyses_field as $keys) { ?>
-						<div class="keyses-slide flex">
-							<div class="keyses__left">
-								<img src="<?php echo $keys['logo']; ?>" alt="">
-								<div class="keys__descr">
-									<?php echo $keys['short_descr']; ?>
-								</div>
-							</div>
-							<div class="keyses__right">
-								<div class="title">
-									Задача
-								</div>
-								<div class="descr">
-									<?php echo $keys['task']; ?>
-								</div>
-								<div class="title">
-									что сделали
-								</div>
-								<div class="descr">
-									<?php echo $keys['result']; ?>
-								</div>
-							</div>
-						</div>
-						<?php } ?>
-					</div>
-					<?php } ?>
-				</div>
-				<?php $count_keys++; } ?>
-			</div>
-			<div class="slide_count">
-				<span class="slick-prev-new keyses__slick"> 
-					<
-			    </span>
-                    <span class="currentCoach">2</span><span class="slesh">/</span><span class="allCoach">3</span>
-				<span class="slick-next-new keyses__slick">
-					>
-				</span>
-            </div>
-		</div>
-	</section>
-	<?php } 
-	wp_reset_postdata(); 
-	?>
+    <!--  кейсы клиентов-->
+    <?php get_template_part('templates/blocks/block', 'cases'); ?>
+    <!-- кейсы клиентов-->
+
 	<section class="benefit">
 		<div class="container">
 			<h2 class="titles">Чем полезен Патентный поверенный именно мне?</h2>
@@ -296,8 +225,8 @@ global $post;
 						Цель  – привести дела клиента в полный порядок и поддерживать его
 					</div>
 					<p class="benefit-banner__text hidden-text">
-						Как патентный поверенный и юрист способен создать весь комплекс действий по защите иновационного бизнеса. Подготовлю договор об учреждении ООО, при котором партнеры будут эффективно взаимодействовать, мы зарегистрируем товарный знак, получим патент на устройство или вещество 
-						из любой отрасли (техника, элктроника, проукты питания, стройматрерилы, медицина….).Получим патент на дизайн, составим авторское соглашение 
+						Как патентный поверенный и юрист способен создать весь комплекс действий по защите иновационного бизнеса. Подготовлю договор об учреждении ООО, при котором партнеры будут эффективно взаимодействовать, мы зарегистрируем товарный знак, получим патент на устройство или вещество
+						из любой отрасли (техника, элктроника, проукты питания, стройматрерилы, медицина….).Получим патент на дизайн, составим авторское соглашение
 						с разделением авторского вклада.Защитим интересы компаниив на стадии досудебного урегулирвания и в суде,Проведем экспертзизу, проведем патентые исследования.Проведем инвентарицацию и оценку сущесвуюх объектов для создания эффективного портфеля объектов или при покупке бизнеса.Ваши дела всегда будут в порядке! 
 						Я привожу дела килентов в прядок и в сложных ситуациях нахожу примелемый выход.
 					</p>
@@ -307,7 +236,7 @@ global $post;
 					</div>
 				</div>
 			</div>
-			<?php 
+			<?php
 			$profs = get_field('profs');
 			if($profs) {
 			?>
@@ -342,7 +271,7 @@ global $post;
 			<?php } ?>
 		</div>
 	</section>
-	<?php 
+	<?php
 	$branches = get_field('branches');
 	if($branches) {
 	?>
@@ -379,7 +308,7 @@ global $post;
 		</div>
 	</section>
 	<?php $recomendations = get_field('recomend');
-	if($recomendations) { 
+	if($recomendations) {
 	?>
 	<section class="articles">
 		<div class="container">
@@ -389,14 +318,14 @@ global $post;
 				</h2>
 				<div class="tabs articles__tabs flex">
 					<ul class="tabs__caption">
-						<?php 
+						<?php
 						$r_count = 1;
 						foreach($recomendations as $recomendation) {
 						?>
 						<li <?php if($r_count == 1) { ?> class="active" <?php } ?>>Раздел <?php echo $r_count; ?></li>
 						<?php $r_count++; } ?>
 					</ul>
-					<?php 
+					<?php
 						$r2_count = 1;
 						foreach($recomendations as $recomendation) {
 							$stages = $recomendation['stages'];
@@ -415,7 +344,7 @@ global $post;
 							<?php echo $recomendation['txt']; ?>
 						</div>
 						<?php } ?>
-						<?php if($stages) { 
+						<?php if($stages) {
 							$count_inside = 1;
 						?>
 						<div class="article__content-list flex">
@@ -435,14 +364,14 @@ global $post;
 							<?php echo $recomendation['txt2']; ?>
 						</div>
 						<?php } ?>
-						<?php  
+						<?php
 						if($recomendation['show_rec']) {
 							$rec = $recomendation['rec_group'];
 						?>
 						<!-- тут совет -->
 						<div>
 							<div>СОВЕТ</div>
-							<div><?php // echo $rec['rec_txt']; ?> 
+							<div><?php // echo $rec['rec_txt']; ?>
 								<p>
 									ЗДЕСЬ ВЫ МОЖЕТЕ ПРИГЛАСИТЬ МЕНЯ В КАЧЕСТВЕ ЭКСПЕРТА, ПОДТВЕРЖДАЮЩЕГО ВОЗМОЖНОСТЬ ПОЛУЧЕНИЯ ПАТЕНТА, ЗАЩИЩАЮЩЕГО ПРОДУКТ
 								</p>
@@ -452,7 +381,7 @@ global $post;
 							</div>
 						</div>
 						<!-- конец совета -->
-						<?php 
+						<?php
 						}
 						?>
 					</div>
@@ -468,7 +397,7 @@ global $post;
 				Статьи
 			</h2>
 			<div class="newsblock flex">
-			<?php 
+			<?php
 				$args = array(
 					'post_type' => 'articles',
 					'post_status' => 'publish',
@@ -482,7 +411,7 @@ global $post;
 						Это важно иметь в виду
 					</div>
 					<div class="newsblock__list flex">
-						<?php 
+						<?php
 						while ( $articles->have_posts() ) {
 							$articles->the_post();
 							$thumbnail_id = get_post_thumbnail_id();
@@ -502,11 +431,11 @@ global $post;
 						<?php } ?>
 					</div>
 				</div>
-				<?php 
-				} 
+				<?php
+				}
 				wp_reset_postdata();
 				?>
-				<?php 
+				<?php
 					$args = array(
 						'post_type' => 'news',
 						'post_status' => 'publish',
@@ -520,7 +449,7 @@ global $post;
 						Вам может быть интересно
 					</div>
 					<div class="newsblock__list flex">
-						<?php 
+						<?php
 						while ( $news->have_posts() ) {
 							$news->the_post();
 							$thumbnail_id = get_post_thumbnail_id();
@@ -540,76 +469,19 @@ global $post;
 						<?php } ?>
 					</div>
 				</div>
-				<?php 
-				} 
+				<?php
+				}
 				wp_reset_postdata();
 				?>
 			</div>
 		</div>
 	</section>
-	<section class="order-form">
-		<div class="container">
-			<div class="form__content flex">
-				<div class="form__part">
-					<h2 class="titles">
-						заказать услугу патнетного&nbsp;поверенного
-					</h2>
-					<p>
-						Равным образом консультация с широким активом требуют от нас анализа форм развития.
-					</p>
-					<img src="/wp-content/themes/patent/images/form_bg.svg" alt="">
-				</div>
-				<div class="form__part">
-					<?php get_template_part('templates/forms/feedback'); ?>
-				</div>
-			</div>
-		</div>
-		<div class="form-bottom">
-			<div class="container">
-				<h2 class="titles">
-				Услуги
-			</h2>
-			<ul class="form-bottom__list">
-				<li class="form-bottom__item">
-					<span>Регистрация товарного знака</span>
-					<svg width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
-					</svg>
-				</li>
 
-				<li class="form-bottom__item">
-					<span>Патент на изобретение</span>
-					<svg width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
-					</svg>
-				</li>
+    <!--заказать услугу патнетного поверенного -->
+    <?php get_template_part('templates/blocks/form', 'order'); ?>
+    <!--заказать услугу патнетного поверенного -->
 
-				<li class="form-bottom__item">
-					<span>Составление 
-					лицензионного договора</span>
-					<svg width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
-					</svg>
-				</li>
 
-				<li class="form-bottom__item">
-					<span>Составление регистрации 
-					договора отчуждения</span>
-					<svg width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
-					</svg>
-				</li>
 
-				<li class="form-bottom__item">
-					<span>Защита контента 
-					на сайте (авторское право)</span>
-					<svg width="23" height="12" viewBox="0 0 23 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M22.5303 6.53033C22.8232 6.23744 22.8232 5.76256 22.5303 5.46967L17.7574 0.696699C17.4645 0.403806 16.9896 0.403806 16.6967 0.696699C16.4038 0.989593 16.4038 1.46447 16.6967 1.75736L20.9393 6L16.6967 10.2426C16.4038 10.5355 16.4038 11.0104 16.6967 11.3033C16.9896 11.5962 17.4645 11.5962 17.7574 11.3033L22.5303 6.53033ZM0 6.75H22V5.25H0V6.75Z" fill="#4B555E" fill-opacity="0.5" />
-					</svg>
-				</li>
-			</ul>
-			</div>
-		</div>
-	</section>
 </main>
 <?php get_footer(); ?>
