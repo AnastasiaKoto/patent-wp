@@ -1,194 +1,64 @@
+<?php
+$recomendations = get_field('recomend');
 
-<section class="articles">
-    <div class="container">
-        <div class="articles__block">
-            <h2 class="titles">
-                Патентный поверенный дает рекомендации, как построить инновационную компанию.
-            </h2>
-            <div class="tabs articles__tabs flex">
-                <ul class="tabs__caption">
-                    <li class="active">Раздел 1</li>
-                    <li>Раздел 2</li>
-                </ul>
-                <div class="tabs__content article__content active">
-                    <div class="article__subtitle">
-                        раздел 111
-                    </div>
-                    <div class="title">
-                        От мысли к…..идее
-                    </div>
-                    <div class="article__txt">
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Классификация идей
-                        </p>
-                        <p>
-                            Мысль – формируется идея. В этом случае мы вместе можем довольно быстро представить перспективы идеи по следующей цепочке, а) возможность ее реализации по шкале**** б) вероятность ее привлекательности и коммерциализации с) потенциальная патентоспособность. Таким образом каждая ваша мысль в предпринимательсвком плане будет быстро обработана и систематизирована. Вы будете быстро принимать решения/
-                        </p>
-                    </div>
-                    <div class="article__content-list flex">
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
+$recomendations_field = get_field_object('recomend');
+
+
+if ($recomendations) {
+    ?>
+    <section class="articles">
+        <div class="container">
+            <div class="articles__block">
+                <h2 class="titles">
+                    <?php echo $recomendations_field['label']; ?>
+                </h2>
+                <div class="tabs articles__tabs flex">
+                    <ul class="tabs__caption">
+                        <?php
+                        foreach ($recomendations as $index => $recomendation) {
+                            ?>
+                            <li class="<?php if ($index === 0) echo 'active'; ?>"><?php echo $recomendation['title_section']; ?></li>
+                            <?php
+                        }
+                        ?>
+                    </ul>
+                    <?php
+                    foreach ($recomendations as $index => $recomendation) {
+                        ?>
+                        <div class="tabs__content article__content <?php if ($index === 0) echo 'active'; ?>">
+                            <div class="article__subtitle">
+                                <?php echo $recomendation['title_section']; ?>
                             </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
+                            <div class="title">
+                                <?php echo $recomendation['title_block']; ?>
                             </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
+                            <div class="article__txt">
+                                <?php echo $recomendation['content_block']; ?>
                             </div>
-                            <div class="sm__title">Идея</div>
+                            <div class="article__content-list flex">
+                            <?php
+                            foreach ($recomendation['stages']  as $stage_index => $stage) {
+                                ?>
+                                    <div class="article__content-list_point">
+                                        <div class="art__count"><div><?php echo $stage_index + 1; ?></div></div>
+                                        <div class="icon">
+                                            <img src="<?php echo esc_url($stage['img']['url']); ?>" alt="">
+                                        </div>
+                                        <div class="sm__title"><?php echo $stage['title']; ?></div>
+                                    </div>
+
+                                <?php
+                            }
+                            ?>
+                                </div>
                         </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs__content article__content">
-                    <div class="article__subtitle">
-                        раздел 2
-                    </div>
-                    <div class="title">
-                        От мысли к…..идее
-                    </div>
-                    <div class="article__txt">
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Мысль ( мысль преврщается в идею) – (из идеи появлются очертания конструкции) – общее понимание проходит к проработке деталей и убеждению в работе устройства/Далее следует подвергнуть идею патентонм анализу на предмет надежной защитыЗатем построить модель коммерциализации продукта
-                        </p>
-                        <p>
-                            Классификация идей
-                        </p>
-                        <p>
-                            Мысль – формируется идея. В этом случае мы вместе можем довольно быстро представить перспективы идеи по следующей цепочке, а) возможность ее реализации по шкале**** б) вероятность ее привлекательности и коммерциализации с) потенциальная патентоспособность. Таким образом каждая ваша мысль в предпринимательсвком плане будет быстро обработана и систематизирована. Вы будете быстро принимать решения/
-                        </p>
-                    </div>
-                    <div class="article__content-list flex">
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                        <div class="article__content-list_point">
-                            <div class="art__count"><div>1</div></div>
-                            <div class="icon">
-                                <img src="/wp-content/themes/patent/images/icon1.svg" alt="">
-                            </div>
-                            <div class="sm__title">Идея</div>
-                        </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <?php
+}
+?>

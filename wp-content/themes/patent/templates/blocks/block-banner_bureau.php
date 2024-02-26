@@ -3,8 +3,9 @@
         <div class="banner__content flex">
             <div class="banner__block">
                 <div class="banner__offer">
-                    <h1 class="titles main__title"><?php the_title(); ?></h1>
+                    <h1 class="titles main__title"><?php $banner_list_title = get_field('offers_list_title'); echo $banner_list_title ?></h1>
                     <?php
+
                     $banner_list = get_field('offers_list');
                     if($banner_list) {
                         ?>
@@ -14,7 +15,7 @@
                             <?php } ?>
                         </ul>
                     <?php } ?>
-                    <a href="#" class="dark__btn btn banner__btn">Кому и чем могу быть полезен</a>
+
                 </div>
                 <?php
                 if( have_rows('utp') ) { ?>
