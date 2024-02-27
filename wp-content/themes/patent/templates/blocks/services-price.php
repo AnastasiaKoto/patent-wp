@@ -34,8 +34,8 @@ $parties_desc = get_field('parties_desc');
                                     <?php
                                     foreach ($stage['stages_list'] as $substage) {
                                         ?>
-                                        <li class="prices-card__item">
-                                            <div class="prices-card__text <?php echo $substage['selection'] ? 'yellow' : ''; ?>"><?php echo $substage['title']; ?></div>
+                                        <li class="prices-card__item <?php echo $substage['selection'] ? 'yellow' : ''; ?>">
+                                            <div class="prices-card__text"><?php echo $substage['title']; ?></div>
 
                                             <?php if ($substage['substage_check']) { ?>
                                                 <span class="prices-card__text-radius"> <?php echo $substage['substage_price']; ?></span>
