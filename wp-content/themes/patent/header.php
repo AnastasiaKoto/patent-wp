@@ -23,8 +23,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <?/*my script? */?>
-    <link href="<?=get_template_directory_uri()?>/css/style_help.css" rel="stylesheet">
-    <script src="<?=get_template_directory_uri()?>/js/main_help.js"> </script>
+    <link href="/wp-content/themes/patent/css/style_help.css" rel="stylesheet">
+    <script src="/wp-content/themes/patent/js/main_help.js"> </script>
 
 </head>
 
