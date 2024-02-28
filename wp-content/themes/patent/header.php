@@ -67,7 +67,7 @@
                             <?php }
                         } ?>
                     </address>
-                    <a href="#" class="btn header__btn lite__btn">Заказать звонок</a>
+                    <a href="#callback-popup" class="btn header__btn lite__btn global-trigger">Заказать звонок</a>
                     <div class="header__socials flex">
                         <?php if (get_field('wa_link', 'option')) { ?>
                             <a href="<?php echo get_field('wa_link', 'option'); ?>">
