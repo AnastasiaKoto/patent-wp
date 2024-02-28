@@ -244,8 +244,23 @@ h2.global-popup__title {
         flex: 0 0 0;
         margin: unset;
     }
+    .section-mkty-tabs-item__data::-webkit-scrollbar{
+        width: 3px;
+        margin-top: 20px;
+    }
+
+    .section-mkty-tabs-item__data::-webkit-scrollbar-track {
+        background: white;
+      }
+
+      .section-mkty-tabs-item__data::-webkit-scrollbar-thumb {
+        background: gray;
+      } 
+
+    
 
     .section-mkty-tabs-item {
+        flex-direction: column;
         width: 100%;
         box-shadow: 0px 5px 25px 0px #00000026;
         border-radius: 18px;
@@ -256,13 +271,15 @@ h2.global-popup__title {
         margin-bottom: 50px;
         background: white;
         position: static;
-        height: 100%;
-        overflow: auto;
+        height: 90vh;
         position: relative;
-
-
+        overflow: hidden;
     }
-
+    .section-mkty-tabs-item__data{
+        overflow: auto;
+        height: calc(100% - 80px);
+    }
+    
     .modal-mkty.fancybox__container .f-button svg {
         stroke: black;
     }
@@ -283,6 +300,10 @@ h2.global-popup__title {
 
 
     }
+    .modal-mkty .fancybox__slide {
+        overflow: unset;
+    }
+     
 
     .section-mkty-tabs-item__name {
         display: inline-flex;
