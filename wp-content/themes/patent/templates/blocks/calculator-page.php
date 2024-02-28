@@ -15,15 +15,15 @@
                         <div class="calculator__type">
                             <h2 class="calculator__title">тип товарного знака</h2>
                             <label class="">
-                                <input type="radio" name="wordmark_option">
+                                <input type="radio" name="wordmark_option" value="100"checked>
                                 Словесный
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark_option">
+                                <input type="radio" name="wordmark_option" value="200">
                                 Изобразительный
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark_option">
+                                <input type="radio" name="wordmark_option" value="0">
                                 Комбинированный
                             </label>
                         </div>
@@ -102,11 +102,11 @@
                                 ваш знак на соответствие требованиям законодательства. Это значительно (до 95%) увеличивает вероятность того, что ваш знак будет зарегистрирован.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark2_option">
+                                <input type="radio" name="wordmark2_option" value="200">
                                 Да, требуется полная проверка моего товарного знака (3-4 дня).
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark2_option">
+                                <input type="radio" name="wordmark2_option" value="0">
                                 Нет, не требуется. Мне известна возможность регистрации моего товарного знака.
                             </label>
                         </div>
@@ -129,12 +129,18 @@
                         </div>
                         <div class="calculator-box calculator-box-2">
                             <div class="calculator-box__wrapper calculator-box__wrapper--fb800">
+
                                 <h3 class="calculator-box__title">Классы товаров</h3>
                                 <div class="calculator-box__list">
                                     <div class="calculator-box__inner">
                                         <div class="calculator-box__items">
-                                            <div class="calculator-box__item">1</div>
-                                            <div class="calculator-box__item">2</div>
+
+                                            <div class="calculator-box__item">
+                                                <label for="modern-checkbox1"  class=""></label>
+                                                <input type="checkbox" id="modern-checkbox1" value="100">
+                                                <span>1</span>
+                                            </div>
+
                                         </div>
                                         <div class="calculator-box__text">агрохимия, краски, ацетон;</div>
                                     </div>
@@ -143,29 +149,11 @@
                                 <div class="calculator-box__list">
                                     <div class="calculator-box__inner">
                                         <div class="calculator-box__items">
-                                            <div class="calculator-box__item">3</div>
-                                            <div class="calculator-box__item">4</div>
-                                            <div class="calculator-box__item">5</div>
-                                            <div class="calculator-box__item">6</div>
-                                            <div class="calculator-box__item">7</div>
-                                            <div class="calculator-box__item">8</div>
-                                            <div class="calculator-box__item">9</div>
-                                            <div class="calculator-box__item">10</div>
-                                            <div class="calculator-box__item">11</div>
-                                            <div class="calculator-box__item">12</div>
-                                            <div class="calculator-box__item">13</div>
-                                            <div class="calculator-box__item">14</div>
-                                            <div class="calculator-box__item">15</div>
-                                            <div class="calculator-box__item">16</div>
-
-                                            <div class="calculator-box__item">17</div>
-                                            <div class="calculator-box__item">18</div>
-                                            <div class="calculator-box__item">19</div>
-                                            <div class="calculator-box__item">20</div>
-                                            <div class="calculator-box__item">21</div>
-                                            <div class="calculator-box__item">22</div>
-                                            <div class="calculator-box__item">23</div>
-                                            <div class="calculator-box__item">24</div>
+                                            <div class="calculator-box__item">
+                                                <label for="modern-checkbox2"  class=""></label>
+                                                <input type="checkbox" id="modern-checkbox2" value="100">
+                                                <span>2</span>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -174,7 +162,11 @@
                                 <div class="calculator-box__list">
                                     <div class="calculator-box__inner">
                                         <div class="calculator-box__items">
-                                            <div class="calculator-box__item">25</div>
+                                            <div class="calculator-box__item">
+                                                <label for="modern-checkbox3"  class=""></label>
+                                                <input type="checkbox" id="modern-checkbox3" value="100">
+                                                <span>3</span>
+                                            </div>
                                         </div>
                                         <div class="calculator-box__text">одежда</div>
                                     </div>
@@ -183,9 +175,16 @@
                                 <div class="calculator-box__list">
                                     <div class="calculator-box__inner">
                                         <div class="calculator-box__items">
-                                            <div class="calculator-box__item">26</div>
-                                            <div class="calculator-box__item">27</div>
-                                            <div class="calculator-box__item">28</div>
+                                            <div class="calculator-box__item">
+                                                <label for="modern-checkbox4"  class=""></label>
+                                                <input type="checkbox" id="modern-checkbox4" value="100">
+                                                <span>4</span>
+                                            </div>
+                                            <div class="calculator-box__item">
+                                                <label for="modern-checkbox5"  class=""></label>
+                                                <input type="checkbox" id="modern-checkbox5" value="100">
+                                                <span>5</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -193,15 +192,34 @@
                                 <div class="calculator-box__list">
                                     <div class="calculator-box__inner">
                                         <div class="calculator-box__items">
-                                            <div class="calculator-box__item">29</div>
-                                            <div class="calculator-box__item">25</div>
-                                            <div class="calculator-box__item">25</div>
-                                            <div class="calculator-box__item">25</div>
-                                            <div class="calculator-box__item">25</div>
+                                            <div class="calculator-box__item">
+                                                <label for="modern-checkbox6"  class=""></label>
+                                                <input type="checkbox" id="modern-checkbox6" value="100">
+                                                <span>5</span>
+                                            </div>
                                         </div>
                                         <div class="calculator-box__text">продукты питания</div>
                                     </div>
                                 </div>
+                                <div class="pt55"></div>
+                                <h3 class="calculator-box__title">Классы услуг</h3>
+                                <div class="calculator-box__list">
+                                    <div class="calculator-box__inner">
+                                        <div class="calculator-box__items">
+
+                                            <div class="calculator-box__item">
+                                                <label for="modern-checkbox7"  class=""></label>
+                                                <input type="checkbox" id="modern-checkbox7" value="100">
+                                                <span>1</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
                             <div class="calculator-box__wrapper calculator-box__wrapper--fb300">
                                 <div class="calculator-helps">
@@ -219,10 +237,10 @@
                                         и заполните заявку
                                     </p>
 
-                                    <label  class="calculator-helps__input-text">
-                                        <input type="text" placeholder="1">
+                                    <div class="calculator-helps__input-text">
+                                        <div class="selected-count-block" id="selected-count">0</div>
                                         <span>Количество выбранных классов</span>
-                                    </label>
+                                    </div>
 
 
                                 </div>
@@ -250,11 +268,11 @@
                                 и зарегистрировать за 2–3 месяца.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark3_option">
+                                <input type="radio" name="wordmark3_option" value="300">
                                 Стандартная регистрация 10-15 месяцев
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark3_option">
+                                <input type="radio" name="wordmark3_option" value="0">
                                 Ускоренная регистрация 2-3 месяца*
                             </label>
                             <div class="calculator__text--min">*Увеличивает пошлину на 100 000 рублей</div>
@@ -275,11 +293,11 @@
                                 Но если по каким-либо причинам Вам важно его получить (доверие к системе), мысделаем это.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark4_option">
+                                <input type="radio" name="wordmark4_option" value="400">
                                 Получить свидетельство на бумаге
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark4_option">
+                                <input type="radio" name="wordmark4_option" value="0">
                                 Получить свидетельство в электронном виде
                             </label>
                         </div>
@@ -293,7 +311,7 @@
                     <div class="calculator-value">
                         <div class="calculator__inner calculator__inner--sb">
                             <h2 class="calculator__title">Цена за наши услуги</h2>
-                            <ul class="calculator-value__list">
+                            <ul class="calculator-value__list calculator-value__list-js1">
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Ваш товарный знак:</span>
@@ -304,28 +322,28 @@
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Поиск:</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">1 000 ₽</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s1">1 000 ₽</span>
                                     </p>
                                 </li>
 
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Подача заявки и ведение дел</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">26 000 ₽</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s2">26 000 ₽</span>
                                     </p>
                                 </li>
 
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Получение свидетельства</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">12 000 ₽</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-js-3">12 000 ₽</span>
                                     </p>
                                 </li>
 
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Итого:</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">38 000 ₽</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s-4">38 000 ₽</span>
                                     </p>
                                 </li>
                             </ul>
@@ -335,25 +353,25 @@
                                 <h2 class="calculator__title">Пошлины Роспатента</h2>
                                 <p class="calculator__subtitle-text">Размер пошлины зависит от количества классов МКТУ, которые вы указали при расчете.</p>
                             </div>
-                            <ul class="calculator-value__list">
+                            <ul class="calculator-value__list calculator-value__list-js2">
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Подача заявки</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">10 500 ₽</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-1">10 500 ₽</span>
                                     </p>
                                 </li>
 
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Получение свидетельства</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">11 200 ₽</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-2">11 200 ₽</span>
                                     </p>
                                 </li>
 
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Итого:</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">21 700 ₽</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-3">21 700 ₽</span>
                                     </p>
                                 </li>
 
@@ -361,7 +379,7 @@
                         </div>
                     </div>
                     <div class="calculator-value-bottom">
-                        <p>Всего за регистрацию: <span>59 700 ₽</span></p>
+                        <p>Всего за регистрацию: <span class="total">59 700 ₽</span></p>
                     </div>
                 </div>
             </div>
@@ -399,3 +417,95 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addOptionHandler = groupName => {
+            const inputs = document.querySelectorAll(`input[name="${groupName}"]`);
+            inputs.forEach(input => {
+                input.addEventListener('change', calculateTotal);
+            });
+        };
+
+        const calculateTotal = () => {
+            const radios = document.querySelectorAll('input[type="radio"]:checked');
+            const checkboxes = document.querySelectorAll('.calculator-box__items input[type="checkbox"]:checked');
+
+            let radioTotal = Array.from(radios).reduce((acc, radio) => acc + parseInt(radio.value), 0);
+            let checkboxTotal = Array.from(checkboxes).reduce((acc, checkbox) => acc + parseInt(checkbox.value), 0);
+
+            // Обновляем суммы в разметке для радио кнопок
+            document.querySelector('.calculator-value__span-js-s-4').textContent = formatPrice(radioTotal);
+
+            // Обновляем суммы в разметке для чекбоксов
+            document.querySelector('.calculator-value__span-js-c-3').textContent = formatPrice(checkboxTotal);
+
+            // Обновляем общую сумму в разметке
+            const total = radioTotal + checkboxTotal;
+            document.querySelector('.total').textContent = formatPrice(total);
+
+            console.log('Общая сумма:', total);
+        };
+
+        const checkboxes = document.querySelectorAll('.calculator-box__items input[type="checkbox"]');
+        const selectedCountDiv = document.getElementById('selected-count');
+
+        const updateSelectedCount = () => {
+            let selectedCount = 0;
+            let totalValue = 0;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedCount++;
+                    totalValue += parseInt(checkbox.value);
+                }
+            });
+
+            selectedCountDiv.textContent = selectedCount;
+            console.log('Общая сумма выбранных: ', totalValue);
+        };
+
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', updateSelectedCount);
+            checkbox.id = 'modern-checkbox' + (index + 1);
+            checkbox.nextElementSibling.setAttribute('for', 'modern-checkbox' + (index + 1));
+        });
+
+        addOptionHandler('wordmark_option');
+        addOptionHandler('wordmark2_option');
+        addOptionHandler('wordmark3_option');
+        addOptionHandler('wordmark4_option');
+
+        // Функция для форматирования цены
+        const formatPrice = price => {
+            return price.toLocaleString('ru-RU') + ' ₽';
+        };
+
+
+
+
+
+
+    });
+
+    // Получаем все радио-кнопки
+    var radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+
+    // Получаем все блоки с логотипами
+    var logoBlocks = document.querySelectorAll('.calculator__logos');
+
+    // Перебираем радио-кнопки
+    radioButtons.forEach(function(radioButton, index) {
+        // Назначаем обработчик события изменения для каждой кнопки
+        radioButton.addEventListener('change', function() {
+            // Скрываем все блоки с логотипами
+            logoBlocks.forEach(function(logoBlock) {
+                logoBlock.style.display = 'none';
+            });
+
+            // Показываем блок с логотипами, соответствующий выбранной радио-кнопке
+            logoBlocks[index].style.display = 'block';
+        });
+    });
+
+</script>

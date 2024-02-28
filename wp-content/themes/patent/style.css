@@ -8,13 +8,3 @@ Updated: 2024-01-31 14:54:07
 */
 
 
-
-#page {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-}
-
-.footer {
-    grid-row-start: 3;
-}
