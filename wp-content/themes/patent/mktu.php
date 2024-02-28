@@ -50,8 +50,8 @@ $class_sections = get_field('class_sections');
                         <?php foreach ($subsection['class_subsections_item'] as $item) : ?>
                             <div class="section-mkty-tabs__item section-mkty-tabs-item" id="mkty-tabs-item_<?php echo $item['class_subsections_num']; ?>">
                                 <!-- Tab Content Here -->
-
-                                    <!-- Content -->
+                                <div class="section-mkty-tabs-item__name"> </div>
+                                <!-- Content -->
                                 <!--    <h3  class="section-mkty-tabs-item__title"><?php /*echo $class_section['class_section_title']; */?> <?php /*echo $item['class_subsections_num']; */?> МКТУ </h3>-->
                                     <?php foreach ($item['class_subsections_description'] as $description) : ?>
                                         <div class="section-mkty-tabs-item__part">
