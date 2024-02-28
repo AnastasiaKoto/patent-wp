@@ -19,13 +19,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <?php wp_head(); ?>
-     <?/*fancybox*/ ?>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-    <?/*my script? */?>
-    <link href="/wp-content/themes/patent/css/style_help.css" rel="stylesheet">
-    <script src="/wp-content/themes/patent/js/main_help.js"> </script>
-
 </head>
 
 <body <?php body_class(); ?>> <?php wp_body_open(); ?> <div id="page" class="site">
