@@ -293,8 +293,8 @@ h2.global-popup__title {
     .modal-mkty.fancybox__container .f-button.is-close-btn {
         position: absolute;
         opacity: 1;
-        top: 16px;
-        right: 16px;
+        top: 16px ;
+        right: 16px ;
         background: transparent;
         z-index: 100;
 
@@ -302,6 +302,11 @@ h2.global-popup__title {
     }
     .modal-mkty .fancybox__slide {
         overflow: unset;
+    }
+    .fancybox__container.modal-mkty .is-compact .fancybox__content>.f-button.is-close-btn {
+  
+        top: 16px ;
+        right: 16px ;
     }
      
 
@@ -321,10 +326,17 @@ h2.global-popup__title {
 
 
     }
+    .section-mkty-tabs-item.fancybox__content{
+        height: 100%;
+        border-radius: 18px;
+    }
+  
 
     .section-mkty-tabs-item.section-mkty-tabs-item_active {
         display: none;
     }
+
+   
 
     .section-mkty-tabs-item {
         display: none;
@@ -377,4 +389,6 @@ h2.global-popup__title {
         padding: 46px 21px 28px;
     }
 
+
+  
 }
