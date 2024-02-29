@@ -294,6 +294,23 @@ h2.global-popup__title {
 
 }
 
+/* OFFICE*/
+.banner_office{
+    background: linear-gradient(289.54deg, #CDD1DD 29.58%, #5671B2 159.34%);
+}
+.titles__block_dark{
+    background: linear-gradient(216.54deg, #CDD1DD 29.58%, #5671B2 159.34%);
+}
+.titles__block_office{
+    padding-bottom: 0px;
+}
+.titles__block_office .breadcrumbs {
+    margin-bottom: 15px;
+}
+
+
+
+
 
 
 @media (max-width:767.98px) {

@@ -1,4 +1,5 @@
-<section class="banner">
+
+<section class="banner <?=is_page(381)?'banner_office':'' ?>" >
     <div class="container">
         <div class="banner__content flex">
             <div class="banner__block">
