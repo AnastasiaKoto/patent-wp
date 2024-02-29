@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .section-mkty {
     padding-top: 46px;
     padding-bottom: 97px;
@@ -50,6 +54,7 @@
     font-weight: 600;
     font-size: 18px;
     padding: 7px 5px;
+
 
 }
 
@@ -209,8 +214,12 @@ h2.global-popup__title {
         padding-bottom: 10px;
         border-bottom: 1px solid #E6E8EF;
         gap: 12px;
+
     }
 
+    .section-mkty-area__name {
+        order: -1;
+    }
 
     .sectiom-mkty-area__row:not(:first-child):not(:nth-child(2)) {
         padding-top: 17px;
@@ -244,20 +253,24 @@ h2.global-popup__title {
         flex: 0 0 0;
         margin: unset;
     }
-    .section-mkty-tabs-item__data::-webkit-scrollbar{
+
+    .section-mkty-tabs-item__data::-webkit-scrollbar {
         width: 3px;
         margin-top: 20px;
     }
 
     .section-mkty-tabs-item__data::-webkit-scrollbar-track {
         background: white;
-      }
+    }
 
-      .section-mkty-tabs-item__data::-webkit-scrollbar-thumb {
+    .section-mkty-tabs-item__data::-webkit-scrollbar-thumb {
         background: gray;
-      } 
+    }
 
-    
+    .section-mkty {
+        padding-top: 19px;
+        padding-bottom: 43px;
+    }
 
     .section-mkty-tabs-item {
         flex-direction: column;
@@ -275,11 +288,18 @@ h2.global-popup__title {
         position: relative;
         overflow: hidden;
     }
-    .section-mkty-tabs-item__data{
+    .section-mkty__area.sectiom-mkty-area{
+        margin-bottom: 0px;
+    }
+    .section-mkty__area.sectiom-mkty-area:not(:last-child){
+        margin-bottom: 25px;
+    }
+
+    .section-mkty-tabs-item__data {
         overflow: auto;
         height: calc(100% - 80px);
     }
-    
+
     .modal-mkty.fancybox__container .f-button svg {
         stroke: black;
     }
@@ -293,22 +313,24 @@ h2.global-popup__title {
     .modal-mkty.fancybox__container .f-button.is-close-btn {
         position: absolute;
         opacity: 1;
-        top: 16px ;
-        right: 16px ;
+        top: 16px;
+        right: 16px;
         background: transparent;
         z-index: 100;
 
 
     }
+
     .modal-mkty .fancybox__slide {
         overflow: unset;
     }
+
     .fancybox__container.modal-mkty .is-compact .fancybox__content>.f-button.is-close-btn {
-  
-        top: 16px ;
-        right: 16px ;
+
+        top: 16px;
+        right: 16px;
     }
-     
+
 
     .section-mkty-tabs-item__name {
         display: inline-flex;
@@ -326,17 +348,18 @@ h2.global-popup__title {
 
 
     }
-    .section-mkty-tabs-item.fancybox__content{
+
+    .section-mkty-tabs-item.fancybox__content {
         height: 100%;
         border-radius: 18px;
     }
-  
+
 
     .section-mkty-tabs-item.section-mkty-tabs-item_active {
         display: none;
     }
 
-   
+
 
     .section-mkty-tabs-item {
         display: none;
@@ -390,5 +413,5 @@ h2.global-popup__title {
     }
 
 
-  
+
 }
