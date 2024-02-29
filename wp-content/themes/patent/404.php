@@ -32,7 +32,7 @@ get_header();
 
 			</div>
 			<div class="section-404-body__bottom">
-				<a class="btn-404" href="/">Вернуться на главную </a>
+				<a class="btn-404 dark__btn" href="/">Вернуться на главную </a>
 			</div>
 		</div>
 	</div>

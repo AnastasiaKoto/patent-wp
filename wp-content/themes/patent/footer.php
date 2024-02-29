@@ -20,7 +20,7 @@
 		<div class="footer__content flex">
 			<div class="footer__group flex">
 				<img src="<?php echo get_field('footer_logo', 'option'); ?>" alt="">
-				<a href="<?php echo get_field('policy_link', 'option'); ?>" class="policy">Политика
+				<a href="<?php echo get_field('policy_link', 'option'); ?>" class="policy ">Политика
 					конфеденциальности</a>
 				<div class="footer__descr">
 					Предоставленная вами персональная информация используется для обработки заказа. Ваши данные не будут
@@ -162,6 +162,10 @@
 			патнетного поверенного
 		</h2>
 	</div>
+</div>
+
+<div class="global-popup" id="privacy-popup" style="display:none">
+		<h1>Политика </h1>
 </div>
 
 </div><!-- #page -->
