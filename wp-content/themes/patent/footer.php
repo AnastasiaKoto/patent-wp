@@ -20,7 +20,7 @@
 		<div class="footer__content flex">
 			<div class="footer__group flex">
 				<img src="<?php echo get_field('footer_logo', 'option'); ?>" alt="">
-				<a href="<?php echo get_field('policy_link', 'option'); ?>" class="policy ">Политика
+				<a href="/privacy/" class="policy ">Политика
 					конфеденциальности</a>
 				<div class="footer__descr">
 					Предоставленная вами персональная информация используется для обработки заказа. Ваши данные не будут
