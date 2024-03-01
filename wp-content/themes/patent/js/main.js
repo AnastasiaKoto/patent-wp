@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       slidesToScroll: 1,
       arrows: false,
     });
+    updateCounter();
 
       // Обновление счетчика
       function updateCounter() {
