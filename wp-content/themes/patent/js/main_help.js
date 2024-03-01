@@ -2,7 +2,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     jQuery(function ($) {
         // fix slider on tabs
     $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
+        function updateCounter() {
+            var currentSlideNumber = $('.keyses__slider').slick('slickCurrentSlide') + 1;
+            $('.currentCoach').text(currentSlideNumber);
+            $('.allCoach').text($('.keyses__slider').slick('getSlick').slideCount);
+          
+            // console.log($('.keyses__slider:eq(2)').slick('getSlick').slideCount)  ;
+        }
+            
         $('.keyses__slider').slick("refresh");
+        updateCounter();
     });
         /*page mktu */
         if (window.innerWidth < 768) {
@@ -118,7 +127,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         /*read more */
         $(".article-box__readmore").click(function(){
-            $(".article-box__readmore").toggleClass("article-box__readmore_active");
+            if(!$(this).hasClass("article-box__readmore_active")){
+                $(this).find("span").text("Свернуть");
+            }
+            else{
+                $(this).find("span").text("Читать полностью"); 
+            }
+            $(this).toggleClass("article-box__readmore_active");
+           
             $(this).prev(".article-box__text").toggleClass("article-box__text_active");
         });
 

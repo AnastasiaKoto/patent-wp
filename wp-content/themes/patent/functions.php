@@ -39,7 +39,7 @@ function all_js() {
 	wp_enqueue_script('main', '/wp-content/themes/patent/js/main.js');
 	wp_enqueue_script('landing', '/wp-content/themes/patent/js/landing.js');
     wp_enqueue_script('fancybox.umd', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js');
-    wp_enqueue_script('main_help', '/wp-content/themes/patent/js/main_help.js');
+    wp_enqueue_script('main_help', '/wp-content/themes/patent/js/main_help.js',array(),null);
 }
 add_action('wp_enqueue_scripts', 'all_styles');
 add_action('wp_enqueue_scripts', 'all_js');
