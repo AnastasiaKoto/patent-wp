@@ -747,8 +747,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-
   const nextBtn = document.querySelector('.calculator__next');
   const prevBtn = document.querySelector('.calculator__end');
   const countElement = document.querySelector('.calculator__caunt span:first-child');
@@ -843,6 +841,29 @@ document.addEventListener('DOMContentLoaded', function() {
     alert('Здесь отправляем заявку');
   }
 
+  // Управление отображением блоков с логотипами для радио-кнопок
+  const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+  const logoBlocks = document.querySelectorAll('.calculator__logos-p');
 
+  radioButtons.forEach(function (radioButton, index) {
+    radioButton.addEventListener('change', function () {
+      logoBlocks.forEach(function (logoBlock) {
+        logoBlock.style.display = 'none';
+      });
+      logoBlocks[index].style.display = 'block';
+    });
+  });
 
+  // Управление отображением блоков с логотипами для других радио-кнопок
+  const radioButtonsm = document.querySelectorAll('input[name="wordmark_option"]');
+  const logoBlocksm = document.querySelectorAll('.calculator__logos-m');
+
+  radioButtonsm.forEach(function (radioButton, index) {
+    radioButton.addEventListener('change', function () {
+      logoBlocksm.forEach(function (logoBlock) {
+        logoBlock.style.display = 'none';
+      });
+      logoBlocksm[index].style.display = 'block';
+    });
+  });
 });

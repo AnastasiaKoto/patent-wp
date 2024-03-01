@@ -16,15 +16,15 @@
                         <div class="calculator__type">
                             <h2 class="calculator__title">тип товарного знака</h2>
                             <label class="">
-                                <input type="radio" name="wordmark_option" value="10" checked>
+                                <input type="radio" name="wordmark_option" value="11000" checked>
                                 Словесный
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark_option" value="20">
+                                <input type="radio" name="wordmark_option" value="12000">
                                 Изобразительный
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark_option" value="30">
+                                <input type="radio" name="wordmark_option" value="23000">
                                 Комбинированный
                             </label>
                         </div>
@@ -154,7 +154,7 @@
                                 увеличивает вероятность того, что ваш знак будет зарегистрирован.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark2_option" value="100000">
+                                <input type="radio" name="wordmark2_option" value="">
                                 Да, требуется полная проверка моего товарного знака (3-4 дня).
                             </label>
                             <label class="">
@@ -822,174 +822,6 @@
 </section>
 
 <script>
-    // Ожидаем загрузки контента страницы
-    document.addEventListener('DOMContentLoaded', function () {
 
-        // Функция для добавления обработчиков событий для групп радио-кнопок
-        const addOptionHandler = groupName => {
-            const inputs = document.querySelectorAll(`input[name="${groupName}"]`);
-            inputs.forEach(input => {
-                input.addEventListener('change', calculateTotal);
-            });
-        };
-
-        // Функция для вычисления общей суммы выбранных параметров
-        const calculateTotal = () => {
-            // Получаем выбранные радио-кнопки
-            const radios = document.querySelectorAll('input[type="radio"]:checked');
-
-            // Вычисляем общую сумму для радио-кнопок
-            let radioTotal = Array.from(radios).reduce((acc, radio) => acc + parseInt(radio.value), 0);
-
-            // Обновляем сумму в разметке для радио кнопок
-            document.querySelector('.calculator-value__span-js-s-4').textContent = formatPrice(radioTotal);
-
-            // Обновляем общую сумму в разметке
-            document.querySelector('.total').textContent = formatPrice(radioTotal);
-
-            console.log('Общая сумма:', radioTotal);
-        };
-
-        // Функция для форматирования цены
-        const formatPrice = price => {
-            return price.toLocaleString('ru-RU') + ' ₽';
-        };
-
-        // Добавляем обработчики событий для групп радио-кнопок
-        addOptionHandler('wordmark_option');
-        addOptionHandler('wordmark2_option');
-        addOptionHandler('wordmark3_option');
-        addOptionHandler('wordmark4_option');
-
-        // Управление переходами между разделами калькулятора
-
-        // Получаем необходимые элементы
-        const nextBtn = document.querySelector('.calculator__next');
-        const prevBtn = document.querySelector('.calculator__end');
-        const endPages = document.querySelector('.calculator');
-        const countElement = document.querySelector('.calculator__caunt span:first-child');
-        const totalElement = document.querySelector('.calculator__caunt span:last-child');
-        const nextBtnText = nextBtn.querySelector('span');
-        const questionsBtn = document.querySelector('.calculator__questions');
-        let currentWrapperIndex = 0;
-        const wrappers = document.querySelectorAll('.calculator__wrapper');
-        const totalWrappers = wrappers.length;
-
-        // Скрыть все блоки, кроме первого
-        hideAllWrappers();
-        showWrapper(currentWrapperIndex);
-
-        updateNextButtonText();
-        updateCountText();
-
-        // Добавляем обработчики событий для кнопок "Далее" и "Назад"
-        nextBtn.addEventListener('click', function (event) {
-            event.preventDefault();
-            if (currentWrapperIndex < totalWrappers - 1) {
-                currentWrapperIndex++;
-                updateCalculator();
-            } else {
-                sendRequest(); // Если текущий блок последний, отправить заявку
-            }
-        });
-
-        prevBtn.addEventListener('click', function (event) {
-            event.preventDefault();
-            if (currentWrapperIndex > 0) {
-                currentWrapperIndex--;
-                updateCalculator();
-            }
-        });
-
-        // Функция для обновления состояния калькулятора
-        function updateCalculator() {
-            hideAllWrappers();
-            showWrapper(currentWrapperIndex);
-            updateNextButtonText();
-            updateCountText();
-            showQuestionsButtonIfNeeded()
-            updatePrevButtonVisibility();
-        }
-
-        // Функция для скрытия всех блоков
-        function hideAllWrappers() {
-            wrappers.forEach(function (wrapper) {
-                wrapper.style.display = 'none';
-            });
-        }
-
-        // Функция для отображения блока по индексу
-        function showWrapper(index) {
-            wrappers[index].style.display = 'flex';
-        }
-
-        // Функция для обновления текста кнопки "Далее"
-        function updateNextButtonText() {
-            if (nextBtnText) {
-                if (currentWrapperIndex === totalWrappers - 1) {
-                    nextBtnText.textContent = 'Оставить заявку';
-                } else {
-                    nextBtnText.textContent = 'Далее';
-                }
-            }
-        }
-
-        // Функция для обновления текста счетчика разделов
-        function updateCountText() {
-            countElement.textContent = currentWrapperIndex + 1;
-            totalElement.textContent = totalWrappers;
-        }
-
-        // Показать кнопку "Задать вопрос"
-        function showQuestionsButtonIfNeeded() {
-            if (currentWrapperIndex === totalWrappers - 1) {
-                questionsBtn.style.display = 'block';
-                endPages.classList.add('calculator-js');
-            } else {
-                questionsBtn.style.display = 'none';
-                endPages.classList.remove('calculator-js');
-            }
-        }
-
-        // Обновить видимость кнопки "Назад"
-        function updatePrevButtonVisibility() {
-            if (currentWrapperIndex === 0) {
-                prevBtn.style.display = 'none';
-            } else {
-                prevBtn.style.display = 'block';
-            }
-        }
-
-        // Отправить заявку
-        function sendRequest() {
-            alert('Здесь отправляем заявку');
-        }
-    });
-
-    // Управление отображением блоков с логотипами для радио-кнопок
-    const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
-    const logoBlocks = document.querySelectorAll('.calculator__logos-p');
-
-    radioButtons.forEach(function (radioButton, index) {
-        radioButton.addEventListener('change', function () {
-            logoBlocks.forEach(function (logoBlock) {
-                logoBlock.style.display = 'none';
-            });
-            logoBlocks[index].style.display = 'block';
-        });
-    });
-
-    // Управление отображением блоков с логотипами для других радио-кнопок
-    const radioButtonsm = document.querySelectorAll('input[name="wordmark_option"]');
-    const logoBlocksm = document.querySelectorAll('.calculator__logos-m');
-
-    radioButtonsm.forEach(function (radioButton, index) {
-        radioButton.addEventListener('change', function () {
-            logoBlocksm.forEach(function (logoBlock) {
-                logoBlock.style.display = 'none';
-            });
-            logoBlocksm[index].style.display = 'block';
-        });
-    });
 </script>
 
