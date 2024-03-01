@@ -15,17 +15,65 @@
                         <div class="calculator__type">
                             <h2 class="calculator__title">тип товарного знака</h2>
                             <label class="">
-                                <input type="radio" name="wordmark_option" value="100"checked>
+                                <input type="radio" name="wordmark_option" value="10" checked>
                                 Словесный
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark_option" value="200">
+                                <input type="radio" name="wordmark_option" value="20">
                                 Изобразительный
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark_option" value="0">
+                                <input type="radio" name="wordmark_option" value="30">
                                 Комбинированный
                             </label>
+                        </div>
+
+                        <div class="calculator__inner  calculator__inner-m">
+                            <div class="calculator__logos">
+                                <p>Примеры словесного товарного знака:</p>
+                                <ul>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/1/coca-cola.svg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/1/Google.svg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/1/Sony.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="calculator__logos" style="display: none;">
+                                <p>Примеры словесного товарного знака:</p>
+                                <ul>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/2/apple.svg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/2/mac.svg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/2/star.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="calculator__logos" style="display: none;">
+                                <p>Примеры словесного товарного знака:</p>
+                                <ul>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/3/adidas.svg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/3/king.svg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="/wp-content/themes/patent/images/logos/3/peugeot.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
 
                         <div class="calculator__type">
@@ -41,7 +89,7 @@
                             <span class="calculator__optional">*Поле не является обязательным для заполнения</span>
                         </div>
                     </div>
-                    <div class="calculator__inner">
+                    <div class="calculator__inner  calculator__inner-p">
                         <div class="calculator__logos">
                             <p>Примеры словесного товарного знака:</p>
                             <ul>
@@ -102,7 +150,7 @@
                                 ваш знак на соответствие требованиям законодательства. Это значительно (до 95%) увеличивает вероятность того, что ваш знак будет зарегистрирован.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark2_option" value="200">
+                                <input type="radio" name="wordmark2_option" value="100000">
                                 Да, требуется полная проверка моего товарного знака (3-4 дня).
                             </label>
                             <label class="">
@@ -151,7 +199,7 @@
                                         <div class="calculator-box__items">
                                             <div class="calculator-box__item">
                                                 <label for="modern-checkbox2"  class=""></label>
-                                                <input type="checkbox" id="modern-checkbox2" value="100">
+                                                <input type="checkbox" id="modern-checkbox2" value="50">
                                                 <span>2</span>
                                             </div>
                                         </div>
@@ -164,7 +212,7 @@
                                         <div class="calculator-box__items">
                                             <div class="calculator-box__item">
                                                 <label for="modern-checkbox3"  class=""></label>
-                                                <input type="checkbox" id="modern-checkbox3" value="100">
+                                                <input type="checkbox" id="modern-checkbox3" value="50">
                                                 <span>3</span>
                                             </div>
                                         </div>
@@ -177,12 +225,12 @@
                                         <div class="calculator-box__items">
                                             <div class="calculator-box__item">
                                                 <label for="modern-checkbox4"  class=""></label>
-                                                <input type="checkbox" id="modern-checkbox4" value="100">
+                                                <input type="checkbox" id="modern-checkbox4" value="50">
                                                 <span>4</span>
                                             </div>
                                             <div class="calculator-box__item">
                                                 <label for="modern-checkbox5"  class=""></label>
-                                                <input type="checkbox" id="modern-checkbox5" value="100">
+                                                <input type="checkbox" id="modern-checkbox5" value="50">
                                                 <span>5</span>
                                             </div>
                                         </div>
@@ -194,7 +242,7 @@
                                         <div class="calculator-box__items">
                                             <div class="calculator-box__item">
                                                 <label for="modern-checkbox6"  class=""></label>
-                                                <input type="checkbox" id="modern-checkbox6" value="100">
+                                                <input type="checkbox" id="modern-checkbox6" value="50">
                                                 <span>5</span>
                                             </div>
                                         </div>
@@ -209,7 +257,7 @@
 
                                             <div class="calculator-box__item">
                                                 <label for="modern-checkbox7"  class=""></label>
-                                                <input type="checkbox" id="modern-checkbox7" value="100">
+                                                <input type="checkbox" id="modern-checkbox7" value="50">
                                                 <span>1</span>
                                             </div>
 
@@ -221,6 +269,13 @@
 
 
                             </div>
+                            <p class="calculator-helps__link calculator-helps__link-m">Чтобы ознакомиться более подробно с каждым классом,
+                                <a  href="">перейдите на страницу МКТУ
+                                    <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.3536 4.35355C19.5488 4.15829 19.5488 3.84171 19.3536 3.64645L16.1716 0.464466C15.9763 0.269204 15.6597 0.269204 15.4645 0.464466C15.2692 0.659728 15.2692 0.976311 15.4645 1.17157L18.2929 4L15.4645 6.82843C15.2692 7.02369 15.2692 7.34027 15.4645 7.53553C15.6597 7.7308 15.9763 7.7308 16.1716 7.53553L19.3536 4.35355ZM0 4.5H19V3.5H0V4.5Z" fill="#5671B2" />
+                                    </svg>
+                                </a>
+                            </p>
                             <div class="calculator-box__wrapper calculator-box__wrapper--fb300">
                                 <div class="calculator-helps">
                                     <label class="patent-form__custom-checkbox">
@@ -247,7 +302,7 @@
                             </div>
 
                         </div>
-                        <p class="calculator-helps__link">Чтобы ознакомиться более подробно с каждым классом,
+                        <p class="calculator-helps__link calculator-helps__link-p">Чтобы ознакомиться более подробно с каждым классом,
                             <a  href="">перейдите на страницу МКТУ
                                 <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M19.3536 4.35355C19.5488 4.15829 19.5488 3.84171 19.3536 3.64645L16.1716 0.464466C15.9763 0.269204 15.6597 0.269204 15.4645 0.464466C15.2692 0.659728 15.2692 0.976311 15.4645 1.17157L18.2929 4L15.4645 6.82843C15.2692 7.02369 15.2692 7.34027 15.4645 7.53553C15.6597 7.7308 15.9763 7.7308 16.1716 7.53553L19.3536 4.35355ZM0 4.5H19V3.5H0V4.5Z" fill="#5671B2" />
@@ -268,11 +323,11 @@
                                 и зарегистрировать за 2–3 месяца.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark3_option" value="300">
+                                <input type="radio" name="wordmark3_option" value="0" checked>
                                 Стандартная регистрация 10-15 месяцев
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark3_option" value="0">
+                                <input type="radio" name="wordmark3_option" value="100000">
                                 Ускоренная регистрация 2-3 месяца*
                             </label>
                             <div class="calculator__text--min">*Увеличивает пошлину на 100 000 рублей</div>
@@ -293,7 +348,7 @@
                                 Но если по каким-либо причинам Вам важно его получить (доверие к системе), мысделаем это.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark4_option" value="400">
+                                <input type="radio" name="wordmark4_option" value="1400" checked>
                                 Получить свидетельство на бумаге
                             </label>
                             <label class="">
@@ -482,6 +537,107 @@
         };
 
 
+        const nextBtn = document.querySelector('.calculator__next');
+        const prevBtn = document.querySelector('.calculator__end');
+        const endPages = document.querySelector('.calculator');
+
+        const countElement = document.querySelector('.calculator__caunt span:first-child');
+        const totalElement = document.querySelector('.calculator__caunt span:last-child');
+        const nextBtnText = nextBtn.querySelector('span');
+        const questionsBtn = document.querySelector('.calculator__questions');
+
+        let currentWrapperIndex = 0;
+        const wrappers = document.querySelectorAll('.calculator__wrapper');
+        const totalWrappers = wrappers.length;
+
+        // Скрыть все блоки, кроме первого
+        hideAllWrappers();
+        showWrapper(currentWrapperIndex);
+
+        updateNextButtonText();
+        updateCountText();
+
+        nextBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (currentWrapperIndex < totalWrappers - 1) {
+                currentWrapperIndex++;
+                updateCalculator();
+            } else {
+                // Если текущий блок последний, выполнить действие
+                // Например, отправить заявку
+                sendRequest();
+            }
+        });
+
+        prevBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (currentWrapperIndex > 0) {
+                currentWrapperIndex--;
+                updateCalculator();
+            }
+        });
+
+        function updateCalculator() {
+            hideAllWrappers();
+            showWrapper(currentWrapperIndex);
+            updateNextButtonText();
+            updateCountText();
+            showQuestionsButtonIfNeeded()
+            updatePrevButtonVisibility();
+        }
+
+        function hideAllWrappers() {
+            wrappers.forEach(function (wrapper) {
+                wrapper.style.display = 'none';
+            });
+        }
+
+        function showWrapper(index) {
+            wrappers[index].style.display = 'flex';
+
+
+        }
+
+        function updateNextButtonText() {
+            if (nextBtnText) {
+                if (currentWrapperIndex === totalWrappers - 1) {
+                    nextBtnText.textContent = 'Оставить заявку';
+                } else {
+                    nextBtnText.textContent = 'Далее';
+                }
+            }
+        }
+
+        function updateCountText() {
+            countElement.textContent = currentWrapperIndex + 1;
+            totalElement.textContent = totalWrappers;
+        }
+
+        function showQuestionsButtonIfNeeded() {
+            if (currentWrapperIndex === totalWrappers - 1) {
+                questionsBtn.style.display = 'block';
+                endPages.classList.add('calculator-js');
+            } else {
+                questionsBtn.style.display = 'none';
+                endPages.classList.remove('calculator-js');
+
+            }
+        }
+
+        function updatePrevButtonVisibility() {
+            if (currentWrapperIndex === 0) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+        }
+
+        function sendRequest() {
+            // Здесь можно добавить логику отправки заявки
+            // Например, показать модальное окно или перенаправить пользователя на другую страницу
+            alert('Здесь отправляем заявку');
+        }
+
 
 
 
@@ -489,10 +645,10 @@
     });
 
     // Получаем все радио-кнопки
-    var radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+    const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
 
     // Получаем все блоки с логотипами
-    var logoBlocks = document.querySelectorAll('.calculator__logos');
+    const logoBlocks = document.querySelectorAll('.calculator__logos');
 
     // Перебираем радио-кнопки
     radioButtons.forEach(function(radioButton, index) {

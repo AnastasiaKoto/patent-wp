@@ -1,47 +1,32 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   jQuery(function($) {
-      
-    //if($('section.keyses')) {
-      $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-          $('.keyses__slider').slick('reinit');
-        $(this)
+
+    // При клике на таб
+    $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
+      // Находим слайдер в текущей вкладке и переинициализируем его
+      $(this).closest('.keys__tabs').find('.keyses__slider').slick('unslick').slick({
+        infinite: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      });
+
+      // Далее ваш код для переключения табов
+      $(this)
           .addClass('active').siblings().removeClass('active')
           .closest('div.keyses__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
-      });
-    //}
-
-    /*if($('.keyses-section')) {
-      $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-        var index = $(this).index();
-        var $tabsContent = $(this).closest('div.keyses__tabs').find('div.tabs__content');
-    
-        $tabsContent.removeClass('active').eq(index).addClass('active'); // Переключаем активную вкладку
-    
-        // Переинициализируем пагинацию внутри активной вкладки
-        $tabsContent.eq(index).find('.navigation').wp_pagenavi({
-            query: {
-                paged: 1 // Установите начальную страницу при переключении вкладок
-            }
-        });
-      });    
-    }*/
-
-    $('.articles__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-      $(this)
-        .addClass('active').siblings().removeClass('active')
-        .closest('div.articles__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
     });
 
-      var $slider1 = $('.keyses__slider');
-
-      // Инициализация слайдера
-      $slider1.slick({
-          infinite: false,
-          dots: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-      });
+// Инициализация слайдера при загрузке страницы
+    var $slider1 = $('.keyses__slider');
+    $slider1.slick({
+      infinite: false,
+      dots: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+    });
 
       // Обновление счетчика
       function updateCounter() {
@@ -262,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     $('.points-slider__list').slick({
       infinite: false,
-      slidesToShow: 2,
+      slidesToShow: 1,
       slidesToScroll: 3,
       variableWidth: true,
       prevArrow: $('.points-slider__arrows__end'),
@@ -473,102 +458,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-
-  const nextBtn = document.querySelector('.calculator__next');
-  const prevBtn = document.querySelector('.calculator__end');
-  const countElement = document.querySelector('.calculator__caunt span:first-child');
-  const totalElement = document.querySelector('.calculator__caunt span:last-child');
-  const nextBtnText = nextBtn.querySelector('span');
-  const questionsBtn = document.querySelector('.calculator__questions');
-
-  let currentWrapperIndex = 0;
-  const wrappers = document.querySelectorAll('.calculator__wrapper');
-  const totalWrappers = wrappers.length;
-
-  // Скрыть все блоки, кроме первого
-  hideAllWrappers();
-  showWrapper(currentWrapperIndex);
-
-  updateNextButtonText();
-  updateCountText();
-
-  nextBtn.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (currentWrapperIndex < totalWrappers - 1) {
-      currentWrapperIndex++;
-      updateCalculator();
-    } else {
-      // Если текущий блок последний, выполнить действие
-      // Например, отправить заявку
-      sendRequest();
-    }
-  });
-
-  prevBtn.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (currentWrapperIndex > 0) {
-      currentWrapperIndex--;
-      updateCalculator();
-    }
-  });
-
-  function updateCalculator() {
-    hideAllWrappers();
-    showWrapper(currentWrapperIndex);
-    updateNextButtonText();
-    updateCountText();
-    showQuestionsButtonIfNeeded()
-    updatePrevButtonVisibility();
-  }
-
-  function hideAllWrappers() {
-    wrappers.forEach(function (wrapper) {
-      wrapper.style.display = 'none';
-    });
-  }
-
-  function showWrapper(index) {
-    wrappers[index].style.display = 'flex';
-  }
-
-  function updateNextButtonText() {
-    if (nextBtnText) {
-      if (currentWrapperIndex === totalWrappers - 1) {
-        nextBtnText.textContent = 'Оставить заявку';
-      } else {
-        nextBtnText.textContent = 'Далее';
-      }
-    }
-  }
-
-  function updateCountText() {
-    countElement.textContent = currentWrapperIndex + 1;
-    totalElement.textContent = totalWrappers;
-  }
-
-  function showQuestionsButtonIfNeeded() {
-    if (currentWrapperIndex === totalWrappers - 1) {
-      questionsBtn.style.display = 'block';
-    } else {
-      questionsBtn.style.display = 'none';
-    }
-  }
-
-  function updatePrevButtonVisibility() {
-    if (currentWrapperIndex === 0) {
-      prevBtn.style.display = 'none';
-    } else {
-      prevBtn.style.display = 'block';
-    }
-  }
-
-  function sendRequest() {
-    // Здесь можно добавить логику отправки заявки
-    // Например, показать модальное окно или перенаправить пользователя на другую страницу
-    alert('Здесь отправляем заявку');
-  }
-
-
 
 });
