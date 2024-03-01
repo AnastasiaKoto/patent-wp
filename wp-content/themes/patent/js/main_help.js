@@ -1,18 +1,30 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     jQuery(function ($) {
         // fix slider on tabs
-    $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-        function updateCounter() {
-            var currentSlideNumber = $('.keyses__slider').slick('slickCurrentSlide') + 1;
+
+        function updateOnTabs(order) {
+
+            var currentSlideNumber = $(`.keyses__slider:eq(${order})`).slick('slickCurrentSlide') + 1;
             $('.currentCoach').text(currentSlideNumber);
-            $('.allCoach').text($('.keyses__slider').slick('getSlick').slideCount);
-          
-            // console.log($('.keyses__slider:eq(2)').slick('getSlick').slideCount)  ;
+            $('.allCoach').text($(`.keyses__slider:eq(${order})`).slick('getSlick').slideCount);
+
         }
-            
-        $('.keyses__slider').slick("refresh");
-        updateCounter();
-    });
+        $('.keyses__tabs ul.tabs__caption').on('click', 'li', function () {
+            $('.keyses__slider').slick("refresh");
+            $('.keyses__tabs ul.tabs__caption li').each((i, item) => {
+                if (item == this) {
+                    updateOnTabs(i);
+                    $(".keyses__slider").on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+                        updateOnTabs(i);
+                    });
+
+                }
+
+            });
+
+        });
+
+
         /*page mktu */
         if (window.innerWidth < 768) {
             $(".section-mkty-area-item").click(function () {
@@ -126,15 +138,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         /*read more */
-        $(".article-box__readmore").click(function(){
-            if(!$(this).hasClass("article-box__readmore_active")){
+        $(".article-box__readmore").click(function () {
+            if (!$(this).hasClass("article-box__readmore_active")) {
                 $(this).find("span").text("Свернуть");
             }
-            else{
-                $(this).find("span").text("Читать полностью"); 
+            else {
+                $(this).find("span").text("Читать полностью");
             }
             $(this).toggleClass("article-box__readmore_active");
-           
+
             $(this).prev(".article-box__text").toggleClass("article-box__text_active");
         });
 
