@@ -1,47 +1,32 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   jQuery(function($) {
 
-    //if($('section.keyses')) {
-      $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-          $('.keyses__slider').slick('reinit');
-        $(this)
+    // При клике на таб
+    $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
+      // Находим слайдер в текущей вкладке и переинициализируем его
+      $(this).closest('.keys__tabs').find('.keyses__slider').slick('unslick').slick({
+        infinite: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      });
+
+      // Далее ваш код для переключения табов
+      $(this)
           .addClass('active').siblings().removeClass('active')
           .closest('div.keyses__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
-      });
-    //}
-
-    /*if($('.keyses-section')) {
-      $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-        var index = $(this).index();
-        var $tabsContent = $(this).closest('div.keyses__tabs').find('div.tabs__content');
-
-        $tabsContent.removeClass('active').eq(index).addClass('active'); // Переключаем активную вкладку
-
-        // Переинициализируем пагинацию внутри активной вкладки
-        $tabsContent.eq(index).find('.navigation').wp_pagenavi({
-            query: {
-                paged: 1 // Установите начальную страницу при переключении вкладок
-            }
-        });
-      });
-    }*/
-
-    $('.articles__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
-      $(this)
-        .addClass('active').siblings().removeClass('active')
-        .closest('div.articles__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
     });
 
-      var $slider1 = $('.keyses__slider');
-
-      // Инициализация слайдера
-      $slider1.slick({
-          infinite: false,
-          dots: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-      });
+// Инициализация слайдера при загрузке страницы
+    var $slider1 = $('.keyses__slider');
+    $slider1.slick({
+      infinite: false,
+      dots: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+    });
 
       // Обновление счетчика
       function updateCounter() {

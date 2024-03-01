@@ -3,11 +3,7 @@
  */
 get_header();
 $class_sections = get_field('class_sections');
-
 ?>
-
-
-
 <main class="main">
     <?php get_template_part('templates/blocks/titles', 'wrapper'); ?>
 
