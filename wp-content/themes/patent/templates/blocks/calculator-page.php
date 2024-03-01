@@ -533,8 +533,8 @@
                             </div>
 
                             <!-- endtab -->
-                        <!-- </div> -->
-                        <!-- end mkty->
+                            <!-- </div> -->
+                            <!-- end mkty->
                             <div class="calculator-box__wrapper calculator-box__wrapper--fb800">
 
                                 <h3 class="calculator-box__title">Классы товаров</h3>
@@ -660,203 +660,203 @@
                                 </div>
                             </div> -->
 
-                    </div>
-                    <p class="calculator-helps__link calculator-helps__link-p">Чтобы ознакомиться более подробно с
-                        каждым классом,
-                        <a href="">перейдите на страницу МКТУ
-                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M19.3536 4.35355C19.5488 4.15829 19.5488 3.84171 19.3536 3.64645L16.1716 0.464466C15.9763 0.269204 15.6597 0.269204 15.4645 0.464466C15.2692 0.659728 15.2692 0.976311 15.4645 1.17157L18.2929 4L15.4645 6.82843C15.2692 7.02369 15.2692 7.34027 15.4645 7.53553C15.6597 7.7308 15.9763 7.7308 16.1716 7.53553L19.3536 4.35355ZM0 4.5H19V3.5H0V4.5Z"
-                                    fill="#5671B2" />
-                            </svg>
-                        </a>
-                    </p>
-                </div>
-
-
-            </div>
-
-            <div style="display: none" class="calculator__wrapper">
-                <div class="calculator__inner calculator__inner-2">
-                    <div class="calculator__type">
-                        <h2 class="calculator__title">Выберите тип регистрации</h2>
-                        <div class="calculator__text">
-                            Обычно от 10 до 15 месяцев может занять регистрация, в некоторых случаях, требуется
-                            ускорить этот процесс, тогда мы можем приложить дополнительные усилия
-                            и зарегистрировать за 2–3 месяца.
                         </div>
-                        <label class="">
-                            <input type="radio" name="wordmark3_option" value="0" checked>
-                            Стандартная регистрация 10-15 месяцев
-                        </label>
-                        <label class="">
-                            <input type="radio" name="wordmark3_option" value="100000">
-                            Ускоренная регистрация 2-3 месяца*
-                        </label>
-                        <div class="calculator__text--min">*Увеличивает пошлину на 100 000 рублей</div>
+                        <p class="calculator-helps__link calculator-helps__link-p">Чтобы ознакомиться более подробно с
+                            каждым классом,
+                            <a href="">перейдите на страницу МКТУ
+                                <svg width="20" height="8" viewBox="0 0 20 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.3536 4.35355C19.5488 4.15829 19.5488 3.84171 19.3536 3.64645L16.1716 0.464466C15.9763 0.269204 15.6597 0.269204 15.4645 0.464466C15.2692 0.659728 15.2692 0.976311 15.4645 1.17157L18.2929 4L15.4645 6.82843C15.2692 7.02369 15.2692 7.34027 15.4645 7.53553C15.6597 7.7308 15.9763 7.7308 16.1716 7.53553L19.3536 4.35355ZM0 4.5H19V3.5H0V4.5Z"
+                                        fill="#5671B2" />
+                                </svg>
+                            </a>
+                        </p>
                     </div>
+
 
                 </div>
 
-
-            </div>
-
-            <div style="display: none" class="calculator__wrapper">
-                <div class="calculator__inner calculator__inner-2">
-                    <div class="calculator__type">
-                        <h2 class="calculator__title">Будете ли вы учувствовать в сохранении природы на планете?
-                        </h2>
-                        <div class="calculator__text">
-                            <span>Можно не получать готовое свидетельство на бумаге и сэкономить 1 400 руб.</span>
-                            В этом случае будет только публикация в эл. реестре – ссылка
-                            Но если по каким-либо причинам Вам важно его получить (доверие к системе), мысделаем
-                            это.
+                <div style="display: none" class="calculator__wrapper">
+                    <div class="calculator__inner calculator__inner-2">
+                        <div class="calculator__type">
+                            <h2 class="calculator__title">Выберите тип регистрации</h2>
+                            <div class="calculator__text">
+                                Обычно от 10 до 15 месяцев может занять регистрация, в некоторых случаях, требуется
+                                ускорить этот процесс, тогда мы можем приложить дополнительные усилия
+                                и зарегистрировать за 2–3 месяца.
+                            </div>
+                            <label class="">
+                                <input type="radio" name="wordmark3_option" value="0" checked>
+                                Стандартная регистрация 10-15 месяцев
+                            </label>
+                            <label class="">
+                                <input type="radio" name="wordmark3_option" value="100000">
+                                Ускоренная регистрация 2-3 месяца*
+                            </label>
+                            <div class="calculator__text--min">*Увеличивает пошлину на 100 000 рублей</div>
                         </div>
-                        <label class="">
-                            <input type="radio" name="wordmark4_option" value="1400" checked>
-                            Получить свидетельство на бумаге
-                        </label>
-                        <label class="">
-                            <input type="radio" name="wordmark4_option" value="0">
-                            Получить свидетельство в электронном виде
-                        </label>
+
                     </div>
+
 
                 </div>
 
-
-            </div>
-
-            <div style="display: none" class="calculator__wrapper calculator-value-inner">
-                <div class="calculator-value">
-                    <div class="calculator__inner calculator__inner--sb">
-                        <h2 class="calculator__title">Цена за наши услуги</h2>
-                        <ul class="calculator-value__list calculator-value__list-js1">
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Ваш товарный знак:</span>
-                                    <span class="calculator-value__span calculator-value__span-bold">апр</span>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Поиск:</span>
-                                    <span
-                                        class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s1">1
-                                        000 ₽</span>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Подача заявки и ведение дел</span>
-                                    <span
-                                        class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s2">26
-                                        000 ₽</span>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Получение свидетельства</span>
-                                    <span
-                                        class="calculator-value__span calculator-value__span-bold calculator-value__span-js-3">12
-                                        000 ₽</span>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Итого:</span>
-                                    <span
-                                        class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s-4">38
-                                        000 ₽</span>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="calculator__inner calculator__inner--sb">
-                        <div class="">
-                            <h2 class="calculator__title">Пошлины Роспатента</h2>
-                            <p class="calculator__subtitle-text">Размер пошлины зависит от количества классов МКТУ,
-                                которые вы указали при расчете.</p>
+                <div style="display: none" class="calculator__wrapper">
+                    <div class="calculator__inner calculator__inner-2">
+                        <div class="calculator__type">
+                            <h2 class="calculator__title">Будете ли вы учувствовать в сохранении природы на планете?
+                            </h2>
+                            <div class="calculator__text">
+                                <span>Можно не получать готовое свидетельство на бумаге и сэкономить 1 400 руб.</span>
+                                В этом случае будет только публикация в эл. реестре – ссылка
+                                Но если по каким-либо причинам Вам важно его получить (доверие к системе), мысделаем
+                                это.
+                            </div>
+                            <label class="">
+                                <input type="radio" name="wordmark4_option" value="1400" checked>
+                                Получить свидетельство на бумаге
+                            </label>
+                            <label class="">
+                                <input type="radio" name="wordmark4_option" value="0">
+                                Получить свидетельство в электронном виде
+                            </label>
                         </div>
-                        <ul class="calculator-value__list calculator-value__list-js2">
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Подача заявки</span>
-                                    <span
-                                        class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-1">10
-                                        500 ₽</span>
-                                </p>
-                            </li>
 
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Получение свидетельства</span>
-                                    <span
-                                        class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-2">11
-                                        200 ₽</span>
-                                </p>
-                            </li>
+                    </div>
 
-                            <li>
-                                <p>
-                                    <span class="calculator-value__span">Итого:</span>
-                                    <span
-                                        class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-3">21
-                                        700 ₽</span>
-                                </p>
-                            </li>
 
-                        </ul>
+                </div>
+
+                <div style="display: none" class="calculator__wrapper calculator-value-inner">
+                    <div class="calculator-value">
+                        <div class="calculator__inner calculator__inner--sb">
+                            <h2 class="calculator__title">Цена за наши услуги</h2>
+                            <ul class="calculator-value__list calculator-value__list-js1">
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Ваш товарный знак:</span>
+                                        <span class="calculator-value__span calculator-value__span-bold">апр</span>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Поиск:</span>
+                                        <span
+                                            class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s1">1
+                                            000 ₽</span>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Подача заявки и ведение дел</span>
+                                        <span
+                                            class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s2">26
+                                            000 ₽</span>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Получение свидетельства</span>
+                                        <span
+                                            class="calculator-value__span calculator-value__span-bold calculator-value__span-js-3">12
+                                            000 ₽</span>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Итого:</span>
+                                        <span
+                                            class="calculator-value__span calculator-value__span-bold calculator-value__span-js-s-4">38
+                                            000 ₽</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="calculator__inner calculator__inner--sb">
+                            <div class="">
+                                <h2 class="calculator__title">Пошлины Роспатента</h2>
+                                <p class="calculator__subtitle-text">Размер пошлины зависит от количества классов МКТУ,
+                                    которые вы указали при расчете.</p>
+                            </div>
+                            <ul class="calculator-value__list calculator-value__list-js2">
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Подача заявки</span>
+                                        <span
+                                            class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-1">10
+                                            500 ₽</span>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Получение свидетельства</span>
+                                        <span
+                                            class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-2">11
+                                            200 ₽</span>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                        <span class="calculator-value__span">Итого:</span>
+                                        <span
+                                            class="calculator-value__span calculator-value__span-bold calculator-value__span-js-c-3">21
+                                            700 ₽</span>
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="calculator-value-bottom">
+                        <p>Всего за регистрацию: <span class="total">59 700 ₽</span></p>
                     </div>
                 </div>
-                <div class="calculator-value-bottom">
-                    <p>Всего за регистрацию: <span class="total">59 700 ₽</span></p>
-                </div>
             </div>
-        </div>
 
 
 
 
 
 
-        <div class="calculator__inner-btn">
-            <a style="display: none" class="calculator__end" href="#">
-                <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0.46967 5.46967C0.176777 5.76256 0.176777 6.23744 0.46967 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46447 6.59619 0.989592 6.3033 0.696699C6.01041 0.403805 5.53553 0.403805 5.24264 0.696699L0.46967 5.46967ZM11 5.25L1 5.25L1 6.75L11 6.75L11 5.25Z"
-                        fill="#1E1D25" fill-opacity="0.6" />
-                </svg>
-                назад
-            </a>
-
-            <div style="display: none" class="calculator__questions">
-                остались вопросы? хотите получить услугу?
-                <span>
-                    тогда оставьте заявку
-                    <svg width="25" height="8" viewBox="0 0 25 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="calculator__inner-btn">
+                <a style="display: none" class="calculator__end" href="#">
+                    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M24.3536 4.35355C24.5488 4.15829 24.5488 3.84171 24.3536 3.64645L21.1716 0.464466C20.9763 0.269204 20.6597 0.269204 20.4645 0.464466C20.2692 0.659728 20.2692 0.976311 20.4645 1.17157L23.2929 4L20.4645 6.82843C20.2692 7.02369 20.2692 7.34027 20.4645 7.53553C20.6597 7.7308 20.9763 7.7308 21.1716 7.53553L24.3536 4.35355ZM0 4.5H24V3.5H0V4.5Z"
-                            fill="#1E1D25" />
+                            d="M0.46967 5.46967C0.176777 5.76256 0.176777 6.23744 0.46967 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46447 6.59619 0.989592 6.3033 0.696699C6.01041 0.403805 5.53553 0.403805 5.24264 0.696699L0.46967 5.46967ZM11 5.25L1 5.25L1 6.75L11 6.75L11 5.25Z"
+                            fill="#1E1D25" fill-opacity="0.6" />
                     </svg>
-                </span>
-            </div>
+                    назад
+                </a>
 
-            <a class="calculator__next" href="#">
-                <span>далее</span>
-                <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10.5303 6.53033C10.8232 6.23744 10.8232 5.76256 10.5303 5.46967L5.75736 0.696699C5.46447 0.403806 4.98959 0.403806 4.6967 0.696699C4.40381 0.989593 4.40381 1.46447 4.6967 1.75736L8.93934 6L4.6967 10.2426C4.40381 10.5355 4.40381 11.0104 4.6967 11.3033C4.98959 11.5962 5.46447 11.5962 5.75736 11.3033L10.5303 6.53033ZM0 6.75H10V5.25H0V6.75Z"
-                        fill="white" />
-                </svg>
-            </a>
+                <div style="display: none" class="calculator__questions">
+                    остались вопросы? хотите получить услугу?
+                    <span>
+                        тогда оставьте заявку
+                        <svg width="25" height="8" viewBox="0 0 25 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24.3536 4.35355C24.5488 4.15829 24.5488 3.84171 24.3536 3.64645L21.1716 0.464466C20.9763 0.269204 20.6597 0.269204 20.4645 0.464466C20.2692 0.659728 20.2692 0.976311 20.4645 1.17157L23.2929 4L20.4645 6.82843C20.2692 7.02369 20.2692 7.34027 20.4645 7.53553C20.6597 7.7308 20.9763 7.7308 21.1716 7.53553L24.3536 4.35355ZM0 4.5H24V3.5H0V4.5Z"
+                                fill="#1E1D25" />
+                        </svg>
+                    </span>
+                </div>
+
+                <a class="calculator__next" href="#">
+                    <span>далее</span>
+                    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.5303 6.53033C10.8232 6.23744 10.8232 5.76256 10.5303 5.46967L5.75736 0.696699C5.46447 0.403806 4.98959 0.403806 4.6967 0.696699C4.40381 0.989593 4.40381 1.46447 4.6967 1.75736L8.93934 6L4.6967 10.2426C4.40381 10.5355 4.40381 11.0104 4.6967 11.3033C4.98959 11.5962 5.46447 11.5962 5.75736 11.3033L10.5303 6.53033ZM0 6.75H10V5.25H0V6.75Z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </div>
         </div>
-    </div>
     </div>
 </section>
 

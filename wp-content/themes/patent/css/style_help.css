@@ -365,7 +365,7 @@ h2.global-popup__title {
 
 
 
-@media (max-width:576px) {
+@media (max-width:767px) {
     .titles__block_dark {
         background: linear-gradient(194.54deg, #CDD1DD 25%, #5671B2 159.34%);
     }
