@@ -47,7 +47,7 @@ function main_callback(){
         $headers  = "Content-type: text/html; charset=utf-8 \r\n";
         $headers .= "From: <wordpress@patent.veht.ru>\r\n";
 
-        $mailstat = mail('kotova.kotovashisha@yandex.ru', 'Письмо с сайта', $message2, $headers);
+        $mailstat = mail('info@gospatent.ru', 'Письмо с сайта', $message2, $headers);
 
         wp_send_json([
             'success' => true,
