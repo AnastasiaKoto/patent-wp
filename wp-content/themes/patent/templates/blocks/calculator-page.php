@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="calculator__inner  calculator__inner-m">
-                            <div class="calculator__logos">
+                            <div class="calculator__logos calculator__logos-m">
                                 <p>Примеры словесного товарного знака:</p>
                                 <ul>
                                     <li>
@@ -45,7 +45,7 @@
                                 </ul>
                             </div>
 
-                            <div class="calculator__logos" style="display: none;">
+                            <div class="calculator__logos calculator__logos-m" style="display: none;">
                                 <p>Примеры словесного товарного знака:</p>
                                 <ul>
                                     <li>
@@ -60,7 +60,7 @@
                                 </ul>
                             </div>
 
-                            <div class="calculator__logos" style="display: none;">
+                            <div class="calculator__logos calculator__logos-m" style="display: none;">
                                 <p>Примеры словесного товарного знака:</p>
                                 <ul>
                                     <li>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="calculator__inner  calculator__inner-p">
-                        <div class="calculator__logos">
+                        <div class="calculator__logos calculator__logos-p">
                             <p>Примеры словесного товарного знака:</p>
                             <ul>
                                 <li>
@@ -106,7 +106,7 @@
                             </ul>
                         </div>
 
-                        <div class="calculator__logos" style="display: none;">
+                        <div class="calculator__logos calculator__logos-p" style="display: none;">
                             <p>Примеры словесного товарного знака:</p>
                             <ul>
                                 <li>
@@ -121,7 +121,7 @@
                             </ul>
                         </div>
 
-                        <div class="calculator__logos" style="display: none;">
+                        <div class="calculator__logos calculator__logos-p" style="display: none;">
                             <p>Примеры словесного товарного знака:</p>
                             <ul>
                                 <li>
@@ -822,7 +822,10 @@
 </section>
 
 <script>
+    // Ожидаем загрузки контента страницы
     document.addEventListener('DOMContentLoaded', function () {
+
+        // Функция для добавления обработчиков событий для групп радио-кнопок
         const addOptionHandler = groupName => {
             const inputs = document.querySelectorAll(`input[name="${groupName}"]`);
             inputs.forEach(input => {
@@ -830,70 +833,44 @@
             });
         };
 
+        // Функция для вычисления общей суммы выбранных параметров
         const calculateTotal = () => {
+            // Получаем выбранные радио-кнопки
             const radios = document.querySelectorAll('input[type="radio"]:checked');
-            const checkboxes = document.querySelectorAll('.calculator-box__items input[type="checkbox"]:checked');
 
+            // Вычисляем общую сумму для радио-кнопок
             let radioTotal = Array.from(radios).reduce((acc, radio) => acc + parseInt(radio.value), 0);
-            let checkboxTotal = Array.from(checkboxes).reduce((acc, checkbox) => acc + parseInt(checkbox.value), 0);
 
-            // Обновляем суммы в разметке для радио кнопок
+            // Обновляем сумму в разметке для радио кнопок
             document.querySelector('.calculator-value__span-js-s-4').textContent = formatPrice(radioTotal);
 
-            // Обновляем суммы в разметке для чекбоксов
-            document.querySelector('.calculator-value__span-js-c-3').textContent = formatPrice(checkboxTotal);
-
             // Обновляем общую сумму в разметке
-            const total = radioTotal + checkboxTotal;
-            document.querySelector('.total').textContent = formatPrice(total);
+            document.querySelector('.total').textContent = formatPrice(radioTotal);
 
-            console.log('Общая сумма:', total);
+            console.log('Общая сумма:', radioTotal);
         };
-
-        const checkboxes = document.querySelectorAll('.calculator-box__items input[type="checkbox"]');
-        const selectedCountDiv = document.getElementById('selected-count');
-
-        const updateSelectedCount = () => {
-            let selectedCount = 0;
-            let totalValue = 0;
-
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    selectedCount++;
-                    totalValue += parseInt(checkbox.value);
-                }
-            });
-
-            selectedCountDiv.textContent = selectedCount;
-            console.log('Общая сумма выбранных: ', totalValue);
-        };
-
-        checkboxes.forEach((checkbox, index) => {
-            checkbox.addEventListener('change', updateSelectedCount);
-            checkbox.id = 'modern-checkbox' + (index + 1);
-            checkbox.nextElementSibling.setAttribute('for', 'modern-checkbox' + (index + 1));
-        });
-
-        addOptionHandler('wordmark_option');
-        addOptionHandler('wordmark2_option');
-        addOptionHandler('wordmark3_option');
-        addOptionHandler('wordmark4_option');
 
         // Функция для форматирования цены
         const formatPrice = price => {
             return price.toLocaleString('ru-RU') + ' ₽';
         };
 
+        // Добавляем обработчики событий для групп радио-кнопок
+        addOptionHandler('wordmark_option');
+        addOptionHandler('wordmark2_option');
+        addOptionHandler('wordmark3_option');
+        addOptionHandler('wordmark4_option');
 
+        // Управление переходами между разделами калькулятора
+
+        // Получаем необходимые элементы
         const nextBtn = document.querySelector('.calculator__next');
         const prevBtn = document.querySelector('.calculator__end');
         const endPages = document.querySelector('.calculator');
-
         const countElement = document.querySelector('.calculator__caunt span:first-child');
         const totalElement = document.querySelector('.calculator__caunt span:last-child');
         const nextBtnText = nextBtn.querySelector('span');
         const questionsBtn = document.querySelector('.calculator__questions');
-
         let currentWrapperIndex = 0;
         const wrappers = document.querySelectorAll('.calculator__wrapper');
         const totalWrappers = wrappers.length;
@@ -905,15 +882,14 @@
         updateNextButtonText();
         updateCountText();
 
+        // Добавляем обработчики событий для кнопок "Далее" и "Назад"
         nextBtn.addEventListener('click', function (event) {
             event.preventDefault();
             if (currentWrapperIndex < totalWrappers - 1) {
                 currentWrapperIndex++;
                 updateCalculator();
             } else {
-                // Если текущий блок последний, выполнить действие
-                // Например, отправить заявку
-                sendRequest();
+                sendRequest(); // Если текущий блок последний, отправить заявку
             }
         });
 
@@ -925,6 +901,7 @@
             }
         });
 
+        // Функция для обновления состояния калькулятора
         function updateCalculator() {
             hideAllWrappers();
             showWrapper(currentWrapperIndex);
@@ -934,18 +911,19 @@
             updatePrevButtonVisibility();
         }
 
+        // Функция для скрытия всех блоков
         function hideAllWrappers() {
             wrappers.forEach(function (wrapper) {
                 wrapper.style.display = 'none';
             });
         }
 
+        // Функция для отображения блока по индексу
         function showWrapper(index) {
             wrappers[index].style.display = 'flex';
-
-
         }
 
+        // Функция для обновления текста кнопки "Далее"
         function updateNextButtonText() {
             if (nextBtnText) {
                 if (currentWrapperIndex === totalWrappers - 1) {
@@ -956,11 +934,13 @@
             }
         }
 
+        // Функция для обновления текста счетчика разделов
         function updateCountText() {
             countElement.textContent = currentWrapperIndex + 1;
             totalElement.textContent = totalWrappers;
         }
 
+        // Показать кнопку "Задать вопрос"
         function showQuestionsButtonIfNeeded() {
             if (currentWrapperIndex === totalWrappers - 1) {
                 questionsBtn.style.display = 'block';
@@ -968,10 +948,10 @@
             } else {
                 questionsBtn.style.display = 'none';
                 endPages.classList.remove('calculator-js');
-
             }
         }
 
+        // Обновить видимость кнопки "Назад"
         function updatePrevButtonVisibility() {
             if (currentWrapperIndex === 0) {
                 prevBtn.style.display = 'none';
@@ -980,36 +960,36 @@
             }
         }
 
+        // Отправить заявку
         function sendRequest() {
-            // Здесь можно добавить логику отправки заявки
-            // Например, показать модальное окно или перенаправить пользователя на другую страницу
             alert('Здесь отправляем заявку');
         }
-
-
-
-
-
     });
 
-    // Получаем все радио-кнопки
+    // Управление отображением блоков с логотипами для радио-кнопок
     const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+    const logoBlocks = document.querySelectorAll('.calculator__logos-p');
 
-    // Получаем все блоки с логотипами
-    const logoBlocks = document.querySelectorAll('.calculator__logos');
-
-    // Перебираем радио-кнопки
     radioButtons.forEach(function (radioButton, index) {
-        // Назначаем обработчик события изменения для каждой кнопки
         radioButton.addEventListener('change', function () {
-            // Скрываем все блоки с логотипами
             logoBlocks.forEach(function (logoBlock) {
                 logoBlock.style.display = 'none';
             });
-
-            // Показываем блок с логотипами, соответствующий выбранной радио-кнопке
             logoBlocks[index].style.display = 'block';
         });
     });
 
+    // Управление отображением блоков с логотипами для других радио-кнопок
+    const radioButtonsm = document.querySelectorAll('input[name="wordmark_option"]');
+    const logoBlocksm = document.querySelectorAll('.calculator__logos-m');
+
+    radioButtonsm.forEach(function (radioButton, index) {
+        radioButton.addEventListener('change', function () {
+            logoBlocksm.forEach(function (logoBlock) {
+                logoBlock.style.display = 'none';
+            });
+            logoBlocksm[index].style.display = 'block';
+        });
+    });
 </script>
+

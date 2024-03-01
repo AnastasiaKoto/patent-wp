@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     jQuery(function ($) {
-
+        // fix slider on tabs
+    $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
+        $('.keyses__slider').slick("refresh");
+    });
         /*page mktu */
         if (window.innerWidth < 768) {
             $(".section-mkty-area-item").click(function () {

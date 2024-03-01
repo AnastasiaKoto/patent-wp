@@ -377,7 +377,7 @@ h2.global-popup__title {
     .banner_office .banner__offer {
        top: 0px;
        padding-bottom: 30px;
-       margin-bottom: 0px;
+       margin-bottom: 20px;
     }
     .titles__block_dark {
         background: linear-gradient(194.54deg, #CDD1DD 32%, #5671B2 159.34%);
@@ -403,6 +403,7 @@ h2.global-popup__title {
 
     .banner_office .banner__offer ul li {
         padding-left: 0px;
+        padding-bottom: 20px;
     }
 
     .section-mkty-tabs-item p,
