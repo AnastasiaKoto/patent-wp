@@ -31,7 +31,7 @@ function all_styles() {
   wp_enqueue_style( 'archive-services_css', '/wp-content/themes/patent/css/archive-services.css' );
   wp_enqueue_style( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css' );
     wp_enqueue_style( 'style_help', '/wp-content/themes/patent/css/style_help.css' );
-   
+
 }
 function all_js() {
 	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js');
@@ -171,4 +171,5 @@ function create_custom_taxonomies() {
 add_action('init', 'create_custom_taxonomies');
 
 require __DIR__ . '/inc/main_form.php';
+
 

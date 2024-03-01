@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       $('.slick-prev-new').click(function(){
           $slider1.slick('slickPrev');
       });
-    
+
 
 
           // Создаем медиа-запрос для экранов с шириной меньше 1024px
@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       });
 
 
-    
-    
+
+
     //отправка формы
     let footerSubmitted = false;
     $('#order').on('click', '.btn__submit', function (e) {
@@ -156,6 +156,295 @@ document.addEventListener("DOMContentLoaded", function(event) {
       } else {
         form.find('.global_err').addClass('active');
       }
+    });
+
+
+
+
+    //Получить скидку
+    let SubmittedSale = false;
+    $('#order-sale').on('click', '.btn__submit', function (e) {
+      e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
+      if(SubmittedSale == false) {
+        let policy = form.find('input[name="agree"]');
+
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
+
+        if (policy.is(':checked')) {
+          SubmittedSale = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            SubmittedSale = false;
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+                if($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
+              }
+            }
+          });
+        } else {
+          console.log('политика не заполнена');
+          policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
+        }
+      } else {
+        form.find('.global_err').addClass('active');
+      }
+    });
+
+
+    //Заказать услугу
+    let SubmittedOrder = false;
+    $('#order-services').on('click', '.btn__submit', function (e) {
+      e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
+      if(SubmittedOrder == false) {
+        let policy = form.find('input[name="agree"]');
+
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
+
+        if (policy.is(':checked')) {
+          SubmittedOrder = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            SubmittedOrder = false;
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+                if($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
+              }
+            }
+          });
+        } else {
+          console.log('политика не заполнена');
+          policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
+        }
+      } else {
+        form.find('.global_err').addClass('active');
+      }
+    });
+
+    //Заказать звонок
+    let SubmittedCall = false;
+    $('#request-call').on('click', '.btn__submit', function (e) {
+      e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
+      if(SubmittedCall == false) {
+        let policy = form.find('input[name="agree"]');
+
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
+
+        if (policy.is(':checked')) {
+          SubmittedCall = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            SubmittedCall = false;
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+                if($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
+              }
+            }
+          });
+        } else {
+          console.log('политика не заполнена');
+          policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
+        }
+      } else {
+        form.find('.global_err').addClass('active');
+      }
+    });
+
+
+
+    //Получить консультацию
+    let SubmittedConsult = false;
+    $('#get-consult').on('click', '.btn__submit', function (e) {
+      e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
+      if(SubmittedConsult == false) {
+        let policy = form.find('input[name="agree"]');
+
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
+
+        if (policy.is(':checked')) {
+          SubmittedConsult = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            SubmittedConsult = false;
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+                if($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
+              }
+            }
+          });
+        } else {
+          console.log('политика не заполнена');
+          policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
+        }
+      } else {
+        form.find('.global_err').addClass('active');
+      }
+    });
+
+
+    //Оставить заявку
+    let SubmittedApplication = false;
+    $('#submit-application').on('click', '.btn__submit', function (e) {
+      e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
+      if(SubmittedApplication == false) {
+        let policy = form.find('input[name="agree"]');
+
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
+
+        if (policy.is(':checked')) {
+          SubmittedApplication = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            SubmittedApplication = false;
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+                if($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
+              }
+            }
+          });
+        } else {
+          console.log('политика не заполнена');
+          policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
+        }
+      } else {
+        form.find('.global_err').addClass('active');
+      }
+    });
+
+
+    $(".click_btn_banner").click(function() {
+      $('html, body').animate({
+        scrollTop: $(".benefit").offset().top
+      }, 2000);
     });
 
 
@@ -247,7 +536,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     $('.points-slider__list').slick({
       infinite: false,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 3,
       variableWidth: true,
       prevArrow: $('.points-slider__arrows__end'),
@@ -274,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //     service.addEventListener('click', function() {
   //       currentPoint.textContent = this.textContent;
   //       let selectedValue = this.getAttribute('data-value');
-  //       servicesSelect.value = selectedValue; 
+  //       servicesSelect.value = selectedValue;
   //     })
   //   })
   // }
@@ -354,7 +643,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   let overlay = document.querySelector('.overlay');
   let resultClose = document.querySelector('.close__btn');
   let modal = document.querySelector('.modal');
-  
+
   if(overlay) {
     overlay.addEventListener('click', function() {
       if(modal.classList.contains('active')) {
@@ -385,7 +674,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       })
     })
   }
-  
+
 });
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -458,5 +747,102 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+
+  const nextBtn = document.querySelector('.calculator__next');
+  const prevBtn = document.querySelector('.calculator__end');
+  const countElement = document.querySelector('.calculator__caunt span:first-child');
+  const totalElement = document.querySelector('.calculator__caunt span:last-child');
+  const nextBtnText = nextBtn.querySelector('span');
+  const questionsBtn = document.querySelector('.calculator__questions');
+
+  let currentWrapperIndex = 0;
+  const wrappers = document.querySelectorAll('.calculator__wrapper');
+  const totalWrappers = wrappers.length;
+
+  // Скрыть все блоки, кроме первого
+  hideAllWrappers();
+  showWrapper(currentWrapperIndex);
+
+  updateNextButtonText();
+  updateCountText();
+
+  nextBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex < totalWrappers - 1) {
+      currentWrapperIndex++;
+      updateCalculator();
+    } else {
+      // Если текущий блок последний, выполнить действие
+      // Например, отправить заявку
+      sendRequest();
+    }
+  });
+
+  prevBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex > 0) {
+      currentWrapperIndex--;
+      updateCalculator();
+    }
+  });
+
+  function updateCalculator() {
+    hideAllWrappers();
+    showWrapper(currentWrapperIndex);
+    updateNextButtonText();
+    updateCountText();
+    showQuestionsButtonIfNeeded()
+    updatePrevButtonVisibility();
+  }
+
+  function hideAllWrappers() {
+    wrappers.forEach(function (wrapper) {
+      wrapper.style.display = 'none';
+    });
+  }
+
+  function showWrapper(index) {
+    wrappers[index].style.display = 'flex';
+  }
+
+  function updateNextButtonText() {
+    if (nextBtnText) {
+      if (currentWrapperIndex === totalWrappers - 1) {
+        nextBtnText.textContent = 'Оставить заявку';
+      } else {
+        nextBtnText.textContent = 'Далее';
+      }
+    }
+  }
+
+  function updateCountText() {
+    countElement.textContent = currentWrapperIndex + 1;
+    totalElement.textContent = totalWrappers;
+  }
+
+  function showQuestionsButtonIfNeeded() {
+    if (currentWrapperIndex === totalWrappers - 1) {
+      questionsBtn.style.display = 'block';
+    } else {
+      questionsBtn.style.display = 'none';
+    }
+  }
+
+  function updatePrevButtonVisibility() {
+    if (currentWrapperIndex === 0) {
+      prevBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = 'block';
+    }
+  }
+
+  function sendRequest() {
+    // Здесь можно добавить логику отправки заявки
+    // Например, показать модальное окно или перенаправить пользователя на другую страницу
+    alert('Здесь отправляем заявку');
+  }
+
+
 
 });

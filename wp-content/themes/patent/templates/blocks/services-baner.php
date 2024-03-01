@@ -19,7 +19,7 @@ $offer_field = get_field('offer_list');
                 <?php if (!empty($service_field)): ?>
                     <div class="banner-services__offerse">
                         <p><?php echo $service_field ?></p>
-                        <a href="#" class="dark__btn btn banner__btn">Заказать услугу</a>
+                        <a href="#callback-popup3"  class="dark__btn btn banner__btn global-trigger">Заказать услугу</a>
                     </div>
                 <?php endif; ?>
 
@@ -46,3 +46,17 @@ $offer_field = get_field('offer_list');
         </div>
     </div>
 </section>
+<!-- Global Popup -->
+<div class="global-popup" id="callback-popup3" style="display:none">
+    <div class="global-popup__inner">
+        <h2 class="global-popup__title">
+            заказать услугу
+            патнетного поверенного
+        </h2>
+        <p>Равным образом консультация с широким активом требуют
+            от нас анализа форм развития. </p>
+        <!--заказать услугу патнетного поверенного -->
+        <?php get_template_part('templates/forms/feedback', 'services'); ?>
+        <!--заказать услугу патнетного поверенного -->
+    </div>
+</div>

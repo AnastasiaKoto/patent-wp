@@ -156,12 +156,17 @@
 
 <!-- Global Popup -->
 <div class="global-popup" id="callback-popup" style="display:none">
-	<div class="global-popup__inner">
-		<h2 class="global-popup__title">
-			заказать услугу
-			патнетного поверенного
-		</h2>
-	</div>
+    <div class="global-popup__inner">
+        <h2 class="global-popup__title">
+            заказать звонок
+            патнетного поверенного
+        </h2>
+        <p>Равным образом консультация с широким активом требуют
+            от нас анализа форм развития. </p>
+        <!--заказать услугу патнетного поверенного -->
+        <?php get_template_part('templates/forms/feedback', 'call'); ?>
+        <!--заказать услугу патнетного поверенного -->
+    </div>
 </div>
 
 <div class="global-popup" id="privacy-popup" style="display:none">

@@ -35,7 +35,7 @@
                         <?php } ?>
                     </ul>
                 <?php } ?>
-                <a href="#" class="btn dark__btn">Получить консультацию</a>
+                <a href="#callback-consult" class="btn dark__btn global-trigger">Получить консультацию</a>
             </div>
             <div class="lead__card">
                 <div class="big__title">
@@ -53,8 +53,42 @@
                         <?php } ?>
                     </ul>
                 <?php } ?>
-                <a href="#" class="btn dark__btn">Оставить заявку</a>
+                <a href="#callback-application" class="btn dark__btn global-trigger">Оставить заявку</a>
             </div>
         </div>
     </div>
 </section>
+
+
+
+<!-- Global Popup -->
+<div class="global-popup" id="callback-consult" style="display:none">
+    <div class="global-popup__inner">
+        <h2 class="global-popup__title">
+            Получить консультацию
+            патнетного поверенного
+        </h2>
+        <p>Равным образом консультация с широким активом требуют
+            от нас анализа форм развития. </p>
+        <!--заказать услугу патнетного поверенного -->
+        <?php get_template_part('templates/forms/feedback', 'consult'); ?>
+        <!--заказать услугу патнетного поверенного -->
+    </div>
+</div>
+
+
+
+
+<!-- Global Popup -->
+<div class="global-popup" id="callback-application" style="display:none">
+    <div class="global-popup__inner">
+        <h2 class="global-popup__title">
+            Оставить заявку
+        </h2>
+        <p>Равным образом консультация с широким активом требуют
+            от нас анализа форм развития. </p>
+        <!--заказать услугу патнетного поверенного -->
+        <?php get_template_part('templates/forms/feedback', 'application'); ?>
+        <!--заказать услугу патнетного поверенного -->
+    </div>
+</div>
