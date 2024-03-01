@@ -116,7 +116,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         });
 
-        
+        /*read more */
+        $(".article-box__readmore").click(function(){
+            $(".article-box__readmore").toggleClass("article-box__readmore_active");
+            $(this).prev(".article-box__text").toggleClass("article-box__text_active");
+        });
 
     })
 
