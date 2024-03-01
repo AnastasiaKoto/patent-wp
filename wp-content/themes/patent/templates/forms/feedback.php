@@ -1,4 +1,4 @@
-<form action="" method="POST" id="order" name="order">
+<form action="" method="POST" id="order"  name="order">
     <div class="form__wrapper flex">
         <div class="inp__wrapper">
             <input type="text" name="order_name" id="order_name" class="order__inp" placeholder="Имя">
@@ -9,7 +9,7 @@
         <div class="inp__wrapper">
             <input type="email" name="order_mail" id="order_mail" class="order__inp" placeholder="Email">
         </div>
-        <?php 
+        <?php
         $args = array(
             'post_type' => 'services',
             'post_status' => 'publish',
@@ -19,7 +19,7 @@
         if ($services ->have_posts()) {
         ?>
         <select name="order_service" id="order_service" class="order__inp">
-            <?php 
+            <?php
             while ( $services->have_posts() ) {
                 $services->the_post();
             ?>
@@ -30,7 +30,7 @@
             <div class="order__default">Услуга</div>
             <div class="order__services-list">
                 <ul class="flex">
-                    <?php 
+                    <?php
                     while ( $services->have_posts() ) {
                         $services->the_post();
                     ?>
@@ -39,7 +39,7 @@
                 </ul>
             </div>
         </div>
-        <?php 
+        <?php
         }
         wp_reset_postdata();
         ?>

@@ -14,7 +14,7 @@
                             <?php } ?>
                         </ul>
                     <?php } ?>
-                    <a href="#" class="dark__btn btn banner__btn">Кому и чем могу быть полезен</a>
+                    <a  class="dark__btn btn banner__btn click_btn_banner">Кому и чем могу быть полезен</a>
                 </div>
                 <?php
                 if( have_rows('utp') ) { ?>
