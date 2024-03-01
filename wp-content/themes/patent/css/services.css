@@ -390,6 +390,27 @@
     flex-basis: auto;
 }
 
+.section-mkty-tabs-styles {
+    display: none;
+    position: absolute;
+    background: #ebebeb;
+    color: #fff3cd;
+    padding: 20px;
+    border-radius: 3%;
+    top: 0;
+    right: 529px;
+}
+
+.section-mkty-area__item .section-mkty-area-item:hover .section-mkty-tabs-styles {
+    display: flex;
+}
+
+
+
+.calculator__inner-2 {
+    position: relative;
+}
+
 .calculator__text {
     font-weight: 400;
     font-size: 16px;

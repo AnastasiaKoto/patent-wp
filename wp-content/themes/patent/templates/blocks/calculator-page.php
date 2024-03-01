@@ -154,11 +154,11 @@
                                 увеличивает вероятность того, что ваш знак будет зарегистрирован.
                             </div>
                             <label class="">
-                                <input type="radio" name="wordmark2_option" value="">
+                                <input type="radio" name="wordmark2_option" value="yes">
                                 Да, требуется полная проверка моего товарного знака (3-4 дня).
                             </label>
                             <label class="">
-                                <input type="radio" name="wordmark2_option" value="0">
+                                <input type="radio" name="wordmark2_option" value="no">
                                 Нет, не требуется. Мне известна возможность регистрации моего товарного знака.
                             </label>
                         </div>
@@ -368,7 +368,7 @@
                         </div>
                         <!--endarea -->
 
-                        <div class="section-mkty__tabs section-mkty-tabs">
+                        <div class="section-mkty__tabs section-mkty-tabs section-mkty-tabs-styles">
                             <!-- tab -->
                             <div class="section-mkty-tabs__item section-mkty-tabs-item" id="mkty-tabs-item_1">
 
@@ -822,6 +822,98 @@
 </section>
 
 <script>
+    // Получаем все радио-кнопки
+    const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+    const radioButtons2 = document.querySelectorAll('input[name="wordmark2_option"]');
+
+    // Создаем переменную для хранения выбранного значения
+    let selectedValue = '';
+    let additionalValue = 0; // Дополнительное значение, которое будет добавлено к selectedValue
+
+    // Проходимся по всем радио-кнопкам и добавляем обработчик события
+    radioButtons.forEach(button => {
+        button.addEventListener('change', function() {
+            // Обновляем значение переменной при изменении выбора
+            selectedValue = this.value;
+            // Выводим значение в консоль
+            console.log('Выбранное значение:', selectedValue);
+        });
+    });
+
+    // Проходимся по всем радио-кнопкам во второй группе и добавляем обработчик события
+    radioButtons2.forEach(button => {
+        button.addEventListener('change', function() {
+            // Обновляем значение переменной при изменении выбора во второй группе
+            selectedValue = document.querySelector('input[name="wordmark_option"]:checked').value;
+            // Проверяем, был ли выбран вариант "Да" во второй группе
+            if (this.value === 'yes') {
+                // Если выбрано "Да", то добавляем 10 к selectedValue
+                additionalValue = 10;
+            } else {
+                // Если выбрано "Нет", то сбрасываем дополнительное значение
+                additionalValue = 0;
+            }
+            // Выводим значение в консоль
+            console.log('Выбранное значение:', selectedValue);
+            console.log('Дополнительное значение:', additionalValue);
+        });
+    });
+
+
+
+
+
+
+
+    // Получаем все элементы с классом section-mkty-area-item
+    const items = document.querySelectorAll('.section-mkty-area-item');
+
+    // Добавляем цену 1000 к каждому элементу
+    items.forEach(item => {
+        item.dataset.price = '1000';
+    });
+
+    // Переменные для хранения общей цены без скидки и с учетом скидки
+    let totalPrice = 0;
+    let discountedPrice = 0;
+
+    // Добавляем обработчик клика для каждого элемента
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            // Добавляем класс при клике
+            item.classList.toggle('section-clicked');
+
+            // Подсчитываем количество выбранных элементов
+            const clickedItems = document.querySelectorAll('.section-mkty-area-item.section-clicked');
+            const clickedCount = clickedItems.length;
+
+            // Вычисляем общую цену выбранных элементов без скидки
+            totalPrice = 0;
+            clickedItems.forEach(clickedItem => {
+                totalPrice += parseInt(clickedItem.dataset.price);
+            });
+
+            // Вычисляем цену с учетом скидки после выбора более 10 элементов
+            discountedPrice = totalPrice;
+            if (clickedCount > 10) {
+                const discountPrice = Math.ceil(clickedCount / 10) * 1000;
+                discountedPrice -= discountPrice;
+            }
+
+            // Выводим результат в консоль
+            console.log('Количество выбранных элементов:', clickedCount);
+            console.log('Общая цена выбранных элементов без скидки:', totalPrice);
+            console.log('Цена со скидкой:', discountedPrice);
+        });
+    });
+
 
 </script>
 
+
+<style>
+    .section-clicked {
+        background-color: #5671B2;
+        color: white;
+    }
+</style>
