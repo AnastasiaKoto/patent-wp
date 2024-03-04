@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     jQuery(function ($) {
         // fix slider on tabs
-
         function updateOnTabs(order) {
-
             var currentSlideNumber = $(`.keyses__slider:eq(${order})`).slick('slickCurrentSlide') + 1;
             $('.currentCoach').text(currentSlideNumber);
             $('.allCoach').text($(`.keyses__slider:eq(${order})`).slick('getSlick').slideCount);
@@ -148,6 +146,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $(this).toggleClass("article-box__readmore_active");
 
             $(this).prev(".article-box__text").toggleClass("article-box__text_active");
+        });
+
+        /*fixed tab */
+        $(".tabs__caption li ").on("click", function () {
+            $order = $(this).attr("data-target");
+            $(".tabs__caption").removeClass("active");
+            $(".tabs__content.article__content").removeClass("active");
+            $("#tabs__content_" + $order).addClass("active");
         });
 
     })

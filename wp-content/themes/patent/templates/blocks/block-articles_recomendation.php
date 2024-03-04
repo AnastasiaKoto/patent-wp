@@ -17,7 +17,7 @@ if ($recomendations) {
                         <?php
                         foreach ($recomendations as $index => $recomendation) {
                             ?>
-                            <li class="<?php if ($index === 0) echo 'active'; ?>"><?php echo $recomendation['title_section']; ?></li>
+                            <li data-target="<?=$index ?>" class="<?php if ($index === 0) echo 'active'; ?>"><?php echo $recomendation['title_section']; ?></li>
                             <?php
                         }
                         ?>
@@ -25,7 +25,7 @@ if ($recomendations) {
                     <?php
                     foreach ($recomendations as $index => $recomendation) {
                         ?>
-                        <div class="tabs__content article__content <?php if ($index === 0) echo 'active'; ?>">
+                        <div id="tabs__content_<?=$index?>" class="tabs__content article__content <?php if ($index === 0) echo 'active'; ?>">
                             <div class="article__subtitle">
                                 <?php echo $recomendation['title_section']; ?>
                             </div>
