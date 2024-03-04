@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-  jQuery(function($) {
+document.addEventListener("DOMContentLoaded", function (event) {
+  jQuery(function ($) {
 
     var overlay = $('.overlay');
     var modal = $('.modal-result');
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     closeButton.on('click', closeModal);
     $("input[name='order_tel']").mask("+7(999) 999-99-99");
     // При клике на таб
-    $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
+    $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function () {
       // Находим слайдер в текущей вкладке и переинициализируем его
       $(this).closest('.keys__tabs').find('.keyses__slider').slick('unslick').slick({
         infinite: false,
@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       // Далее ваш код для переключения табов
       $(this)
-          .addClass('active').siblings().removeClass('active')
-          .closest('div.keyses__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+        .addClass('active').siblings().removeClass('active')
+        .closest('div.keyses__tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
     });
 
-// Инициализация слайдера при загрузке страницы
+    // Инициализация слайдера при загрузке страницы
     var $slider1 = $('.keyses__slider');
     $slider1.slick({
       infinite: false,
@@ -40,77 +40,77 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     updateCounter();
 
-      // Обновление счетчика
-      function updateCounter() {
-          var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
-          $('.currentCoach').text(currentSlideNumber);
-          $('.allCoach').text($slider1.slick('getSlick').slideCount);
+    // Обновление счетчика
+    function updateCounter() {
+      var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
+      $('.currentCoach').text(currentSlideNumber);
+      $('.allCoach').text($slider1.slick('getSlick').slideCount);
+    }
+
+    // Обновление счетчика при инициализации и переключении таба
+    $slider1.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+      updateCounter();
+    });
+
+    $('.tabs__caption li').on('click', function () {
+      // Проверяем активный таб и обновляем счетчик, если это нужный таб
+      if ($(this).hasClass('active')) {
+        updateCounter();
       }
+    });
 
-      // Обновление счетчика при инициализации и переключении таба
-      $slider1.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
-          updateCounter();
+    // Обработчик клика на кнопку "Вперед"
+    $('.slick-next-new').click(function () {
+      $slider1.slick('slickNext');
+    });
+
+    // Обработчик клика на кнопку "Назад"
+    $('.slick-prev-new').click(function () {
+      $slider1.slick('slickPrev');
+    });
+
+
+
+    // Создаем медиа-запрос для экранов с шириной меньше 1024px
+    const mobileMediaQuery = window.matchMedia('(max-width: 1024px)');
+    let sliderInitialized = false;
+    let $slider;
+
+    // Функция для инициализации слайдера
+    function initSlider() {
+      $slider = $('.benefit__list').slick({
+        infinite: false,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false
       });
+      sliderInitialized = true;
+    }
 
-      $('.tabs__caption li').on('click', function () {
-          // Проверяем активный таб и обновляем счетчик, если это нужный таб
-          if ($(this).hasClass('active')) {
-              updateCounter();
-          }
-      });
-
-      // Обработчик клика на кнопку "Вперед"
-      $('.slick-next-new').click(function(){
-          $slider1.slick('slickNext');
-      });
-
-      // Обработчик клика на кнопку "Назад"
-      $('.slick-prev-new').click(function(){
-          $slider1.slick('slickPrev');
-      });
-
-
-
-          // Создаем медиа-запрос для экранов с шириной меньше 1024px
-      const mobileMediaQuery = window.matchMedia('(max-width: 1024px)');
-      let sliderInitialized = false;
-      let $slider;
-
-      // Функция для инициализации слайдера
-      function initSlider() {
-          $slider = $('.benefit__list').slick({
-              infinite: false,
-              dots: true,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false
-          });
-          sliderInitialized = true;
+    // Функция для уничтожения слайдера
+    function destroySlider() {
+      if (sliderInitialized) {
+        $slider.slick('unslick');
+        sliderInitialized = false;
       }
+    }
 
-      // Функция для уничтожения слайдера
-      function destroySlider() {
-          if (sliderInitialized) {
-              $slider.slick('unslick');
-              sliderInitialized = false;
-          }
-      }
+    // Проверяем условие медиа-запроса при загрузке страницы и вызываем инициализацию слайдера при необходимости
+    if (mobileMediaQuery.matches) {
+      initSlider();
+    }
 
-      // Проверяем условие медиа-запроса при загрузке страницы и вызываем инициализацию слайдера при необходимости
+    // Следим за изменениями размера экрана и вызываем инициализацию или уничтожение слайдера при необходимости
+    window.addEventListener('resize', function () {
       if (mobileMediaQuery.matches) {
+        if (!sliderInitialized) {
           initSlider();
+        }
+      } else {
+        destroySlider();
       }
-
-      // Следим за изменениями размера экрана и вызываем инициализацию или уничтожение слайдера при необходимости
-      window.addEventListener('resize', function() {
-          if (mobileMediaQuery.matches) {
-              if (!sliderInitialized) {
-                  initSlider();
-              }
-          } else {
-              destroySlider();
-          }
-      });
+    });
 
 
 
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(footerSubmitted == false) {
+      if (footerSubmitted == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -146,12 +146,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
               if (result.success == true) {
                 form[0].reset();
-                if($('.order-form')) {
+                if ($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
                   $('.order-form .form__content').remove();
                   $('.order-form .container').append(submitBlock);
                 }
-                if($('.page-template-contacts')) {
+                if ($('.page-template-contacts')) {
                   console.log('contacts');
                   $('.overlay').addClass('active');
                   $('.modal-result').addClass('active');
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(bannerSubmitted == false) {
+      if (bannerSubmitted == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -194,9 +194,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                    .find('input[name="' + e + '"]')
-                    .parent()
-                    .append('<div class="form__error">' + index[0] + '</div>');
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(SubmittedSale == false) {
+      if (SubmittedSale == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -240,20 +240,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                    .find('input[name="' + e + '"]')
-                    .parent()
-                    .append('<div class="form__error">' + index[0] + '</div>');
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
                 Fancybox.close();
                 form[0].reset();
-                if($('.order-form')) {
+                if ($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
                   $('.order-form .form__content').remove();
                   $('.order-form .container').append(submitBlock);
                 }
-                if($('.page-template-contacts')) {
+                if ($('.page-template-contacts')) {
                   console.log('contacts');
                   $('.overlay').addClass('active');
                   $('.modal-result').addClass('active');
@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(SubmittedOrder == false) {
+      if (SubmittedOrder == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -297,20 +297,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                    .find('input[name="' + e + '"]')
-                    .parent()
-                    .append('<div class="form__error">' + index[0] + '</div>');
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
                 Fancybox.close();
                 form[0].reset();
-                if($('.order-form')) {
+                if ($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
                   $('.order-form .form__content').remove();
                   $('.order-form .container').append(submitBlock);
                 }
-                if($('.page-template-contacts')) {
+                if ($('.page-template-contacts')) {
                   console.log('contacts');
                   $('.overlay').addClass('active');
                   $('.modal-result').addClass('active');
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(SubmittedCall == false) {
+      if (SubmittedCall == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -353,21 +353,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                    .find('input[name="' + e + '"]')
-                    .parent()
-                    .append('<div class="form__error">' + index[0] + '</div>');
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
                 Fancybox.close();
 
                 form[0].reset();
-                if($('.order-form')) {
+                if ($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
                   $('.order-form .form__content').remove();
                   $('.order-form .container').append(submitBlock);
                 }
-                if($('.page-template-contacts')) {
+                if ($('.page-template-contacts')) {
                   console.log('contacts');
                   $('.overlay').addClass('active');
                   $('.modal-result').addClass('active');
@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(SubmittedConsult == false) {
+      if (SubmittedConsult == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -412,20 +412,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                    .find('input[name="' + e + '"]')
-                    .parent()
-                    .append('<div class="form__error">' + index[0] + '</div>');
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
                 Fancybox.close();
                 form[0].reset();
-                if($('.order-form')) {
+                if ($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
                   $('.order-form .form__content').remove();
                   $('.order-form .container').append(submitBlock);
                 }
-                if($('.page-template-contacts')) {
+                if ($('.page-template-contacts')) {
                   console.log('contacts');
                   $('.overlay').addClass('active');
                   $('.modal-result').addClass('active');
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(SubmittedApplication == false) {
+      if (SubmittedApplication == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -469,20 +469,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                    .find('input[name="' + e + '"]')
-                    .parent()
-                    .append('<div class="form__error">' + index[0] + '</div>');
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
                 Fancybox.close();
                 form[0].reset();
-                if($('.order-form')) {
+                if ($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
                   $('.order-form .form__content').remove();
                   $('.order-form .container').append(submitBlock);
                 }
-                if($('.page-template-contacts')) {
+                if ($('.page-template-contacts')) {
                   console.log('contacts');
                   $('.overlay').addClass('active');
                   $('.modal-result').addClass('active');
@@ -509,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(SubmittedUseful == false) {
+      if (SubmittedUseful == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
@@ -527,21 +527,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                    .find('input[name="' + e + '"]')
-                    .parent()
-                    .append('<div class="form__error">' + index[0] + '</div>');
+                  .find('input[name="' + e + '"]')
+                  .parent()
+                  .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
                 Fancybox.close();
 
                 form[0].reset();
-                if($('.order-form')) {
+                if ($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
                   $('.order-form .form__content').remove();
                   $('.order-form .container').append(submitBlock);
                 }
-                if($('.page-template-contacts')) {
+                if ($('.page-template-contacts')) {
                   console.log('contacts');
                   $('.overlay').addClass('active');
                   $('.modal-result').addClass('active');
@@ -563,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 
-    $(".click_btn_services-top").click(function() {
+    $(".click_btn_services-top").click(function () {
       $('html, body').animate({
         scrollTop: $(".services").offset().top
       }, 1000);
@@ -582,13 +582,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       nextArrow: $('.slick-next-new-2'),
       appendArrows: $('.prices__slide_count'),
       appendDots: $('.prices__slide_count'),
-      customPaging: function(slider, i) {
+      customPaging: function (slider, i) {
         return '<span class="dot"></span>';
       },
       dots: true
     });
 
-    $('.targets__list').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    $('.targets__list').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       $('.currentCoach').text(nextSlide + 1);
     });
 
@@ -601,13 +601,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         nextArrow: $('.slick-next-new'),
         appendArrows: $('.prices__slide_count'),
         appendDots: $('.prices__slide_count'),
-        customPaging: function(slider, i) {
+        customPaging: function (slider, i) {
           return '<span class="dot"></span>';
         },
         dots: true
       });
 
-      $('.prices__list').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('.prices__list').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $('.currentCoach').text(nextSlide + 1);
       });
     }
@@ -716,26 +716,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
 
   burger?.addEventListener('click', () => {
-      body.classList.toggle('stop-scroll');
-      burger?.classList.toggle('burger--active');
-      nav?.classList.toggle('nav--visible');
+    body.classList.toggle('stop-scroll');
+    burger?.classList.toggle('burger--active');
+    nav?.classList.toggle('nav--visible');
   });
 
   navItems.forEach(el => {
-      el.addEventListener('click', () => {
-          body.classList.remove('stop-scroll');
-          burger?.classList.remove('burger--active');
-          nav?.classList.remove('nav--visible');
-      });
+    el.addEventListener('click', () => {
+      body.classList.remove('stop-scroll');
+      burger?.classList.remove('burger--active');
+      nav?.classList.remove('nav--visible');
+    });
   });
 
   let overlay = document.querySelector('.overlay');
   let resultClose = document.querySelector('.close__btn');
   let modal = document.querySelector('.modal');
 
-  if(overlay) {
-    overlay.addEventListener('click', function() {
-      if(modal.classList.contains('active')) {
+  if (overlay) {
+    overlay.addEventListener('click', function () {
+      if (modal.classList.contains('active')) {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         body.classList.remove('stop-scroll');
@@ -743,9 +743,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
   }
 
-  if(resultClose) {
-    resultClose.addEventListener('click', function() {
-      if(modal.classList.contains('active')) {
+  if (resultClose) {
+    resultClose.addEventListener('click', function () {
+      if (modal.classList.contains('active')) {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         body.classList.remove('stop-scroll');
@@ -755,9 +755,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   let dropDownServices = document.querySelectorAll('.serv__header-block');
 
-  if(dropDownServices) {
+  if (dropDownServices) {
     dropDownServices.forEach(service => {
-      service.addEventListener('click', function() {
+      service.addEventListener('click', function () {
         this.classList.toggle('active');
         this.parentNode.querySelector('.service-cats__card-list').classList.toggle('active');
       })
@@ -785,7 +785,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Плавный скролл к началу страницы при клике на кнопку "Наверх"
   btnToTop.addEventListener('click', () => {
-    window.scrollTo(pageYOffset, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
     // scrollToTop();
   });
 
@@ -793,20 +796,20 @@ window.addEventListener('DOMContentLoaded', () => {
   const scrollToTop = () => {
     const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
     if (currentPosition > 0) {
-     
+
       window.requestAnimationFrame(scrollToTop);
       window.scrollTo(0, currentPosition - currentPosition / 20); // Скорость скролла определяется делим значением второго аргумента
     }
   };
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var showMoreButton = document.getElementById('showMoreKeyses');
   if (showMoreButton) {
-    showMoreButton.addEventListener('click', function() {
+    showMoreButton.addEventListener('click', function () {
       var hiddenSlides = document.querySelectorAll('.keyses-slide.hidden');
       var counter = 0;
-      hiddenSlides.forEach(function(slide) {
+      hiddenSlides.forEach(function (slide) {
         if (counter < 4) {
           slide.classList.remove('hidden');
           counter++;
@@ -820,11 +823,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const pointsItems = document.querySelectorAll('.points__inner');
 
   pointsItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       const hiddenContents = document.querySelectorAll('.points__hidden.active');
       hiddenContents.forEach(content => {
         content.classList.toggle('active');
