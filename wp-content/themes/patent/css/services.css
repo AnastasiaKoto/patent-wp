@@ -405,14 +405,44 @@ background: #F9CD54;
 }
 
 .section-mkty-tabs-styles {
-    display: none;
+
     position: absolute;
-    background: #ebebeb;
-    color: #fff3cd;
+    background: linear-gradient(159deg, #4d4b5a 0%, #485c63 100%);
+    color: #fff;
     padding: 20px;
     border-radius: 3%;
     top: 0;
-    right: 529px;
+}
+
+.section-mkty-tabs-styles .section-mkty-tabs-item p {
+    color: #fff;
+}
+
+
+.section-mkty-tabs-styles p {
+    color: #fff;
+}
+
+
+.section-mkty-tabs-styles li {
+    color: #fff;
+}
+
+.section-mkty-tabs-styles {
+    position: absolute;
+    background: linear-gradient(159deg, #4d4b5a 0%, #485c63 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 3%;
+    top: 0;
+    width: 30%;
+    height: 300px;
+    overflow: hidden;
+}
+
+
+.section-mkty-tabs-styles .section-mkty-tabs-item__title {
+    color: #fff;
 }
 
 .section-mkty-area__item .section-mkty-area-item:hover .section-mkty-tabs-styles {
@@ -557,8 +587,12 @@ background: #F9CD54;
     color: rgba(30, 29, 37, 0.5);
 }
 
-.calculator-box-2 {
+.calculator-box-inner {
     display: flex;
+}
+
+.calculator-box-inner__item {
+
 }
 
 .calculator-box__wrapper--fb800 {
@@ -572,6 +606,7 @@ background: #F9CD54;
     padding-left: 28px;
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .calculator__end {
@@ -1464,6 +1499,17 @@ background: #F9CD54;
     display: none;
 }
 
+.calculator-box-inner {
+    display: flex;
+}
+
+.section-mkty-tabs-styles {
+    display: none;
+}
+
+.section-mkty-tabs-styles .active {
+    display: flex;
+}
 
 
 @media  (max-width: 768px) {
@@ -1941,6 +1987,7 @@ background: #F9CD54;
         align-items: center;
         justify-content: center;
         align-content: center;
+        flex-direction: column;
     }
 
     .calculator-helps__text a {
@@ -2064,6 +2111,11 @@ background: #F9CD54;
         border-top: 0px solid transparent;
         border-right: 48px solid #fff;
         border-bottom: 33px solid transparent;
+    }
+
+    .calculator-box-inner {
+        display: flex;
+        flex-direction: column;
     }
 
 
