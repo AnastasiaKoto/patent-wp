@@ -785,13 +785,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Плавный скролл к началу страницы при клике на кнопку "Наверх"
   btnToTop.addEventListener('click', () => {
-    scrollToTop();
+    window.scrollTo(pageYOffset, 0);
+    // scrollToTop();
   });
 
   // Функция плавного скролла
   const scrollToTop = () => {
     const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
     if (currentPosition > 0) {
+     
       window.requestAnimationFrame(scrollToTop);
       window.scrollTo(0, currentPosition - currentPosition / 20); // Скорость скролла определяется делим значением второго аргумента
     }
