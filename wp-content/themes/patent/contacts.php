@@ -1,4 +1,4 @@
-<?php  
+<?php
 /* Template Name: Контакты
 */
 
@@ -22,7 +22,7 @@ get_header();
                             <a href="<?php echo get_field('header_mail', 'option'); ?>"><?php echo get_field('header_mail', 'option'); ?></a>
                         </div>
                     <?php } ?>
-                    <?php 
+                    <?php
                     if( have_rows('header_tel', 'option') ) {
                         while( have_rows('header_tel', 'option') ) {
                             the_row();
@@ -48,7 +48,7 @@ get_header();
                     <?php } ?>
                 </div>
                 <div class="contacts__content-block">
-                    <h2 class="titles">заказать услугу патнетного поверенного</h2>
+                    <h2 class="titles">заказать услугу патентного поверенного</h2>
                     <p>
                     Равным образом консультация с широким активом требуют от нас анализа форм развития.
                     </p>

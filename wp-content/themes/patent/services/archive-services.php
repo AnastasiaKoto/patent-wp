@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* Template Name: Услуги
 */
 get_header();
@@ -7,7 +7,7 @@ get_header();
 	<?php get_template_part('templates/blocks/titles', 'wrapper'); ?>
     <section class="service-cats">
         <div class="container">
-            <?php 
+            <?php
             $terms = get_terms(array(
                 'taxonomy' => 'services_category',
                 'hide_empty' => true,
@@ -23,7 +23,7 @@ get_header();
                         <?php echo $term->name; ?>
                     </h2>
                     <div class="service-cats__list grid">
-                        <?php 
+                        <?php
                         $childrens = get_terms(array(
                             'taxonomy' => 'services_category',
                             'hide_empty' => true,
@@ -48,7 +48,7 @@ get_header();
                                         </div>
                                     </div>
                                     <ul class="service-cats__card-list flex"> <!-- Поместили ul здесь -->
-                                        <?php 
+                                        <?php
                                         $args = array(
                                             'post_type' => 'services',
                                             'post_status' => 'publish',
@@ -64,7 +64,7 @@ get_header();
                                         $services = new WP_Query($args);
                                         if ($services->have_posts()) {
                                             while ( $services->have_posts() ) {
-                                                $services->the_post(); 
+                                                $services->the_post();
                                         ?>
                                             <li>
                                                 <a href="<?php the_permalink(); ?>">
@@ -98,7 +98,7 @@ get_header();
                 </h2>
                 <div class="service-cats__list grid">
                     <div class="service-cats__card services__card">
-                        <a href="/" class="serv__header-block flex">
+                        <a href="/patentnoe-byuro/" class="serv__header-block flex">
                             <div class="number">
                                 01
                             </div>
@@ -117,6 +117,12 @@ get_header();
             </div>
         </div>
     </section>
+    <div class="orfer-form__wrapper-gray">
+    <!--заказать услугу патнетного поверенного -->
+    <?php get_template_part('templates/blocks/form', 'order'); ?>
+    <!--заказать услугу патнетного поверенного -->
+    </div>
+
     <section class="mobile__block">
         <div class="container">
             <div class="form__mobile-block">

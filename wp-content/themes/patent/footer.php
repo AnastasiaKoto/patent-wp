@@ -28,17 +28,20 @@
 				</div>
 			</div>
 			<div class="footer__group">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'footer',
-						'menu_class'     => 'footer__nav flex', // класс элемента <ul>
-						'container'      => false, // тег контейнера или false, если контейнер не нужен
-						'echo'           => true, // вывести или вернуть
-						'depth'          => 1, // количество уровней вложенности
-					)
-				);
-				?>
+
+
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location'  => 'header',
+                        'menu_class'      => 'footer__nav flex', // класс элемента <ul>
+                        'container'       =>  false, // тег контейнера или false, если контейнер не нужен
+                        'echo'            => true, // вывести или вернуть
+                        'depth'           => 1, // количество уровней вложенности
+                    ));
+                ?>
+
+
 			</div>
 			<div class="footer__group flex">
 				<div class="footer__address flex">
@@ -159,7 +162,7 @@
     <div class="global-popup__inner">
         <h2 class="global-popup__title">
             заказать звонок
-            патнетного поверенного
+            патентного поверенного
         </h2>
         <p>Равным образом консультация с широким активом требуют
             от нас анализа форм развития. </p>

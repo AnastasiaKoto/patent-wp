@@ -34,7 +34,7 @@ $payment_sale = get_field('payment_sale', 'option');
     <div class="global-popup__inner">
         <h2 class="global-popup__title">
             заказать услугу
-            патнетного поверенного
+            патентного поверенного
         </h2>
     <p>Равным образом консультация с широким активом требуют
         от нас анализа форм развития. </p>

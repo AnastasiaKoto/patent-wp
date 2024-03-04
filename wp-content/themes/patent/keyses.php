@@ -85,5 +85,13 @@ get_header();
         ?>
         <div class="no-found">Извините, ничего не найдено</div>
     <?php } ?>
+
+
+    <div class="orfer-form__wrapper-gray">
+    <!--заказать услугу патнетного поверенного -->
+    <?php get_template_part('templates/blocks/form', 'order'); ?>
+    <!--заказать услугу патнетного поверенного -->
+    </div>
+
 </main>
 <?php get_footer(); ?>
