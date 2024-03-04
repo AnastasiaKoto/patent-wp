@@ -27,6 +27,12 @@
     padding-left: 53px;
 }
 
+
+.service-cats__card-list li a:hover h4, .service-cats__card-list li a:hover  .small__price span{
+
+    color: #5671B2 !important;
+}
+
 .serv__header-block {
     align-items: center;
     column-gap: 14px;

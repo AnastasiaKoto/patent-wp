@@ -137,6 +137,20 @@
     background: linear-gradient(159deg, #fff 0%, #dfe3ee 100%);
 }
 
+
+.prices-card__item.yellow .prices-card__text p{
+background: #F9CD54;
+    display: inline;
+
+}
+
+
+.prices-card__item.yellow::before{
+    background: #F9CD54;
+}
+
+
+
 .prices-card__text-bold {
     font-weight: 600;
     font-size: 16px;

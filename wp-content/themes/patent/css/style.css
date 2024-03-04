@@ -139,6 +139,11 @@ h1, h2, h3, button {
     font-family: 'Open Sans', sans-serif;
 }
 
+.header__nav ul li.current_page_item, .footer__nav li.current_page_item{
+    color: #1E1D25;
+}
+
+
 .header__address {
     display: flex;
     flex-direction: column;
