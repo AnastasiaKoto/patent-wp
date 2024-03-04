@@ -36,9 +36,12 @@ function all_styles() {
 function all_js() {
 	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js');
 	wp_enqueue_script('slick', '/wp-content/themes/patent/slick/slick.min.js');
-	wp_enqueue_script('main', '/wp-content/themes/patent/js/main.js');
+
 	wp_enqueue_script('landing', '/wp-content/themes/patent/js/landing.js');
     wp_enqueue_script('fancybox.umd', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js');
+
+    wp_enqueue_script('jquery.maskedinput.min', 'https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js');
+    wp_enqueue_script('main', '/wp-content/themes/patent/js/main.js');
     wp_enqueue_script('main_help', '/wp-content/themes/patent/js/main_help.js',array(),null);
 }
 add_action('wp_enqueue_scripts', 'all_styles');

@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   jQuery(function($) {
 
+    var overlay = $('.overlay');
+    var modal = $('.modal-result');
+
+    var closeButton = $('.close__btn');
+
+    function closeModal() {
+      overlay.removeClass('active');
+      modal.removeClass('active');
+    }
+    closeButton.on('click', closeModal);
+    $("input[name='order_tel']").mask("+7(999) 999-99-99");
     // При клике на таб
     $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function() {
       // Находим слайдер в текущей вкладке и переинициализируем его
@@ -159,8 +170,51 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     });
 
+    //отправка формы банер
+    let bannerSubmitted = false;
+    $('#banner').on('click', '.btn__submit', function (e) {
+      e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
+      if(bannerSubmitted == false) {
+        let policy = form.find('input[name="agree"]');
 
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
 
+        if (policy.is(':checked')) {
+          bannerSubmitted = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            bannerSubmitted = false;
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                form[0].reset();
+                let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                form.remove();
+                $('.patent-form h2').remove();
+                $('.patent-form .container').append(submitBlock);
+              }
+            }
+          });
+        } else {
+          $('.patent-form__custom-checkbox').addClass('error');
+        }
+      } else {
+        form.find('.global_err').addClass('active');
+      }
+    });
 
     //Получить скидку
     let SubmittedSale = false;
@@ -192,6 +246,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
               });
             } else {
               if (result.success == true) {
+                Fancybox.close();
                 form[0].reset();
                 if($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
@@ -248,6 +303,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
               });
             } else {
               if (result.success == true) {
+                Fancybox.close();
                 form[0].reset();
                 if($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
@@ -303,6 +359,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
               });
             } else {
               if (result.success == true) {
+                Fancybox.close();
+
                 form[0].reset();
                 if($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
@@ -360,6 +418,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
               });
             } else {
               if (result.success == true) {
+                Fancybox.close();
                 form[0].reset();
                 if($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
@@ -416,6 +475,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
               });
             } else {
               if (result.success == true) {
+                Fancybox.close();
                 form[0].reset();
                 if($('.order-form')) {
                   let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
@@ -442,57 +502,75 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
 
-    $(".click_btn_banner").click(function() {
-      $('html, body').animate({
-        scrollTop: $(".benefit").offset().top
-      }, 2000);
-    });
 
-
-    let bannerSubmitted = false;
-    $('#banner').on('click', '.btn__submit', function (e) {
+    //Кому и чем могу быть полезен
+    let SubmittedUseful = false;
+    $('#request-useful').on('click', '.btn__submit', function (e) {
       e.preventDefault();
       let form = $(this).closest('form');
       form.find('.global_err').removeClass('active');
-      if(bannerSubmitted == false) {
+      if(SubmittedUseful == false) {
         let policy = form.find('input[name="agree"]');
 
         form.find('.error').removeClass('error');
         form.find('.form__error').remove();
 
         if (policy.is(':checked')) {
-          bannerSubmitted = true;
+          SubmittedUseful = true;
           $.ajax({
             url: '/wp-admin/admin-ajax.php',
             data: form.serialize() + '&action=main_callback',
             type: 'POST',
           }).done(function (result) {
-            bannerSubmitted = false;
+            SubmittedUseful = false;
             if (result.errors) {
               $.each(result.errors, function (e, index) {
                 form.find('input[name="' + e + '"]').addClass('error');
                 form
-                  .find('input[name="' + e + '"]')
-                  .parent()
-                  .append('<div class="form__error">' + index[0] + '</div>');
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
               });
             } else {
               if (result.success == true) {
+                Fancybox.close();
+
                 form[0].reset();
-                let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
-                form.remove();
-                $('.patent-form h2').remove();
-                $('.patent-form .container').append(submitBlock);
+                if($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
               }
             }
           });
         } else {
-          $('.patent-form__custom-checkbox').addClass('error');
+          console.log('политика не заполнена');
+          policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
         }
       } else {
         form.find('.global_err').addClass('active');
       }
     });
+
+
+
+
+    $(".click_btn_services-top").click(function() {
+      $('html, body').animate({
+        scrollTop: $(".services").offset().top
+      }, 1000);
+    });
+
+
+
 
 
 
@@ -575,6 +653,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //     feedBack.querySelector('.custom__check').classList.toggle('active');
   //   })
   // }
+
+
+
+
+
+
+
+
+
+
 
 
   let dropDownBtns = document.querySelectorAll('.order__custom-select'); // Общий класс для кнопок
@@ -675,6 +763,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       })
     })
   }
+
+
+
+
+
 
 });
 

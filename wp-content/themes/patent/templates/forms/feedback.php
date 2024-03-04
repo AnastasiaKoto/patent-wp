@@ -45,10 +45,10 @@
         ?>
         <button class="btn dark__btn btn__submit" type="submit">Заказать услугу</button>
         <div class="agree__group flex">
-            <input type="checkbox" name="agree" id="agree">
-            <span class="custom__check"></span>
-            <label for="agree" class="personal">
-                Я даю согласие на&nbsp;обработку&nbsp;моих&nbsp;персональных&nbsp;данных
+            <label class="patent-form__custom-checkbox" >
+                <input type="checkbox" name="agree" id="agree">
+                <span class="patent-form__checkmark"></span>
+                Я даю согласие на обработку моих персональных данных
             </label>
         </div>
         <div class="global_err">Дождитесь отправки предыдущей формы!</div>

@@ -14,7 +14,7 @@
                             <?php } ?>
                         </ul>
                     <?php } ?>
-                    <a  class="dark__btn btn banner__btn click_btn_banner">Кому и чем могу быть полезен</a>
+                    <a  href="#useful-popup" class="dark__btn btn banner__btn click_btn_banner global-trigger">Кому и чем могу быть полезен</a>
                 </div>
                 <?php
                 if( have_rows('utp') ) { ?>
@@ -72,3 +72,17 @@
         </div>
     </div>
 </section>
+<!-- Global Popup -->
+<div class="global-popup" id="useful-popup" style="display:none">
+    <div class="global-popup__inner">
+        <h2 class="global-popup__title">
+            заказать звонок
+            патнетного поверенного
+        </h2>
+        <p>Равным образом консультация с широким активом требуют
+            от нас анализа форм развития. </p>
+        <!--заказать услугу патнетного поверенного -->
+        <?php get_template_part('templates/forms/feedback', 'usefull'); ?>
+        <!--заказать услугу патнетного поверенного -->
+    </div>
+</div>
