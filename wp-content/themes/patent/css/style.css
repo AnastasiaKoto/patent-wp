@@ -186,6 +186,7 @@ h1, h2, h3, button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; */
+    width: 700px;
     background: white;
     padding: 36px 36px 48px 36px ;
     min-width: 700px;
