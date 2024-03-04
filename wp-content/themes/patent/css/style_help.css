@@ -433,8 +433,9 @@ h2.global-popup__title {
 .banner__offer ul {
     margin-bottom: 26px;
 }
-
-
+.article__content{
+    display: none;
+}
 
 @media (max-width:1024px) {
     .footer__group:last-child {
@@ -975,11 +976,7 @@ h2.global-popup__title {
         font-size: 14px;
     }
 
-    .banner__offer ul {
-
-        margin-bottom: 10px;
-
-    }
+   
 
     .header-mobile__bottom {
         font-size: 16px;
@@ -1015,6 +1012,41 @@ h2.global-popup__title {
 
         padding-bottom: 0px;
     }
+
+    .small__price {
+        justify-content: flex-start;
+        gap: 5px;
+    }
+    .small__price span:last-child {
+       flex-grow: 1;
+       display: flex;
+       justify-content: flex-end;
+    }
+    .small__price span:last-child{
+        padding-right: 5px;
+    }
+    .benefit h2 {
+        margin-bottom: 25px;
+    }
+    .keyses {
+        padding-top: 0;
+        padding-bottom: 60px;
+        background-color: #fff;
+    }
+    .benefit {
+        padding-top: 20px;
+    }
+    .branch {
+        padding-bottom: 60px;
+    }
+    .tabs__content.active div {
+        font-size: 13px;
+    }
+    .article-advice__image img{
+        display: block;
+        margin: auto;
+    }
+    
 
 }
 
