@@ -1,4 +1,3 @@
-
 .body_active {
     overflow: hidden;
 }
@@ -370,7 +369,8 @@ h2.global-popup__title {
 .article__content-list_point {
     position: relative;
 }
-.article__content h3{
+
+.article__content h3 {
     font-size: 20px;
     line-height: 32px;
     margin-bottom: 20px;
@@ -411,27 +411,42 @@ h2.global-popup__title {
     font-weight: 500;
     margin-bottom: 12px;
 }
-.article-advice__text{
+
+.article-advice__text {
     text-transform: uppercase;
     margin-bottom: 13px;
 
 }
-.article-advice >div {
+
+.article-advice>div {
     flex-basis: unset;
 }
 
 .footer__group:last-child {
     align-items: flex-end;
 }
-.to_top{
+
+.to_top {
     cursor: pointer;
 }
+
+.banner__offer ul {
+    margin-bottom: 26px;
+}
+
+
 
 @media (max-width:1024px) {
     .footer__group:last-child {
         align-items: flex-start;
     }
+
+    .banner__offer {
+        max-width: 600px;
+        margin-top: 20px;
+    }
 }
+
 @media (min-width:1400px) {
     .banner_office .banner__block:nth-of-type(1) {
         max-width: 88%;
@@ -449,16 +464,19 @@ h2.global-popup__title {
     .banner_office .banner__offer {
         max-width: 345px;
     }
-    .article-advice{
+
+    .article-advice {
         flex-direction: column;
         gap: 15px;
     }
+
     .article-advice__image {
         aspect-ratio: unset;
         flex-shrink: 0;
     }
+
     .article-advice {
-       padding: 20px;
+        padding: 20px;
     }
 }
 
@@ -874,6 +892,10 @@ h2.global-popup__title {
 }
 
 @media (max-width:576px) {
+    .banner__btn {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .article-box__readmore {
         display: flex;
     }
@@ -947,11 +969,64 @@ h2.global-popup__title {
         height: max-content;
         -webkit-line-clamp: unset;
     }
+
+
+    .banner__offer ul li {
+        font-size: 14px;
+    }
+
+    .banner__offer ul {
+
+        margin-bottom: 10px;
+
+    }
+
+    .header-mobile__bottom {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .banner__block .banner__offer {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+
+
+
+    .banner__block .banner__offer:after {
+
+        content: "";
+        position: absolute;
+        left: 80px;
+        top: auto;
+        bottom: -30px;
+        width: 0;
+        height: 0;
+        border-left: 0;
+        border-top: 0px solid transparent;
+        border-right: 48px solid #fff;
+        border-bottom: 33px solid transparent;
+    }
+
+    .banner_office .banner__offer ul li {
+
+        padding-bottom: 0px;
+    }
+
 }
+
+
 
 @media (max-width:1024px) {
     .article__content-list_point .icon {
         margin: auto;
+    }
+
+    .banner_office .banner__offer {
+        max-width: 80%;
     }
 
     /* .article__content-list_point::after {
@@ -963,4 +1038,11 @@ h2.global-popup__title {
         content: url('data:image/svg+xml;utf8,<svg width="28" height="7" viewBox="0 0 28 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M27.616 3.53834C27.7639 3.39042 27.7639 3.15059 27.616 3.00267L25.2055 0.592172C25.0576 0.444252 24.8177 0.444252 24.6698 0.592172C24.5219 0.740093 24.5219 0.979919 24.6698 1.12784L26.8125 3.27051L24.6698 5.41318C24.5219 5.5611 24.5219 5.80092 24.6698 5.94884C24.8177 6.09676 25.0576 6.09676 25.2055 5.94884L27.616 3.53834ZM0.833984 3.64928H27.3482V2.89173H0.833984V3.64928Z" fill="url(%23paint0_linear_550_1095)"/> <defs><linearGradient id="paint0_linear_550_1095" x1="27.3482" y1="-25.7294" x2="-6.40757" y2="-3.60293" gradientUnits="userSpaceOnUse"> <stop/> <stop offset="1" stop-opacity="0"/></linearGradient> </defs> </svg>');
     }
      */
+}
+
+@media (max-width:768px) {
+    .banner__offer {
+        max-width: 80%;
+        min-width: unset;
+    }
 }
