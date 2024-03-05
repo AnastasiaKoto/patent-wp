@@ -38,18 +38,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
       slidesToScroll: 1,
       arrows: false,
     });
-    updateCounter();
+    updateCounter(".keyses__slider");
 
     // Обновление счетчика
-    function updateCounter() {
-      var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
-      $('.currentCoach').text(currentSlideNumber);
-      $('.allCoach').text($slider1.slick('getSlick').slideCount);
+    function updateCounter(selector) {
+
+      if ((selector !== ".keyses__slider") && !($(selector).hasClass("keyses__slider"))) {
+        var currentSlideNumber = $(selector).slick('slickCurrentSlide') + 1;
+        $(selector).parents("section").find('.currentCoach').text(currentSlideNumber);
+        $(selector).parents("section").find('.allCoach').text($(selector).slick('getSlick').slideCount);
+      }
+      else {
+        let activeSlider = $(".keyses__tabs .tabs__content.active").find(".keyses__slider");
+        var currentSlideNumber = activeSlider.slick('slickCurrentSlide') + 1;
+        $(".keyses__tabs .tabs__content.active").parents(".keyses__tabs").next(".slide_count").find('.currentCoach').text(currentSlideNumber);
+        $(".keyses__tabs .tabs__content.active").parents(".keyses__tabs").next(".slide_count").find('.allCoach').text($(activeSlider).slick('getSlick').slideCount);
+      }
     }
 
     // Обновление счетчика при инициализации и переключении таба
-    $slider1.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-      updateCounter();
+    $(".slick-slider").on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+
+      updateCounter(this);
     });
 
     $('.tabs__caption li').on('click', function () {
