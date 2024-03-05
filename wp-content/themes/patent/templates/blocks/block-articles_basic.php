@@ -45,7 +45,7 @@
                     <?php $count++; } ?>
                 <div class="services__card last__card last__card-hidden">
                     <div class="services-card__content">
-                        <a href="/uslugi/" class="btn dark__btn all__btn">Все услуги</a>
+                        <a href="/services/" class="btn dark__btn all__btn">Все услуги</a>
                         <div class="small__price">
                             Ознакомиться со всеми услугами
                         </div>
@@ -54,7 +54,7 @@
             </div>
             <div class="services__card last__card last__card-mob">
                 <div class="services-card__content">
-                    <a href="/uslugi/" class="btn dark__btn all__btn">Все услуги</a>
+                    <a href="/services/" class="btn dark__btn all__btn">Все услуги</a>
                     <div class="small__price">
                         Ознакомиться со всеми услугами
                     </div>

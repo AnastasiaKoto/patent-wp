@@ -113,7 +113,7 @@ function create_custom_post_type() {
                 'singular_name' => __('Услуги')
             ),
             'public' => true,
-            'has_archive' => false,
+            'has_archive' => true,
             'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
         )
     );
