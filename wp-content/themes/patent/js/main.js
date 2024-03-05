@@ -577,6 +577,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $('.targets__list').slick({
       arrows: true,
       infinite: false,
+      dots: false,
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $('.slick-prev-new-2'),
@@ -586,7 +587,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       customPaging: function (slider, i) {
         return '<span class="dot"></span>';
       },
-      dots: true
     });
 
     $('.targets__list').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
@@ -598,8 +598,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: $('.slick-prev-new'),
-        nextArrow: $('.slick-next-new'),
+        prevArrow: $('.slick-prev-new-2'),
+        nextArrow: $('.slick-next-new-2'),
         appendArrows: $('.prices__slide_count'),
         appendDots: $('.prices__slide_count'),
         customPaging: function (slider, i) {

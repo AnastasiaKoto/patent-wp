@@ -486,6 +486,29 @@ h2.global-popup__title {
     top: 50%;
  
 } */
+.target_single.targets{
+    padding-bottom: 0px;
+}
+.targets .slick-dots{
+    display: none;
+}
+.what__item >a{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.what_single{
+    padding-top: 0px;
+}
+.article-box_single{
+    padding-top: 0px;
+}
+.slick-next-new-2:hover , .slick-prev-new-2:hover{
+    background: #4d4b5a;
+    opacity: 0.83;
+    cursor: pointer;
+}
 
 
 @media (max-width:1024px) {
@@ -930,7 +953,13 @@ h2.global-popup__title {
     .section-privacy h2 {
         font-size: 18px;
     }
-
+    .prices__list{
+        margin-bottom: 22px;
+    }
+    .prices__item{
+        width: 100%;
+    }
+  
 
 
 }
@@ -960,12 +989,34 @@ h2.global-popup__title {
 }
 
 @media (max-width:576px) {
+    .banner-services__offerse {
+    
+        margin-bottom: 72px;
+    }
+    .banner__block img {
+        position: absolute;
+        bottom: -58px;
+        right: 0;
+        width: 127px;
+    }
+    .prices__list  .slick-list {
+        width: 100%;
+    }
+    .prices__list {
+        padding-bottom: 0px;
+    }
+    .banner-services__offerse {
+        max-width: 100%;
+    }
     .banner__btn {
         padding-left: 10px;
         padding-right: 10px;
     }
     .article-box__readmore {
         display: flex;
+    }
+    .prices-card{
+        min-height: 616px;
     }
 
     /* artcile text*/
@@ -1149,9 +1200,68 @@ h2.global-popup__title {
 }
 
 @media (max-width:768px) {
+    .tabs__caption {
+       
+        padding: 0;
+    }
+    .keyses h2 {
+        margin-bottom: 32px;
+    }
+    .points {
+        padding-bottom: 40px;
+    }
+    .prices {
+        padding-top: 40px;
+        padding-bottom: 0px;
+    }
+    .prices__list {
+        padding-top: 20px;
+       
+    }
+    .points__wrapper {
+        padding-bottom: 55px;
+    }
+    .discounts {
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+    .points__wrapper {
+        padding-top: 24px;
+    }
+    .keyses__tabs .tabs__caption {
+      margin-bottom: 20px;
+    }
+    .interesting {
+        padding-top: 0px;
+    }
+    .target_single .targets__wrapper{
+        padding-top: 24px;
+    }
+    .what_single .what__list{
+        padding-top: 24px;
+    }
+    .interesting__list {
+        padding-top: 24px;
+    }
+    .what__wrapper--title {
+        padding-top: 24px;
+    }
+    .approach__list{
+        padding-top: 24px;
+    }
+    .slide_count{
+        padding-bottom: 0px;
+    }
+
+    .points-slider__inner {
+        flex-basis: unset;
+    }
     .banner__offer {
         max-width: 80%;
         min-width: unset;
+    }
+    .points-slider__slides{
+        padding-left: 20px;
     }
 }
 
