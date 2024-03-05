@@ -114,7 +114,6 @@ function create_custom_post_type() {
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'services'),
             'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
         )
     );
