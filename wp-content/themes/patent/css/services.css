@@ -420,6 +420,11 @@ background: #F9CD54;
     color: #fff;
 }
 
+.calculator .section-mkty__tabs {
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: -1;
+}
 
 .section-mkty-tabs-styles p {
     color: #fff;
