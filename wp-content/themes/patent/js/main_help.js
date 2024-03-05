@@ -151,11 +151,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         /*fixed tab */
         $(".tabs__caption li ").on("click", function () {
             $order = $(this).attr("data-target");
-            $(".tabs__caption").removeClass("active");
-            $(".articles__tabs ul li").removeClass("active");
-            $(".tabs__content.article__content").removeClass("active");
-            $("#tabs__content_" + $order).addClass("active");
-            $(this).addClass("active");z
+            $(".tabs__caption  li").removeClass("active");
+            $(".tabs__content").removeClass("active");
+            $("#tab__content_"+$order).addClass("active");
+            $(this).addClass("active");
         });
 
         /*Fixed faq */
