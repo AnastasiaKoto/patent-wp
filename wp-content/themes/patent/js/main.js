@@ -575,13 +575,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
     $('.targets__list').slick({
+      arrows: true,
       infinite: false,
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $('.slick-prev-new-2'),
       nextArrow: $('.slick-next-new-2'),
-      appendArrows: $('.prices__slide_count'),
-      appendDots: $('.prices__slide_count'),
+      // appendArrows: $('.prices__slide_count'),
+      // appendDots: $('.prices__slide_count'),
       customPaging: function (slider, i) {
         return '<span class="dot"></span>';
       },
@@ -620,6 +621,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
       variableWidth: true,
       prevArrow: $('.points-slider__arrows__end'),
       nextArrow: $('.points-slider__arrows__next'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            prevArrow: false,
+            nextArrow: false,
+          },
+        }
+      ]
     });
 
   });
@@ -846,7 +856,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //     }
   //   });
   // });
-  
+
   const nextBtn = document.querySelector('.calculator__next');
   const prevBtn = document.querySelector('.calculator__end');
   const countElement = document.querySelector('.calculator__caunt span:first-child');

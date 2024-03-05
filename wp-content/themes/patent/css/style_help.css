@@ -8,6 +8,19 @@ header{
     z-index: 1000;
     background: white;
 }
+.points__item--svg{
+    cursor: pointer;
+}
+
+.points__item--svg:hover{
+    background: #4d4b5a;
+    opacity: 0.83;
+}
+.points-arrows__item:hover{
+    background: #4d4b5a;
+    opacity: 0.83;
+    cursor: pointer;
+}
 
 .section-mkty {
     padding-top: 46px;
@@ -443,6 +456,37 @@ h2.global-popup__title {
 .article__content{
     display: none;
 }
+.targets__wrapper{
+    position: relative;
+}
+/* .slick-prev-new-2 ,.slick-next-new-2{
+    position: absolute;
+    z-index: 1000;
+    width: 33px;
+    height: 33px;
+    display: inline-flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(99.39deg, #4D4B5A -4.76%, #485C63 158.33%);
+    cursor: pointer;
+
+}
+.slick-prev-new-2:hover ,.slick-next-new-2:hover{
+    background: #4d4b5a;
+    opacity: 0.83;
+}
+.slick-prev-new-2 {
+    left: -50px;
+    top:50%;
+
+}
+.slick-next-new-2 {
+    right: -50px;
+    top: 50%;
+ 
+} */
+
 
 @media (max-width:1024px) {
     .footer__group:last-child {
@@ -503,6 +547,19 @@ h2.global-popup__title {
 }
 
 @media (min-width:1024px) and (max-width:1200px) {
+    .targets .slide_count {
+        position: absolute;
+        top: 50%;
+        display: flex;
+        justify-content: space-between;
+        left: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+    .targets .slide_count >span:not(:first-child):not(:last-child){
+        display: none;
+    }
+  
     .header__block:nth-child(1) {
         margin-bottom: 20px;
     }
@@ -882,6 +939,9 @@ h2.global-popup__title {
     .form-bottom {
         padding-top: 27px;
     }
+    .targets .slide_count{
+        bottom: -60px;
+    }
 }
 
 @media ((min-width:480px) and (max-width:576px)) {
@@ -1092,5 +1152,20 @@ h2.global-popup__title {
     .banner__offer {
         max-width: 80%;
         min-width: unset;
+    }
+}
+
+@media (min-width:1200px) {
+    .targets .slide_count{
+        position: absolute;
+        top: 50%;
+        display: flex;
+        justify-content: space-between;
+        left: -50px;
+        right: -50px;
+        z-index: 1000;
+    }
+    .targets .slide_count >span:not(:first-child):not(:last-child){
+        display: none;
     }
 }
