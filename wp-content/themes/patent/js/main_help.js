@@ -155,7 +155,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $(".articles__tabs ul li").removeClass("active");
             $(".tabs__content.article__content").removeClass("active");
             $("#tabs__content_" + $order).addClass("active");
-            $(this).addClass("active");
+            $(this).addClass("active");z
+        });
+
+        /*Fixed faq */
+        $(".points__item--svg").click(function(){
+            $(this).parents(".points__item").find(".points__hidden").toggleClass("active");
         });
 
     })

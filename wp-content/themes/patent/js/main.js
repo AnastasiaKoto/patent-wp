@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     closeButton.on('click', closeModal);
     $("input[name='order_tel']").mask("+7(999) 999-99-99");
     // При клике на таб
-
     $('.keyses__tabs ul.tabs__caption').on('click', 'li:not(.active)', function () {
       // Находим слайдер в текущей вкладке и переинициализируем его
       $(this).closest('.keys__tabs').find('.keyses__slider').slick('unslick').slick({
@@ -623,97 +622,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       nextArrow: $('.points-slider__arrows__next'),
     });
 
-    /*mktu tabs and popup */
-    /*page mktu */
-    if (window.innerWidth < 768) {
-      $(".section-mkty-area-item").click(function () {
-        let id = $(this).attr("data-target");
-        $("#" + id).find(".section-mkty-tabs-item__name").text($(this).attr("data-number"));
-        $(".section-mkty-area-item").removeClass("section-mkty-area-item_active");
-        $(this).addClass("section-mkty-area-item_active");
-
-      });
-      Fancybox.bind(".section-mkty-area-item", {
-        dragToClose: false,
-        hideScrollbar: false,
-        mainClass: "modal-mkty",
-        closeButton: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7867 1.24296C15.8544 1.17535 15.908 1.09508 15.9446 1.00674C15.9812 0.918404 16 0.823724 16 0.728108C16 0.632491 15.9812 0.537811 15.9446 0.449473C15.908 0.361135 15.8544 0.280869 15.7867 0.213258C15.7191 0.145647 15.6389 0.0920148 15.5505 0.055424C15.4622 0.0188331 15.3675 0 15.2719 0C15.1763 0 15.0816 0.0188331 14.9933 0.055424C14.9049 0.0920148 14.8247 0.145647 14.757 0.213258L8 6.97175L1.24296 0.213258C1.17535 0.145647 1.09508 0.0920148 1.00674 0.055424C0.918404 0.0188331 0.823724 7.12398e-10 0.728108 0C0.632491 -7.12398e-10 0.537811 0.0188331 0.449473 0.055424C0.361135 0.0920148 0.280869 0.145647 0.213258 0.213258C0.145647 0.280869 0.0920148 0.361135 0.055424 0.449473C0.0188331 0.537811 -7.12398e-10 0.632491 0 0.728108C7.12398e-10 0.823724 0.0188331 0.918404 0.055424 1.00674C0.0920148 1.09508 0.145647 1.17535 0.213258 1.24296L6.97175 8L0.213258 14.757C0.076711 14.8936 0 15.0788 0 15.2719C0 15.465 0.076711 15.6502 0.213258 15.7867C0.349804 15.9233 0.535002 16 0.728108 16C0.921214 16 1.10641 15.9233 1.24296 15.7867L8 9.02824L14.757 15.7867C14.8936 15.9233 15.0788 16 15.2719 16C15.465 16 15.6502 15.9233 15.7867 15.7867C15.9233 15.6502 16 15.465 16 15.2719C16 15.0788 15.9233 14.8936 15.7867 14.757L9.02824 8L15.7867 1.24296Z" fill="white"/> </svg>'
-      });
-      $(".section-mkty-area-item").attr("data-fancybox", "");
-      $(".section-mkty-area-item").each(function (i, item) {
-        let id = $(this).attr("data-target");
-        $(item).attr("href", '#' + id);
-      });
-
-    }
-    else {
-      $(".section-mkty-area-item").each(function (i, item) {
-
-        $(item).attr("href", "#" + $(item).attr("data-target"));
-        if ($(item).hasClass("section-mkty-area-item_active")) {
-          let id = $(item).attr("data-target");
-          $("#" + id).addClass("section-mkty-tabs-item_active");
-
-        }
-      });
-
-
-      $(".section-mkty-area-item").click(function () {
-        $(".section-mkty-tabs-item").removeClass("section-mkty-tabs-item_active");
-        $(".section-mkty-area-item").removeClass("section-mkty-area-item_active");
-        $(this).addClass("section-mkty-area-item_active");
-        let id = $(this).attr("data-target");
-
-        $("#" + id).addClass("section-mkty-tabs-item_active");
-
-
-      });
-
-
-
-    }
-
-    /* on resize */
-    $(window).resize(function () {
-      if (window.innerWidth > 768) {
-        Fancybox.unbind(".section-mkty-area-item", {});
-        $(".section-mkty-area-item").click(function () {
-          $(".section-mkty-tabs-item").removeClass("section-mkty-tabs-item_active");
-          $(".section-mkty-area-item").removeClass("section-mkty-area-item_active");
-          $(".section-mkty-tabs-item").removeAttr("style");
-          $(this).addClass("section-mkty-area-item_active");
-          let id = $(this).attr("data-target");
-          $("#" + id).find(".section-mkty-tabs-item__name").text($(this).attr("data-number"));
-          $("#" + id).addClass("section-mkty-tabs-item_active");
-        });
-
-        $(".section-mkty-area-item").removeAttr("data-fancybox");
-        $(".section-mkty-area-item").each(function (i, item) {
-          let id = $(this).attr("data-target");
-          $(item).attr("href", "javascript:void(0)");
-        });
-
-      }
-      else {
-
-
-        Fancybox.bind(".section-mkty-area-item", {
-          dragToClose: false,
-          hideScrollbar: false,
-          mainClass: "modal-mkty",
-          closeButton: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7867 1.24296C15.8544 1.17535 15.908 1.09508 15.9446 1.00674C15.9812 0.918404 16 0.823724 16 0.728108C16 0.632491 15.9812 0.537811 15.9446 0.449473C15.908 0.361135 15.8544 0.280869 15.7867 0.213258C15.7191 0.145647 15.6389 0.0920148 15.5505 0.055424C15.4622 0.0188331 15.3675 0 15.2719 0C15.1763 0 15.0816 0.0188331 14.9933 0.055424C14.9049 0.0920148 14.8247 0.145647 14.757 0.213258L8 6.97175L1.24296 0.213258C1.17535 0.145647 1.09508 0.0920148 1.00674 0.055424C0.918404 0.0188331 0.823724 7.12398e-10 0.728108 0C0.632491 -7.12398e-10 0.537811 0.0188331 0.449473 0.055424C0.361135 0.0920148 0.280869 0.145647 0.213258 0.213258C0.145647 0.280869 0.0920148 0.361135 0.055424 0.449473C0.0188331 0.537811 -7.12398e-10 0.632491 0 0.728108C7.12398e-10 0.823724 0.0188331 0.918404 0.055424 1.00674C0.0920148 1.09508 0.145647 1.17535 0.213258 1.24296L6.97175 8L0.213258 14.757C0.076711 14.8936 0 15.0788 0 15.2719C0 15.465 0.076711 15.6502 0.213258 15.7867C0.349804 15.9233 0.535002 16 0.728108 16C0.921214 16 1.10641 15.9233 1.24296 15.7867L8 9.02824L14.757 15.7867C14.8936 15.9233 15.0788 16 15.2719 16C15.465 16 15.6502 15.9233 15.7867 15.7867C15.9233 15.6502 16 15.465 16 15.2719C16 15.0788 15.9233 14.8936 15.7867 14.757L9.02824 8L15.7867 1.24296Z" fill="white"/> </svg>'
-        });
-        $(".section-mkty-area-item").attr("data-fancybox", "");
-        $(".section-mkty-area-item").each(function (i, item) {
-          let id = $(this).attr("data-target");
-          $(item).attr("href", '#' + id);
-        });
-
-      }
-    });
-
-    /*end mkty */
-
   });
 
   // let dropDownBtn = document.querySelector('.order__custom-select');
@@ -757,8 +665,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-
-
   let dropDownBtns = document.querySelectorAll('.order__custom-select'); // Общий класс для кнопок
   let dropDownLists = document.querySelectorAll('.order__services-list'); // Общий класс для списков
   let currentPoints = document.querySelectorAll('.order__default'); // Общий класс для текущих значений
@@ -790,17 +696,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let feedBacks = document.querySelectorAll('.agree__group'); // Общий класс для обратной связи
 
   feedBacks.forEach(feedBack => {
-    let personalCheckbox = feedBack.querySelector('.personal');
-    let customCheck = feedBack.querySelector('.custom__check');
-
-    if (personalCheckbox && customCheck) {
-      personalCheckbox.addEventListener('click', function () {
-        customCheck.classList.toggle('active');
+    if (feedBack) {
+      feedBack.querySelector('.personal').addEventListener('click', function () {
+        feedBack.querySelector('.custom__check').classList.toggle('active');
       });
     }
   });
-
-  console.log(feedBacks)
 
 
 
@@ -923,125 +824,122 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const pointsItems = document.querySelectorAll('.points__inner');
+  // const pointsItems = document.querySelectorAll('.points__inner');
 
-  pointsItems.forEach(item => {
-    item.addEventListener('click', function () {
-      const hiddenContents = document.querySelectorAll('.points__hidden.active');
-      hiddenContents.forEach(content => {
-        content.classList.toggle('active');
-      });
+  // pointsItems.forEach(item => {
+  //   item.addEventListener('click', function () {
+  //     const hiddenContents = document.querySelectorAll('.points__hidden.active');
+  //     hiddenContents.forEach(content => {
+  //       content.classList.toggle('active');
+  //     });
 
-      const hiddenContent = this.parentElement.querySelector('.points__hidden');
-      const svgIcons = document.querySelectorAll('.points__item--svg.active');
-      svgIcons.forEach(icon => {
-        icon.classList.toggle('active');
-      });
+  //     const hiddenContent = this.parentElement.querySelector('.points__hidden');
+  //     const svgIcons = document.querySelectorAll('.points__item--svg.active');
+  //     svgIcons.forEach(icon => {
+  //       icon.classList.toggle('active');
+  //     });
 
-      const svgIcon = this.querySelector('.points__item--svg');
-      if (hiddenContent) {
-        hiddenContent.classList.add('active');
-        svgIcon.classList.add('active');
-      }
-    });
-  });
+  //     const svgIcon = this.querySelector('.points__item--svg');
+  //     if (hiddenContent) {
+  //       hiddenContent.classList.add('active');
+  //       svgIcon.classList.add('active');
+  //     }
+  //   });
+  // });
+  
   const nextBtn = document.querySelector('.calculator__next');
   const prevBtn = document.querySelector('.calculator__end');
   const countElement = document.querySelector('.calculator__caunt span:first-child');
   const totalElement = document.querySelector('.calculator__caunt span:last-child');
+  const nextBtnText = nextBtn.querySelector('span');
   const questionsBtn = document.querySelector('.calculator__questions');
 
-  if (nextBtn && prevBtn && countElement && totalElement && questionsBtn) {
-    const nextBtnText = nextBtn.querySelector('span');
+  let currentWrapperIndex = 0;
+  const wrappers = document.querySelectorAll('.calculator__wrapper');
+  const totalWrappers = wrappers.length;
 
-    let currentWrapperIndex = 0;
-    const wrappers = document.querySelectorAll('.calculator__wrapper');
-    const totalWrappers = wrappers.length;
+  // Скрыть все блоки, кроме первого
+  hideAllWrappers();
+  showWrapper(currentWrapperIndex);
 
-    // Скрыть все блоки, кроме первого
+  updateNextButtonText();
+  updateCountText();
+
+  nextBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex < totalWrappers - 1) {
+      currentWrapperIndex++;
+      updateCalculator();
+    } else {
+      // Если текущий блок последний, выполнить действие
+      // Например, отправить заявку
+      sendRequest();
+    }
+  });
+
+  prevBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex > 0) {
+      currentWrapperIndex--;
+      updateCalculator();
+    }
+  });
+
+  function updateCalculator() {
     hideAllWrappers();
     showWrapper(currentWrapperIndex);
-
     updateNextButtonText();
     updateCountText();
+    showQuestionsButtonIfNeeded()
+    updatePrevButtonVisibility();
+  }
 
-    nextBtn.addEventListener('click', function (event) {
-      event.preventDefault();
-      if (currentWrapperIndex < totalWrappers - 1) {
-        currentWrapperIndex++;
-        updateCalculator();
-      } else {
-        // Если текущий блок последний, выполнить действие
-        // Например, отправить заявку
-        sendRequest();
-      }
+  function hideAllWrappers() {
+    wrappers.forEach(function (wrapper) {
+      wrapper.style.display = 'none';
     });
+  }
 
-    prevBtn.addEventListener('click', function (event) {
-      event.preventDefault();
-      if (currentWrapperIndex > 0) {
-        currentWrapperIndex--;
-        updateCalculator();
-      }
-    });
+  function showWrapper(index) {
+    wrappers[index].style.display = 'flex';
+  }
 
-    function updateCalculator() {
-      hideAllWrappers();
-      showWrapper(currentWrapperIndex);
-      updateNextButtonText();
-      updateCountText();
-      showQuestionsButtonIfNeeded();
-      updatePrevButtonVisibility();
-    }
-
-    function hideAllWrappers() {
-      wrappers.forEach(function (wrapper) {
-        wrapper.style.display = 'none';
-      });
-    }
-
-    function showWrapper(index) {
-      wrappers[index].style.display = 'flex';
-    }
-
-    function updateNextButtonText() {
-      if (nextBtnText) {
-        if (currentWrapperIndex === totalWrappers - 1) {
-          nextBtnText.textContent = 'Оставить заявку';
-        } else {
-          nextBtnText.textContent = 'Далее';
-        }
-      }
-    }
-
-    function updateCountText() {
-      countElement.textContent = currentWrapperIndex + 1;
-      totalElement.textContent = totalWrappers;
-    }
-
-    function showQuestionsButtonIfNeeded() {
+  function updateNextButtonText() {
+    if (nextBtnText) {
       if (currentWrapperIndex === totalWrappers - 1) {
-        questionsBtn.style.display = 'block';
+        nextBtnText.textContent = 'Оставить заявку';
       } else {
-        questionsBtn.style.display = 'none';
+        nextBtnText.textContent = 'Далее';
       }
-    }
-
-    function updatePrevButtonVisibility() {
-      if (currentWrapperIndex === 0) {
-        prevBtn.style.display = 'none';
-      } else {
-        prevBtn.style.display = 'block';
-      }
-    }
-
-    function sendRequest() {
-      // Здесь можно добавить логику отправки заявки
-      // Например, показать модальное окно или перенаправить пользователя на другую страницу
-      alert('Здесь отправляем заявку');
     }
   }
 
+  function updateCountText() {
+    countElement.textContent = currentWrapperIndex + 1;
+    totalElement.textContent = totalWrappers;
+  }
+
+  function showQuestionsButtonIfNeeded() {
+    if (currentWrapperIndex === totalWrappers - 1) {
+      questionsBtn.style.display = 'block';
+    } else {
+      questionsBtn.style.display = 'none';
+    }
+  }
+
+  function updatePrevButtonVisibility() {
+    if (currentWrapperIndex === 0) {
+      prevBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = 'block';
+    }
+  }
+
+  function sendRequest() {
+    // Здесь можно добавить логику отправки заявки
+    // Например, показать модальное окно или перенаправить пользователя на другую страницу
+    alert('Здесь отправляем заявку');
+  }
 
   // Управление отображением блоков с логотипами для радио-кнопок
   const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');

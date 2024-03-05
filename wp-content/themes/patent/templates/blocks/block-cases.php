@@ -17,7 +17,7 @@ if ($keyses->have_posts()) {
                     while ( $keyses->have_posts() ) {
                         $keyses->the_post();
                         ?>
-                        <li <?php if($count_tab == 1) { ?> class="active" <?php } ?>><?php the_title(); ?></li>
+                        <li data-target="<?=$count_tab ?>" <?php if($count_tab == 1) { ?> class="active" <?php } ?>><?php the_title(); ?></li>
                         <?php $count_tab++;  } ?>
                 </ul>
                 <?php
@@ -25,7 +25,7 @@ if ($keyses->have_posts()) {
                 while ( $keyses->have_posts() ) {
                     $keyses->the_post();
                     ?>
-                    <div class="tabs__content <?php if($count_keys == 1) { ?> active <?php } ?>">
+                    <div id="tab__content_<?=$count_keys?>" class="tabs__content <?php if($count_keys == 1) { ?> active <?php } ?>">
                         <?php
                         $keyses_field = get_field('servise_keyses', get_the_ID());
                         if($keyses_field) {

@@ -2,6 +2,13 @@
     overflow: hidden;
 }
 
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+}
+
 .section-mkty {
     padding-top: 46px;
     padding-bottom: 97px;
@@ -1047,6 +1054,15 @@ h2.global-popup__title {
         margin: auto;
     }
     
+    .order-form h2 {
+        margin-bottom: 10px;
+    }
+    .form__part:first-child > p {
+        margin-bottom: 26px;
+    }
+    .patent-form {
+        padding: 20px 0 20px 0;
+    }
 
 }
 
