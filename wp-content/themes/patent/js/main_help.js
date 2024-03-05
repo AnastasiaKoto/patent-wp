@@ -7,6 +7,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $('.allCoach').text($(`.keyses__slider:eq(${order})`).slick('getSlick').slideCount);
 
         }
+
+        /*fix prices slider */
+
+        function correctCounter(selectorSlider) {
+            var currentSlideNumber = $(selectorSlider).slick('slickCurrentSlide') + 1;
+            $('.allCoach').text($(selectorSlider).slick('getSlick').slideCount);
+        }
+            correctCounter(".prices__list:not(.price__list_two)");
+    //    correctCounter(".price__list_two");
+       
+
         $('.keyses__tabs ul.tabs__caption').on('click', 'li', function () {
             $('.keyses__slider').slick("refresh");
             $('.keyses__tabs ul.tabs__caption li').each((i, item) => {
@@ -153,12 +164,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $order = $(this).attr("data-target");
             $(".tabs__caption  li").removeClass("active");
             $(".tabs__content").removeClass("active");
-            $("#tab__content_"+$order).addClass("active");
+            $("#tab__content_" + $order).addClass("active");
             $(this).addClass("active");
         });
 
         /*Fixed faq */
-        $(".points__item--svg").click(function(){
+        $(".points__item--svg").click(function () {
             $(this).parents(".points__item").find(".points__hidden").toggleClass("active");
         });
 

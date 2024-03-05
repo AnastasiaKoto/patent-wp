@@ -44,6 +44,8 @@ $parties_desc = get_field('parties_desc');
                                         <?php
                                     }
                                     ?>
+
+                                    
                                 </ul>
                                 <ul class="prices-card__list-info">
                                     <li>
@@ -73,13 +75,13 @@ $parties_desc = get_field('parties_desc');
 
 
             <div class="slide_count prices__slide_count">
-            <span class="slick-prev-new keyses__slick">
+            <span class=" slick-prev-price slick-prev-price_1">
                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 1L2 6L7 11" stroke="white" stroke-width="2" stroke-linecap="round" />
                 </svg>
             </span>
                 <span class="currentCoach">1</span><span class="slesh">/</span><span class="allCoach">6</span>
-                <span class="slick-next-new keyses__slick">
+                <span class="slick-next-price slick-next-price_1">
                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 11L6 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round" />
                 </svg>

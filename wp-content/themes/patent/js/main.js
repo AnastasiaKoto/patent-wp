@@ -582,8 +582,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       slidesToScroll: 1,
       prevArrow: $('.slick-prev-new-2'),
       nextArrow: $('.slick-next-new-2'),
-      // appendArrows: $('.prices__slide_count'),
-      // appendDots: $('.prices__slide_count'),
+      appendArrows: $('.prices__slide_count'),
+      appendDots: $('.prices__slide_count'),
       customPaging: function (slider, i) {
         return '<span class="dot"></span>';
       },
@@ -594,12 +594,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     if ($(window).width() < 769) {
-      $('.prices__list').slick({
+      $('.prices__list').not(".prices__list_two").slick({
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: $('.slick-prev-new-2'),
-        nextArrow: $('.slick-next-new-2'),
+        prevArrow: $('.slick-prev-price_1'),
+        nextArrow: $('.slick-next-price_1'),
         appendArrows: $('.prices__slide_count'),
         appendDots: $('.prices__slide_count'),
         customPaging: function (slider, i) {
@@ -608,7 +608,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
         dots: true
       });
 
-      $('.prices__list').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      $('.prices__list').not(".prices__list_two").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        $('.currentCoach').text(nextSlide + 1);
+      });
+
+
+      $(".prices__list_two").slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.slick-prev-price_2'),
+        nextArrow: $('.slick-next-price_2'),
+        appendArrows: $('.prices__slide_count'),
+        appendDots: $('.prices__slide_count'),
+        customPaging: function (slider, i) {
+          return '<span class="dot"></span>';
+        },
+        dots: true
+      });
+
+      $(".prices__list_two").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $('.currentCoach').text(nextSlide + 1);
       });
     }

@@ -10,7 +10,7 @@ $parties_desc = get_field('parties_desc');
 
 
 <?php if ( !empty($service_stages2)): ?>
-    <section class="prices">
+    <section class="prices ">
         <div class="container">
             <?php if (!empty($parties_desc)): ?>
                 <div class="prices-subtitle">
@@ -18,7 +18,7 @@ $parties_desc = get_field('parties_desc');
                     <div class="prices-subtitle__text"> <?php echo $parties_desc ?> </div>
                 </div>
             <?php endif; ?>
-            <ul class="prices__list">
+            <ul class="prices__list prices__list_two">
                 <?php
                 if (!empty($service_stages2)) {
                     $stage_number = 1;
@@ -42,6 +42,62 @@ $parties_desc = get_field('parties_desc');
                                         <?php
                                     }
                                     ?>
+
+                                    
+                                    
+                                </ul>
+                                <ul class="prices-card__list-info">
+                                    <li>
+                                        <span class="prices-card__text-bold"><?php echo $stage['stage_second']['price_or_descr']; ?></span>
+                                        <?php if ($stage['stage_second']['show_deadline']) { ?>
+
+                                            <span class="prices-card__text-average">(<?php echo $stage['stage_second']['deadline']; ?>)</span>
+
+                                        <?php } ?>
+
+                                        <?php echo $stage['stage_second']['descr_under_price']; ?>
+                                    </li>
+                                </ul>
+                                <ul class="prices-card__list-last">
+                                    <li>
+                                        <span class="prices-card__text-bold">Результат</span>
+                                        <p>Решение в вашу пользу</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <?php
+                    }
+                }
+                ?>
+
+
+<?php
+                if (!empty($service_stages2)) {
+                    $stage_number = 1;
+                    foreach ($service_stages2 as $stage) {
+                        ?>
+                        <li class="prices__item">
+                            <div class="prices-card">
+                                <span class="prices-card__stage-text   <?php echo $stage['selected_title'] ? 'prices-card__stage-text--color' : ''; ?>"><?php echo $stage_number++; ?> этап</span>
+
+                                <ul class="prices-card__list">
+                                    <?php
+                                    foreach ($stage['stages_list'] as $substage) {
+                                        ?>
+                                        <li class="prices-card__item <?php echo $substage['selection'] ? 'yellow' : ''; ?>">
+                                            <div class="prices-card__text"><?php echo $substage['title']; ?></div>
+
+                                            <?php if ($substage['substage_check']) { ?>
+                                                <span class="prices-card__text-radius"> <?php echo $substage['substage_price']; ?></span>
+                                            <?php } ?>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+
+                                    
+                                    
                                 </ul>
                                 <ul class="prices-card__list-info">
                                     <li>
@@ -71,13 +127,13 @@ $parties_desc = get_field('parties_desc');
 
 
             <div class="slide_count prices__slide_count">
-            <span class="slick-prev-new keyses__slick">
+            <span class="slick-prev-price slick-prev-price_2">
                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 1L2 6L7 11" stroke="white" stroke-width="2" stroke-linecap="round" />
                 </svg>
             </span>
                 <span class="currentCoach">1</span><span class="slesh">/</span><span class="allCoach">6</span>
-                <span class="slick-next-new keyses__slick">
+                <span class="slick-next-price slick-next-price_2">
                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 11L6 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round" />
                 </svg>
