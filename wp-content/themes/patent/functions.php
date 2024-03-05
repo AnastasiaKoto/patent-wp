@@ -31,7 +31,9 @@ function all_styles() {
   wp_enqueue_style( 'archive-services_css', '/wp-content/themes/patent/css/archive-services.css' );
   wp_enqueue_style( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css' );
     wp_enqueue_style( 'style_help', '/wp-content/themes/patent/css/style_help.css' );
-
+    if(is_single() && 'services' === get_post_type() ) {
+        wp_enqueue_script('calc-script', '/wp-content/themes/patent/js/calc.js', array('jquery'), '1.0', true);
+    }
 }
 function all_js() {
 	wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js');
@@ -46,12 +48,6 @@ function all_js() {
 }
 add_action('wp_enqueue_scripts', 'all_styles');
 add_action('wp_enqueue_scripts', 'all_js');
-
-function enqueue_test_scripts() {
-    wp_enqueue_script('calc-script', '/wp-content/themes/patent/js/calc.js', array('jquery'), '1.0', true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_test_scripts');
-
 
 //страница опций
 add_action('acf/init', 'my_acf_op_init');
