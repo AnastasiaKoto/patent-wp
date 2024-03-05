@@ -47,6 +47,12 @@ function all_js() {
 add_action('wp_enqueue_scripts', 'all_styles');
 add_action('wp_enqueue_scripts', 'all_js');
 
+function enqueue_test_scripts() {
+    wp_enqueue_script('calc-script', '/wp-content/themes/patent/js/calc.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_test_scripts');
+
+
 //страница опций
 add_action('acf/init', 'my_acf_op_init');
 function my_acf_op_init() {
