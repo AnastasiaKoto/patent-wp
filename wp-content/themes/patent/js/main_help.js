@@ -12,10 +12,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         function correctCounter(selectorSlider) {
             var currentSlideNumber = $(selectorSlider).slick('slickCurrentSlide') + 1;
-            $('.allCoach').text($(selectorSlider).slick('getSlick').slideCount);
+            console.log($(selectorSlider));
+            $(selectorSlider).next(".slide_count").find($('.currentCoach')).text(currentSlideNumber);
+            $(selectorSlider).next(".slide_count").find($('.allCoach')).text($(selectorSlider).slick('getSlick').slideCount);
         }
-            correctCounter(".prices__list:not(.price__list_two)");
-    //    correctCounter(".price__list_two");
+            correctCounter(".prices__list");
+            correctCounter(".prices__list_two");
        
 
         $('.keyses__tabs ul.tabs__caption').on('click', 'li', function () {

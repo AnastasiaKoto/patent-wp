@@ -609,7 +609,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
 
       $('.prices__list').not(".prices__list_two").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        $('.currentCoach').text(nextSlide + 1);
+        $(this).next(".slide_count").find('.currentCoach').text(nextSlide + 1);
       });
 
 
@@ -628,7 +628,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
 
       $(".prices__list_two").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        $('.currentCoach').text(nextSlide + 1);
+        $(this).next(".slide_count").find(".currentCoach").text(nextSlide + 1);
       });
     }
 
