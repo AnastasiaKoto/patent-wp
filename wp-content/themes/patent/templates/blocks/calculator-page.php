@@ -900,21 +900,29 @@
     });
 
     // Проходимся по всем радио-кнопкам во второй группе и добавляем обработчик события
+    // Получаем элементы, в которые будем выводить название товарного знака и цену
+    let selectedTrademark = document.querySelector('.calculator-value__span-jsstr');
+
+
+    // Проходимся по всем радио-кнопкам второй группы и добавляем обработчик события
     radioButtons2.forEach(button => {
         button.addEventListener('change', function() {
             // Обновляем значение переменной при изменении выбора во второй группе
             selectedValue = document.querySelector('input[name="wordmark_option"]:checked').value;
             // Проверяем, был ли выбран вариант "Да" во второй группе
             if (this.value === 'yes') {
-                // Если выбрано "Да", то добавляем 10 к selectedValue
-                additionalValue = selectedValue += 10;
+                // Выводим название товарного знака в соответствующий элемент
+                let selectedTrademarkName = document.querySelector('input[name="wordmark_option"]:checked').nextSibling.nodeValue.trim();
+                selectedTrademark.textContent = selectedTrademarkName;
+
+                // Выводим цену в соответствующий элемент
+                let price = parseInt(selectedValue);
+                priceSearch.textContent = price;
             } else {
-                // Если выбрано "Нет", то сбрасываем дополнительное значение
-                additionalValue = 0;
+                // Если выбрано "Нет", то сбрасываем значения
+                selectedTrademark.textContent = '';
+                priceSearch.textContent = '';
             }
-            // Выводим значение в консоль
-            console.log('Выбранное значение2:', selectedValue);
-            console.log('Дополнительное значение:', additionalValue);
         });
     });
 
@@ -950,9 +958,9 @@
         let additionalPrice = 0;
 
         // Вычисляем дополнительную стоимость в зависимости от выбранного словесного или изобразительного знака
-        if (wordOrImage === '11000') {
+        if (wordOrImage === "11000") {
             additionalPrice = 2000;
-        } else if (wordOrImage === '12000') {
+        } else if (wordOrImage === "12000") {
             additionalPrice = 4000;
         }
 
@@ -1002,25 +1010,25 @@
                 totalPrice += parseInt(clickedItem.dataset.price);
             });
 
+            // Вычисляем цену за каждый класс и прибавляем к итоговой цене
+            const classPrice = 1000; // Указываем цену за каждый класс
+            const additionalPrice = classPrice * clickedCount;
+            const totalPriceWithClasses = totalPrice + additionalPrice;
+
             // Вычисляем цену с учетом скидки после выбора более 10 элементов
-            discountedPrice = totalPrice;
+            discountedPrice = totalPriceWithClasses;
             if (clickedCount > 10) {
                 const discountPrice = Math.ceil(clickedCount / 10) * 1000;
                 discountedPrice -= discountPrice;
             }
 
-            // Вызываем функцию calculatePrice для расчета цены с учетом логики
-            const wordOrImage = 11000; // Укажи тип знака (word или image) в соответствии с твоими условиями
-            const totalClasses = 23; // Укажи общее количество классов
-            const basePrice = 11000; // Укажи базовую стоимость
-            const price = calculatePrice(clickedCount, totalClasses, basePrice, wordOrImage);
+            // Выводим цену в соответствующий элемент
+            priceSearch.textContent = discountedPrice;
 
             // Выводим результат в консоль
             console.log('Количество выбранных элементов:', clickedCount);
             console.log('Общая цена выбранных элементов без скидки:', totalPrice);
             console.log('Цена со скидкой:', discountedPrice);
-            console.log('Цена с учетом гуру ; ) ', price);
-
 
             // Обновляем текст внутри элемента div
             selectedCountElement.textContent = clickedCount;
@@ -1028,6 +1036,9 @@
     });
 
 </script>
+
+
+
 
 
 <style>
