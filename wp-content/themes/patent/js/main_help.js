@@ -161,14 +161,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $(this).prev(".article-box__text").toggleClass("article-box__text_active");
         });
 
+        
+
         /*fixed tab */
-        $(".tabs__caption li ").on("click", function () {
+        $(".tabs__caption li").on("click", function () {
             $order = $(this).attr("data-target");
-            $(".tabs__caption  li").removeClass("active");
-            $(".tabs__content").removeClass("active");
-            $("#tab__content_" + $order).addClass("active");
+            $(this).parents(".tabs__caption ").find("li").removeClass("active");
+            $(this).parents("section").find(".tabs__content").removeClass("active");
+            $(this).parents("section").find("#tab__content_"+$order).addClass("active");
+         
             $(this).addClass("active");
         });
+        $(".tabs__caption li").each(function(i,item){
+            if($(item).hasClass("active")){
+                $order = $(item).attr("data-target");
+                $(item).parents("section").find("#tab__content_"+$order).addClass("active");
+            }
+        });
+        
+        /*article tab */
+
+        
 
         /*Fixed faq */
         $(".points__item--svg").click(function () {
