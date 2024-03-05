@@ -436,7 +436,7 @@ background: #F9CD54;
     color: #fff;
     padding: 20px;
     border-radius: 3%;
-    top: 0;
+    top: -50px;
     width: 30%;
     height: 300px;
     overflow: hidden;
@@ -1505,13 +1505,13 @@ background: #F9CD54;
     display: flex;
 }
 
-.section-mkty-tabs-styles {
-    display: none;
-}
+/*.section-mkty-tabs-styles {*/
+/*    display: none;*/
+/*}*/
 
-.section-mkty-tabs-styles .active {
-    display: flex;
-}
+/*.section-mkty-tabs-styles .active {*/
+/*    display: flex;*/
+/*}*/
 
 
 @media  (max-width: 768px) {

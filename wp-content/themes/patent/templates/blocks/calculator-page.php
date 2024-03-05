@@ -736,7 +736,7 @@
                                 <li>
                                     <p>
                                         <span class="calculator-value__span">Ваш товарный знак:</span>
-                                        <span class="calculator-value__span calculator-value__span-bold">апр</span>
+                                        <span class="calculator-value__span calculator-value__span-bold calculator-value__span-jsstr">апр</span>
                                     </p>
                                 </li>
 
@@ -864,6 +864,21 @@
 
 
 <script>
+    // Получаем все поля для вывода цены
+    let priceTrademark = document.querySelector('.calculator-value__span-jsstr');  // Ваш товарный знак:
+    let priceSearch = document.querySelector('.calculator-value__span-js-s1');  // Поиск:
+    let priceBusiness  = document.querySelector('.calculator-value__span-js-s2');  // Подача заявки и ведение дел
+    let priceEvidence = document.querySelector('.calculator-value__span-js-3');  // Получение свидетельства
+    let priceTotal = document.querySelector('.calculator-value__span-js-s-4');  // Итого:
+
+    let duesFiling = document.querySelector('.calculator-value__span-js-c-1');  // Подача заявки
+    let duesCertificate  = document.querySelector('.calculator-value__span-js-c-2');  // Получение свидетельства
+    let duesTotal = document.querySelector('.calculator-value__span-js-c-3');  // Итого:
+
+    console.log(priceSearch)
+
+
+
     // Получаем все радио-кнопки
     const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
     const radioButtons2 = document.querySelectorAll('input[name="wordmark2_option"]');
