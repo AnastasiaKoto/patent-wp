@@ -1357,6 +1357,7 @@ h2.global-popup__title {
         position: static;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     .article__content-list_point .icon {
         margin: auto;

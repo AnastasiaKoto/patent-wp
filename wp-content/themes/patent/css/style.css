@@ -1355,6 +1355,7 @@ input.error {
 .header-mobile__info {
     display: flex;
     flex-direction: column;
+    
 }
 
 .header-mobile__text--400 {
