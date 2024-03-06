@@ -705,9 +705,9 @@ h2.global-popup__title {
         height: 100%;
     }
 
-    .orfer-form__wrapper-gray_archive {
+    /* .orfer-form__wrapper-gray_archive {
         display: none;
-    }
+    } */
 
     .orfer-form__wrapper-gray_archive {
         padding-top: 0px;
