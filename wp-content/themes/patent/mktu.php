@@ -81,5 +81,10 @@ $class_sections = get_field('class_sections');
 
         </div>
     </section>
+    <div class="orfer-form__wrapper-gray">
+        <!--заказать услугу патнетного поверенного -->
+        <?php get_template_part('templates/blocks/form', 'order'); ?>
+        <!--заказать услугу патнетного поверенного -->
+    </div>
 </main>
 <?php get_footer(); ?>
