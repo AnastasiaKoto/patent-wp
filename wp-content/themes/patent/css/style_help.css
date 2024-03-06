@@ -128,7 +128,6 @@ header {
 }
 
 
-
 .section-mkty-tabs-item__title {
     margin-bottom: 12px;
 }
@@ -221,7 +220,12 @@ h2.global-popup__title {
     font-weight: 500;
     margin-bottom: 9px;
 }
-
+.form-bottom__item  >a {
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 0;
+}
 /*page 404 */
 .section-404 {
     padding-top: 56px;
