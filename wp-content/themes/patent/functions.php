@@ -158,7 +158,13 @@ function create_custom_post_type() {
     );
 }
 add_action('init', 'create_custom_post_type');
-
+function custom_services_menu_class($classes, $item) {
+    if (is_post_type_archive('services') && $item->title == 'Услуги') {
+        $classes[] = 'current_page_item';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'custom_services_menu_class', 10, 2);
 // таксономии
 
 function create_custom_taxonomies() {
