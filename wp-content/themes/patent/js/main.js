@@ -652,11 +652,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       nextArrow: $('.points-slider__arrows__next'),
       responsive: [
         {
-          breakpoint: 1024,
-          settings: {
-            prevArrow: false,
-            nextArrow: false,
-          },
+          // breakpoint: 1024,
+          // settings: {
+          //   prevArrow: false,
+          //   nextArrow: false,
+          // },
         }
       ]
     });

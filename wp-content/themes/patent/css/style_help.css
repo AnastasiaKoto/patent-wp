@@ -520,6 +520,27 @@ h2.global-popup__title {
     opacity: 0.83;
     cursor: pointer;
 }
+.orfer-form__wrapper-gray_archive{
+    margin-top: 0px;
+}
+
+.prices__item{
+    display: flex;
+    flex-direction: column;
+}
+.prices-card{
+   
+    flex-grow: 1;
+}
+.prices-card__stage-text {
+   display: inline-flex;
+   width: max-content;
+}
+.prices-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 
 @media (max-width:1024px) {
@@ -630,6 +651,35 @@ h2.global-popup__title {
 
 
 @media (max-width:767px) {
+    .prices__list .slick-list {
+        display: flex ;
+        flex-direction: column;
+    
+    }
+    
+    .prices__list .slick-list .slick-slide  >div,.prices__item{
+        height: 100%;
+    }
+    
+    .prices-card{
+        height: 100%;
+    }
+  
+    .orfer-form__wrapper-gray_archive{
+        display: none;
+    }
+    .orfer-form__wrapper-gray_archive{
+        padding-top: 0px;
+    }
+    .header-mobile__text--500{
+        font-size: 14px;
+    }
+    .header-mobile__bottom{
+        gap: 2px;
+    }
+    .header-mobile__social {
+        column-gap: 3px;
+    }
 
     /*Office */
     .titles__block_office .breadcrumbs {
@@ -767,6 +817,7 @@ h2.global-popup__title {
         position: relative;
         overflow: hidden;
     }
+
 
     .section-mkty__area.sectiom-mkty-area {
         margin-bottom: 0px;
@@ -1053,7 +1104,7 @@ h2.global-popup__title {
         position: absolute;
         bottom: -58px;
         right: 0;
-        width: 127px;
+        width: 176px;
     }
 
     .prices__list .slick-list {
@@ -1197,11 +1248,14 @@ h2.global-popup__title {
         justify-content: flex-start;
         gap: 5px;
     }
+    .services-card__content  .small__price {
+        justify-content: center;
+    }
 
     .small__price span:last-child {
         flex-grow: 1;
         display: flex;
-        justify-content: flex-end;
+        /* justify-content: flex-end; */
     }
 
     .small__price span:last-child {
@@ -1272,6 +1326,13 @@ h2.global-popup__title {
 }
 
 @media (max-width:768px) {
+    .header-mobile{
+        position: sticky;
+        top: 0;
+    }
+    .articles__tabs .tabs__caption{
+        padding: 23px;
+    }
     .tabs__caption {
 
         padding: 0;
@@ -1352,6 +1413,9 @@ h2.global-popup__title {
     .points-slider__slides {
         padding-left: 20px;
     }
+    .last__card .small__price {
+        text-align: center;
+    }
 }
 
 @media (min-width:1200px) {
@@ -1367,5 +1431,12 @@ h2.global-popup__title {
 
     .targets .slide_count>span:not(:first-child):not(:last-child) {
         display: none;
+    }
+}
+@media (max-width:370px) {
+    .header-mobile__bottom{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 }
