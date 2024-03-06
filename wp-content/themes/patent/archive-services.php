@@ -3,7 +3,7 @@
 */
 get_header();
 ?>
-<main class="main">
+<main  class="main">
 	<?php get_template_part('templates/blocks/titles', 'wrapper'); ?>
     <section class="service-cats">
         <div class="container">
