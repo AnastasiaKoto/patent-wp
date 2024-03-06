@@ -20,7 +20,7 @@ get_header(); // подключаем шапку сайта
         <!--стоимость-->
 
 
-        <section class="points  prices-pt0">
+        <section class="points  prices-pt0 <?=is_page_template("services/single-service.php")?'points_single':'points_single-two' ?>">
             <div class="container">
                 <!--   Важные моменты---->
                 <?php get_template_part('templates/blocks/services', 'moments'); ?>

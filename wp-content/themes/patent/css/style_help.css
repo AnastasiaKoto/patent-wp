@@ -669,6 +669,27 @@ h2.global-popup__title {
 
 
 @media (max-width:767px) {
+    .form-bottom__item >a{
+        position: static;
+        display: flex;
+        justify-content: space-between;
+    }
+    .interesting_single-two .interesting__list{
+        padding-top: 8px;
+    }
+    .discounts_single-two{
+        padding-bottom: 40px !important;
+    }
+    .points_single-two .points__wrapper{
+        padding-bottom: 39px;
+    }
+    .article-box_single-two{
+        padding-top:46px;
+        padding-bottom: 39px;
+    }
+    .prices_single-two .prices__list{
+        padding-top: 44px;
+    }
     .prices__list .slick-list {
         display: flex;
         flex-direction: column;
@@ -740,6 +761,7 @@ h2.global-popup__title {
         line-height: 24.8px;
         padding-left: 21px;
         padding-left: 0px;
+        color: #1E1D25;
     }
 
     .banner_office .banner__offer ul li {
@@ -1238,8 +1260,8 @@ h2.global-popup__title {
         font-weight: 500;
     }
 
-    .banner__block .banner__offer {
-        width: 100%;
+    .banner__block div.banner__offer {
+        width: 100% ;
         min-width: unset;
         max-width: 100%;
         padding: 20px;
@@ -1264,7 +1286,7 @@ h2.global-popup__title {
     }
 
     .banner_office .banner__offer ul li {
-
+        color: #1E1D25;
         padding-bottom: 0px;
     }
 
@@ -1351,6 +1373,9 @@ h2.global-popup__title {
 }
 
 @media (max-width:768px) {
+    .titles__block_office .breadcrumbs ~ h1{
+        margin-bottom: 0px;
+    }
     .header-mobile {
         position: sticky;
         top: 0;
