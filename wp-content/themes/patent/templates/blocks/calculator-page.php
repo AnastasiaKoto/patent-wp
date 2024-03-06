@@ -864,6 +864,17 @@
 
 
 <script>
+    // Получаем все поля для вывода цены
+    let priceTrademark = document.querySelector('.calculator-value__span-jsstr');  // Ваш товарный знак:
+    let priceSearch = document.querySelector('.calculator-value__span-js-s1');  // Поиск:
+    let priceBusiness  = document.querySelector('.calculator-value__span-js-s2');  // Подача заявки и ведение дел
+    let priceEvidence = document.querySelector('.calculator-value__span-js-3');  // Получение свидетельства
+    let priceTotal = document.querySelector('.calculator-value__span-js-s-4');  // Итого:
+
+    let duesFiling = document.querySelector('.calculator-value__span-js-c-1');  // Подача заявки
+    let duesCertificate  = document.querySelector('.calculator-value__span-js-c-2');  // Получение свидетельства
+    let duesTotal = document.querySelector('.calculator-value__span-js-c-3');  // Итого:
+
     // Шаг 1
     // Получаем все радио-кнопки по имени группы для типа товарного знака
     const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
@@ -905,22 +916,57 @@
 
     // Шаг 3
     // Получаем все элементы с классом "section-mkty-area__item"
-    const mktyItems = document.querySelectorAll('.section-mkty-area__item');
+    // Получаем все элементы с классом section-mkty-area-item
+    const items = document.querySelectorAll('.section-mkty-area-item');
 
-    // Назначаем обработчик события клика для каждого элемента
-    mktyItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Переключаем класс "selected" для текущего элемента
-            this.classList.toggle('selected');
+    // Добавляем цену 1000 к каждому элементу
+    items.forEach(item => {
+        item.dataset.price = '1000';
+    });
 
-            // Получаем все выбранные элементы с классом "selected"
-            const selectedItems = document.querySelectorAll('.section-mkty-area__item.selected');
+    // Переменные для хранения общей цены без скидки и с учетом скидки
+    let totalPrice = 0;
+    let discountedPrice = 0;
 
-            // Записываем количество выбранных элементов в переменную
-            const selectedCount = selectedItems.length;
+    // Добавляем обработчик клика для каждого элемента
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            // Добавляем класс при клике
+            item.classList.toggle('section-clicked');
 
-            // Выводим количество выбранных элементов
-            console.log('Выбрано элементов:', selectedCount);
+            // Подсчитываем количество выбранных элементов
+            let selectedCountElement = document.getElementById("selected-count");
+            const clickedItems = document.querySelectorAll('.section-mkty-area-item.section-clicked');
+            const clickedCount = clickedItems.length;
+
+            // Вычисляем общую цену выбранных элементов без скидки
+            totalPrice = 0;
+            clickedItems.forEach(clickedItem => {
+                totalPrice += parseInt(clickedItem.dataset.price);
+            });
+
+            // Вычисляем цену за каждый класс и прибавляем к итоговой цене
+            const classPrice = 1000; // Указываем цену за каждый класс
+            const additionalPrice = classPrice * clickedCount;
+            const totalPriceWithClasses = totalPrice + additionalPrice;
+
+            // Вычисляем цену с учетом скидки после выбора более 10 элементов
+            discountedPrice = totalPriceWithClasses;
+            if (clickedCount > 10) {
+                const discountPrice = Math.ceil(clickedCount / 10) * 1000;
+                discountedPrice -= discountPrice;
+            }
+
+            // Выводим цену в соответствующий элемент
+            priceSearch.textContent = discountedPrice;
+
+            // Выводим результат в консоль
+            console.log('Количество выбранных элементов:', clickedCount);
+            console.log('Общая цена выбранных элементов без скидки:', totalPrice);
+            console.log('Цена со скидкой:', discountedPrice);
+
+            // Обновляем текст внутри элемента div
+            selectedCountElement.textContent = clickedCount;
         });
     });
 
@@ -947,6 +993,12 @@
             // Выводим обновленные значения стоимостей
             console.log('Стартовая стоимость подачи заявки и ведения дел:', applicationCost);
             console.log('Стартовая стоимость проведения экспертизы:', expertiseCost);
+
+            // Выводим значения цен
+            priceBusiness.textContent = applicationCost;
+            duesFiling.textContent = applicationCost;
+            duesCertificate.textContent = expertiseCost;
+            duesTotal.textContent = applicationCost + expertiseCost;
         });
     });
 
@@ -966,11 +1018,16 @@
 
             // Выводим обновленное значение стоимости получения свидетельства
             console.log('Стартовая стоимость получения свидетельства:', certificatePrice);
+
+            // Выводим значение цены
+            priceEvidence.textContent = certificatePrice;
+            priceTotal.textContent = certificatePrice;
         });
     });
 
 
 </script>
+
 
 
 

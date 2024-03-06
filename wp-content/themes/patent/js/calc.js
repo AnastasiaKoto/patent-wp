@@ -31,5 +31,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 });
             }
         });
+        $('.section-mkty-area-item').on('mouseleave', function(){
+            $('.section-mkty__tabs').css({
+                position: 'absolute',
+                opacity: '0',
+                transition: 'all .3s ease',
+                zIndex: '-1' 
+            });
+        })
     })
 })

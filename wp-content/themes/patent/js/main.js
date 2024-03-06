@@ -733,14 +733,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   let feedBacks = document.querySelectorAll('.agree__group'); // Общий класс для обратной связи
-
-  feedBacks.forEach(feedBack => {
-    if (feedBack) {
-      feedBack.querySelector('.personal').addEventListener('click', function () {
-        feedBack.querySelector('.custom__check').classList.toggle('active');
-      });
-    }
-  });
+  if (feedBacks.length > 0) {
+    feedBacks.forEach(feedBack => {
+      if (feedBack) {
+          if(feedBack.querySelector('.personal')!==null){
+          feedBack.querySelector('.personal').addEventListener('click', function () {
+            feedBack.querySelector('.custom__check').classList.toggle('active');
+          });
+        }
+        
+      }
+    });
+  }
 
 
 
