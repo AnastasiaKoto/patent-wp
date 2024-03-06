@@ -1353,6 +1353,11 @@ h2.global-popup__title {
 
 
 @media (max-width:1024px) {
+    .form-bottom__item >a {
+        position: static;
+        display: flex;
+        justify-content: space-between;
+    }
     .article__content-list_point .icon {
         margin: auto;
     }
