@@ -16,7 +16,7 @@
                         <div class="calculator__type">
                             <h2 class="calculator__title">тип товарного знака</h2>
                             <label class="">
-                                <input type="radio" name="wordmark_option" value="11000" checked>
+                                <input type="radio" name="wordmark_option" value="11000">
                                 Словесный
                             </label>
                             <label class="">
@@ -195,7 +195,7 @@
                                     <div class="sectiom-mkty-area__row">
                                         <div class="section-mkty-area__items">
                                             <a href="javascript:void(0)" data-target="mkty-tabs-item_1" data-number="1"
-                                               class="section-mkty-area__item section-mkty-area-item section-mkty-area-item_active">
+                                               class="section-mkty-area__item section-mkty-area-item">
                                                 1
                                             </a>
 
@@ -815,7 +815,7 @@
                         </div>
                     </div>
                     <div class="calculator-value-bottom">
-                        <p>Всего за регистрацию: <span class="total">59 700 ₽</span></p>
+                        <p>Всего за регистрацию: <span class="total-js">59 700 ₽</span></p>
                     </div>
                 </div>
 
@@ -864,16 +864,7 @@
 
 
 <script>
-    // Получаем все поля для вывода цены
-    let priceTrademark = document.querySelector('.calculator-value__span-jsstr');  // Ваш товарный знак:
-    let priceSearch = document.querySelector('.calculator-value__span-js-s1');  // Поиск:
-    let priceBusiness  = document.querySelector('.calculator-value__span-js-s2');  // Подача заявки и ведение дел
-    let priceEvidence = document.querySelector('.calculator-value__span-js-3');  // Получение свидетельства
-    let priceTotal = document.querySelector('.calculator-value__span-js-s-4');  // Итого:
 
-    let duesFiling = document.querySelector('.calculator-value__span-js-c-1');  // Подача заявки
-    let duesCertificate  = document.querySelector('.calculator-value__span-js-c-2');  // Получение свидетельства
-    let duesTotal = document.querySelector('.calculator-value__span-js-c-3');  // Итого:
 
     // Шаг 1
     // Получаем все радио-кнопки по имени группы для типа товарного знака
@@ -894,23 +885,36 @@
         });
     });
 
-
-
     // Шаг 2
-    // Назначаем обработчик события изменения для каждой радио-кнопки проверки товарного знака
+
+    let selectedTrademark = document.querySelector('.calculator-value__span-jsstr');
+
+
+    // Проходимся по всем радио-кнопкам второй группы и добавляем обработчик события
     radioButtons2.forEach(button => {
         button.addEventListener('change', function() {
-            // Проверяем, выбран ли вариант "Да"
-            if (this.value === 'yes' && this.checked) {
-                // Если да, сохраняем сумму из предыдущей группы радио-кнопок
-                console.log('Требуется проверка. Сумма:', sum);
+            // Обновляем значение переменной при изменении выбора во второй группе
+            selectedValue = document.querySelector('input[name="wordmark_option"]:checked').value;
+            // Проверяем, был ли выбран вариант "Да" во второй группе
+            if (this.value === 'yes') {
+                // Выводим название товарного знака в соответствующий элемент
+                let selectedTrademarkName = document.querySelector('input[name="wordmark_option"]:checked').nextSibling.nodeValue.trim();
+                selectedTrademark.textContent = selectedTrademarkName;
+
+                // Выводим цену в соответствующий элемент
+                let price = parseInt(selectedValue);
+                priceSearch.textContent = price;
             } else {
-                // Если выбрано "Нет" или другой вариант, обнуляем сумму
-                sum = 0;
-                console.log('Проверка не требуется. Сумма:', sum);
+                // Если выбрано "Нет", то сбрасываем значения
+                selectedTrademark.textContent = '';
+                priceSearch.textContent = '';
+                console.log(price)
             }
         });
     });
+
+
+
 
 
 
@@ -1025,6 +1029,19 @@
         });
     });
 
+    // Шаг 6
+    // Получаем все поля для вывода цены
+    let priceTrademark = document.querySelector('.calculator-value__span-jsstr');  // Ваш товарный знак:
+    let priceSearch = document.querySelector('.calculator-value__span-js-s1');  // Поиск:
+    let priceBusiness  = document.querySelector('.calculator-value__span-js-s2');  // Подача заявки и ведение дел
+    let priceEvidence = document.querySelector('.calculator-value__span-js-3');  // Получение свидетельства
+    let priceTotal = document.querySelector('.calculator-value__span-js-s-4');  // Итого:
+
+    let duesFiling = document.querySelector('.calculator-value__span-js-c-1');  // Подача заявки
+    let duesCertificate  = document.querySelector('.calculator-value__span-js-c-2');  // Получение свидетельства
+    let duesTotal = document.querySelector('.calculator-value__span-js-c-3');  // Итого:
+
+    let allTotal = document.querySelector('.total-js');  // ВСЕГО ЗА РЕГИСТРАЦИЮ:
 
 </script>
 
