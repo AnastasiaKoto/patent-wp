@@ -45,7 +45,7 @@ get_header(); // подключаем шапку сайта
         <!--  Договор и оплата-->
 
 
-        <section class="points prices-pt0">
+        <section class="points prices-pt0 <?=is_page_template("services/single-service.php")?'points_single':'points_single-two' ?> " >
             <div class="container">
 
                 <!--   Важные моменты3---->
