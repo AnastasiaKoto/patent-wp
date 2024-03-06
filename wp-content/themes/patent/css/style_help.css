@@ -553,6 +553,12 @@ h2.global-popup__title {
     flex-direction: column;
     justify-content: space-between;
 }
+.points__item--svg_active svg{
+    transform: rotate(180deg);
+}
+.points__item--svg svg{
+    transition:all ease 0.4s;
+}
 
 
 @media (max-width:1024px) {
@@ -1122,7 +1128,7 @@ h2.global-popup__title {
         position: absolute;
         bottom: -58px;
         right: 0;
-        width: 176px;
+        width: 191px;
     }
 
     .prices__list .slick-list {

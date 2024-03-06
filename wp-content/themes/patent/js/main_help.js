@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         /*Fixed faq */
         $(".points__item--svg").click(function () {
-            console.log(true);
+            $(this).toggleClass("points__item--svg_active");
             $(this).parents(".points__item").find(".points__hidden").toggleClass("active");
         });
 
