@@ -136,7 +136,11 @@ header {
 .section-mkty-tabs-item__part {
     margin-bottom: 25px;
 }
-
+.slick-disabled{
+    background: #4d4b5a;
+    opacity: 0.83;
+    cursor: unset !important;
+}
 /*dropdown */
 .dropdown-mkty__header {
     display: flex;
