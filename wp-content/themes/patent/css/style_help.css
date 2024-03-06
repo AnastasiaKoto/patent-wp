@@ -12,7 +12,7 @@ header {
 .points__item--svg {
     cursor: pointer;
 }
-
+  
 .points__item--svg:hover {
     background: #4d4b5a;
     opacity: 0.83;
