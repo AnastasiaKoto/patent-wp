@@ -596,6 +596,7 @@ background: #F9CD54;
 
 .calculator-box-inner {
     display: flex;
+    align-items: center;
 }
 
 .calculator-box-inner__item {
@@ -603,7 +604,7 @@ background: #F9CD54;
 }
 
 .calculator-box__wrapper--fb800 {
-    flex-basis: 800px;
+    flex-basis: 776px;
     border-right: 2px solid #e6e8ef;
     padding-right: 20px;
 }
