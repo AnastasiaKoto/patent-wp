@@ -833,7 +833,7 @@ background: #F9CD54;
 }
 
 .discounts__inner {
-    flex-basis: 620px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -850,7 +850,7 @@ background: #F9CD54;
     background-size: contain;
     background: url(/wp-content/themes/patent/images/payment-bg.png) no-repeat center;
     width: 100%;
-    min-height: 373px;
+    min-height:  289px;
     border-radius: 27px;
 }
 
@@ -2118,6 +2118,15 @@ background: #F9CD54;
     .calculator-box-inner {
         display: flex;
         flex-direction: column;
+    }
+
+    .discounts__text {
+        max-width: 480px;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 133%;
+        color: #4b555e;
+        margin-bottom: 14px;
     }
 
 
