@@ -11,7 +11,7 @@ $parties_desc = get_field('parties_desc');
 
 
 <?php if ( !empty($service_stages)): ?>
-    <section class="prices">
+    <section class="prices <?=is_page_template("services/single-service.php")?'prices_single':'prices_single-two' ?>" >
         <div class="container">
             <h2 class="titles">стоимость </h2>
             <?php if (!empty($parties_desc)): ?>

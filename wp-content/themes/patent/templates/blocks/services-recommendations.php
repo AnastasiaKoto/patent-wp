@@ -6,7 +6,7 @@ $recommendations_wrapper = get_field('recommendations_wrapper');
 
 <?php if (!empty($recommendations_wrapper)): ?>
 
-    <section class="targets <?=is_single(195)?'target_single':'' ?>" >
+    <section class="targets <?=is_page_template("services/single-service.php")?'target_single':'target_single-two' ?>" >
         <div class="container">
             <h2 class="titles">рекомендации</h2>
             <div class="targets__wrapper">
