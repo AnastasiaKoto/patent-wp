@@ -11,14 +11,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
         /*fix prices slider */
 
         function correctCounter(selectorSlider) {
-            var currentSlideNumber = $(selectorSlider).slick('slickCurrentSlide') + 1;
-            $(selectorSlider).next(".slide_count").find($('.currentCoach')).text(currentSlideNumber);
-            $(selectorSlider).next(".slide_count").find($('.allCoach')).text($(selectorSlider).slick('getSlick').slideCount);
+            if ($(selectorSlider.length > 0)) {
+                if ($(selectorSlider).hasClass("slick-slider")) {
+                    var currentSlideNumber = $(selectorSlider).slick('slickCurrentSlide') + 1;
+                    $(selectorSlider).next(".slide_count").find($('.currentCoach')).text(currentSlideNumber);
+                    $(selectorSlider).next(".slide_count").find($('.allCoach')).text($(selectorSlider).slick('getSlick').slideCount);
+                }
+            }
+
+
         }
-            correctCounter(".prices__list");
-            correctCounter(".prices__list_two");
-            correctCounter(".targets__list");
-       
+        correctCounter(".prices__list");
+        correctCounter(".prices__list_two");
+        correctCounter(".targets__list");
+
 
         $('.keyses__tabs ul.tabs__caption').on('click', 'li', function () {
             $('.keyses__slider').slick("refresh");
@@ -161,30 +167,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $(this).prev(".article-box__text").toggleClass("article-box__text_active");
         });
 
-        
+
 
         /*fixed tab */
         $(".tabs__caption li").on("click", function () {
             $order = $(this).attr("data-target");
             $(this).parents(".tabs__caption ").find("li").removeClass("active");
             $(this).parents("section").find(".tabs__content").removeClass("active");
-            $(this).parents("section").find("#tab__content_"+$order).addClass("active");
-         
+            $(this).parents("section").find("#tab__content_" + $order).addClass("active");
+
             $(this).addClass("active");
         });
-        $(".tabs__caption li").each(function(i,item){
-            if($(item).hasClass("active")){
+        $(".tabs__caption li").each(function (i, item) {
+            if ($(item).hasClass("active")) {
                 $order = $(item).attr("data-target");
-                $(item).parents("section").find("#tab__content_"+$order).addClass("active");
+                $(item).parents("section").find("#tab__content_" + $order).addClass("active");
             }
         });
-        
+
         /*article tab */
 
-        
+
 
         /*Fixed faq */
         $(".points__item--svg").click(function () {
+            console.log(true);
             $(this).parents(".points__item").find(".points__hidden").toggleClass("active");
         });
 
