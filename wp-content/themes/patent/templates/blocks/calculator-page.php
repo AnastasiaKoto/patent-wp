@@ -632,7 +632,7 @@
                                         </svg>
                                     </a>
                                 </p>
-                                <div class="calculator-box__wrapper calculator-box__wrapper--fb300">
+                                <div class="calculator-box__wrapper">
                                     <div class="calculator-helps">
                                         <label class="patent-form__custom-checkbox">
                                             <input type="checkbox" >
