@@ -1514,6 +1514,27 @@ background: #F9CD54;
 /*    display: flex;*/
 /*}*/
 
+.btn-hidde:hover {
+    background: #4d4b5a;
+    opacity: 0.83;
+}
+
+.btn-hidde {
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    gap: 8px;
+    padding: 15px 32px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 57px;
+    margin-left: auto;
+    background: linear-gradient(159deg, #4d4b5a 0%, #485c63 100%);
+}
+
 
 @media  (max-width: 768px) {
 
