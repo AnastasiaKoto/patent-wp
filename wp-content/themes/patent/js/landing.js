@@ -10,16 +10,12 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
-   let benefitCon = document.querySelector(".benefit-banner__content");
-    let benefitBtn = benefitCon.querySelector('.benefitBtn');
-    let paragraph = benefitCon.querySelector(".benefit-banner__text");
+   let benefitCon = document?.querySelector(".benefit-banner__content");
+    let benefitBtn = benefitCon?.querySelector('.benefitBtn');
+    let paragraph = benefitCon?.querySelector(".benefit-banner__text");
 
-    benefitBtn.addEventListener('click', function() {
+    benefitBtn?.addEventListener('click', function() {
         paragraph.classList.remove('hidden-text');
         benefitBtn.classList.add('d-none');
     });
-
-    console.log(paragraph);
-    console.log(benefitBtn);
-
 })
