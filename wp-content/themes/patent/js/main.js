@@ -797,9 +797,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
           });
         }
 
-      }
-    });
-  }
+
+  feedBacks.forEach(feedBack => {
+    let personalCheckbox = feedBack.querySelector('.personal');
+    let customCheck = feedBack.querySelector('.custom__check');
+
+    if (personalCheckbox && customCheck) {
+      personalCheckbox.addEventListener('click', function () {
+        customCheck.classList.toggle('active');
+      });
+    }
+  });
+
 
 
 
@@ -969,9 +978,9 @@ document.addEventListener('DOMContentLoaded', function () {
       currentWrapperIndex++;
       updateCalculator();
     } else {
-      // Если текущий блок последний, выполнить действие
-      // Например, отправить заявку
-      sendRequest();
+      // Если текущий блок последний, открываем модальное окно
+      const modal = document.getElementById('calc-popup');
+      modal.click();
     }
   });
 
@@ -1018,10 +1027,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function showQuestionsButtonIfNeeded() {
+    const nextButton = document.querySelector('.calculator__next');
+    const leaveRequestButton = document.querySelector('.btn-hidde');
+
     if (currentWrapperIndex === totalWrappers - 1) {
-      questionsBtn.style.display = 'block';
+      nextButton.style.display = 'none'; // Скрываем кнопку "Далее"
+      leaveRequestButton.style.display = 'block'; // Показываем кнопку "Оставить заявку"
     } else {
-      questionsBtn.style.display = 'none';
+      nextButton.style.display = 'block'; // Показываем кнопку "Далее"
+      leaveRequestButton.style.display = 'none'; // Скрываем кнопку "Оставить заявку"
     }
   }
 
