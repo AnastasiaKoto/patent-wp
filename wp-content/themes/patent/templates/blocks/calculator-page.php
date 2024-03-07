@@ -535,7 +535,7 @@
                     </span>
                 </div>
 
-                <a class="calculator__next" href="#">
+                <a class="calculator__next" href="#calc-popup">
                     <span>далее</span>
                     <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -546,188 +546,247 @@
             </div>
         </div>
     </div>
+
+
+        <!-- Global Popup Сalc -->
+        <div class="global-popup" id="calc-popup" style="display:none">
+            <div class="global-popup__inner">
+                <h2 class="global-popup__title">
+                    заказать звонок
+                    патентного поверенного
+                </h2>
+                <p>Равным образом консультация с широким активом требуют
+                    от нас анализа форм развития. </p>
+                <!--заказать услугу патнетного поверенного -->
+              <?php get_template_part('templates/forms/feedback', 'calc'); ?>
+                <!--заказать услугу патнетного поверенного -->
+            </div>
+        </div>
+
+
 </section>
 
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
 
 
-    // Шаг 1
-    // Получаем все радио-кнопки по имени группы для типа товарного знака
-    const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+        // Шаг 1
+        // Получаем все радио-кнопки по имени группы для типа товарного знака
+        const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
 
-    // Получаем все радио-кнопки по имени группы для проверки товарного знака
-    const radioButtons2 = document.querySelectorAll('input[name="wordmark2_option"]');
+        // Получаем все радио-кнопки по имени группы для проверки товарного знака
+        const radioButtons2 = document.querySelectorAll('input[name="wordmark2_option"]');
 
-    // Объявляем переменную для хранения суммы
-    let sum = 0;
+        const radioButtons3 = document.querySelectorAll('input[name="wordmark3_option"]');
 
-    // Назначаем обработчик события изменения для каждой радио-кнопки типа товарного знака
-    radioButtons.forEach(button => {
-        button.addEventListener('change', function() {
-            // Получаем значение выбранной радио-кнопки и преобразуем его в число
-            sum = parseInt(this.value);
-            console.log('Выбранная сумма для типа товарного знака:', sum);
+        const radioButtons4 = document.querySelectorAll('input[name="wordmark4_option"]');
+
+        // Объявляем переменную для хранения суммы
+        let sum = 0;
+
+        // Назначаем обработчик события изменения для каждой радио-кнопки типа товарного знака
+        radioButtons.forEach(button => {
+            button.addEventListener('change', function() {
+                // Получаем значение выбранной радио-кнопки и преобразуем его в число
+                sum = parseInt(this.value);
+                console.log('Выбранная сумма для типа товарного знака:', sum);
+            });
         });
-    });
 
-    // Шаг 2
+        // Шаг 2
 
-    let selectedTrademark = document.querySelector('.calculator-value__span-jsstr');
+        let selectedTrademark = document.querySelector('.calculator-value__span-jsstr');
 
 
-    // Проходимся по всем радио-кнопкам второй группы и добавляем обработчик события
-    radioButtons2.forEach(button => {
-        button.addEventListener('change', function() {
-            // Обновляем значение переменной при изменении выбора во второй группе
-            selectedValue = document.querySelector('input[name="wordmark_option"]:checked').value;
-            // Проверяем, был ли выбран вариант "Да" во второй группе
-            if (this.value === 'yes') {
-                // Выводим название товарного знака в соответствующий элемент
-                let selectedTrademarkName = document.querySelector('input[name="wordmark_option"]:checked').nextSibling.nodeValue.trim();
-                selectedTrademark.textContent = selectedTrademarkName;
+        // Проходимся по всем радио-кнопкам второй группы и добавляем обработчик события
+        radioButtons2.forEach(button => {
+            button.addEventListener('change', function() {
+                // Обновляем значение переменной при изменении выбора во второй группе
+                selectedValue = document.querySelector('input[name="wordmark_option"]:checked').value;
+                // Проверяем, был ли выбран вариант "Да" во второй группе
+                if (this.value === 'yes') {
+                    // Выводим название товарного знака в соответствующий элемент
+                    let selectedTrademarkName = document.querySelector('input[name="wordmark_option"]:checked').nextSibling.nodeValue.trim();
+                    selectedTrademark.textContent = selectedTrademarkName;
+
+                    // Выводим цену в соответствующий элемент
+                    let price = parseInt(selectedValue);
+                    priceSearch.textContent = price;
+                } else {
+                    // Если выбрано "Нет", то сбрасываем значения
+                    selectedTrademark.textContent = '';
+                    priceSearch.textContent = '';
+                    console.log(price)
+                }
+            });
+        });
+
+
+
+
+
+
+// Шаг 3
+// Получаем все элементы с классом "section-mkty-area__item"
+        const items = document.querySelectorAll('.section-mkty-area-item');
+
+// Объявляем переменные для хранения стоимости базы и дополнительной стоимости классов
+        let basePrice = 0;
+        let additionalClassPrice = 0;
+
+// Добавляем обработчик клика для каждого элемента
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // Добавляем класс при клике
+                item.classList.toggle('section-clicked');
+
+                // Подсчитываем количество выбранных элементов
+                const clickedItems = document.querySelectorAll('.section-mkty-area-item.section-clicked');
+                const clickedCount = clickedItems.length;
+
+                // Проверяем, какой тип товарного знака был выбран на шаге 1 и устанавливаем соответствующую базовую стоимость
+                if (sum === 11000 || sum === 12000 || sum === 23000) {
+                    basePrice = sum;
+                } else if (sum === 13000 || sum === 14000 || sum === 24000) {
+                    basePrice = sum + 2000; // Добавляем 2000 рублей за выбор словесного знака
+                } else if (sum === 15000 || sum === 16000 || sum === 25000) {
+                    basePrice = sum + 4000; // Добавляем 4000 рублей за выбор комбинированного знака
+                }
+
+                // Рассчитываем дополнительную стоимость классов в зависимости от количества выбранных элементов
+                if (clickedCount === 1) {
+                    additionalClassPrice = 0;
+                } else if (clickedCount === 2) {
+                    additionalClassPrice = 2000;
+                } else if (clickedCount >= 9) {
+                    additionalClassPrice = (clickedCount - 1) * 2000;
+                }
+
+                // Общая стоимость равна базовой стоимости плюс дополнительная стоимость классов
+                let totalPrice = basePrice + additionalClassPrice;
 
                 // Выводим цену в соответствующий элемент
-                let price = parseInt(selectedValue);
-                priceSearch.textContent = price;
-            } else {
-                // Если выбрано "Нет", то сбрасываем значения
-                selectedTrademark.textContent = '';
-                priceSearch.textContent = '';
-                console.log(price)
-            }
-        });
-    });
-
-
-
-
-
-
-    // Шаг 3
-    // Получаем все элементы с классом "section-mkty-area__item"
-    // Получаем все элементы с классом section-mkty-area-item
-    const items = document.querySelectorAll('.section-mkty-area-item');
-
-    // Добавляем цену 1000 к каждому элементу
-    items.forEach(item => {
-        item.dataset.price = '1000';
-    });
-
-    // Переменные для хранения общей цены без скидки и с учетом скидки
-    let totalPrice = 0;
-    let discountedPrice = 0;
-
-    // Добавляем обработчик клика для каждого элемента
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            // Добавляем класс при клике
-            item.classList.toggle('section-clicked');
-
-            // Подсчитываем количество выбранных элементов
-            let selectedCountElement = document.getElementById("selected-count");
-            const clickedItems = document.querySelectorAll('.section-mkty-area-item.section-clicked');
-            const clickedCount = clickedItems.length;
-
-            // Вычисляем общую цену выбранных элементов без скидки
-            totalPrice = 0;
-            clickedItems.forEach(clickedItem => {
-                totalPrice += parseInt(clickedItem.dataset.price);
+                priceSearch.textContent = totalPrice;
+                // Выводим результат в консоль
+                console.log('Общая цена:', totalPrice);
             });
+        });
 
-            // Вычисляем цену за каждый класс и прибавляем к итоговой цене
-            const classPrice = 1000; // Указываем цену за каждый класс
-            const additionalPrice = classPrice * clickedCount;
-            const totalPriceWithClasses = totalPrice + additionalPrice;
 
-            // Вычисляем цену с учетом скидки после выбора более 10 элементов
-            discountedPrice = totalPriceWithClasses;
-            if (clickedCount > 10) {
-                const discountPrice = Math.ceil(clickedCount / 10) * 1000;
-                discountedPrice -= discountPrice;
+// Шаг 4
+        radioButtons3.forEach(button => {
+            button.addEventListener('change', function() {
+                // Получаем значение выбранной радио-кнопки
+                const registrationType = parseInt(this.value);
+
+                // Прибавляем автоматически 10.000 рублей в поле "подача заявки и ведение дел"
+                priceBusiness.textContent = 10000;
+
+                // Если выбрана ускоренная регистрация, добавляем 100.000 рублей в пошлины
+                if (registrationType === 100000) {
+                    duesCertificate.textContent = 100000;
+                } else {
+                    // Если выбрана стандартная регистрация, ничего не делаем
+                    console.log('Выбрана стандартная регистрация.');
+                }
+            });
+        });
+
+// Шаг 5
+        radioButtons4.forEach(button => {
+            button.addEventListener('change', function() {
+                // Получаем значение выбранной радио-кнопки
+                const certificateFormat = parseInt(this.value);
+
+                // Если выбрано бумажное свидетельство, добавляем 5.000 рублей в работу товарища
+                if (certificateFormat === 5000) {
+                    duesCertificate.textContent = 5000;
+                } else {
+                    // Если выбрано электронное свидетельство, добавляем 1.400 рублей в пошлины
+                    duesCertificate.textContent = 1400;
+                }
+            });
+        });
+
+// Шаг 6
+// Получаем все поля для вывода цены
+// Цена за наши услуги
+        let priceTrademark = document.querySelector('.calculator-value__span-jsstr');  // Ваш товарный знак:
+        let priceSearch = document.querySelector('.calculator-value__span-js-s1');  // Поиск:
+        let priceBusiness  = document.querySelector('.calculator-value__span-js-s2');  // Подача заявки и ведение дел
+        let priceEvidence = document.querySelector('.calculator-value__span-js-3');  // Получение свидетельства
+        let priceTotal = document.querySelector('.calculator-value__span-js-s-4');  // Итого:
+// Пошлины Роспатента
+        let duesFiling = document.querySelector('.calculator-value__span-js-c-1');  // Подача заявки
+        let duesCertificate  = document.querySelector('.calculator-value__span-js-c-2');  // Получение свидетельства
+        let duesTotal = document.querySelector('.calculator-value__span-js-c-3');  // Итого:
+
+// Всего за регистрацию
+        let allTotal = document.querySelector('.total-js');  // ВСЕГО ЗА РЕГИСТРАЦИЮ: вся сумма всех полей вместе
+
+// Функция для обновления сумм
+        function updatePrices() {
+            // Получаем значение выбранного типа товарного знака
+            let selectedValue = document.querySelector('input[name="wordmark_option"]:checked').value;
+
+            // Получаем значение выбранного количества классов
+            const clickedCount = document.querySelectorAll('.section-mkty-area-item.section-clicked').length;
+
+            // Рассчитываем базовую стоимость в зависимости от выбранного типа товарного знака
+            let basePrice = parseInt(priceTrademark.textContent);
+            // Рассчитываем дополнительную стоимость классов
+            let additionalClassPrice = 0;
+            if (clickedCount === 2) {
+                additionalClassPrice = 2000;
+            } else if (clickedCount >= 9) {
+                additionalClassPrice = (clickedCount - 1) * 2000;
             }
 
-            // Выводим цену в соответствующий элемент
-            priceSearch.textContent = discountedPrice;
+            // Общая стоимость поиска
+            let totalPriceSearch = basePrice + additionalClassPrice;
+            // Выводим общую стоимость поиска
+            priceSearch.textContent = totalPriceSearch;
 
-            // Выводим результат в консоль
-            console.log('Количество выбранных элементов:', clickedCount);
-            console.log('Общая цена выбранных элементов без скидки:', totalPrice);
-            console.log('Цена со скидкой:', discountedPrice);
+            // Общая стоимость подачи заявки и ведения дел
+            let totalPriceBusiness = totalPriceSearch + 10000; // Добавляем 10.000 рублей за подачу заявки и ведение дел
+            // Выводим общую стоимость подачи заявки и ведения дел
+            priceBusiness.textContent = totalPriceBusiness;
 
-            // Обновляем текст внутри элемента div
-            selectedCountElement.textContent = clickedCount;
-        });
+            // Общая стоимость получения свидетельства
+            let totalPriceEvidence = parseInt(duesCertificate.textContent); // Изначально берем значение из поля получения свидетельства
+            // Если выбрано бумажное свидетельство, добавляем 5.000 рублей
+            if (parseInt(duesCertificate.textContent) === 5000) {
+                totalPriceEvidence += 5000;
+            }
+            // Выводим общую стоимость получения свидетельства
+            priceEvidence.textContent = totalPriceEvidence;
+
+            // Общая стоимость
+            let totalPriceTotal = totalPriceSearch + totalPriceBusiness + totalPriceEvidence;
+            // Выводим общую стоимость
+            priceTotal.textContent = totalPriceTotal;
+
+            // Подача заявки
+            let totalDuesFiling = 2450; // Фиксированная цена за подачу заявки
+            if (clickedCount > 5) {
+                totalDuesFiling += (clickedCount - 5) * 700; // Дополнительная цена за количество классов (по 700 рублей за каждый класс сверху пяти)
+            }
+            duesFiling.textContent = totalDuesFiling;
+
+            // Общая сумма всех расходов
+            let allTotalSum = totalPriceSearch + totalPriceBusiness + totalPriceEvidence + totalDuesFiling;
+            // Выводим общую сумму всех расходов
+            allTotal.textContent = allTotalSum;
+        }
+
+// Обновляем суммы при загрузке страницы
+        updatePrices();
+
+
+        console.log('DOM загружен');
     });
 
-
-    // Шаг 4
-
-    // Получаем все радио-кнопки по имени группы для типа регистрации
-    const radioButtons3 = document.querySelectorAll('input[name="wordmark3_option"]');
-
-    // Назначаем обработчик события изменения для каждой радио-кнопки типа регистрации
-    radioButtons3.forEach(button => {
-        button.addEventListener('change', function() {
-            // Получаем значение выбранной радио-кнопки и преобразуем его в число
-            const registrationCost = parseInt(this.value);
-
-            // Обновляем стоимость подачи заявки и ведения дел
-            let applicationCost = 10000;
-            applicationCost += registrationCost === 100000 ? 100000 : 0;
-
-            // Обновляем стоимость проведения экспертизы
-            let expertiseCost = 0;
-            expertiseCost += registrationCost === 100000 ? 100000 : 0;
-
-            // Выводим обновленные значения стоимостей
-            console.log('Стартовая стоимость подачи заявки и ведения дел:', applicationCost);
-            console.log('Стартовая стоимость проведения экспертизы:', expertiseCost);
-
-            // Выводим значения цен
-            priceBusiness.textContent = applicationCost;
-            duesFiling.textContent = applicationCost;
-            duesCertificate.textContent = expertiseCost;
-            duesTotal.textContent = applicationCost + expertiseCost;
-        });
-    });
-
-    // Шаг 5
-    // Получаем все радио-кнопки по имени группы для выбора формата свидетельства
-    const radioButtons4 = document.querySelectorAll('input[name="wordmark4_option"]');
-
-    // Назначаем обработчик события изменения для каждой радио-кнопки формата свидетельства
-    radioButtons4.forEach(button => {
-        button.addEventListener('change', function() {
-            // Получаем значение выбранной радио-кнопки и преобразуем его в число
-            const certificateCost = parseInt(this.value);
-
-            // Обновляем стоимость получения свидетельства
-            let certificatePrice = 0;
-            certificatePrice += certificateCost === 1400 ? 1400 : 5000;
-
-            // Выводим обновленное значение стоимости получения свидетельства
-            console.log('Стартовая стоимость получения свидетельства:', certificatePrice);
-
-            // Выводим значение цены
-            priceEvidence.textContent = certificatePrice;
-            priceTotal.textContent = certificatePrice;
-        });
-    });
-
-    // Шаг 6
-    // Получаем все поля для вывода цены
-    let priceTrademark = document.querySelector('.calculator-value__span-jsstr');  // Ваш товарный знак:
-    let priceSearch = document.querySelector('.calculator-value__span-js-s1');  // Поиск:
-    let priceBusiness  = document.querySelector('.calculator-value__span-js-s2');  // Подача заявки и ведение дел
-    let priceEvidence = document.querySelector('.calculator-value__span-js-3');  // Получение свидетельства
-    let priceTotal = document.querySelector('.calculator-value__span-js-s-4');  // Итого:
-
-    let duesFiling = document.querySelector('.calculator-value__span-js-c-1');  // Подача заявки
-    let duesCertificate  = document.querySelector('.calculator-value__span-js-c-2');  // Получение свидетельства
-    let duesTotal = document.querySelector('.calculator-value__span-js-c-3');  // Итого:
-
-    let allTotal = document.querySelector('.total-js');  // ВСЕГО ЗА РЕГИСТРАЦИЮ:
 
 </script>
 
