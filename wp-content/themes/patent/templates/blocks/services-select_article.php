@@ -8,7 +8,7 @@ $services_after_box_field = get_field_object('services_after_box');
 
 
 <?php if ( !empty($services_reg_boxes) || !empty($services_after_boxes)): ?>
-    <section class="what <?=is_single(195)?'what_single':'' ?>" >
+    <section class="what <?=is_page_template("services/single-service.php")?'what_single':'what_single-two' ?>" >
         <div class="container">
             <?php if ($services_reg_boxes): ?>
                 <h2 class="titles"> <?php echo   $services_reg_box_field['label'] ?></h2>

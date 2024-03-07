@@ -38,18 +38,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
       slidesToScroll: 1,
       arrows: false,
     });
-    updateCounter();
+    updateCounter(".keyses__slider");
 
     // Обновление счетчика
-    function updateCounter() {
-      var currentSlideNumber = $slider1.slick('slickCurrentSlide') + 1;
-      $('.currentCoach').text(currentSlideNumber);
-      $('.allCoach').text($slider1.slick('getSlick').slideCount);
+    function updateCounter(selector) {
+
+      if ((selector !== ".keyses__slider") && !($(selector).hasClass("keyses__slider"))) {
+        var currentSlideNumber = $(selector).slick('slickCurrentSlide') + 1;
+        $(selector).parents("section").find('.currentCoach').text(currentSlideNumber);
+        $(selector).parents("section").find('.allCoach').text($(selector).slick('getSlick').slideCount);
+      }
+      else {
+        let activeSlider = $(".keyses__tabs .tabs__content.active").find(".keyses__slider");
+        var currentSlideNumber = activeSlider.slick('slickCurrentSlide') + 1;
+        $(".keyses__tabs .tabs__content.active").parents(".keyses__tabs").next(".slide_count").find('.currentCoach').text(currentSlideNumber);
+        $(".keyses__tabs .tabs__content.active").parents(".keyses__tabs").next(".slide_count").find('.allCoach').text($(activeSlider).slick('getSlick').slideCount);
+      }
     }
 
     // Обновление счетчика при инициализации и переключении таба
-    $slider1.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-      updateCounter();
+    $(".slick-slider").on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+
+      updateCounter(this);
     });
 
     $('.tabs__caption li').on('click', function () {
@@ -561,7 +571,62 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
 
+    //Форма калькулятора
+    let SubmittedCalc = false;
+    $('#request-calc').on('click', '.btn__submit', function (e) {
+      e.preventDefault();
+      let form = $(this).closest('form');
+      form.find('.global_err').removeClass('active');
+      if (SubmittedCalc == false) {
+        let policy = form.find('input[name="agree"]');
 
+        form.find('.error').removeClass('error');
+        form.find('.form__error').remove();
+
+        if (policy.is(':checked')) {
+          SubmittedCalc = true;
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: form.serialize() + '&action=main_callback',
+            type: 'POST',
+          }).done(function (result) {
+            SubmittedCalc = false;
+            if (result.errors) {
+              $.each(result.errors, function (e, index) {
+                form.find('input[name="' + e + '"]').addClass('error');
+                form
+                    .find('input[name="' + e + '"]')
+                    .parent()
+                    .append('<div class="form__error">' + index[0] + '</div>');
+              });
+            } else {
+              if (result.success == true) {
+                Fancybox.close();
+
+                form[0].reset();
+                if ($('.order-form')) {
+                  let submitBlock = '<div class="footer__submit-block"><div>спасибо, ваша&nbsp;заявка&nbsp;отправлена</div><p>Мы с Вами свяжемся в ближайшее время</p></div>';
+                  $('.order-form .form__content').remove();
+                  $('.order-form .container').append(submitBlock);
+                }
+                if ($('.page-template-contacts')) {
+                  console.log('contacts');
+                  $('.overlay').addClass('active');
+                  $('.modal-result').addClass('active');
+                  body.classList.add('stop-scroll');
+                }
+              }
+            }
+          });
+        } else {
+          console.log('политика не заполнена');
+          policy.parent().addClass('error');
+          policy.parent.append('<div class="form__error">Это обязательное поле</div>')
+        }
+      } else {
+        form.find('.global_err').addClass('active');
+      }
+    });
 
     $(".click_btn_services-top").click(function () {
       $('html, body').animate({
@@ -609,7 +674,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
 
       $('.prices__list').not(".prices__list_two").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        $('.currentCoach').text(nextSlide + 1);
+        $(this).next(".slide_count").find('.currentCoach').text(nextSlide + 1);
       });
 
 
@@ -628,7 +693,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
 
       $(".prices__list_two").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        $('.currentCoach').text(nextSlide + 1);
+        $(this).next(".slide_count").find(".currentCoach").text(nextSlide + 1);
       });
     }
 
@@ -642,11 +707,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       nextArrow: $('.points-slider__arrows__next'),
       responsive: [
         {
-          breakpoint: 1024,
-          settings: {
-            prevArrow: false,
-            nextArrow: false,
-          },
+          // breakpoint: 1024,
+          // settings: {
+          //   prevArrow: false,
+          //   nextArrow: false,
+          // },
         }
       ]
     });
@@ -723,6 +788,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   let feedBacks = document.querySelectorAll('.agree__group'); // Общий класс для обратной связи
+  if (feedBacks.length > 0) {
+    feedBacks.forEach(feedBack => {
+      if (feedBack) {
+          if(feedBack.querySelector('.personal')!==null){
+          feedBack.querySelector('.personal').addEventListener('click', function () {
+            feedBack.querySelector('.custom__check').classList.toggle('active');
+          });
+        }
+
 
   feedBacks.forEach(feedBack => {
     let personalCheckbox = feedBack.querySelector('.personal');
@@ -734,6 +808,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   });
+
 
 
 

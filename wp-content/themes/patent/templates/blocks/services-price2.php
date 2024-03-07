@@ -26,6 +26,7 @@ $parties_desc = get_field('parties_desc');
                         ?>
                         <li class="prices__item">
                             <div class="prices-card">
+                                <div class="prices-card__part1">
                                 <span class="prices-card__stage-text   <?php echo $stage['selected_title'] ? 'prices-card__stage-text--color' : ''; ?>"><?php echo $stage_number++; ?> этап</span>
 
                                 <ul class="prices-card__list">
@@ -46,6 +47,8 @@ $parties_desc = get_field('parties_desc');
                                     
                                     
                                 </ul>
+                                </div>
+                                <div class="prices-card__part2">
                                 <ul class="prices-card__list-info">
                                     <li>
                                         <span class="prices-card__text-bold"><?php echo $stage['stage_second']['price_or_descr']; ?></span>
@@ -64,6 +67,7 @@ $parties_desc = get_field('parties_desc');
                                         <p>Решение в вашу пользу</p>
                                     </li>
                                 </ul>
+                                </div>
                             </div>
                         </li>
                         <?php
@@ -72,57 +76,6 @@ $parties_desc = get_field('parties_desc');
                 ?>
 
 
-<?php
-                if (!empty($service_stages2)) {
-                    $stage_number = 1;
-                    foreach ($service_stages2 as $stage) {
-                        ?>
-                        <li class="prices__item">
-                            <div class="prices-card">
-                                <span class="prices-card__stage-text   <?php echo $stage['selected_title'] ? 'prices-card__stage-text--color' : ''; ?>"><?php echo $stage_number++; ?> этап</span>
-
-                                <ul class="prices-card__list">
-                                    <?php
-                                    foreach ($stage['stages_list'] as $substage) {
-                                        ?>
-                                        <li class="prices-card__item <?php echo $substage['selection'] ? 'yellow' : ''; ?>">
-                                            <div class="prices-card__text"><?php echo $substage['title']; ?></div>
-
-                                            <?php if ($substage['substage_check']) { ?>
-                                                <span class="prices-card__text-radius"> <?php echo $substage['substage_price']; ?></span>
-                                            <?php } ?>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-
-                                    
-                                    
-                                </ul>
-                                <ul class="prices-card__list-info">
-                                    <li>
-                                        <span class="prices-card__text-bold"><?php echo $stage['stage_second']['price_or_descr']; ?></span>
-                                        <?php if ($stage['stage_second']['show_deadline']) { ?>
-
-                                            <span class="prices-card__text-average">(<?php echo $stage['stage_second']['deadline']; ?>)</span>
-
-                                        <?php } ?>
-
-                                        <?php echo $stage['stage_second']['descr_under_price']; ?>
-                                    </li>
-                                </ul>
-                                <ul class="prices-card__list-last">
-                                    <li>
-                                        <span class="prices-card__text-bold">Результат</span>
-                                        <p>Решение в вашу пользу</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <?php
-                    }
-                }
-                ?>
             </ul>
 
 

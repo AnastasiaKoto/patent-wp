@@ -1355,6 +1355,7 @@ input.error {
 .header-mobile__info {
     display: flex;
     flex-direction: column;
+    
 }
 
 .header-mobile__text--400 {
@@ -2311,9 +2312,11 @@ input.error {
     }
 
     .form-bottom {
-        border-top: solid 1px #fff;
+        border-top: 1px solid  white;
         display: block;
         margin-top: 30px;
+        position: relative;
+        z-index: 100;
 
     }
 

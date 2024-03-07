@@ -11,7 +11,7 @@ $parties_desc = get_field('parties_desc');
 
 
 <?php if ( !empty($service_stages)): ?>
-    <section class="prices">
+    <section class="prices <?=is_page_template("services/single-service.php")?'prices_single':'prices_single-two' ?>" >
         <div class="container">
             <h2 class="titles">стоимость </h2>
             <?php if (!empty($parties_desc)): ?>
@@ -28,6 +28,7 @@ $parties_desc = get_field('parties_desc');
                         ?>
                         <li class="prices__item">
                             <div class="prices-card">
+                                <div class="prices-card__part1">
                                 <span class="prices-card__stage-text   <?php echo $stage['selected_title'] ? 'prices-card__stage-text--color' : ''; ?>"><?php echo $stage_number++; ?> этап</span>
 
                                 <ul class="prices-card__list">
@@ -47,6 +48,8 @@ $parties_desc = get_field('parties_desc');
 
                                     
                                 </ul>
+                                </div>
+                                <div class="prices-card__part2">
                                 <ul class="prices-card__list-info">
                                     <li>
                                         <span class="prices-card__text-bold"><?php echo $stage['stage_second']['price_or_descr']; ?></span>
@@ -65,6 +68,7 @@ $parties_desc = get_field('parties_desc');
                                         <p>Решение в вашу пользу</p>
                                     </li>
                                 </ul>
+                                </div>
                             </div>
                         </li>
                         <?php

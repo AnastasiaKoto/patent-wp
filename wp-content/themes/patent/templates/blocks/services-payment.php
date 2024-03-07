@@ -6,7 +6,7 @@ $payment_sale = get_field('payment_sale', 'option');
 
 
 <?php if (!empty($payment_title)): ?>
-    <section class="discounts">
+    <section class="discounts <?=is_page_template("services/single-service.php")?'discounts_single':'discounts_single-two' ?> ">
         <div class="container">
             <div class="discounts__wrapper">
                 <div class="discounts__inner discounts__inner--sb">

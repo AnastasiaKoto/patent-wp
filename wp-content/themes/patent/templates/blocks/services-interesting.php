@@ -7,7 +7,7 @@ $article_reg_box_field = get_field_object('article_reg_box');
 
 
 <?php if ( !empty($article_reg_boxes)): ?>
-    <section class="interesting">
+    <section class="interesting <?=is_page_template("services/single-service.php")?'interesting_single':'interesting_single-two' ?>" >
 
         <div class="container">
             <h2 class="titles"><?php echo   $article_reg_box_field['label'] ?></h2>

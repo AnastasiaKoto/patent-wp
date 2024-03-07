@@ -26,9 +26,9 @@ if ($recomendations) {
                         ?>
                     </ul>
                     <?php
-                    foreach ($recomendations as $index => $recomendation) {
+                    foreach ($recomendations as $index2 => $recomendation) {
                         ?>
-                        <div id="tabs__content_<?= $index ?>" class="tabs__content article__content <?php if ($index === 0)
+                        <div id="tab__content_<?=$index2 ?>" class="tabs__content article__content <?php if ($index === 0)
                               echo 'active'; ?>">
                             <div class="article__subtitle">
                                 <?php echo $recomendation['title_section']; ?>
