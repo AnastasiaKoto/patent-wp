@@ -849,7 +849,7 @@
                     </span>
                 </div>
 
-                <a class="calculator__next" href="#">
+                <a class="calculator__next" href="#calc-popup">
                     <span>далее</span>
                     <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -876,7 +876,8 @@
                 <!--заказать услугу патнетного поверенного -->
             </div>
         </div>
-        <a href="#calc-popup" class="btn header__btn lite__btn global-trigger">обратный звонок</a>
+
+
 </section>
 
 
