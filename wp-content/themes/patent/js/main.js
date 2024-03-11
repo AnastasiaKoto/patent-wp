@@ -744,7 +744,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const body = document.body;
   const header = document?.querySelector('.header');
   const headerHeight = header.offsetHeight;
-  // console.log(headerHeight)
+  console.log(headerHeight)
   document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
 
   burger?.addEventListener('click', () => {
@@ -854,3 +854,303 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  // const pointsItems = document.querySelectorAll('.points__inner');
+
+  // pointsItems.forEach(item => {
+  //   item.addEventListener('click', function () {
+  //     const hiddenContents = document.querySelectorAll('.points__hidden.active');
+  //     hiddenContents.forEach(content => {
+  //       content.classList.toggle('active');
+  //     });
+
+  //     const hiddenContent = this.parentElement.querySelector('.points__hidden');
+  //     const svgIcons = document.querySelectorAll('.points__item--svg.active');
+  //     svgIcons.forEach(icon => {
+  //       icon.classList.toggle('active');
+  //     });
+
+  //     const svgIcon = this.querySelector('.points__item--svg');
+  //     if (hiddenContent) {
+  //       hiddenContent.classList.add('active');
+  //       svgIcon.classList.add('active');
+  //     }
+  //   });
+  // });
+
+  const nextBtn = document.querySelector('.calculator__next');
+  const prevBtn = document.querySelector('.calculator__end');
+  const countElement = document.querySelector('.calculator__caunt span:first-child');
+  const totalElement = document.querySelector('.calculator__caunt span:last-child');
+  const nextBtnText = nextBtn.querySelector('span');
+  const questionsBtn = document.querySelector('.calculator__questions');
+
+  let currentWrapperIndex = 0;
+  const wrappers = document.querySelectorAll('.calculator__wrapper');
+  const totalWrappers = wrappers.length;
+
+  // Скрыть все блоки, кроме первого
+  hideAllWrappers();
+  showWrapper(currentWrapperIndex);
+
+  updateNextButtonText();
+  updateCountText();
+
+  nextBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex < totalWrappers - 1) {
+      currentWrapperIndex++;
+      updateCalculator();
+    } else {
+      // Если текущий блок последний, открываем модальное окно
+      const modal = document.getElementById('calc-popup');
+      modal.click();
+    }
+  });
+
+  prevBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex > 0) {
+      currentWrapperIndex--;
+      updateCalculator();
+    }
+  });
+
+  function updateCalculator() {
+    hideAllWrappers();
+    showWrapper(currentWrapperIndex);
+    updateNextButtonText();
+    updateCountText();
+    showQuestionsButtonIfNeeded()
+    updatePrevButtonVisibility();
+  }
+
+  function hideAllWrappers() {
+    wrappers.forEach(function (wrapper) {
+      wrapper.style.display = 'none';
+    });
+  }
+
+  function showWrapper(index) {
+    wrappers[index].style.display = 'flex';
+  }
+
+  function updateNextButtonText() {
+    if (nextBtnText) {
+      if (currentWrapperIndex === totalWrappers - 1) {
+        nextBtnText.textContent = 'Оставить заявку';
+      } else {
+        nextBtnText.textContent = 'Далее';
+      }
+    }
+  }
+
+  function updateCountText() {
+    countElement.textContent = currentWrapperIndex + 1;
+    totalElement.textContent = totalWrappers;
+  }
+
+  function showQuestionsButtonIfNeeded() {
+    const nextButton = document.querySelector('.calculator__next');
+    const leaveRequestButton = document.querySelector('.btn-hidde');
+
+    if (currentWrapperIndex === totalWrappers - 1) {
+      nextButton.style.display = 'none'; // Скрываем кнопку "Далее"
+      leaveRequestButton.style.display = 'block'; // Показываем кнопку "Оставить заявку"
+    } else {
+      nextButton.style.display = 'block'; // Показываем кнопку "Далее"
+      leaveRequestButton.style.display = 'none'; // Скрываем кнопку "Оставить заявку"
+    }
+  }
+
+  function updatePrevButtonVisibility() {
+    if (currentWrapperIndex === 0) {
+      prevBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = 'block';
+    }
+  }
+
+  function sendRequest() {
+    // Здесь можно добавить логику отправки заявки
+    // Например, показать модальное окно или перенаправить пользователя на другую страницу
+    alert('Здесь отправляем заявку');
+  }
+
+  // Управление отображением блоков с логотипами для радио-кнопок
+  const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+  const logoBlocks = document.querySelectorAll('.calculator__logos-p');
+
+  radioButtons.forEach(function (radioButton, index) {
+    radioButton.addEventListener('change', function () {
+      logoBlocks.forEach(function (logoBlock) {
+        logoBlock.style.display = 'none';
+      });
+      logoBlocks[index].style.display = 'block';
+    });
+  });
+
+  // Управление отображением блоков с логотипами для других радио-кнопок
+  const radioButtonsm = document.querySelectorAll('input[name="wordmark_option"]');
+  const logoBlocksm = document.querySelectorAll('.calculator__logos-m');
+
+  radioButtonsm.forEach(function (radioButton, index) {
+    radioButton.addEventListener('change', function () {
+      logoBlocksm.forEach(function (logoBlock) {
+        logoBlock.style.display = 'none';
+      });
+      logoBlocksm[index].style.display = 'block';
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  // const pointsItems = document.querySelectorAll('.points__inner');
+
+  // pointsItems.forEach(item => {
+  //   item.addEventListener('click', function () {
+  //     const hiddenContents = document.querySelectorAll('.points__hidden.active');
+  //     hiddenContents.forEach(content => {
+  //       content.classList.toggle('active');
+  //     });
+
+  //     const hiddenContent = this.parentElement.querySelector('.points__hidden');
+  //     const svgIcons = document.querySelectorAll('.points__item--svg.active');
+  //     svgIcons.forEach(icon => {
+  //       icon.classList.toggle('active');
+  //     });
+
+  //     const svgIcon = this.querySelector('.points__item--svg');
+  //     if (hiddenContent) {
+  //       hiddenContent.classList.add('active');
+  //       svgIcon.classList.add('active');
+  //     }
+  //   });
+  // });
+
+  const nextBtn = document.querySelector('.calculator__next');
+  const prevBtn = document.querySelector('.calculator__end');
+  const countElement = document.querySelector('.calculator__caunt span:first-child');
+  const totalElement = document.querySelector('.calculator__caunt span:last-child');
+  const nextBtnText = nextBtn.querySelector('span');
+  const questionsBtn = document.querySelector('.calculator__questions');
+
+  let currentWrapperIndex = 0;
+  const wrappers = document.querySelectorAll('.calculator__wrapper');
+  const totalWrappers = wrappers.length;
+
+  // Скрыть все блоки, кроме первого
+  hideAllWrappers();
+  showWrapper(currentWrapperIndex);
+
+  updateNextButtonText();
+  updateCountText();
+
+  nextBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex < totalWrappers - 1) {
+      currentWrapperIndex++;
+      updateCalculator();
+    } else {
+      // Если текущий блок последний, открываем модальное окно
+      const modal = document.getElementById('calc-popup');
+      modal.click();
+    }
+  });
+
+  prevBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentWrapperIndex > 0) {
+      currentWrapperIndex--;
+      updateCalculator();
+    }
+  });
+
+  function updateCalculator() {
+    hideAllWrappers();
+    showWrapper(currentWrapperIndex);
+    updateNextButtonText();
+    updateCountText();
+    showQuestionsButtonIfNeeded()
+    updatePrevButtonVisibility();
+  }
+
+  function hideAllWrappers() {
+    wrappers.forEach(function (wrapper) {
+      wrapper.style.display = 'none';
+    });
+  }
+
+  function showWrapper(index) {
+    wrappers[index].style.display = 'flex';
+  }
+
+  function updateNextButtonText() {
+    if (nextBtnText) {
+      if (currentWrapperIndex === totalWrappers - 1) {
+        nextBtnText.textContent = 'Оставить заявку';
+      } else {
+        nextBtnText.textContent = 'Далее';
+      }
+    }
+  }
+
+  function updateCountText() {
+    countElement.textContent = currentWrapperIndex + 1;
+    totalElement.textContent = totalWrappers;
+  }
+
+  function showQuestionsButtonIfNeeded() {
+    const nextButton = document.querySelector('.calculator__next');
+    const leaveRequestButton = document.querySelector('.btn-hidde');
+
+    if (currentWrapperIndex === totalWrappers - 1) {
+      nextButton.style.display = 'none'; // Скрываем кнопку "Далее"
+      leaveRequestButton.style.display = 'block'; // Показываем кнопку "Оставить заявку"
+    } else {
+      nextButton.style.display = 'block'; // Показываем кнопку "Далее"
+      leaveRequestButton.style.display = 'none'; // Скрываем кнопку "Оставить заявку"
+    }
+  }
+
+  function updatePrevButtonVisibility() {
+    if (currentWrapperIndex === 0) {
+      prevBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = 'block';
+    }
+  }
+
+  function sendRequest() {
+    // Здесь можно добавить логику отправки заявки
+    // Например, показать модальное окно или перенаправить пользователя на другую страницу
+    alert('Здесь отправляем заявку');
+  }
+
+  // Управление отображением блоков с логотипами для радио-кнопок
+  const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
+  const logoBlocks = document.querySelectorAll('.calculator__logos-p');
+
+  radioButtons.forEach(function (radioButton, index) {
+    radioButton.addEventListener('change', function () {
+      logoBlocks.forEach(function (logoBlock) {
+        logoBlock.style.display = 'none';
+      });
+      logoBlocks[index].style.display = 'block';
+    });
+  });
+
+  // Управление отображением блоков с логотипами для других радио-кнопок
+  const radioButtonsm = document.querySelectorAll('input[name="wordmark_option"]');
+  const logoBlocksm = document.querySelectorAll('.calculator__logos-m');
+
+  radioButtonsm.forEach(function (radioButton, index) {
+    radioButton.addEventListener('change', function () {
+      logoBlocksm.forEach(function (logoBlock) {
+        logoBlock.style.display = 'none';
+      });
+      logoBlocksm[index].style.display = 'block';
+    });
+  });
+});
