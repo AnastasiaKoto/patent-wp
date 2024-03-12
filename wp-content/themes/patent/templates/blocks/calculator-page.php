@@ -502,7 +502,7 @@
                         </div>
                     </div>
                     <div class="calculator-value-bottom">
-                        <p>Всего за регистрацию: <span class="total-js">0 ₽</span></p>
+                        <p>Всего за регистрацию: <span class="totalAmount">0 ₽</span></p>
                     </div>
                 </div>
 
@@ -575,6 +575,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
+
         // Шаг 1
         const radioButtons = document.querySelectorAll('input[name="wordmark_option"]');
         let sum = 0;
@@ -582,35 +583,39 @@
         radioButtons.forEach(button => {
             button.addEventListener('change', function() {
                 sum = parseInt(this.value);
-                updatePrices(); // Обновляем суммы при изменении выбора на шаге 1
+
             });
         });
 
         // Шаг 2
         const radioButtons2 = document.querySelectorAll('input[name="wordmark2_option"]');
         const selectedTrademark = document.querySelector('.calculator-value__span-jsstr');
-        let priceSearch = document.querySelector('.calculator-value__span-js-s1');
+
+        let priceSearch = 0; // ТИП ТОВАРНОГО ЗНАКА
+
 
         radioButtons2.forEach(button => {
             button.addEventListener('change', function() {
                 if (this.value === 'yes') {
                     let selectedTrademarkName = document.querySelector('input[name="wordmark_option"]:checked').nextSibling.nodeValue.trim();
-                    selectedTrademark.textContent = selectedTrademarkName;
-                    priceSearch.textContent = sum; // Устанавливаем цену поиска на основе выбора на шаге 1
+                    selectedTrademark.innerHTML = selectedTrademarkName;
+                    priceSearch = sum; // Устанавливаем цену поиска на основе выбора на шаге 1
+                    console.log(priceSearch)
                 } else {
-                    selectedTrademark.textContent = '';
-                    priceSearch.textContent = '';
+                    selectedTrademark.innerHTML = '';
+                    priceSearch = 0;
+                    console.log(priceSearch)
                 }
-                updatePrices(); // Обновляем суммы при изменении выбора на шаге 2
+                updateTotalPrice(); // Обновляем общую цену при изменении цены поиска
             });
         });
 
         // Шаг 3
         const items = document.querySelectorAll('.section-mkty-area-item');
-        let priceBusiness = document.querySelector('.calculator-value__span-js-s2');
         let selectedCountBlock = document.getElementById("selected-count");
         let totalPriceAll = 0;
         let selectedClassesCount = 0;
+        let additionalClassPrice = 0;
 
         items.forEach(item => {
             item.addEventListener('click', () => {
@@ -621,33 +626,35 @@
                 selectedClassesCount = clickedItems.length;
 
                 let basePrice = 0;
-                if (sum === 11000 || sum === 12000 || sum === 23000) {
-                    basePrice = sum;
-                } else if (sum === 13000 || sum === 14000 || sum === 24000) {
-                    basePrice = sum + 2000;
-                } else if (sum === 15000 || sum === 16000 || sum === 25000) {
-                    basePrice = sum + 4000;
+                if (priceSearch >= 11000 && priceSearch <= 16000) {
+                    basePrice = priceSearch;
+                    if (priceSearch >= 13000) {
+                        basePrice += (priceSearch >= 15000) ? 4000 : 2000;
+                    }
                 }
 
-                let additionalClassPrice = 0;
+
+
                 if (clickedCount <= 5) {
                     additionalClassPrice = 35000;
                 } else {
-                    additionalClassPrice = 35000 + (clickedCount - 5) * ((sum >= 15000) ? 4000 : 2000);
+                    additionalClassPrice = 35000 + (clickedCount - 5) * ((priceSearch >= 15000) ? 4000 : 2000);
                 }
 
-                totalPriceAll = basePrice + additionalClassPrice;
-                priceSearch.textContent = totalPriceAll;
+                totalPriceAll = basePrice + priceSearch;
+
 
                 selectedCountBlock.textContent = clickedCount.toString(); // Обновляем счетчик выбранных классов
-
-                updatePrices(); // Обновляем общие суммы
+                console.log(totalPriceAll, '1!')
+                console.log(selectedClassesCount, '2!')
+                console.log(additionalClassPrice, '3!')
+                updateTotalPrice(); // Обновляем общую цену при изменении выбранных пунктов
             });
         });
 
         // Шаг 4
         const radioButtons3 = document.querySelectorAll('input[name="wordmark3_option"]');
-        let duesCertificate = document.querySelector('.calculator-value__span-js-c-4');
+        let duesCertificate = 10000;
 
         radioButtons3.forEach(button => {
             button.addEventListener('change', function() {
@@ -655,103 +662,125 @@
 
 
                 if (registrationType === 100000) {
-                    duesCertificate.textContent = 100000;
+                    duesCertificate = 100000;
+                    console.log(duesCertificate)
                 } else {
-                    duesCertificate.textContent = ''; // Если выбрана стандартная регистрация, скрываем стоимость за ускоренную экспертизу
+                    duesCertificate = 10000;
                 }
-                updatePrices(); // Обновляем суммы при изменении выбора на шаге 4
+                updateTotalPrice();
             });
         });
 
         // Шаг 5
         const radioButtons4 = document.querySelectorAll('input[name="wordmark4_option"]');
-        let priceEvidence = document.querySelector('.calculator-value__span-js-3');
+        let priceEvidence = 0;
 
         radioButtons4.forEach(button => {
             button.addEventListener('change', function() {
                 let certificateFormat = parseInt(this.value);
 
                 if (certificateFormat === 5000) {
-                    priceEvidence.textContent = 5000;
+                    priceEvidence = 5000;
+                    console.log(priceEvidence)
                 } else {
-                    priceEvidence.textContent = 1400;
+                    priceEvidence = 1400;
+                    console.log(priceEvidence)
                 }
-                updatePrices(); // Обновляем суммы при изменении выбора на шаге 5
+                updateTotalPrice();
             });
         });
 
-        // Функция для обновления сумм
-        function updatePrices() {
-            let totalTrademark = parseInt(selectedTrademark.textContent) || 0;
-            let totalSearch = parseInt(priceSearch.textContent) || 0;
-            let totalBusiness = parseInt(priceBusiness.textContent) || 0;
-            let totalEvidence = parseInt(priceEvidence.textContent) || 0;
-            let totalDuesFiling = parseInt(document.querySelector('.calculator-value__span-js-c-1').textContent) || 0;
-            let totalExpertise = parseInt(document.querySelector('.calculator-value__span-js-c-4').textContent) || 0;
-            let totalCertificate = parseInt(document.querySelector('.calculator-value__span-js-c-2').textContent) || 0;
 
-            let allTotalSum = totalTrademark + totalSearch + totalBusiness + totalEvidence + totalDuesFiling + totalExpertise + totalCertificate;
+        // ЦЕНА ЗА НАШИ УСЛУГИ
+        const searchFields = document.querySelector('.calculator-value__span-js-s1'); // Поиск:
+        const applicationAndCase  = document.querySelector('.calculator-value__span-js-s2'); // Подача заявки и ведение дел
+        const obtainingCertificate = document.querySelector('.calculator-value__span-js-3'); // Получение свидетельства
+        const servicePrice = document.querySelector('.calculator-value__span-js-s-4'); // Итого:
 
-            let duesFiling = document.querySelector('.calculator-value__span-js-c-1');
-            let allTotal = document.querySelector('.total-js');
+        // ПОШЛИНЫ РОСПАТЕНТА
+        const applicationFee = document.querySelector('.calculator-value__span-js-c-1'); // Подача заявки
+        const carryingOutAnExamination = document.querySelector('.calculator-value__span-js-c-4'); // Проведение экспертизы
+        const obtainingCertificateFee = document.querySelector('.calculator-value__span-js-c-2'); // Получение свидетельства
+        const servicePriceFee = document.querySelector('.calculator-value__span-js-c-3'); // Итого:
 
-            duesFiling.textContent = totalDuesFiling;
+        // ВСЕГО ЗА РЕГИСТРАЦИЮ:
+        const totalAmount = document.querySelector('.totalAmount'); // Итого:
 
-            // Шаг 3: Расчет стоимости проведения экспертизы
-            let baseExpertiseFee = 8050; // Фиксированная стоимость экспертизы за один класс
-            let additionalExpertiseFeePerClass = 1750; // Дополнительная стоимость за каждый класс после первого
-            let selectedClassesCount = document.querySelectorAll('.section-mkty-area-item.section-clicked').length;
-            let expertiseFee = baseExpertiseFee + Math.max(0, selectedClassesCount - 5) * additionalExpertiseFeePerClass;
 
-            // Шаг 4: Ускоренная экспертиза
-            let expeditedExamFee = 0;
-            if (parseInt(document.querySelector('input[name="wordmark3_option"]:checked').value) === 100000) {
-                expeditedExamFee = 100000;
+        function updateTotalPrice() {
+            // ЦЕНА ЗА НАШИ УСЛУГИ
+            let searchFieldsPrice = priceSearch + totalPriceAll; // вывод цены 2 + 3 шаг
+            searchFields.textContent = searchFieldsPrice;
+
+            let applicationAndCasePrice = additionalClassPrice + duesCertificate; // Подача заявки и ведение дел
+            applicationAndCase.textContent = applicationAndCasePrice;
+
+            let obtainingCertificatePrice = priceEvidence; // Получение свидетельства
+            obtainingCertificate.textContent = obtainingCertificatePrice;
+
+            let servicePriceAll = searchFieldsPrice + applicationAndCasePrice + obtainingCertificatePrice; // Получение свидетельства
+            servicePrice.textContent = servicePriceAll;
+
+            // ПОШЛИНЫ РОСПАТЕНТА
+
+            // Расчет стоимости по количеству выбранных классов
+            let fixedPrice = 2450; // Фиксированная цена за первые 5 классов
+            let additionalClassFee = 700; // Дополнительная плата за каждый класс свыше 5
+            let totalClassFee = fixedPrice + (Math.max(selectedClassesCount - 5, 0) * additionalClassFee);
+            console.log(totalClassFee); // Выводим результат в консоль или используйте эту переменную по своему усмотрению
+
+            let applicationFeePrice = totalClassFee; // Получение свидетельства
+            applicationFee.textContent = applicationFeePrice;
+
+
+            // Расчет стоимости проведения экспертизы
+            let examinationBasePrice = 8050; // Фиксированная цена за первый класс
+            let additionalExaminationFee = 1750; // Дополнительная плата за каждый класс свыше 1
+
+            let totalExaminationFee = examinationBasePrice + (Math.max(selectedClassesCount - 1, 0) * additionalExaminationFee);
+
+            // Учитываем ускоренную экспертизу, если выбрана
+            if (duesCertificate === 100000) {
+                totalExaminationFee += 100000;
             }
 
-            // Шаг 5: Расчет стоимости получения свидетельства
-            let baseCertificateFee = 11200; // Фиксированная стоимость получения свидетельства
-            let electronicCertificateFee = 1400; // Стоимость за электронное свидетельство
+            carryingOutAnExamination.textContent = totalExaminationFee; // Отображаем стоимость проведения экспертизы
 
+
+
+            // Расчет стоимости получения свидетельства
+            let certificateBasePrice = 11200; // Фиксированная цена за свидетельство
+            let electronicCertificateFee = 1400; // Дополнительная плата за электронное свидетельство
+
+            let totalCertificateFee = certificateBasePrice;
+
+            // Проверяем, нужно ли добавить дополнительную плату за электронное свидетельство
+            if (priceEvidence === 1400) {
+                totalCertificateFee += electronicCertificateFee;
+            }
+
+            // Проверяем, нужно ли добавить дополнительную плату за количество классов
             if (selectedClassesCount > 5) {
-                baseCertificateFee += (selectedClassesCount - 5) * 700; // Добавляем стоимость за дополнительные классы после 5
+                let additionalClassFee = (selectedClassesCount - 5) * 700;
+                totalCertificateFee += additionalClassFee;
             }
 
-            if (parseInt(document.querySelector('input[name="wordmark4_option"]:checked').value) === 1400) {
-                baseCertificateFee += electronicCertificateFee; // Добавляем стоимость за электронное свидетельство
-            }
+            obtainingCertificateFee.textContent = totalCertificateFee; // Отображаем стоимость получения свидетельства
 
-            // Обновляем сумму за получение свидетельства
-            let totalCertificateFee = baseCertificateFee;
-            document.querySelector('.calculator-value__span-js-c-2').textContent = totalCertificateFee;
 
-            // Добавляем цену из шага 3, шага 4 и шага 5 в priceBusiness
-            priceBusiness.textContent = expertiseFee + expeditedExamFee + totalCertificateFee;
+            let pricesSent = applicationFeePrice + totalExaminationFee + totalCertificateFee; // итого
+            servicePriceFee.textContent = pricesSent;
 
-            // Складываем все суммы и выводим результат в calculator-value__span-js-s-4
-            let totalS4 = totalSearch + totalBusiness + totalEvidence;
-            document.querySelector('.calculator-value__span-js-s-4').textContent = totalS4;
+            let pricesAll = pricesSent + servicePriceAll; // итого
+            totalAmount.textContent = pricesAll;
 
-            let filingFee = 2450; // Фиксированная цена за подачу заявки
-            let additionalClassFee = 700; // Цена за каждый дополнительный класс после 5
-
-            if (selectedClassesCount > 5) {
-                filingFee += (selectedClassesCount - 5) * additionalClassFee;
-            }
-
-            document.querySelector('.calculator-value__span-js-c-1').textContent = filingFee;
-
-            // Сумма всего, включая Шаг 3 и Шаг 5
-            allTotalSum += totalS4;
-            allTotal.textContent = allTotalSum;
         }
 
 
 
 
 
-        // Обновляем суммы при загрузке страницы
-        updatePrices();
+
 
     });
 
